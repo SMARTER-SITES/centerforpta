@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const books = [
+  { author: "Neff, K. (2015)", title: "Self‑compassion: The proven power of being kind to yourself", publisher: "William Morrow.", amazonQuery: "Self-Compassion Kristin Neff" },
+  { author: "Hendel, H. J. (2018)", title: "It’s not always depression: Working the Change Triangle to listen to the body, discover core emotions, and connect to your authentic self", publisher: "Random House.", amazonQuery: "Its Not Always Depression Hilary Jacobs Hendel" },
+  { author: "Sincero, J. (2023)", title: "You are a badass: How to stop doubting your greatness and start living an awesome life", publisher: "Running Press.", amazonQuery: "You Are a Badass Jen Sincero" },
+  { author: "Beattie, M. (2022)", title: "Codependent no more: How to stop controlling others and start caring for yourself", publisher: "Spiegel & Grau.", amazonQuery: "Codependent No More Melody Beattie" },
+  { author: "Clear, J. (2018)", title: "Atomic habits: Tiny changes, remarkable results: An easy & proven way to build good habits & break bad ones", publisher: "Avery.", amazonQuery: "Atomic Habits James Clear" },
+  { author: "Germer, C. K. (2009)", title: "The mindful path to self-compassion: Freeing yourself from destructive thoughts and emotions", publisher: "The Guilford Press.", amazonQuery: "The Mindful Path to Self-Compassion Christopher Germer" },
+  { author: "Kogan, N. (2020)", title: "Happier now: How to stop chasing perfection and embrace everyday moments", publisher: "Sounds True.", amazonQuery: "Happier Now Nataly Kogan" },
+  { author: "Gottman, J. M., & DeClaire, J. (2001)", title: "The relationship cure: A five-step guide for building better connections with family, friends, and lovers", publisher: "Crown Publishers.", amazonQuery: "The Relationship Cure John Gottman Joan DeClaire" },
+  { author: "van der Kolk, B. (2015)", title: "The body keeps the score: Brain, mind, and body in the healing of trauma", publisher: "Penguin Books.", amazonQuery: "The Body Keeps the Score Bessel van der Kolk" },
+  { author: "Grace, A. (2018)", title: "This naked mind: Control alcohol, find freedom, discover happiness & change your life", publisher: "Avery.", amazonQuery: "This Naked Mind Annie Grace" }
+];
+
+const buildAmazonUrl = (query) => `https://www.amazon.com/s?k=${encodeURIComponent(query)}`;
+---
+
+<Layout
+  title="Book Recommendations | Center for Psychological Treatment and Assessment"
+  description="Recommended mental health and personal growth books selected by Dr. Jelena Djurovic and the Center for Psychological Treatment and Assessment."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resources</p>
+      <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Book Recommendations
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        A curated selection of books we highly recommend to support your personal growth and healing journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+        {books.map(book => (
+          <article class="flex flex-col p-8 bg-white border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] transition-all duration-300">
+            <div class="w-12 h-12 bg-[#e0eae5] text-[#147b6a] rounded-full flex items-center justify-center mb-6">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <h3 class="text-xl xl:text-2xl font-bold text-[#1a1a1a] mb-3 leading-snug">{book.title}</h3>
+            <p class="text-base text-gray-600 mb-1 font-medium">{book.author}</p>
+            <p class="text-sm text-gray-400 mb-6">{book.publisher}</p>
+            <a
+              href={buildAmazonUrl(book.amazonQuery)}
+              target="_blank"
+              rel="noreferrer"
+              class="mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-[#2f594f] px-5 py-3 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1f3f37]"
+              aria-label={`View ${book.title} on Amazon`}
+            >
+              View on Amazon
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5m0 0v5m0-5L10 14"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9v10h10"></path>
+              </svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

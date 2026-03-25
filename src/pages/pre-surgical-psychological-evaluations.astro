@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const timeline = [
+  { step: "1. Clinical Interview", desc: "A comprehensive discussion about your medical history, weight loss journey, current lifestyle, and support systems." },
+  { step: "2. Psychological Testing", desc: "Taking standardized questionnaires to assess emotional well-being and identify any potential psychological barriers." },
+  { step: "3. Feedback & Clearance", desc: "A review of the assessment results, providing tailored recommendations and finalizing your psychological clearance." }
+];
+
+const relatedLinks = [
+  {
+    href: '/psychological-assessment',
+    title: 'Psychological Assessment',
+    desc: 'Learn more about diagnostic testing, cognitive concerns, and recommendations for treatment or accommodations.'
+  },
+  {
+    href: '/rates-and-insurance',
+    title: 'Rates and Insurance',
+    desc: 'Review current rates, accepted insurance plans, and next steps before scheduling an evaluation.'
+  },
+  {
+    href: '/contact',
+    title: 'Contact Us',
+    desc: 'Reach out to schedule a pre-surgical or bariatric psychological evaluation in Schaumburg, IL.'
+  }
+];
+---
+
+<Layout
+  title="Pre-Surgical and Bariatric Psychological Evaluations in Schaumburg, IL | Dr. Jelena Djurovic"
+  description="Pre-surgical and bariatric psychological evaluations in Schaumburg, IL with clear reporting, timely scheduling, and care available in English, Serbian, and Spanish."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Pre-Surgical Psychological Evaluations in Schaumburg, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        We provide pre-surgical psychological evaluations in Schaumburg, Illinois for bariatric surgery and other medical procedures that require mental health clearance.
+      </p>
+    </div>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Why Is an Evaluation Needed?</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Pre-surgical psychological evaluations help determine emotional readiness, behavioral strengths, and potential areas of concern before a medical procedure. Our goal is to provide a clear, supportive, and efficient evaluation process that helps you move forward with confidence.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Dr. Jelena Djurovic conducts thorough clinical interviews, reviews relevant history, and provides clear documentation for surgeons, medical programs, and bariatric teams. Evaluations are available in English, Serbian, and Spanish.
+          </p>
+          <div class="bg-[#d1f3f1] inline-block px-6 py-3 rounded-full text-[#0d5c4e] font-bold">
+            Available in English, Spanish, and Serbian
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <div class="bg-[#fcfbf9] p-8 md:p-10 rounded-[2rem] border border-gray-100 relative">
+            <h2 class="text-2xl font-bold text-[#1a1a1a] mb-8">What to Expect</h2>
+            <div class="space-y-8">
+              {timeline.map((item, index) => (
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-12 h-12 bg-[#2f594f] rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">{item.step.split('. ')[1]}</h3>
+                    <p class="text-gray-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Helpful Next Steps</h2>
+        <p class="text-lg text-gray-700">
+          If you are preparing for surgery, these pages can help you understand the evaluation process, cost, and how to get scheduled quickly.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Schedule Your Pre-Surgical Evaluation</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

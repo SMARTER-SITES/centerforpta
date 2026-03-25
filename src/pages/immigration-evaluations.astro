@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const cases = [
+  { title: "Asylum Cases", desc: "Documenting psychological trauma, PTSD, or other mental health impacts resulting from persecution or feared persecution in a home country." },
+  { title: "Extreme Hardship Waivers", desc: "Demonstrating the exceptional and extremely unusual hardship a U.S. citizen or permanent resident would face if their family member were deported." },
+  { title: "VAWA (Violence Against Women Act)", desc: "Providing clinical evidence of the emotional and psychological abuse suffered by individuals in abusive relationships with a U.S. citizen or permanent resident." },
+  { title: "U Visas and T Visas", desc: "Evaluating the mental health consequences of being a victim of substantial physical or mental abuse, such as human trafficking or other serious crimes." },
+  { title: "Cancellation of Removal", desc: "Evaluating the severe psychological impact that deportation would have on the applicant, their children, or other qualifying family members." }
+];
+
+const relatedLinks = [
+  {
+    href: '/contact',
+    title: 'Request an Immigration Consultation',
+    desc: 'Contact the office to ask about scheduling, timeline, language availability, or working with your attorney.'
+  },
+  {
+    href: '/rates-and-insurance',
+    title: 'Rates and Payment Information',
+    desc: 'Review evaluation pricing details and planning information before booking your immigration assessment.'
+  },
+  {
+    href: '/therapy',
+    title: 'Therapy Services',
+    desc: 'Explore ongoing therapeutic support for anxiety, trauma, grief, and major life transitions.'
+  }
+];
+---
+
+<Layout
+  title="Immigration Psychological Evaluations in Illinois | Dr. Jelena Djurovic"
+  description="Immigration psychological evaluations in Illinois for asylum, hardship waivers, VAWA, U visas, T visas, and cancellation of removal, with reports in English, Serbian, and Spanish."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Immigration Psychological Evaluations in Illinois
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Immigration evaluations for asylum, hardship waivers, VAWA, U visas, T visas, and cancellation of removal cases.
+      </p>
+    </div>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Clinically Thorough Evaluations That Support Immigration Cases</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            A well-prepared immigration psychological evaluation can be a critical part of a strong legal case. We provide detailed, clinically grounded evaluations that document trauma, hardship, and mental health impact in a clear and professional format.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            Our process includes a clinical interview, psychological testing when appropriate, and a written report tailored to the legal needs of the case. Dr. Jelena Djurovic regularly works with attorneys and understands the importance of clarity, credibility, and timely communication.
+          </p>
+          <div class="bg-[#e0eae5] border-l-4 border-[#147b6a] p-6 rounded-r-xl">
+             <p class="text-[17px] text-[#0d5c4e] font-bold">
+              We offer testing and assessments in Serbian, English, and Spanish.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 w-full space-y-4">
+          <h3 class="text-2xl font-bold text-[#1a1a1a] mb-6">Types of Immigration Cases We Support</h3>
+          {cases.map(type => (
+            <div class="bg-[#fcfbf9] border border-gray-100 p-6 rounded-2xl hover:shadow-md transition-shadow">
+              <h4 class="text-xl font-bold text-[#2f594f] mb-2">{type.title}</h4>
+              <p class="text-gray-600 leading-relaxed">{type.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white border border-gray-100 rounded-[2rem] p-8 md:p-10 shadow-sm">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Our Immigration Evaluation Process</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          The process typically includes an initial consultation, a detailed clinical interview, psychological testing when clinically indicated, and a written report prepared for immigration proceedings. We coordinate carefully with clients and, when appropriate, their attorneys to make sure the evaluation addresses the needs of the case.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Resources</h2>
+        <p class="text-lg text-gray-700">
+          These pages can help you prepare for the evaluation process and connect with the office quickly.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Secure your case today</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

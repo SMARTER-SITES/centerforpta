@@ -1,0 +1,118 @@
+---
+const supportLinks = [
+  { text: 'info@centerforpta.com', href: 'mailto:info@centerforpta.com' },
+  { text: '(847) 230-0045 (Phone)', href: 'tel:+18472300045' },
+  { text: '(847) 929-7040 (Text)', href: 'sms:+18479297040' }
+];
+const servicesLinks = [
+  { text: 'Therapy', href: '/therapy' },
+  { text: 'Psychological Assessment', href: '/psychological-assessment' },
+  { text: 'Immigration Evaluations', href: '/immigration-evaluations' },
+  { text: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching' }
+];
+const legalLinks = [{ text: 'Privacy Policy', href: '/privacy-policy' }];
+const socialLinks: Array<{ label: string; href: string }> = [];
+---
+
+<footer class="bg-white py-14 xl:py-16">
+  <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+
+    <!-- Main grid: stack on mobile, row on desktop -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-[1fr_1fr_1fr_auto] gap-8 xl:gap-12">
+
+      <!-- Column 1: Ordering & Support -->
+      <div class="flex flex-col gap-1">
+        <h3 class="text-base xl:text-xl font-bold text-black py-2">Contact Info</h3>
+        {supportLinks.map((link) => (
+          <a href={link.href} class="text-sm xl:text-lg text-black py-1 hover:text-[#2f594f] transition-colors font-medium">
+            {link.text}
+          </a>
+        ))}
+      </div>
+
+      <!-- Column 2: Services -->
+      <div class="flex flex-col gap-1">
+        <h3 class="text-base xl:text-xl font-bold text-black py-2">Services</h3>
+        {servicesLinks.map((link) => (
+          <a href={link.href} class="text-sm xl:text-lg text-black py-1 hover:text-[#2f594f] transition-colors font-medium">
+            {link.text}
+          </a>
+        ))}
+      </div>
+
+      <!-- Empty column (spacer on xl) — hidden on smaller screens -->
+      <div class="hidden xl:block" />
+
+      <!-- Column 3: Contact form -->
+      <div class="flex flex-col gap-3 sm:col-span-2 xl:col-span-1 xl:w-[450px]">
+        <h3 class="text-base xl:text-2xl font-bold text-black py-2 mb-2">Send a Message</h3>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="flex flex-col gap-3">
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input
+              type="text"
+              name="first-name"
+              placeholder="First Name"
+              required
+              class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
+            />
+            <input
+              type="text"
+              name="last-name"
+              placeholder="Last Name"
+              required
+              class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
+            />
+          </div>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+            class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
+          />
+          <textarea
+            name="message"
+            placeholder="How can we help you?"
+            required
+            rows="4"
+            class="w-full bg-[#fcfbf9] border border-gray-200 rounded-xl px-4 py-3 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all resize-none"
+          ></textarea>
+          <button 
+            type="submit" 
+            class="h-10 xl:h-12 mt-1 bg-[#2f594f] rounded-xl text-sm xl:text-base font-bold text-white hover:bg-[#1f3f37] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Social icons / Copyright -->
+    <div class="mt-12 flex flex-col md:flex-row justify-between items-center border-t border-gray-100 pt-8 gap-4">
+      <p class="text-sm font-medium text-gray-500 text-center md:text-left">
+        © {new Date().getFullYear()} Center for Psychological Treatment and Assessment. All rights reserved.
+      </p>
+      <div class="flex items-center gap-5 xl:gap-6">
+        {legalLinks.map((link) => (
+          <a href={link.href} class="text-sm font-semibold text-[#2f594f] hover:text-[#1f3f37] transition-colors">
+            {link.text}
+          </a>
+        ))}
+        {socialLinks.length > 0 && (
+          <>
+          {socialLinks.map((link) => (
+            <a href={link.href} class="text-sm font-semibold text-[#2f594f] hover:text-[#1f3f37] transition-colors">
+              {link.label}
+            </a>
+          ))}
+          </>
+        )}
+      </div>
+    </div>
+
+  </div>
+</footer>

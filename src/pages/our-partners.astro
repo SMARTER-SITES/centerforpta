@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const facts = [
+  "83% of patients report significant symptom improvement",
+  "63% achieve full remission from depression symptoms",
+  "Covered by most major insurance providers",
+  "FDA approved and medication-free"
+];
+---
+
+<Layout
+  title="Our Partners | Center for Psychological Treatment and Assessment"
+  description="Learn about trusted care partners recommended by the Center for Psychological Treatment and Assessment, including R Hope Treatment in Evanston, IL."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resources</p>
+      <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Our Partners
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        We collaborate with leading health professionals to provide comprehensive care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start bg-[#fcfbf9] border border-gray-100 rounded-[3rem] p-8 md:p-12 xl:p-16 shadow-lg">
+        
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#147b6a] mb-6">R Hope Treatment</h2>
+          <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6">TMS Clinic</h3>
+          
+          <div class="space-y-4 text-gray-700 text-[15px] md:text-lg leading-relaxed font-medium">
+            <p>At R Hope Treatment, we are proud to be a regional leader in delivering both standard and personalized Transcranial Magnetic Stimulation (TMS) therapy — an innovative, non-medication, non-invasive, and FDA-approved treatment for mental health conditions.</p>
+            <p>TMS therapy works by applying gentle magnetic pulses to stimulate underactive areas of the brain that regulate mood, without the use of medication. A typical session lasts less than 20 minutes and is completed over a 6–8 week period.</p>
+            <p>Our clinic, based in Evanston, IL, specializes in treating depression and anxiety, and we also help patients suffering from PTSD, OCD, ADHD, and other mood-related disorders.</p>
+            <p>We are also proud to offer a fully equipped mobile TMS clinic, designed to serve patients who are unable to visit our main location regularly. Our mobile unit brings the same high-quality care directly to your doorstep — whether at home, a care facility, or another convenient location — making mental health care more accessible than ever.</p>
+            <p>At R Hope Treatment, we offer both standard TMS protocols and advanced personalized TMS (PrTMS) protocols using EEG brain mapping. This allows us to tailor treatment to each patient’s unique brainwave activity, resulting in more precise and effective care.</p>
+          </div>
+          
+          <div class="mt-8 pt-6 border-t border-gray-200">
+            <p class="font-bold text-[#1a1a1a]">R Hope Treatment</p>
+            <p class="text-gray-600 mt-1">1335 Dodge Ave, Evanston, IL 60201</p>
+            <p class="text-gray-600 mt-1">📞 847-868-9369 | 📧 office@RHopeTreatment.com</p>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 bg-white rounded-3xl p-8 xl:p-10 shadow-sm border border-gray-100 w-full">
+          <h3 class="text-2xl font-bold text-[#1a1a1a] mb-8 flex items-center">
+            <svg class="w-8 h-8 text-[#fcc13e] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Key Facts
+          </h3>
+          <div class="space-y-6">
+            {facts.map(fact => (
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-[#d1f3f1] text-[#147b6a] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <p class="text-lg text-gray-800 font-medium leading-relaxed">{fact}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

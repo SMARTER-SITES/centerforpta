@@ -1,0 +1,46 @@
+---
+const iconMembers  = "https://www.figma.com/api/mcp/asset/eddd917c-94b6-4a51-9457-a3d1b1633e8f";
+const iconClubs    = "https://www.figma.com/api/mcp/asset/61107efb-e680-4d9b-8a5b-d8fe5cce1635";
+const iconHours    = "https://www.figma.com/api/mcp/asset/a24f2a36-97eb-425c-afc4-0108b96b83e6";
+const iconPayments = "https://www.figma.com/api/mcp/asset/c280f9d1-ccab-47cd-b605-00d394ce053b";
+
+const stats = [
+  { icon: iconMembers,  value: 'Compassionate', label: 'Client-focused care' },
+  { icon: iconClubs,    value: 'Experienced',    label: '10+ Years in practice' },
+  { icon: iconHours,    value: 'Evidence-based',   label: 'Empirically supported' },
+  { icon: iconPayments, value: 'Bilingual', label: 'English & Serbian' },
+];
+---
+
+<section class="bg-white py-14 xl:py-20">
+  <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+    <div class="flex flex-col lg:flex-row items-start lg:items-center gap-10 xl:gap-24">
+
+      <!-- Left: stats 2×2 grid -->
+      <div class="grid grid-cols-2 gap-x-6 gap-y-8 xl:gap-x-8 w-full lg:w-auto lg:flex-none">
+        {stats.map(({ icon, value, label }) => (
+          <div class="flex items-center gap-3 xl:gap-4">
+            <div class="size-10 xl:size-12 flex-none">
+              <img src={icon} class="w-full h-full object-contain" alt="" aria-hidden="true" />
+            </div>
+            <div class="flex flex-col min-w-0">
+              <span class="text-xl xl:text-[28px] font-bold text-[#4d4d4d] leading-tight xl:leading-9">{value}</span>
+              <span class="text-sm xl:text-base text-[#717171] leading-5 xl:leading-6">{label}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Right: heading + subtext -->
+      <div class="flex flex-col gap-3 max-w-full lg:max-w-[465px]">
+        <h2 class="text-2xl md:text-3xl xl:text-[36px] font-bold text-black xl:leading-[44px]">
+          Healing and growth tailored to you
+        </h2>
+        <p class="text-sm xl:text-base text-black leading-6">
+          We offer personalized care to help you create boundaries and build the best possible life for yourself.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>

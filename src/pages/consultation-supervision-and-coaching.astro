@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: "Clinical Supervision",
+    desc: "Are you working to acquire clinical hours and looking for a supervisor? We offer comprehensive, board-approved clinical supervision for new clinicians. Gain confidence, refine your clinical skills, and navigate complex ethical dilemmas in a supportive environment.",
+    icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+  },
+  {
+    title: "Professional Consultation",
+    desc: "Are you a seasoned clinician just starting to work with specific populations, or dealing with a complex diagnostic case? We provide expert peer consultation to help you develop effective treatment plans and expand your clinical expertise.",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+  },
+  {
+    title: "Exam & Career Coaching",
+    desc: "Are you a recent graduate studying for the licensure exam (EPPP) and feeling lost, or a new clinician finding your place in this career? Our coaching services provide structured guidance, study strategies, and career path planning to ensure your success.",
+    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+  }
+];
+---
+
+<Layout
+  title="Consultation, Supervision and Coaching | Center for Psychological Treatment and Assessment"
+  description="Clinical supervision, consultation, and coaching for mental health professionals, including EPPP preparation and career guidance."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Consultation, Supervision & Coaching
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Empowering clinicians at every stage of their professional journey.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Expert Guidance for Mental Health Professionals</h2>
+        <p class="text-lg text-gray-700">
+          Whether you are just starting your clinical training or looking to expand your specialized expertise, our dedicated mentoring and supervision services are designed to elevate your clinical practice.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {services.map(service => (
+          <div class="bg-[#fcfbf9] border border-gray-100 p-8 xl:p-10 rounded-[2rem] hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+            <div class="w-14 h-14 bg-[#147b6a] rounded-2xl flex items-center justify-center mb-8 shadow-md">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={service.icon}></path></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{service.title}</h3>
+            <p class="text-[16px] text-gray-600 leading-relaxed">{service.desc}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-20 text-center bg-[#e0eae5] p-10 rounded-[2rem] border border-[#b8d6c9]">
+        <h3 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-4">Take the next step in your career</h3>
+        <p class="text-lg text-[#2f594f] max-w-2xl mx-auto">Give us a call and see how we can assist you in reaching your professional goals with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ready to excel?</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

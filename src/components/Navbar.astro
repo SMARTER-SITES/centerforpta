@@ -1,0 +1,194 @@
+---
+import { Image } from 'astro:assets';
+import logoImg from '../assets/logo.png';
+
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' },
+  { 
+    name: 'Services', 
+    dropdown: [
+      { name: 'Therapy', href: '/therapy' },
+      { name: 'Pre-Surgical Evaluations', href: '/pre-surgical-psychological-evaluations' },
+      { name: 'Psychological Assessment', href: '/psychological-assessment' },
+      { name: 'Immigration Evaluations', href: '/immigration-evaluations' },
+      { name: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching' }
+    ]
+  },
+  {
+    name: 'Resources',
+    dropdown: [
+      { name: 'Book Recommendations', href: '/book-recommendations' },
+      { name: 'Our Partners', href: '/our-partners' },
+      { name: 'Useful Links', href: '/useful-links' }
+    ]
+  },
+  { name: 'Rates and Insurance', href: '/rates-and-insurance' },
+  { name: 'Blog', href: '/blog/' },
+  { name: 'Contact Us', href: '/contact' }
+];
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 transition-all duration-300" id="navbar">
+  <div class="max-w-[1440px] mx-auto relative">
+    <nav class="flex items-center justify-between w-full px-5 py-3.5 bg-white border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)] rounded-2xl md:rounded-full relative z-20">
+      
+      <!-- Brand -->
+      <a href="/" class="flex flex-col ml-2">
+        <Image 
+          src={logoImg} 
+          alt="Center for Psychological Treatment and Assessment Logo" 
+          class="h-12 md:h-14 w-auto object-contain" 
+          loading="eager" 
+          fetchpriority="high" 
+          format="webp"
+          quality={80}
+          widths={[240, 480]} 
+          sizes="(max-width: 768px) 240px, 240px"
+        />
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-4 xl:gap-6">
+        {navItems.map((item) => (
+          item.dropdown ? (
+            <div class="relative group">
+              <button class="flex items-center gap-1 text-[13px] xl:text-[15px] font-semibold text-gray-600 hover:text-[#2f594f] transition-colors pb-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#2f594f] hover:after:w-full after:transition-all after:duration-300">
+                {item.name}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="absolute top-[120%] left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:top-full group-hover:visible transition-all duration-300 flex flex-col z-50">
+                {item.dropdown.map(subItem => (
+                  <a href={subItem.href} class="px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#f3f0e9] hover:text-[#2f594f] transition-colors">
+                    {subItem.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a href={item.href} class="text-[13px] xl:text-[15px] font-semibold text-gray-600 hover:text-[#2f594f] transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#2f594f] hover:after:w-full after:transition-all after:duration-300 pb-1">
+              {item.name}
+            </a>
+          )
+        ))}
+      </div>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-2 md:gap-3">
+        <a href="tel:+18472300045" class="hidden xl:flex items-center justify-center px-6 py-2.5 bg-[#f3f0e9] text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#e8e2d2] transition-colors">
+          <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          (847) 230-0045
+        </a>
+        <a href="/contact" class="hidden lg:flex items-center justify-center px-6 md:px-7 py-2.5 md:py-3 bg-[#2f594f] text-white text-sm md:text-base font-semibold rounded-full shadow-lg shadow-[#2f594f]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none">
+          Book Consultation
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-[#2f594f] transition-colors focus:outline-none" aria-label="Toggle Menu">
+          <svg id="icon-menu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden absolute top-20 left-0 w-full bg-white shadow-xl rounded-2xl py-6 px-6 opacity-0 invisible translate-y-[-10px] transition-all duration-300 z-10">
+      <div class="flex flex-col gap-4 max-h-[70vh] overflow-y-auto">
+        {navItems.map((item) => (
+          item.dropdown ? (
+            <div class="flex flex-col mobile-dropdown-container">
+              <button class="flex items-center justify-between text-lg font-bold text-gray-800 py-2 mobile-dropdown-btn">
+                {item.name}
+                <svg class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="hidden flex-col gap-2 pl-4 mt-2 border-l-2 border-[#e0eae5] mobile-dropdown-content">
+                {item.dropdown.map(subItem => (
+                  <a href={subItem.href} class="text-base font-medium text-gray-600 py-1.5 hover:text-[#2f594f]">
+                    {subItem.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a href={item.href} class="text-lg font-bold text-gray-800 py-2 hover:text-[#2f594f] transition-colors">
+              {item.name}
+            </a>
+          )
+        ))}
+        
+        <div class="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-4">
+          <a href="tel:+18472300045" class="flex items-center justify-center px-6 py-3 bg-[#f3f0e9] text-[#2f594f] text-base font-bold rounded-full">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            (847) 230-0045
+          </a>
+          <a href="/contact" class="flex items-center justify-center px-6 py-3 bg-[#2f594f] text-white text-base font-bold rounded-full">
+            Book Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  // Add subtle scroll effect to shrink navbar padding
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      if (navbar) {
+        navbar.classList.add('py-2');
+        navbar.classList.remove('py-4');
+      }
+    } else {
+      if (navbar) {
+        navbar.classList.add('py-4');
+        navbar.classList.remove('py-2');
+      }
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  let isMenuOpen = false;
+
+  if (mobileMenuBtn && mobileMenu && iconMenu && iconClose) {
+    mobileMenuBtn.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');
+        mobileMenu.classList.add('opacity-100', 'visible', 'translate-y-0');
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('opacity-0', 'invisible', 'translate-y-[-10px]');
+        mobileMenu.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+    });
+
+    // Mobile dropdowns
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+    dropdownBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('svg');
+        
+        if (content && icon) {
+          content.classList.toggle('hidden');
+          content.classList.toggle('flex');
+          icon.classList.toggle('rotate-180');
+        }
+      });
+    });
+  }
+</script>

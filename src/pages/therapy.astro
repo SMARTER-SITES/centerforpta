@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const concerns = [
+  { title: "Anxiety & Stress", desc: "Learn to manage overwhelming worry, panic attacks, and daily stress with evidence-based coping strategies." },
+  { title: "Depression & Mood", desc: "Find hope and motivation when feeling sad, hopeless, or stuck. We help you rebuild your emotional resilience." },
+  { title: "Trauma & PTSD", desc: "Heal from past experiences in a safe, trauma-informed environment using proven therapeutic approaches." },
+  { title: "Relationships", desc: "Improve communication, rebuild trust, and navigate family or marital challenges effectively." },
+  { title: "Life Transitions", desc: "Get support while navigating career changes, loss, grief, separation, or other significant life shifts." },
+  { title: "Substance Use", desc: "Regain control over drinking or drug use with compassionate, non-judgmental support and effective interventions." },
+  { title: "ADHD & Focus", desc: "Learn to cope effectively with scattered thoughts and improve your daily functioning and quality of life." },
+  { title: "Chronic Pain & Illness", desc: "Explore the mind-body connection and learn interventions to live your life as freely as possible." }
+];
+
+const relatedLinks = [
+  {
+    href: '/rates-and-insurance',
+    title: 'Rates and Insurance',
+    desc: 'Review insurance plans, private pay options, and next steps before scheduling therapy.'
+  },
+  {
+    href: '/contact',
+    title: 'Book a Consultation',
+    desc: 'Reach out to ask about individual, couples, family, or telehealth therapy in Illinois.'
+  },
+  {
+    href: '/psychological-assessment',
+    title: 'Psychological Assessment',
+    desc: 'Explore testing for ADHD, autism, diagnostic clarification, and school or workplace accommodations.'
+  }
+];
+---
+
+<Layout
+  title="Therapy in Schaumburg, IL | Individual, Couples, Family, and Telehealth Therapy"
+  description="Therapy in Schaumburg, IL for individuals, couples, and families, with telehealth available across Illinois for anxiety, trauma, ADHD, grief, and relationship concerns."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Therapy in Schaumburg, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Individual, couples, family, and telehealth therapy for anxiety, depression, trauma, ADHD, relationship issues, grief, and life transitions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Approach Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">A Personalized Approach to Therapy</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Starting therapy can feel overwhelming, but you do not have to navigate difficult emotions or life changes alone. We offer a supportive, non-judgmental space where you can better understand what you are experiencing and build meaningful change over time.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Dr. Jelena Djurovic provides evidence-based therapy tailored to your needs, goals, history, and strengths, helping you move toward greater stability, stronger relationships, and deeper self-understanding.
+          </p>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Individual Therapy</h3>
+            <p class="text-gray-600">One-on-one sessions focused on your personal growth, healing, and specific psychological needs.</p>
+          </div>
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Couples Therapy</h3>
+            <p class="text-gray-600">Learn effective communication skills and problem-solving strategies to strengthen your relationship.</p>
+          </div>
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Family Therapy</h3>
+            <p class="text-gray-600">Resolve conflicts and improve the family dynamic through guided, constructive dialogue.</p>
+          </div>
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Telehealth</h3>
+            <p class="text-gray-600">Secure and convenient virtual therapy sessions from the comfort of your own home.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Treat Section -->
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">What We Treat</h2>
+        <p class="text-lg text-gray-700">We offer specialized treatment for a wide range of emotional, behavioral, and psychological concerns.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+        {concerns.map(concern => (
+          <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{concern.title}</h3>
+            <p class="text-[15px] text-gray-600 leading-relaxed">{concern.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Planning Your Next Step</h2>
+        <p class="text-lg text-gray-700">
+          These pages can help you understand cost, scheduling, and whether therapy or assessment is the best fit for what you need.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Begin your healing journey</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

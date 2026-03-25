@@ -1,0 +1,119 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const featuredLinks = [
+  {
+    tag: 'Featured Interview',
+    title:
+      'Srpkinja psiholog u Čikagu: Od čega najviše pate naši ljudi u Americi i kako im psiholog može pomoći da dobiju "papire" (VIDEO)',
+    href:
+      'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/',
+    source: 'Serbian Times',
+    language: 'Serbian',
+    date: 'July 7, 2025',
+    description:
+      'Razgovor sa dr Jelenom Djurović o tome od čega naši ljudi u Americi najviše pate, kako psihološka podrška može da pomogne i na koji način evaluacije mogu biti važne u imigracionim postupcima.',
+    image: '/images/useful-links/jelena-djurovic-serbian-times.jpg',
+    imageAlt: 'Dr Jelena Djurovic in an interview for Serbian Times',
+    actionLabel: 'Read Article'
+  },
+  {
+    tag: 'Featured Video',
+    title: 'Is TMS great addition to Talk Therapy?',
+    href: 'https://www.youtube.com/watch?v=G6AWlonyxyE',
+    source: 'TMSFIRSTCHOICE on YouTube',
+    language: 'English',
+    description:
+      'A video discussion exploring whether TMS can be a strong complement to talk therapy and broader mental health treatment.',
+    image: 'https://i.ytimg.com/vi/G6AWlonyxyE/hqdefault.jpg',
+    imageAlt: 'Thumbnail for the YouTube video Is TMS great addition to Talk Therapy?',
+    actionLabel: 'Watch on YouTube'
+  }
+];
+---
+
+<Layout
+  title="Useful Links | Center for Psychological Treatment and Assessment"
+  description="Helpful articles, interviews, and resources from the Center for Psychological Treatment and Assessment, including featured media coverage."
+  image="/images/useful-links/jelena-djurovic-serbian-times.jpg"
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resources</p>
+      <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Useful Links
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Helpful articles, interviews, and recommended resources connected to our practice. We will continue adding more content over time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 gap-8">
+        {featuredLinks.map((link) => (
+          <article class="overflow-hidden bg-[#fcfbf9] border border-gray-100 rounded-[2rem] shadow-sm hover:shadow-lg transition-shadow">
+            <div class="grid grid-cols-1 lg:grid-cols-[360px_1fr]">
+              <div class="relative h-[280px] md:h-[360px] lg:h-full bg-[#e0eae5]">
+                <img
+                  src={link.image}
+                  alt={link.imageAlt}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="p-8 md:p-10">
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                  <span class="inline-flex items-center rounded-full bg-[#e0eae5] px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#147b6a]">
+                    {link.tag}
+                  </span>
+                  <span class="text-sm font-semibold text-gray-500">{link.source}</span>
+                  {link.date && <span class="text-sm text-gray-400">{link.date}</span>}
+                  <span class="text-sm text-gray-400">{link.language}</span>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] leading-tight mb-4">
+                  {link.title}
+                </h2>
+                <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-8">
+                  {link.description}
+                </p>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#2f594f] rounded-full text-base font-bold text-white hover:bg-[#1f3f37] hover:-translate-y-0.5 transition-all"
+                >
+                  {link.actionLabel}
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5m0 0v5m0-5L10 14"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9v10h10"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+
+        <div class="bg-[#d1f3f1] border border-[#b8d6c9] rounded-[2rem] p-8 md:p-10">
+          <div class="max-w-3xl">
+            <p class="text-sm font-bold uppercase tracking-widest text-[#147b6a] mb-4">More Content Coming Soon</p>
+            <h2 class="text-2xl md:text-4xl font-bold text-[#1a1a1a] mb-4">We are continuing to grow this page.</h2>
+            <p class="text-base md:text-lg text-[#0d5c4e] leading-relaxed">
+              We will keep adding helpful patient resources, recommended organizations, and media coverage that may be valuable to our community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

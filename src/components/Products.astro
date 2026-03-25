@@ -1,0 +1,36 @@
+---
+const badgeCircle = "https://www.figma.com/api/mcp/asset/b413facd-f562-4235-a232-7371f13141b2";
+
+const products = [
+  { label: 'Therapy' },
+  { label: 'Assessment' },
+  { label: 'Immigration' },
+  { label: 'Coaching' },
+];
+---
+
+<section class="bg-white py-14 xl:py-20">
+  <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+
+    <!-- Cards: 2 col on mobile, 4 col on desktop -->
+    <div class="grid grid-cols-2 xl:grid-cols-4 gap-4 xl:gap-6">
+      {products.map(({ label }) => (
+        <div class="flex flex-col items-start">
+          <!-- Card with badge -->
+          <div class="relative w-full">
+            <!-- Product image -->
+            <div class="w-full aspect-square max-w-[198px] bg-[#c4c4c4] rounded-4xl" />
+
+            <!-- -20% badge hidden -->
+          </div>
+
+          <!-- Label -->
+          <p class="mt-3 xl:mt-4 text-xs xl:text-base font-black text-[#727272] uppercase tracking-[2px] xl:tracking-[3.2px]">
+            {label}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

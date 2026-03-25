@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import therapyImg from '../assets/therapy.png';
+import psychAssessmentImg from '../assets/Psychological Assessment.png';
+import immigrationEvalImg from '../assets/Immigration evaluations.png';
+import consultationImg from '../assets/Consultation, supervision and coaching.png';
+
+const services = [
+  {
+    title: 'Therapy',
+    description: 'Have anxiety? Give us a call! Depressed? Sad? Hopeless? Lacking motivation? We are here to help! Experienced trauma? We can help you heal. Life transitions? Remember that talking it out is sometimes the best remedy.',
+    image: therapyImg,
+    href: '/therapy'
+  },
+  {
+    title: 'Psychological Assessment',
+    description: 'Do people always complain you do not listen when they talk? Do you interrupt conversations? Do you constantly lose your glasses, phone, wallet and other important items? We can help you figure out why!',
+    image: psychAssessmentImg,
+    href: '/psychological-assessment'
+  },
+  {
+    title: 'Immigration Evaluations',
+    description: 'We understand the unique and excruciating challenges that may come with dealing with immigration and specific legal issues related to immigration in the US, especially nowadays!',
+    image: immigrationEvalImg,
+    href: '/immigration-evaluations'
+  },
+  {
+    title: 'Consultation, Supervision and Coaching',
+    description: 'Are you a new clinician working to find your place in this challenging and rewarding career? Are you working to acquire clinical hours and looking for a supervisor?',
+    image: consultationImg,
+    href: '/consultation-supervision-and-coaching'
+  }
+];
+---
+
+<section class="bg-[#d1f3f1] py-20 xl:py-28">
+  <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+    <h2 class="text-4xl md:text-5xl xl:text-[64px] font-bold text-[#147b6a] text-center mb-16 tracking-tight">
+      Our Services
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-6 xl:gap-8 bg-transparent">
+      {services.map((service) => (
+        <div class="flex flex-col h-full bg-white rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-300">
+          
+          <!-- Image -->
+          <div class="h-48 sm:h-56 xl:h-64 w-full overflow-hidden relative group">
+             <Image 
+               src={service.image} 
+               alt={service.title} 
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+               format="webp"
+               quality={75}
+               widths={[380, 760]}
+               sizes="(max-width: 768px) 100vw, 380px"
+             />
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-col flex-1 p-6 sm:p-8">
+            <h3 class="text-[22px] md:text-2xl font-bold text-[#147b6a] mb-5">
+              <a href={service.href} class="hover:text-[#0d5c4e] underline decoration-[#147b6a] decoration-2 underline-offset-8 transition-colors leading-tight">
+                {service.title}
+              </a>
+            </h3>
+            <p class="text-[15px] xl:text-base text-gray-800 leading-relaxed font-medium">
+              {service.description}
+            </p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

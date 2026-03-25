@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const assessments = [
+  { title: "Cognitive & Intellectual", desc: "Discover personal strengths and weaknesses, assess general intellectual ability, and identify learning styles." },
+  { title: "ADHD & Executive Functioning", desc: "Evaluate difficulties with focus, organization, impulsivity, and related challenges affecting daily life." },
+  { title: "Neurocognitive Exams", desc: "Assess for significant memory loss or difficulty remembering familiar people, places, or situations to affect future outcomes." },
+  { title: "Personality & Emotional", desc: "Gain clarity on recurrent relationship issues, changes in mood, and underlying emotional struggles." },
+  { title: "Bariatric & Medical Clearance", desc: "Comprehensive pre-surgical psychological evaluations required for bariatric or other medical procedures." },
+  { title: "Autism Spectrum", desc: "Identify root causes of sensory issues, social awkwardness, and difficulty reading interpersonal cues." }
+];
+
+const relatedLinks = [
+  {
+    href: '/pre-surgical-psychological-evaluations',
+    title: 'Pre-Surgical Evaluations',
+    desc: 'Learn more about bariatric and medical clearance evaluations in Schaumburg, IL.'
+  },
+  {
+    href: '/therapy',
+    title: 'Therapy Services',
+    desc: 'Explore individual, couples, family, and telehealth therapy after testing or diagnostic clarification.'
+  },
+  {
+    href: '/contact',
+    title: 'Schedule an Assessment',
+    desc: 'Contact the office to ask about ADHD testing, autism evaluation, or accommodations-related assessment.'
+  }
+];
+---
+
+<Layout
+  title="Psychological Testing and Assessment in Schaumburg, IL | Dr. Jelena Djurovic"
+  description="Psychological testing and assessment in Schaumburg, IL for ADHD, autism, cognitive concerns, school or workplace accommodations, and diagnostic clarification."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Psychological Testing and Assessment in Schaumburg, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Comprehensive testing for ADHD, autism, diagnostic clarification, cognitive concerns, and school or workplace accommodations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <div class="bg-[#fcfbf9] p-8 md:p-10 rounded-[2rem] border border-gray-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#e0eae5] rounded-bl-full opacity-50 z-0"></div>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 relative z-10">Why Get an Assessment?</h2>
+            <ul class="space-y-4 relative z-10">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Receive an accurate and formal diagnosis.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Guide effective and tailored therapeutic treatment.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Obtain accommodations for school or the workplace.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Clarify the root cause of chronic emotional or behavioral issues.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Get Answers, Clarity, and a Practical Path Forward</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Psychological assessment can help when something feels off but you do not yet have a clear explanation. Through interviews, standardized testing, and careful interpretation, we help identify the patterns behind attention, mood, behavior, and cognitive concerns.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Dr. Jelena Djurovic designs evaluations to provide meaningful diagnostic clarity and practical recommendations tailored to your referral question.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Types Section -->
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Common Reasons Clients Seek Testing</h2>
+        <p class="text-lg text-gray-700">We offer specialized testing batteries tailored to answer specific diagnostic, educational, workplace, and treatment questions.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+        {assessments.map(item => (
+          <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 bg-[#e0eae5] rounded-full flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#147b6a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+            <p class="text-[15px] text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Services</h2>
+        <p class="text-lg text-gray-700">
+          If you are looking for testing, treatment recommendations, or next-step support, these pages are a good place to continue.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ready for clarity?</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

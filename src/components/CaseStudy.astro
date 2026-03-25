@@ -1,0 +1,43 @@
+---
+const cardIcon1 = "https://www.figma.com/api/mcp/asset/9eb955ad-91a0-41aa-b608-4396b8bd1f78";
+const cardIcon2 = "https://www.figma.com/api/mcp/asset/1a76e6aa-0311-46eb-b1e4-a6c431b7fbc6";
+
+const cards = [
+  { icon: cardIcon1, text: 'Have anxiety? Depressed? Sad? Hopeless? Lacking motivation? Life transitions? We are here to help!' },
+  { icon: cardIcon2, text: 'Do people complain you do not listen? Constantly losing important items? We can help you figure out why with an Assessment.' },
+  { icon: cardIcon2, text: 'We understand the unique and excruciating challenges that may come with dealing with immigration in the US.' },
+];
+---
+
+<section class="bg-primary py-14 xl:py-16">
+  <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+
+    <!-- Header -->
+    <h2 class="text-2xl md:text-3xl xl:text-[40px] font-bold text-white leading-normal">Areas of Focus</h2>
+
+    <div class="mt-5 xl:mt-6 flex flex-wrap gap-3 xl:gap-6">
+      <a href="#" class="flex h-12 xl:h-16 items-center justify-center px-8 xl:px-16 bg-cream rounded-full text-sm xl:text-base font-bold text-black">
+        Schedule Appointment
+      </a>
+      <a href="#" class="flex h-12 xl:h-16 items-center justify-center px-8 xl:px-16 bg-accent rounded-full text-sm xl:text-base font-bold text-black">
+        Learn More
+      </a>
+    </div>
+
+    <!-- Cards: 1 col → 2 col → 3 col -->
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      {cards.map(({ icon, text }) => (
+        <div class="flex flex-col rounded-4xl overflow-hidden">
+          <div class="bg-[#c4c4c4] h-[300px] md:h-[380px] xl:h-[467px] rounded-4xl" />
+          <div class="bg-primary rounded-4xl px-5 py-4 mt-1 flex items-start justify-between min-h-[80px] xl:min-h-[89px]">
+            <p class="text-sm xl:text-base font-medium text-white leading-relaxed line-clamp-3 flex-1 mr-3">
+              {text}
+            </p>
+            <img src={icon} class="h-10 xl:h-14 w-16 xl:w-24 object-contain flex-none" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import headshotImg from '../assets/Jelena-Djurovic-headshot.png';
+
+const conditions = [
+  "Marital problems", "Addiction", "Anxiety", "Depression", "OCD", "ADHD", 
+  "Communication issues", "Panic disorder", "Bipolar disorder", "Schizophrenia", 
+  "Social Anxiety", "Adult Autism Spectrum Disorder", "Trauma", 
+  "Acculturation and Isolation", "Anger Management", "Borderline Personality (BPD)", 
+  "Codependency", "Domestic Violence", "Eating Disorders", 
+  "Pre/Post Bariatric surgery counseling", "Body image", "Weight management", 
+  "Impulse Control Disorders", "Mood Disorders", "Personality Disorders", 
+  "Relationship Conflicts", "Self Esteem", "Self-Harming", "Sexual Abuse", 
+  "Sexual Addiction", "Life Transitions", "Somatic disorders", "Suicidal Ideation"
+];
+
+const whoWeTreat = [
+  { title: "Individuals", desc: "Personalized one-on-one therapy tailored to your unique needs and goals." },
+  { title: "Couples", desc: "Navigate relationship challenges, improve communication, and strengthen the bond with your partner." },
+  { title: "Families", desc: "Address systemic family issues, resolve conflicts, and improve overall family dynamics." }
+];
+---
+
+<Layout
+  title="About Us | Center for Psychological Treatment and Assessment"
+  description="Learn about Dr. Jelena Djurovic and the Center for Psychological Treatment and Assessment in Schaumburg, IL, offering therapy, evaluations, and personalized care for ages 13 and up."
+>
+  
+  <Navbar />
+
+  <!-- About Hero -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#fcfbf9] overflow-hidden">
+    <!-- Decorative elements from Hero for consistency -->
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Who We Are</p>
+      <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        State-of-the-art practice for your mental health needs
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        We offer psychotherapy, psychological assessments and psychological evaluations for individuals aged 13 and up for a wide array of needs and issues.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission & Office details -->
+  <section class="pb-16 xl:pb-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-[#d1f3f1] rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 xl:p-20 relative overflow-hidden shadow-lg border border-[#c0ece9]">
+        <div class="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
+          <svg class="w-12 h-12 md:w-16 md:h-16 text-[#147b6a] mb-6 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          <h2 class="text-2xl md:text-4xl lg:text-5xl font-extrabold text-[#147b6a] mb-6 md:mb-8 leading-tight tracking-tight">
+            Comfortable, modern care—wherever you are.
+          </h2>
+          <p class="text-base md:text-xl text-[#0d5c4e] leading-relaxed mb-8 md:mb-10 font-medium">
+            Whether you are looking to visit us in our modern, clean and comfortable office, or looking to obtain services from the comfort of your home, we are here to help!
+          </p>
+          <div class="inline-flex items-center gap-3 bg-white/70 px-5 md:px-7 py-3 md:py-4 rounded-full text-[#147b6a] font-bold text-xs md:text-sm shadow-sm">
+            <svg class="w-5 h-5 text-[#fcc13e] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            <span class="text-left leading-snug">Looking for a child therapist/evaluator? We are actively working on adding one to our team. Stay tuned!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Treat -->
+  <section class="py-16 xl:py-24 bg-white">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] tracking-tight">Who We Treat</h2>
+        <div class="w-24 h-1 bg-[#fcc13e] mx-auto mt-6 rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-10 max-w-[1200px] mx-auto">
+        {whoWeTreat.map(item => (
+          <div class="bg-[#fcfbf9] rounded-[2rem] p-8 xl:p-10 shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:-translate-y-2 transition-all duration-500 border border-gray-100 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 text-[#2f594f] shadow-sm group-hover:bg-[#2f594f] group-hover:text-white transition-colors duration-500">
+              {item.title === 'Individuals' && <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>}
+              {item.title === 'Couples' && <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>}
+              {item.title === 'Families' && <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>}
+            </div>
+            <h3 class="text-2xl font-extrabold text-[#1a1a1a] mb-4">{item.title}</h3>
+            <p class="text-[15px] md:text-base text-gray-600 leading-relaxed font-medium">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Provider Bio -->
+  <section class="bg-[#fcfbf9] py-16 xl:py-24 relative z-10">
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col lg:flex-row items-start gap-12 xl:gap-20">
+
+        <!-- Left: image -->
+        <div class="w-full lg:flex-none lg:w-[450px] xl:w-[500px] h-[400px] sm:h-[500px] lg:h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl lg:sticky lg:top-32 border border-gray-100/50">
+          <Image 
+            src={headshotImg} 
+            alt="Dr. Jelena Djurovic" 
+            class="w-full h-full object-cover object-top" 
+            format="webp"
+            quality={85}
+            widths={[400, 800]} 
+            sizes="(max-width: 1024px) 100vw, 500px" 
+          />
+        </div>
+
+        <!-- Right: content -->
+        <div class="flex flex-col flex-1 pb-10">
+          <p class="text-sm md:text-[15px] font-bold text-[#2f594f] uppercase tracking-widest leading-normal mb-3">Meet Your Provider</p>
+
+          <h2 class="text-3xl md:text-4xl xl:text-[48px] font-extrabold text-[#1a1a1a] xl:leading-snug tracking-tight">
+            Dr. Jelena Djurovic, Psy.D.
+          </h2>
+
+          <div class="mt-8 flex flex-col gap-6 text-[17px] md:text-[19px] text-gray-700 leading-relaxed font-medium">
+            <p>
+              Dr. Jelena Djurovic is a licensed clinical psychologist in the state of Illinois with more than 10 years of clinical practice, including psychotherapy and assessment of individuals with wide array of psychological issues and of diverse backgrounds!
+            </p>
+            <p>
+              Dr. Djurovic obtained her Doctoral degree in Clinical Psychology from The Chicago School of Professional Psychology. Her doctoral research concentrated on the mind-body relationship, which is how the positive relationship with oneself can affect physical health and, conversely, how taking care of our physical health can help us feel better psychologically. She also completed research on how brief training in mindfulness skills can affect depression and quality of life. Dr. Djurovic received her Master’s degree in Clinical Psychology from Illinois School of Professional Psychology. She has experience working with individuals with severe and chronic mental illness, individuals suffering from substance abuse, domestic violence, depression, anxiety, complex trauma, body image issues, eating disorders, relationship issues, and issues related to immigration and acculturation. Being an immigrant herself, Dr. Djurovic is familiar with many emotional, practical and legal issues that can arise from moving to a different country and is well versed in helping individuals facing those issues. Dr. Djurovic is a native Serbian speaker, and is fluent in English. Her Spanish is conversational.
+            </p>
+
+            <h3 class="mt-8 mb-2 text-2xl md:text-3xl font-extrabold text-[#147b6a]">Dr. Djurovic’s approach to therapy</h3>
+
+            <div class="mt-2 flex gap-5 md:gap-7 items-start bg-white p-6 md:p-8 rounded-3xl shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-gray-50">
+              <div class="w-2.5 min-w-[10px] h-auto bg-[#fcc13e] flex-none rounded-full self-stretch" />
+              <p class="text-lg md:text-[22px] font-bold text-[#1a1a1a] leading-relaxed italic">
+                "I believe in this day and age therapy is not a luxury, nor is it exclusively intended for those suffering from a mental illness, but it is rather a necessity and can be a benefit to nearly anyone in any kind of situation."
+              </p>
+            </div>
+
+            <p class="mt-4">
+              Throughout history, human bodies haven’t changed much physiologically in the last several hundred years. However, our lives have changed significantly. Stress and anxiety are everywhere around us. We live our lives at a very fast pace and take on the amount of responsibility and stimulation that is nearly impossible to bear without the help and support from a loving, compassionate and objective partner. Thus my approach to psychotherapy entails a partnership between a therapist and a client which results in my clients getting to know themselves better, learning about their likes and dislikes, and learning how to implement steps in their lives that will help them create boundaries where boundaries are needed, and to create the best possible lives for themselves.
+            </p>
+            <p>
+              Throughout my work with many different types of individuals presenting with many different kinds of issues, I have noted that nearly every kind of problem results from one’s negative relationship to oneself. I believe learning how to relate to oneself in a positive manner, regardless of how and why the negative relationship began, can be very beneficial and improve one’s quality of life in significant ways. It is important to note that self-compassion and a positive relationship with oneself means treating yourself as you would treat your own best friend or someone you really care about.
+            </p>
+            <p>
+              My approach to psychotherapy is evidence-based, empirically supported and results from growing research. I use principles drawn from the research of Dr. Kristin Neff on self-compassion and her contemporaries related to other mindfulness-based interventions. I also use principles of AEDP (Accelerated Experiential Dynamic Psychotherapy), as well as Cognitive-Behavioral techniques when needed.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions We Treat -->
+  <section class="py-20 xl:py-32 bg-white border-t border-gray-100 relative overflow-hidden">
+    <!-- background accent shape -->
+    <div class="absolute right-0 top-0 w-[600px] h-[600px] bg-[#fdf3df] rounded-full blur-[100px] opacity-30 -translate-y-1/2 translate-x-1/3"></div>
+    <div class="absolute left-0 bottom-0 w-[500px] h-[500px] bg-[#e0eae5] rounded-full blur-[100px] opacity-40 translate-y-1/2 -translate-x-1/3"></div>
+
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 relative z-10">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 tracking-tight">Conditions We Treat</h2>
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto font-medium">
+          We have extensive experience supporting clients through a widespread range of life difficulties and clinical diagnoses.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-5">
+        {conditions.map(condition => (
+          <div class="px-5 md:px-6 py-3 bg-white border border-gray-200 text-gray-800 hover:border-[#2f594f] hover:bg-[#2f594f] hover:text-white shadow-sm hover:shadow-md transition-all duration-300 rounded-full text-sm md:text-[15px] font-bold cursor-default">
+            {condition}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-[#1f3f37] rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
+    
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ready to take the first step?</h2>
+      <p class="text-lg md:text-xl text-[#d1f3f1] mb-10 max-w-2xl mx-auto font-medium">
+        Reach out today to schedule an appointment or consultation. We are here to answer any questions you may have and help you on your journey.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

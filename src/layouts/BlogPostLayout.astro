@@ -1,0 +1,69 @@
+---
+import Layout from './Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout
+  title={`${frontmatter.title} | Center for Psychological Treatment and Assessment`}
+  description={frontmatter.description}
+  image={frontmatter.image}
+  ogType="article"
+  publishedTime={frontmatter.date}
+  author={frontmatter.author}
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="absolute bottom-[20%] right-[-10%] w-[30%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    
+    <div class="max-w-[800px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[14px] font-bold text-[#2f594f] uppercase tracking-widest mb-4">
+        {frontmatter.date ? new Date(frontmatter.date).toLocaleDateString() : ''}
+      </p>
+      <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        {frontmatter.title}
+      </h1>
+      {frontmatter.author && (
+        <p class="text-base text-gray-500 font-medium">By {frontmatter.author}</p>
+      )}
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[800px] mx-auto px-5 md:px-10">
+      {frontmatter.image && (
+        <div class="mb-12 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
+          <img src={frontmatter.image} alt={frontmatter.title} class="w-full h-auto object-cover" />
+        </div>
+      )}
+
+      <!-- Prose wrapper for premium markdown styling -->
+      <article class="prose prose-lg md:prose-xl prose-stone max-w-none 
+          prose-headings:text-[#1a1a1a] prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:mb-6 prose-headings:mt-12
+          prose-h2:text-3xl md:prose-h2:text-4xl 
+          prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:text-[#147b6a]
+          prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-8
+          prose-a:text-[#2f594f] hover:prose-a:text-[#147b6a] prose-a:font-semibold prose-a:underline prose-a:decoration-2 prose-a:underline-offset-4
+          prose-strong:text-[#1a1a1a] prose-strong:font-extrabold
+          prose-ul:text-gray-700 prose-ul:mb-8 prose-li:my-2 prose-li:leading-relaxed
+          prose-blockquote:border-l-4 prose-blockquote:border-[#fcc13e] prose-blockquote:pl-6 prose-blockquote:py-1 prose-blockquote:text-gray-800 prose-blockquote:italic prose-blockquote:font-medium text-left">
+        <slot />
+      </article>
+      
+      <div class="mt-16 pt-8 border-t border-gray-200">
+        <a href="/blog/" class="inline-flex items-center text-[#2f594f] font-bold hover:text-[#1a1a1a] transition-colors">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
+          Back to all posts
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
