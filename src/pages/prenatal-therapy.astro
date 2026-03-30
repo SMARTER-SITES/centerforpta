@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const supportAreas = [
@@ -30,6 +33,54 @@ const relatedLinks = [
     href: '/contact',
     title: 'Book a Consultation',
     desc: 'Ask about prenatal therapy in person or through telehealth across Illinois.'
+  }
+];
+
+const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Support during pregnancy and reproductive stress'];
+
+const careStyle = [
+  {
+    title: 'Warm and stabilizing',
+    desc: 'Helpful when pregnancy feels emotionally vulnerable, uncertain, or more intense than expected.'
+  },
+  {
+    title: 'Practical and emotionally aware',
+    desc: 'Makes room for both feelings and the real-life demands of medical decisions, relationships, and change.'
+  },
+  {
+    title: 'Built for layered history',
+    desc: 'Especially relevant when pregnancy overlaps with anxiety, trauma, infertility, or reproductive loss.'
+  }
+];
+
+const overviewParagraphs = [
+  'Pregnancy is often described as a joyful period, but many people also experience fear, grief, irritability, pressure, uncertainty, and emotional vulnerability. That does not mean you are doing anything wrong. It means you are living through a major transition.',
+  'Prenatal therapy can help you process what is coming up emotionally while giving you steadier tools for coping, communication, and self-care.',
+  'If you are looking for prenatal therapy near Schaumburg, sessions can happen in person there or online anywhere in Illinois.'
+];
+
+const overviewCards = supportAreas.map((area) => ({
+  title: area,
+  desc: 'A common way pregnancy can bring more emotional pressure, uncertainty, or vulnerability into daily life.'
+}));
+
+const processParagraphs = [
+  'Prenatal therapy may be particularly helpful if pregnancy is happening alongside infertility history, reproductive loss, high stress, trauma history, prior depression or anxiety, or significant family or relationship strain.',
+  'The goal is not to force a certain emotional experience, but to help you move through pregnancy with more support, clarity, and internal steadiness.'
+];
+
+const processSteps = [
+  {
+    title: 'Name what feels hard',
+    desc: 'Put words to anxiety, medical stress, grief, or uncertainty instead of carrying it silently.'
+  },
+  {
+    title: 'Support the nervous system',
+    desc: 'Build steadier coping tools for decision fatigue, fear, irritability, and emotional overload.'
+  },
+  {
+    title: 'Prepare for what is ahead',
+    desc: 'Strengthen communication, self-care, and emotional readiness for the next stage of pregnancy and birth.'
   }
 ];
 
@@ -69,63 +120,30 @@ const serviceStructuredData = getServiceStructuredData({
   structuredData={serviceStructuredData}
 >
   <Navbar />
+  <TopicHero
+    title="Prenatal Therapy"
+    accent="when pregnancy brings more than joy"
+    description="Emotional support during pregnancy for anxiety, overwhelm, medical stress, relationship changes, and the many adjustments that can happen before birth."
+    imageAlt="Quiet therapy office for prenatal support"
+    imageSrc="/images/prenatal-therapy.jpg"
+    fitText="support during pregnancy when fear, pressure, grief, or uncertainty need more room and steadiness"
+    signals={signals}
+    careStyle={careStyle}
+  />
 
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
-      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Prenatal Therapy in Schaumburg, IL
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Emotional support during pregnancy for anxiety, overwhelm, medical stress, relationship changes, and the many adjustments that can happen before birth, with telehealth available across Illinois.
-      </p>
-    </div>
-  </section>
+  <TopicOverviewSection
+    eyebrow="Pregnancy Support"
+    title="Pregnancy can be meaningful and hard at the same time"
+    paragraphs={overviewParagraphs}
+    cards={overviewCards}
+  />
 
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="flex flex-col md:flex-row gap-12 items-start">
-        <div class="md:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Pregnancy Can Be Meaningful and Hard at the Same Time</h2>
-          <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Pregnancy is often described as a joyful period, but many people also experience fear, grief, irritability, pressure, uncertainty, and emotional vulnerability. That does not mean you are doing anything wrong. It means you are living through a major transition.
-          </p>
-          <p class="text-lg text-gray-700 leading-relaxed">
-            Prenatal therapy can help you process what is coming up emotionally while giving you steadier tools for coping, communication, and self-care.
-          </p>
-          <p class="text-lg text-gray-700 leading-relaxed mt-6">
-            If you are looking for prenatal therapy near Schaumburg, sessions can happen in person there or online anywhere in Illinois.
-          </p>
-        </div>
-        <div class="md:w-1/2 bg-[#fcfbf9] p-8 rounded-[2rem] border border-gray-100">
-          <h2 class="text-2xl font-bold text-[#1a1a1a] mb-6">Common Reasons People Reach Out</h2>
-          <ul class="space-y-4">
-            {supportAreas.map((area) => (
-              <li class="flex items-start gap-3 text-gray-700">
-                <span class="mt-2 h-2.5 w-2.5 rounded-full bg-[#2f594f] flex-shrink-0"></span>
-                <span>{area}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Especially Helpful When There Is Extra History in the Background</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Prenatal therapy may be particularly helpful if pregnancy is happening alongside infertility history, reproductive loss, high stress, trauma history, prior depression or anxiety, or significant family or relationship strain.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          The goal is not to force a certain emotional experience, but to help you move through pregnancy with more support, clarity, and internal steadiness.
-        </p>
-      </div>
-    </div>
-  </section>
+  <TopicProcessSection
+    eyebrow="When Extra Support Helps"
+    title="Especially helpful when there is more history in the background"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
 
   <LocalServiceArea serviceName="Prenatal Therapy" />
 

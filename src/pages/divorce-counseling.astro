@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const phases = [
@@ -32,6 +35,49 @@ const relatedLinks = [
     href: '/contact',
     title: 'Book a Consultation',
     desc: 'Reach out to ask about divorce counseling in person or via telehealth.'
+  }
+];
+
+const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Support before, during, and after separation'];
+
+const careStyle = [
+  {
+    title: 'Grounded and calm',
+    desc: 'Helpful when everything feels emotionally loud, urgent, or hard to sort through.'
+  },
+  {
+    title: 'Emotionally direct',
+    desc: 'Makes space for grief, anger, relief, and uncertainty without forcing one clean narrative.'
+  },
+  {
+    title: 'Transition-focused',
+    desc: 'Useful when co-parenting, identity, loneliness, and practical decisions are all in motion at once.'
+  }
+];
+
+const overviewParagraphs = [
+  "Divorce can bring grief, relief, fear, anger, confusion, and practical stress all at once. Even when separation is the right decision, it can still be emotionally disorienting.",
+  'Therapy offers a structured, supportive space to think clearly, regulate emotions, and move through this transition with more steadiness and less isolation.',
+  'For clients in and around Schaumburg, in-person care is available locally, and telehealth makes divorce counseling accessible across Illinois.'
+];
+
+const processParagraphs = [
+  'Divorce counseling may focus on decision-making, grief, communication boundaries, co-parenting stress, emotional recovery, rebuilding confidence, and understanding patterns that you do not want to repeat.',
+  'It can also be helpful when separation has triggered anxiety, depression, sleep disruption, body stress, or a painful collapse in self-worth.'
+];
+
+const processSteps = [
+  {
+    title: 'Create steadiness during uncertainty',
+    desc: 'Make room for competing emotions while getting clearer about what you need and what comes next.'
+  },
+  {
+    title: 'Protect energy and boundaries',
+    desc: 'Work on communication, co-parenting, and emotional limits when conflict or contact feels draining.'
+  },
+  {
+    title: 'Rebuild after the rupture',
+    desc: 'Support recovery, self-trust, and a more stable sense of identity in the next chapter.'
   }
 ];
 
@@ -71,59 +117,30 @@ const serviceStructuredData = getServiceStructuredData({
   structuredData={serviceStructuredData}
 >
   <Navbar />
+  <TopicHero
+    title="Divorce Counseling"
+    accent="for one of life's hardest transitions"
+    description="Therapy support before divorce, during separation, and after divorce for grief, overwhelm, co-parenting stress, identity shifts, and rebuilding stability."
+    imageAlt="Warm and calm therapy office in Schaumburg"
+    imageSrc="/images/divorce-counseling.jpg"
+    fitText="support that helps you think clearly while carrying grief, anger, fear, and change all at once"
+    signals={signals}
+    careStyle={careStyle}
+  />
 
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
-      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Divorce Counseling in Schaumburg, IL
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Therapy support before divorce, during separation, and after divorce for grief, overwhelm, co-parenting stress, identity shifts, and rebuilding stability, with telehealth across Illinois.
-      </p>
-    </div>
-  </section>
+  <TopicOverviewSection
+    eyebrow="Life Transition Support"
+    title="A structured space when everything feels emotionally mixed"
+    paragraphs={overviewParagraphs}
+    cards={phases}
+  />
 
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="max-w-4xl mx-auto text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Support for One of Life's Hardest Transitions</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Divorce can bring grief, relief, fear, anger, confusion, and practical stress all at once. Even when separation is the right decision, it can still be emotionally disorienting.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Therapy offers a structured, supportive space to think clearly, regulate emotions, and move through this transition with more steadiness and less isolation.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mt-6">
-          For clients in and around Schaumburg, in-person care is available locally, and telehealth makes divorce counseling accessible across Illinois.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
-        {phases.map((item) => (
-          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Common Areas of Focus</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Divorce counseling may focus on decision-making, grief, communication boundaries, co-parenting stress, emotional recovery, rebuilding confidence, and understanding patterns that you do not want to repeat.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          It can also be helpful when separation has triggered anxiety, depression, sleep disruption, body stress, or a painful collapse in self-worth.
-        </p>
-      </div>
-    </div>
-  </section>
+  <TopicProcessSection
+    eyebrow="What Counseling Can Hold"
+    title="Common areas of focus before and after separation"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
 
   <LocalServiceArea serviceName="Divorce Counseling" />
 

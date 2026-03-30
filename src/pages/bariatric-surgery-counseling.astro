@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const stages = [
@@ -43,6 +46,49 @@ const relatedLinks = [
   }
 ];
 
+const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Pre-op and post-op emotional support'];
+
+const careStyle = [
+  {
+    title: 'Warm and steady',
+    desc: 'Supportive when surgery brings up mixed feelings, pressure, grief, or self-doubt.'
+  },
+  {
+    title: 'Practical and emotionally aware',
+    desc: 'Focused on what changes psychologically before and after surgery, not just medically.'
+  },
+  {
+    title: 'Integrated perspective',
+    desc: 'Useful when body image, motivation, routines, identity, and relationships are all shifting together.'
+  }
+];
+
+const overviewParagraphs = [
+  'Bariatric surgery can involve much more than a medical procedure. It can bring up fears, hope, grief, pressure, complicated expectations, and major identity questions before and after surgery.',
+  'Counseling can help you prepare emotionally, strengthen coping skills, and navigate the practical and psychological changes that may come with the process.',
+  'Clients who want bariatric surgery counseling near Schaumburg can meet in person, while telehealth makes this support available throughout Illinois.'
+];
+
+const processParagraphs = [
+  'Some clients need a formal pre-surgical psychological evaluation for clearance. Others need therapy or supportive counseling before or after surgery. These are related but different services.',
+  'If you are unsure which one fits your situation, reaching out first can help clarify whether you need an evaluation, ongoing counseling, or both.'
+];
+
+const processSteps = [
+  {
+    title: 'Prepare for the emotional shift',
+    desc: 'Make room for expectations, anxiety, readiness questions, and the meaning surgery carries for you personally.'
+  },
+  {
+    title: 'Adjust after surgery',
+    desc: 'Process identity changes, eating-pattern changes, body image reactions, and relationship shifts as they unfold.'
+  },
+  {
+    title: 'Stay connected to long-term goals',
+    desc: 'Work through discouragement, shame, or setbacks without losing the bigger picture of your care.'
+  }
+];
+
 const pageDescription =
   'Bariatric surgery counseling in Schaumburg, IL with telehealth across Illinois for emotional readiness, body image concerns, behavior change, post-op adjustment, and ongoing psychological support.';
 
@@ -79,59 +125,30 @@ const serviceStructuredData = getServiceStructuredData({
   structuredData={serviceStructuredData}
 >
   <Navbar />
+  <TopicHero
+    title="Bariatric Surgery Counseling"
+    accent="before and after major change"
+    description="Emotional support before and after bariatric surgery for readiness, body image, identity changes, behavior change, and long-term adjustment."
+    imageAlt="Therapy office prepared for supportive counseling"
+    imageSrc="/images/bariatric-surgery-counseling.jpg"
+    fitText="a space to work through readiness, adjustment, and the emotional impact of bariatric care"
+    signals={signals}
+    careStyle={careStyle}
+  />
 
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
-      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Bariatric Surgery Counseling in Schaumburg, IL
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Emotional support before and after bariatric surgery for readiness, body image, identity changes, behavior change, and long-term adjustment, with telehealth across Illinois.
-      </p>
-    </div>
-  </section>
+  <TopicOverviewSection
+    eyebrow="Bariatric Care"
+    title="Support for the emotional side of surgery"
+    paragraphs={overviewParagraphs}
+    cards={stages}
+  />
 
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="max-w-4xl mx-auto text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Support for the Emotional Side of Bariatric Care</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Bariatric surgery can involve much more than a medical procedure. It can bring up fears, hope, grief, pressure, complicated expectations, and major identity questions before and after surgery.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Counseling can help you prepare emotionally, strengthen coping skills, and navigate the practical and psychological changes that may come with the process.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mt-6">
-          Clients who want bariatric surgery counseling near Schaumburg can meet in person, while telehealth makes this support available throughout Illinois.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
-        {stages.map((item) => (
-          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Counseling vs. Evaluation</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Some clients need a formal pre-surgical psychological evaluation for clearance. Others need therapy or supportive counseling before or after surgery. These are related but different services.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          If you are unsure which one fits your situation, reaching out first can help clarify whether you need an evaluation, ongoing counseling, or both.
-        </p>
-      </div>
-    </div>
-  </section>
+  <TopicProcessSection
+    eyebrow="Clarifying the Service"
+    title="Counseling and evaluation are related, but not the same"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
 
   <LocalServiceArea serviceName="Bariatric Surgery Counseling" />
 

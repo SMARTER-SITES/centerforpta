@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const patterns = [
@@ -30,6 +33,54 @@ const relatedLinks = [
     href: '/contact',
     title: 'Book a Consultation',
     desc: 'Reach out to ask about in-person or telehealth therapy across Illinois.'
+  }
+];
+
+const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Helpful for anxiety, shame, and burnout'];
+
+const careStyle = [
+  {
+    title: 'Warm and direct',
+    desc: 'A grounded style that makes room for honesty without piling on more self-judgment.'
+  },
+  {
+    title: 'Practical and reflective',
+    desc: 'Useful when insight helps, but has not been enough to change how you talk to yourself.'
+  },
+  {
+    title: 'Built for pressure',
+    desc: 'Especially helpful when perfectionism and chronic self-criticism are draining daily life.'
+  }
+];
+
+const overviewParagraphs = [
+  'Self-compassion therapy is not about lowering standards or avoiding accountability. It is about learning how to respond to yourself with honesty, steadiness, and care rather than with punishment, contempt, or relentless pressure.',
+  'This work can be especially helpful when insight alone has not changed the way you treat yourself. Therapy focuses on understanding where the inner critic came from, how it shows up now, and how to build a healthier internal relationship that supports change rather than blocking it.',
+  'For clients near Schaumburg, sessions can happen in person. If you are elsewhere in Illinois, telehealth offers the same focused support in a more flexible format.'
+];
+
+const overviewCards = patterns.map((pattern) => ({
+  title: pattern,
+  desc: 'A common way harsh self-judgment can show up in everyday functioning, motivation, relationships, or recovery from stress.'
+}));
+
+const processParagraphs = [
+  "This page reflects a central part of Dr. Djurovic's approach. Treatment may include self-compassion-based work, mindfulness-informed interventions, relational therapy, and cognitive-behavioral strategies depending on what is getting in the way of change.",
+  'The goal is not to become endlessly positive. The goal is to become more grounded, less ashamed, and more able to move through life with clarity and emotional flexibility.'
+];
+
+const processSteps = [
+  {
+    title: 'Notice the inner critic',
+    desc: 'Learn how self-criticism actually speaks to you and what it tries to control or prevent.'
+  },
+  {
+    title: 'Understand what shaped it',
+    desc: 'Look at past experiences, expectations, and emotional habits that made harshness feel necessary.'
+  },
+  {
+    title: 'Build a different response',
+    desc: 'Practice a steadier, more supportive internal stance that makes change more realistic and sustainable.'
   }
 ];
 
@@ -69,63 +120,30 @@ const serviceStructuredData = getServiceStructuredData({
   structuredData={serviceStructuredData}
 >
   <Navbar />
+  <TopicHero
+    title="Self-Compassion Therapy"
+    accent="for a steadier inner voice"
+    description="Therapy for people who are exhausted by self-criticism, perfectionism, shame, or the constant feeling that they should be handling life better than they are."
+    imageAlt="Calm therapy office in Schaumburg"
+    imageSrc="/images/self-compassion-therapy.jpg"
+    fitText="support that helps you move forward without using shame as fuel"
+    signals={signals}
+    careStyle={careStyle}
+  />
 
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
-      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Self-Compassion Therapy in Schaumburg, IL
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Therapy for people who are exhausted by self-criticism, perfectionism, shame, or the constant feeling that they should be handling life better than they are, with online care available across Illinois.
-      </p>
-    </div>
-  </section>
+  <TopicOverviewSection
+    eyebrow="What This Work Supports"
+    title="What self-compassion work can change"
+    paragraphs={overviewParagraphs}
+    cards={overviewCards}
+  />
 
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="flex flex-col md:flex-row gap-12 items-start">
-        <div class="md:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">What Self-Compassion Work Looks Like</h2>
-          <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Self-compassion therapy is not about lowering standards or avoiding accountability. It is about learning how to respond to yourself with honesty, steadiness, and care rather than with punishment, contempt, or relentless pressure.
-          </p>
-          <p class="text-lg text-gray-700 leading-relaxed">
-            This work can be especially helpful when insight alone has not changed the way you treat yourself. Therapy focuses on understanding where the inner critic came from, how it shows up now, and how to build a healthier internal relationship that supports change rather than blocking it.
-          </p>
-          <p class="text-lg text-gray-700 leading-relaxed mt-6">
-            For clients near Schaumburg, sessions can happen in person. If you are elsewhere in Illinois, telehealth offers the same focused support in a more flexible format.
-          </p>
-        </div>
-        <div class="md:w-1/2 bg-[#fcfbf9] p-8 rounded-[2rem] border border-gray-100">
-          <h2 class="text-2xl font-bold text-[#1a1a1a] mb-6">Common Reasons People Seek This Work</h2>
-          <ul class="space-y-4">
-            {patterns.map((pattern) => (
-              <li class="flex items-start gap-3 text-gray-700">
-                <span class="mt-2 h-2.5 w-2.5 rounded-full bg-[#2f594f] flex-shrink-0"></span>
-                <span>{pattern}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">A Good Fit for Insight-Oriented and Evidence-Based Care</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          This page reflects a central part of Dr. Djurovic's approach. Treatment may include self-compassion-based work, mindfulness-informed interventions, relational therapy, and cognitive-behavioral strategies depending on what is getting in the way of change.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          The goal is not to become endlessly positive. The goal is to become more grounded, less ashamed, and more able to move through life with clarity and emotional flexibility.
-        </p>
-      </div>
-    </div>
-  </section>
+  <TopicProcessSection
+    eyebrow="How It Works"
+    title="A better relationship with yourself can become practical"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
 
   <LocalServiceArea serviceName="Self-Compassion Therapy" />
 

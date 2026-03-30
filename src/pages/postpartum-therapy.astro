@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const supportAreas = [
@@ -43,6 +46,49 @@ const relatedLinks = [
   }
 ];
 
+const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Postpartum and postnatal support'];
+
+const careStyle = [
+  {
+    title: 'Warm and non-shaming',
+    desc: 'Helpful when new parenthood feels heavier, lonelier, or more disorganizing than expected.'
+  },
+  {
+    title: 'Emotionally practical',
+    desc: 'Focused on day-to-day overwhelm, relationship strain, identity shifts, and the pressure to keep coping.'
+  },
+  {
+    title: 'Built for early support',
+    desc: 'Relevant both when symptoms are intense and when you simply know something feels off.'
+  }
+];
+
+const overviewParagraphs = [
+  'The postpartum period can be deeply meaningful, but it can also be emotionally disorganizing. Many new parents feel ashamed when they are struggling because they think they should be coping better or feeling differently.',
+  'Postpartum therapy creates space to talk honestly about what is happening while building practical and emotional support for this stage of life.',
+  'If you are searching for postpartum therapy near Schaumburg, in-person sessions are available locally, and telehealth makes postnatal support accessible across Illinois.'
+];
+
+const processParagraphs = [
+  'Therapy can be helpful when symptoms are severe, but it can also be helpful much earlier, when you simply notice that you feel overwhelmed, disconnected, exhausted, or unlike yourself after birth.',
+  'Support can focus on emotional stabilization, self-compassion, communication, realistic expectations, and restoring a stronger sense of self during a demanding stage.'
+];
+
+const processSteps = [
+  {
+    title: 'Talk honestly about what changed',
+    desc: 'Make room for overwhelm, grief, anxiety, or disconnection without minimizing what the postpartum period can do.'
+  },
+  {
+    title: 'Stabilize what feels shaky',
+    desc: 'Support sleep-related stress, emotional reactivity, relationship strain, and the feeling of not quite being yourself.'
+  },
+  {
+    title: 'Recover a steadier sense of self',
+    desc: 'Build more realistic expectations and more support around the version of life you are actually living now.'
+  }
+];
+
 const pageDescription =
   'Postpartum therapy in Schaumburg, IL with telehealth across Illinois for postpartum anxiety, postpartum depression, overwhelm, identity shifts, relationship stress, and postnatal emotional support.';
 
@@ -79,59 +125,30 @@ const serviceStructuredData = getServiceStructuredData({
   structuredData={serviceStructuredData}
 >
   <Navbar />
+  <TopicHero
+    title="Postpartum Therapy"
+    accent="when after birth feels harder than expected"
+    description="Postnatal mental health support for postpartum anxiety, postpartum depression, overwhelm, identity changes, relationship stress, and emotional recovery after birth."
+    imageAlt="Therapy office offering postpartum support"
+    imageSrc="/images/postpartum-therapy.jpg"
+    fitText="support after birth when overwhelm, anxiety, exhaustion, or disconnection start taking up too much space"
+    signals={signals}
+    careStyle={careStyle}
+  />
 
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute bottom-[20%] right-[-10%] w-[30%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
-      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Postpartum Therapy in Schaumburg, IL
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Postnatal mental health support for postpartum anxiety, postpartum depression, overwhelm, identity changes, relationship stress, and emotional recovery after birth, with telehealth available across Illinois.
-      </p>
-    </div>
-  </section>
+  <TopicOverviewSection
+    eyebrow="Postpartum Support"
+    title="When the postpartum period feels emotionally heavier than expected"
+    paragraphs={overviewParagraphs}
+    cards={supportAreas}
+  />
 
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="max-w-4xl mx-auto text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">When the Postpartum Period Feels Harder Than Expected</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          The postpartum period can be deeply meaningful, but it can also be emotionally disorganizing. Many new parents feel ashamed when they are struggling because they think they should be coping better or feeling differently.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Postpartum therapy creates space to talk honestly about what is happening while building practical and emotional support for this stage of life.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mt-6">
-          If you are searching for postpartum therapy near Schaumburg, in-person sessions are available locally, and telehealth makes postnatal support accessible across Illinois.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
-        {supportAreas.map((item) => (
-          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">You Do Not Need to Wait for a Crisis</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Therapy can be helpful when symptoms are severe, but it can also be helpful much earlier, when you simply notice that you feel overwhelmed, disconnected, exhausted, or unlike yourself after birth.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Support can focus on emotional stabilization, self-compassion, communication, realistic expectations, and restoring a stronger sense of self during a demanding stage.
-        </p>
-      </div>
-    </div>
-  </section>
+  <TopicProcessSection
+    eyebrow="Early Support Matters"
+    title="You do not need to wait for a crisis"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
 
   <LocalServiceArea serviceName="Postpartum Therapy" />
 

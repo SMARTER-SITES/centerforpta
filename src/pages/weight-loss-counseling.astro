@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const topics = [
@@ -43,6 +46,49 @@ const relatedLinks = [
   }
 ];
 
+const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Body image and emotional eating support'];
+
+const careStyle = [
+  {
+    title: 'Warm and nonjudgmental',
+    desc: 'Built for people who are tired of feeling shamed by weight-related struggles.'
+  },
+  {
+    title: 'Behavior-aware',
+    desc: 'Focused on what actually interrupts consistency, not just what sounds good on paper.'
+  },
+  {
+    title: 'Whole-person perspective',
+    desc: 'Useful when food, motivation, anxiety, body image, and self-worth are all tangled together.'
+  }
+];
+
+const overviewParagraphs = [
+  'Many people already know what they are supposed to do, but insight alone does not always translate into change. Stress, shame, perfectionism, trauma history, and a difficult relationship with food or body image can make it hard to stay consistent even when motivation is strong.',
+  'Weight loss counseling focuses on the emotional and psychological factors that affect behavior change so that progress can become more sustainable and less driven by guilt.',
+  'If you are searching for weight loss counseling near Schaumburg, care is available in person there and online for adults located anywhere in Illinois.'
+];
+
+const processParagraphs = [
+  'This work is not about judgment, crash dieting, or simplistic advice. It is about understanding the role of thoughts, feelings, history, habits, and stress in the change process, then building a steadier and more compassionate approach.',
+  'Therapy may be especially helpful when weight-related concerns overlap with anxiety, depression, body image distress, or pre- and post-bariatric care.'
+];
+
+const processSteps = [
+  {
+    title: 'Identify the emotional cycle',
+    desc: 'Look at how stress, loneliness, shame, and all-or-nothing thinking shape eating and motivation.'
+  },
+  {
+    title: 'Reduce shame and reactivity',
+    desc: 'Create more breathing room between difficult feelings and impulsive or discouraging habits.'
+  },
+  {
+    title: 'Support steadier change',
+    desc: 'Build routines and coping strategies that are more realistic, more humane, and easier to maintain.'
+  }
+];
+
 const pageDescription =
   'Weight loss counseling in Schaumburg, IL with telehealth across Illinois for emotional eating, body image concerns, behavior change, motivation, and a healthier relationship with food and yourself.';
 
@@ -79,59 +125,30 @@ const serviceStructuredData = getServiceStructuredData({
   structuredData={serviceStructuredData}
 >
   <Navbar />
+  <TopicHero
+    title="Weight Loss Counseling"
+    accent="that goes deeper than advice"
+    description="Counseling support for emotional eating, body image concerns, motivation, self-criticism, and the emotional ups and downs that often come with trying to make lasting health changes."
+    imageAlt="Comfortable therapy office in Schaumburg"
+    imageSrc="/images/weight-loss-counseling.jpg"
+    fitText="support for lasting change when stress, shame, and food are all part of the picture"
+    signals={signals}
+    careStyle={careStyle}
+  />
 
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
-      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Weight Loss Counseling in Schaumburg, IL
-      </h1>
-      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Counseling support for emotional eating, body image concerns, motivation, self-criticism, and the emotional ups and downs that often come with trying to make lasting health changes, with telehealth across Illinois.
-      </p>
-    </div>
-  </section>
+  <TopicOverviewSection
+    eyebrow="More Than Willpower"
+    title="Why progress can feel harder than it looks"
+    paragraphs={overviewParagraphs}
+    cards={topics}
+  />
 
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="max-w-4xl mx-auto text-center mb-14">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">More Than Willpower</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Many people already know what they are "supposed" to do, but insight alone does not always translate into change. Stress, shame, perfectionism, trauma history, and a difficult relationship with food or body image can make it hard to stay consistent even when motivation is strong.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Weight loss counseling focuses on the emotional and psychological factors that affect behavior change so that progress can become more sustainable and less driven by guilt.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mt-6">
-          If you are searching for weight loss counseling near Schaumburg, care is available in person there and online for adults located anywhere in Illinois.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
-        {topics.map((item) => (
-          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
-            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
-    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
-      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Support That Respects the Whole Person</h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          This work is not about judgment, crash dieting, or simplistic advice. It is about understanding the role of thoughts, feelings, history, habits, and stress in the change process, then building a steadier and more compassionate approach.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          Therapy may be especially helpful when weight-related concerns overlap with anxiety, depression, body image distress, or pre- and post-bariatric care.
-        </p>
-      </div>
-    </div>
-  </section>
+  <TopicProcessSection
+    eyebrow="How Counseling Helps"
+    title="Support that respects the whole person"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
 
   <LocalServiceArea serviceName="Weight Loss Counseling" />
 
