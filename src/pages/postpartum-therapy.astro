@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const supportAreas = [
+  {
+    title: "Mood Changes and Overwhelm",
+    desc: "Support for postpartum depression, postpartum anxiety, irritability, tearfulness, racing thoughts, or the feeling that everything suddenly feels heavier than expected."
+  },
+  {
+    title: "Identity and Relationship Shifts",
+    desc: "Help processing the emotional changes that can come with becoming a parent, changes in partnership, role overload, and feeling unlike yourself."
+  },
+  {
+    title: "Recovery and Adjustment",
+    desc: "Space to talk through sleep disruption, stress, self-criticism, loss of routine, and the challenge of caring for yourself while caring for a baby."
+  },
+  {
+    title: "Postnatal Emotional Support",
+    desc: "Postnatal therapy can help when you need steady support after birth, whether symptoms are severe or you simply feel emotionally stretched thin."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/prenatal-therapy',
+    title: 'Prenatal Therapy',
+    desc: 'Support during pregnancy for anxiety, uncertainty, and transition stress.'
+  },
+  {
+    href: '/womens-mental-health-therapy',
+    title: "Women's Mental Health Therapy",
+    desc: 'Broader support for reproductive concerns, body image, and life-stage challenges.'
+  },
+  {
+    href: '/contact',
+    title: 'Book a Consultation',
+    desc: 'Ask about postpartum therapy in person or through telehealth in Illinois.'
+  }
+];
+---
+
+<Layout
+  title="Postpartum Therapy in Illinois | Postnatal Mental Health Support"
+  description="Postpartum therapy in Illinois for postpartum anxiety, postpartum depression, overwhelm, identity shifts, relationship stress, and postnatal emotional support."
+>
+  <Navbar />
+
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute bottom-[20%] right-[-10%] w-[30%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Postpartum Therapy in Illinois
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Postnatal mental health support for postpartum anxiety, postpartum depression, overwhelm, identity changes, relationship stress, and emotional recovery after birth.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="max-w-4xl mx-auto text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">When the Postpartum Period Feels Harder Than Expected</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          The postpartum period can be deeply meaningful, but it can also be emotionally disorganizing. Many new parents feel ashamed when they are struggling because they think they should be coping better or feeling differently.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Postpartum therapy creates space to talk honestly about what is happening while building practical and emotional support for this stage of life.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+        {supportAreas.map((item) => (
+          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">You Do Not Need to Wait for a Crisis</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Therapy can be helpful when symptoms are severe, but it can also be helpful much earlier, when you simply notice that you feel overwhelmed, disconnected, exhausted, or unlike yourself after birth.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Support can focus on emotional stabilization, self-compassion, communication, realistic expectations, and restoring a stronger sense of self during a demanding stage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Pages</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Postpartum support is real support</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

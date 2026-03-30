@@ -31,6 +31,44 @@ const relatedLinks = [
     desc: 'Explore testing for ADHD, autism, diagnostic clarification, and school or workplace accommodations.'
   }
 ];
+
+const specialtyLinks = [
+  {
+    href: '/womens-mental-health-therapy',
+    title: "Women's Mental Health Therapy",
+    desc: 'Support for reproductive challenges, body image concerns, and life-stage stress.'
+  },
+  {
+    href: '/self-compassion-therapy',
+    title: 'Self-Compassion Therapy',
+    desc: 'Help for harsh self-criticism, shame, perfectionism, and burnout.'
+  },
+  {
+    href: '/weight-loss-counseling',
+    title: 'Weight Loss Counseling',
+    desc: 'Support for emotional eating, body image, and lasting behavior change.'
+  },
+  {
+    href: '/bariatric-surgery-counseling',
+    title: 'Bariatric Surgery Counseling',
+    desc: 'Emotional support before and after bariatric surgery.'
+  },
+  {
+    href: '/divorce-counseling',
+    title: 'Divorce Counseling',
+    desc: 'Support before separation and after divorce during major life transition.'
+  },
+  {
+    href: '/prenatal-therapy',
+    title: 'Prenatal Therapy',
+    desc: 'Therapy support during pregnancy for stress, anxiety, and emotional adjustment.'
+  },
+  {
+    href: '/postpartum-therapy',
+    title: 'Postpartum Therapy',
+    desc: 'Postnatal support for mood changes, overwhelm, and recovery after birth.'
+  }
+];
 ---
 
 <Layout
@@ -102,6 +140,25 @@ const relatedLinks = [
             <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{concern.title}</h3>
             <p class="text-[15px] text-gray-600 leading-relaxed">{concern.desc}</p>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Specialized Therapy Topics</h2>
+        <p class="text-lg text-gray-700">
+          If you are looking for support around a more specific concern, these pages can help you find the best fit more quickly.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {specialtyLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
         ))}
       </div>
     </div>

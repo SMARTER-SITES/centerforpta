@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const phases = [
+  {
+    title: "Pre-Divorce Counseling",
+    desc: "Support while sorting through fear, uncertainty, grief, anger, boundary questions, and the practical emotional impact of deciding what comes next."
+  },
+  {
+    title: "Post-Divorce Counseling",
+    desc: "Help with recovery, co-parenting stress, identity rebuilding, loneliness, dating concerns, trust issues, and adjusting to a very different life structure."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/therapy',
+    title: 'Therapy',
+    desc: 'Explore broader support for anxiety, depression, grief, trauma, and relationship stress.'
+  },
+  {
+    href: '/self-compassion-therapy',
+    title: 'Self-Compassion Therapy',
+    desc: 'Helpful when divorce or separation has intensified shame, self-blame, or harsh self-judgment.'
+  },
+  {
+    href: '/contact',
+    title: 'Book a Consultation',
+    desc: 'Reach out to ask about divorce counseling in person or via telehealth.'
+  }
+];
+---
+
+<Layout
+  title="Divorce Counseling in Illinois | Support Before and After Separation"
+  description="Divorce counseling in Illinois for support before divorce, after divorce, co-parenting stress, grief, relationship loss, and major life transitions."
+>
+  <Navbar />
+
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Divorce Counseling in Illinois
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Therapy support before divorce, during separation, and after divorce for grief, overwhelm, co-parenting stress, identity shifts, and rebuilding stability.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="max-w-4xl mx-auto text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Support for One of Life's Hardest Transitions</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Divorce can bring grief, relief, fear, anger, confusion, and practical stress all at once. Even when separation is the right decision, it can still be emotionally disorienting.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Therapy offers a structured, supportive space to think clearly, regulate emotions, and move through this transition with more steadiness and less isolation.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+        {phases.map((item) => (
+          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Common Areas of Focus</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Divorce counseling may focus on decision-making, grief, communication boundaries, co-parenting stress, emotional recovery, rebuilding confidence, and understanding patterns that you do not want to repeat.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          It can also be helpful when separation has triggered anxiety, depression, sleep disruption, body stress, or a painful collapse in self-worth.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Pages</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Support can make this transition less overwhelming</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

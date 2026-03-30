@@ -15,7 +15,14 @@ const staticPages = [
   '/useful-links/',
   '/privacy-policy/',
   '/contact/',
-  '/blog/'
+  '/blog/',
+  '/womens-mental-health-therapy/',
+  '/self-compassion-therapy/',
+  '/weight-loss-counseling/',
+  '/bariatric-surgery-counseling/',
+  '/divorce-counseling/',
+  '/prenatal-therapy/',
+  '/postpartum-therapy/'
 ];
 
 const blogModules = import.meta.glob('./blog/*.md', { eager: true }) as Record<

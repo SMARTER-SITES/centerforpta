@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const patterns = [
+  "Harsh self-criticism and shame",
+  "Perfectionism and burnout",
+  "Difficulty accepting mistakes or limitations",
+  "Feeling never good enough despite high effort",
+  "Negative body image or chronic self-judgment",
+  "Trouble responding to yourself with kindness under stress"
+];
+
+const relatedLinks = [
+  {
+    href: '/womens-mental-health-therapy',
+    title: "Women's Mental Health Therapy",
+    desc: 'Support for body image, reproductive challenges, and life-stage stress.'
+  },
+  {
+    href: '/therapy',
+    title: 'Therapy',
+    desc: 'Explore broader therapy support for anxiety, depression, trauma, and life transitions.'
+  },
+  {
+    href: '/contact',
+    title: 'Book a Consultation',
+    desc: 'Reach out to ask about in-person or telehealth therapy across Illinois.'
+  }
+];
+---
+
+<Layout
+  title="Self-Compassion Therapy in Illinois | Help for Self-Criticism, Shame, and Burnout"
+  description="Self-compassion therapy in Illinois for self-criticism, shame, perfectionism, burnout, body image concerns, and a healthier relationship with yourself."
+>
+  <Navbar />
+
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Self-Compassion Therapy in Illinois
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Therapy for people who are exhausted by self-criticism, perfectionism, shame, or the constant feeling that they should be handling life better than they are.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-start">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">What Self-Compassion Work Looks Like</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Self-compassion therapy is not about lowering standards or avoiding accountability. It is about learning how to respond to yourself with honesty, steadiness, and care rather than with punishment, contempt, or relentless pressure.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            This work can be especially helpful when insight alone has not changed the way you treat yourself. Therapy focuses on understanding where the inner critic came from, how it shows up now, and how to build a healthier internal relationship that supports change rather than blocking it.
+          </p>
+        </div>
+        <div class="md:w-1/2 bg-[#fcfbf9] p-8 rounded-[2rem] border border-gray-100">
+          <h2 class="text-2xl font-bold text-[#1a1a1a] mb-6">Common Reasons People Seek This Work</h2>
+          <ul class="space-y-4">
+            {patterns.map((pattern) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="mt-2 h-2.5 w-2.5 rounded-full bg-[#2f594f] flex-shrink-0"></span>
+                <span>{pattern}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">A Good Fit for Insight-Oriented and Evidence-Based Care</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          This page reflects a central part of Dr. Djurovic's approach. Treatment may include self-compassion-based work, mindfulness-informed interventions, relational therapy, and cognitive-behavioral strategies depending on what is getting in the way of change.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          The goal is not to become endlessly positive. The goal is to become more grounded, less ashamed, and more able to move through life with clarity and emotional flexibility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Pages</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">A kinder inner relationship can change a lot</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

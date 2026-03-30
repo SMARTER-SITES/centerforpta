@@ -1,0 +1,131 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const focusAreas = [
+  {
+    title: "Reproductive Challenges",
+    desc: "Therapy support for fertility stress, pregnancy-related uncertainty, reproductive loss, medical decision-making, and the emotional strain that can come with trying to conceive or navigating changing plans."
+  },
+  {
+    title: "Body Image and Self-Worth",
+    desc: "A supportive space to work through shame, harsh self-criticism, appearance-related distress, and the pressure many women feel around weight, aging, and identity."
+  },
+  {
+    title: "Substance Use and Reproductive Health",
+    desc: "Compassionate, non-judgmental support when substance use is overlapping with pregnancy concerns, fertility concerns, postpartum stress, or emotional overwhelm."
+  },
+  {
+    title: "Major Life Stages and Transitions",
+    desc: "Help with anxiety, burnout, role changes, relationship strain, caregiving pressure, and identity shifts across different stages of adulthood."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/prenatal-therapy',
+    title: 'Prenatal Therapy',
+    desc: 'Support during pregnancy for anxiety, stress, uncertainty, and emotional adjustment.'
+  },
+  {
+    href: '/postpartum-therapy',
+    title: 'Postpartum Therapy',
+    desc: 'Postnatal support for mood changes, overwhelm, identity shifts, and recovery.'
+  },
+  {
+    href: '/contact',
+    title: 'Book a Consultation',
+    desc: 'Reach out to ask about therapy in Schaumburg or telehealth across Illinois.'
+  }
+];
+---
+
+<Layout
+  title="Women's Mental Health Therapy in Illinois | Reproductive and Life-Stage Support"
+  description="Women's mental health therapy in Illinois for reproductive challenges, body image concerns, substance use concerns, life transitions, anxiety, and relationship stress."
+>
+  <Navbar />
+
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="absolute bottom-[20%] right-[-10%] w-[30%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Women's Mental Health Therapy in Illinois
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Support for reproductive challenges, body image concerns, substance use concerns, relationship stress, and the emotional demands that can come with different stages of a woman's life.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="max-w-4xl mx-auto text-center mb-14">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">A Place for Nuanced, Compassionate Support</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Women's mental health is often shaped by overlapping emotional, relational, cultural, and physical realities. You may be dealing with stress related to fertility, pregnancy, parenting, body image, relationships, substance use, or major life transitions while trying to keep functioning in everyday life.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Therapy can help you make sense of what you are experiencing, reduce shame, strengthen coping skills, and build a more supportive relationship with yourself while addressing the practical realities of your life.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 xl:gap-8">
+        {focusAreas.map((item) => (
+          <div class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">When This Support May Be Helpful</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          You may benefit from this work if you feel emotionally exhausted, disconnected from yourself, overwhelmed by expectations, stuck in self-criticism, or alone in what you are carrying. Many women seek therapy not because something is "wrong" with them, but because they need a space where their full experience can be understood without minimizing it.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Care is individualized and may draw from self-compassion-based work, insight-oriented therapy, trauma-informed therapy, and practical coping strategies depending on your needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Support</h2>
+        <p class="text-lg text-gray-700">
+          These pages may be especially helpful if your current concerns are centered around pregnancy, postpartum adjustment, or getting started with therapy.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">You do not have to carry it all alone</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

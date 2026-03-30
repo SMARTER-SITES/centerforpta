@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const supportAreas = [
+  "Pregnancy-related anxiety and uncertainty",
+  "Medical stress and decision fatigue",
+  "Fear around labor, parenting, or major life change",
+  "Relationship strain during pregnancy",
+  "History of anxiety, depression, trauma, or reproductive loss",
+  "Identity changes and emotional adjustment to pregnancy"
+];
+
+const relatedLinks = [
+  {
+    href: '/postpartum-therapy',
+    title: 'Postpartum Therapy',
+    desc: 'Support after birth for mood changes, overwhelm, and postnatal adjustment.'
+  },
+  {
+    href: '/womens-mental-health-therapy',
+    title: "Women's Mental Health Therapy",
+    desc: 'Broader support for reproductive challenges, life-stage stress, and body image concerns.'
+  },
+  {
+    href: '/contact',
+    title: 'Book a Consultation',
+    desc: 'Ask about prenatal therapy in person or through telehealth across Illinois.'
+  }
+];
+---
+
+<Layout
+  title="Prenatal Therapy in Illinois | Support During Pregnancy"
+  description="Prenatal therapy in Illinois for pregnancy anxiety, stress, reproductive loss history, relationship changes, medical decision fatigue, and emotional support during pregnancy."
+>
+  <Navbar />
+
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Prenatal Therapy in Illinois
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Emotional support during pregnancy for anxiety, overwhelm, medical stress, relationship changes, and the many adjustments that can happen before birth.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-start">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Pregnancy Can Be Meaningful and Hard at the Same Time</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Pregnancy is often described as a joyful period, but many people also experience fear, grief, irritability, pressure, uncertainty, and emotional vulnerability. That does not mean you are doing anything wrong. It means you are living through a major transition.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Prenatal therapy can help you process what is coming up emotionally while giving you steadier tools for coping, communication, and self-care.
+          </p>
+        </div>
+        <div class="md:w-1/2 bg-[#fcfbf9] p-8 rounded-[2rem] border border-gray-100">
+          <h2 class="text-2xl font-bold text-[#1a1a1a] mb-6">Common Reasons People Reach Out</h2>
+          <ul class="space-y-4">
+            {supportAreas.map((area) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="mt-2 h-2.5 w-2.5 rounded-full bg-[#2f594f] flex-shrink-0"></span>
+                <span>{area}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Especially Helpful When There Is Extra History in the Background</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Prenatal therapy may be particularly helpful if pregnancy is happening alongside infertility history, reproductive loss, high stress, trauma history, prior depression or anxiety, or significant family or relationship strain.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          The goal is not to force a certain emotional experience, but to help you move through pregnancy with more support, clarity, and internal steadiness.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Pages</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Support during pregnancy can make a real difference</h2>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Contact Us
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
