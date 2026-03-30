@@ -6,6 +6,18 @@ export const defaultDescription =
 export const defaultOgImage = `${siteUrl}/images/og-default.png`;
 export const logoUrl = `${siteUrl}/images/logo.png`;
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface ServiceStructuredDataInput {
+  name: string;
+  description: string;
+  path: string;
+  serviceType?: string;
+}
+
 export function absoluteUrl(path: string) {
   return new URL(path, siteUrl).toString();
 }
@@ -26,6 +38,7 @@ export function getBaseStructuredData(description: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
+    '@id': `${siteUrl}/#professional-service`,
     name: siteName,
     description,
     url: siteUrl,
@@ -71,5 +84,55 @@ export function getBaseStructuredData(description: string) {
         availableLanguage: ['English', 'Serbian', 'Spanish']
       }
     ]
+  };
+}
+
+export function getFaqStructuredData(faqItems: FaqItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer
+      }
+    }))
+  };
+}
+
+export function getServiceStructuredData({
+  name,
+  description,
+  path,
+  serviceType = name
+}: ServiceStructuredDataInput) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    serviceType,
+    description,
+    url: absoluteUrl(path),
+    provider: {
+      '@id': `${siteUrl}/#professional-service`
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Schaumburg'
+      },
+      {
+        '@type': 'AdministrativeArea',
+        name: 'Illinois'
+      }
+    ],
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: absoluteUrl('/contact'),
+      servicePhone: '+1-847-230-0045',
+      availableLanguage: ['English', 'Serbian', 'Spanish']
+    }
   };
 }

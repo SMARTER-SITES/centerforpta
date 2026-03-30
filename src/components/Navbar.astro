@@ -2,18 +2,33 @@
 import { Image } from 'astro:assets';
 import logoImg from '../assets/logo.png';
 
+type NavLink = {
+  name: string;
+  href?: string;
+  kind?: 'link' | 'label';
+};
+
 const navItems = [
   { name: 'Home', href: '/' },
   { name: 'About Us', href: '/about' },
   { 
     name: 'Services', 
     dropdown: [
+      { name: 'Core Services', kind: 'label' },
       { name: 'Therapy', href: '/therapy' },
       { name: 'Pre-Surgical Evaluations', href: '/pre-surgical-psychological-evaluations' },
       { name: 'Psychological Assessment', href: '/psychological-assessment' },
       { name: 'Immigration Evaluations', href: '/immigration-evaluations' },
-      { name: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching' }
-    ]
+      { name: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching' },
+      { name: 'Therapy Topics', kind: 'label' },
+      { name: "Women's Mental Health", href: '/womens-mental-health-therapy' },
+      { name: 'Self-Compassion', href: '/self-compassion-therapy' },
+      { name: 'Weight Loss Counseling', href: '/weight-loss-counseling' },
+      { name: 'Bariatric Counseling', href: '/bariatric-surgery-counseling' },
+      { name: 'Divorce Counseling', href: '/divorce-counseling' },
+      { name: 'Prenatal Therapy', href: '/prenatal-therapy' },
+      { name: 'Postpartum Therapy', href: '/postpartum-therapy' }
+    ] as NavLink[]
   },
   {
     name: 'Resources',
@@ -57,12 +72,28 @@ const navItems = [
                 {item.name}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
               </button>
-              <div class="absolute top-[120%] left-0 w-64 bg-white border border-gray-100 shadow-xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:top-full group-hover:visible transition-all duration-300 flex flex-col z-50">
-                {item.dropdown.map(subItem => (
-                  <a href={subItem.href} class="px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#f3f0e9] hover:text-[#2f594f] transition-colors">
-                    {subItem.name}
-                  </a>
-                ))}
+              <div class:list={[
+                "absolute top-[120%] left-0 bg-white border border-gray-100 shadow-xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:top-full group-hover:visible transition-all duration-300 z-50",
+                item.name === 'Services' ? 'w-[30rem]' : 'w-64'
+              ]}>
+                <div class:list={[
+                  item.name === 'Services' ? 'grid grid-cols-2 gap-x-2' : 'flex flex-col'
+                ]}>
+                  {item.dropdown.map(subItem => (
+                    subItem.kind === 'label' ? (
+                      <div class:list={[
+                        "px-5 pt-3 pb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2f594f]",
+                        item.name === 'Services' ? 'col-span-2 first:pt-1' : ''
+                      ]}>
+                        {subItem.name}
+                      </div>
+                    ) : (
+                      <a href={subItem.href} class="px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-[#f3f0e9] hover:text-[#2f594f] transition-colors">
+                        {subItem.name}
+                      </a>
+                    )
+                  ))}
+                </div>
               </div>
             </div>
           ) : (
@@ -107,9 +138,15 @@ const navItems = [
               </button>
               <div class="hidden flex-col gap-2 pl-4 mt-2 border-l-2 border-[#e0eae5] mobile-dropdown-content">
                 {item.dropdown.map(subItem => (
-                  <a href={subItem.href} class="text-base font-medium text-gray-600 py-1.5 hover:text-[#2f594f]">
-                    {subItem.name}
-                  </a>
+                  subItem.kind === 'label' ? (
+                    <div class="pt-3 pb-1 text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f]">
+                      {subItem.name}
+                    </div>
+                  ) : (
+                    <a href={subItem.href} class="text-base font-medium text-gray-600 py-1.5 hover:text-[#2f594f]">
+                      {subItem.name}
+                    </a>
+                  )
                 ))}
               </div>
             </div>

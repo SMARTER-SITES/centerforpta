@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const supportAreas = [
   {
@@ -39,11 +42,41 @@ const relatedLinks = [
     desc: 'Ask about postpartum therapy in person or through telehealth in Illinois.'
   }
 ];
+
+const pageDescription =
+  'Postpartum therapy in Schaumburg, IL with telehealth across Illinois for postpartum anxiety, postpartum depression, overwhelm, identity shifts, relationship stress, and postnatal emotional support.';
+
+const faqItems = [
+  {
+    question: 'What can postpartum therapy help with?',
+    answer:
+      'Postpartum therapy can help with postpartum anxiety, postpartum depression, irritability, overwhelm, identity changes, relationship strain, sleep disruption, and the emotional adjustment after birth.'
+  },
+  {
+    question: 'Do you offer postpartum therapy in Schaumburg, IL and online?',
+    answer:
+      'Yes. Sessions are available in person in Schaumburg, and telehealth is available for clients throughout Illinois.'
+  },
+  {
+    question: 'Is postpartum therapy only for severe symptoms?',
+    answer:
+      'No. Therapy can be appropriate when symptoms are severe, but it can also be helpful much earlier if you feel emotionally stretched thin, unlike yourself, or overwhelmed after birth.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Postpartum Therapy',
+  description: pageDescription,
+  path: '/postpartum-therapy/',
+  serviceType: 'Postpartum Therapy'
+});
 ---
 
 <Layout
-  title="Postpartum Therapy in Illinois | Postnatal Mental Health Support"
-  description="Postpartum therapy in Illinois for postpartum anxiety, postpartum depression, overwhelm, identity shifts, relationship stress, and postnatal emotional support."
+  title="Postpartum Therapy in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -52,10 +85,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Postpartum Therapy in Illinois
+        Postpartum Therapy in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Postnatal mental health support for postpartum anxiety, postpartum depression, overwhelm, identity changes, relationship stress, and emotional recovery after birth.
+        Postnatal mental health support for postpartum anxiety, postpartum depression, overwhelm, identity changes, relationship stress, and emotional recovery after birth, with telehealth available across Illinois.
       </p>
     </div>
   </section>
@@ -69,6 +102,9 @@ const relatedLinks = [
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
           Postpartum therapy creates space to talk honestly about what is happening while building practical and emotional support for this stage of life.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-6">
+          If you are searching for postpartum therapy near Schaumburg, in-person sessions are available locally, and telehealth makes postnatal support accessible across Illinois.
         </p>
       </div>
 
@@ -96,6 +132,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Postpartum Therapy" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="A few common questions about postpartum and postnatal support, location, and timing."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

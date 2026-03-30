@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const phases = [
   {
@@ -31,11 +34,41 @@ const relatedLinks = [
     desc: 'Reach out to ask about divorce counseling in person or via telehealth.'
   }
 ];
+
+const pageDescription =
+  'Divorce counseling in Schaumburg, IL with telehealth across Illinois for support before divorce, after divorce, co-parenting stress, grief, relationship loss, and major life transitions.';
+
+const faqItems = [
+  {
+    question: 'Can divorce counseling help before a divorce is final?',
+    answer:
+      'Yes. Divorce counseling can be helpful during the decision-making phase, during separation, and after divorce when grief, anger, confusion, or practical stress are still very active.'
+  },
+  {
+    question: 'Do you offer divorce counseling in Schaumburg, IL and online?',
+    answer:
+      'Yes. Sessions are available in person in Schaumburg and through telehealth for clients across Illinois.'
+  },
+  {
+    question: 'Is divorce counseling only for people who are sure they want to separate?',
+    answer:
+      'No. Some clients come in because they are trying to think clearly about what they want, while others come in after separation or divorce to process the emotional aftermath and rebuild stability.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Divorce Counseling',
+  description: pageDescription,
+  path: '/divorce-counseling/',
+  serviceType: 'Divorce Counseling'
+});
 ---
 
 <Layout
-  title="Divorce Counseling in Illinois | Support Before and After Separation"
-  description="Divorce counseling in Illinois for support before divorce, after divorce, co-parenting stress, grief, relationship loss, and major life transitions."
+  title="Divorce Counseling in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -44,10 +77,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Divorce Counseling in Illinois
+        Divorce Counseling in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Therapy support before divorce, during separation, and after divorce for grief, overwhelm, co-parenting stress, identity shifts, and rebuilding stability.
+        Therapy support before divorce, during separation, and after divorce for grief, overwhelm, co-parenting stress, identity shifts, and rebuilding stability, with telehealth across Illinois.
       </p>
     </div>
   </section>
@@ -61,6 +94,9 @@ const relatedLinks = [
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
           Therapy offers a structured, supportive space to think clearly, regulate emotions, and move through this transition with more steadiness and less isolation.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-6">
+          For clients in and around Schaumburg, in-person care is available locally, and telehealth makes divorce counseling accessible across Illinois.
         </p>
       </div>
 
@@ -88,6 +124,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Divorce Counseling" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Common questions about timing, fit, and access for divorce-related support."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

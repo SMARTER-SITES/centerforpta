@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const patterns = [
   "Harsh self-criticism and shame",
@@ -29,11 +32,41 @@ const relatedLinks = [
     desc: 'Reach out to ask about in-person or telehealth therapy across Illinois.'
   }
 ];
+
+const pageDescription =
+  'Self-compassion therapy in Schaumburg, IL with telehealth across Illinois for self-criticism, shame, perfectionism, burnout, body image concerns, and a healthier relationship with yourself.';
+
+const faqItems = [
+  {
+    question: 'What is self-compassion therapy?',
+    answer:
+      'Self-compassion therapy focuses on changing the way you relate to yourself under stress. It can help reduce harsh self-criticism, perfectionism, shame, and the feeling that you are never doing enough.'
+  },
+  {
+    question: 'Do you offer self-compassion therapy in Schaumburg, IL?',
+    answer:
+      'Yes. Sessions are available in person in Schaumburg, and telehealth is available for clients throughout Illinois.'
+  },
+  {
+    question: 'Is self-compassion therapy helpful for anxiety or burnout?',
+    answer:
+      'Often, yes. This approach can be useful when anxiety, burnout, body image distress, or chronic self-judgment are being made worse by an overly critical inner voice.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Self-Compassion Therapy',
+  description: pageDescription,
+  path: '/self-compassion-therapy/',
+  serviceType: 'Self-Compassion Therapy'
+});
 ---
 
 <Layout
-  title="Self-Compassion Therapy in Illinois | Help for Self-Criticism, Shame, and Burnout"
-  description="Self-compassion therapy in Illinois for self-criticism, shame, perfectionism, burnout, body image concerns, and a healthier relationship with yourself."
+  title="Self-Compassion Therapy in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -42,10 +75,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Self-Compassion Therapy in Illinois
+        Self-Compassion Therapy in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Therapy for people who are exhausted by self-criticism, perfectionism, shame, or the constant feeling that they should be handling life better than they are.
+        Therapy for people who are exhausted by self-criticism, perfectionism, shame, or the constant feeling that they should be handling life better than they are, with online care available across Illinois.
       </p>
     </div>
   </section>
@@ -60,6 +93,9 @@ const relatedLinks = [
           </p>
           <p class="text-lg text-gray-700 leading-relaxed">
             This work can be especially helpful when insight alone has not changed the way you treat yourself. Therapy focuses on understanding where the inner critic came from, how it shows up now, and how to build a healthier internal relationship that supports change rather than blocking it.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mt-6">
+            For clients near Schaumburg, sessions can happen in person. If you are elsewhere in Illinois, telehealth offers the same focused support in a more flexible format.
           </p>
         </div>
         <div class="md:w-1/2 bg-[#fcfbf9] p-8 rounded-[2rem] border border-gray-100">
@@ -90,6 +126,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Self-Compassion Therapy" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="A few quick answers about how this service works and who it may fit."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

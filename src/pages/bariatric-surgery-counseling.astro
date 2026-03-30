@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const stages = [
   {
@@ -39,11 +42,41 @@ const relatedLinks = [
     desc: 'Reach out about bariatric counseling in Schaumburg or via telehealth in Illinois.'
   }
 ];
+
+const pageDescription =
+  'Bariatric surgery counseling in Schaumburg, IL with telehealth across Illinois for emotional readiness, body image concerns, behavior change, post-op adjustment, and ongoing psychological support.';
+
+const faqItems = [
+  {
+    question: 'What is bariatric surgery counseling?',
+    answer:
+      'Bariatric surgery counseling focuses on the emotional side of the process before and after surgery, including readiness concerns, expectations, identity shifts, body image, and long-term adjustment.'
+  },
+  {
+    question: 'Do you provide bariatric counseling in Schaumburg, IL?',
+    answer:
+      'Yes. Sessions are available in person in Schaumburg and by telehealth for clients throughout Illinois.'
+  },
+  {
+    question: 'How is counseling different from a pre-surgical psychological evaluation?',
+    answer:
+      'A pre-surgical evaluation is typically a formal assessment used for medical clearance. Counseling is ongoing therapeutic support and may happen before surgery, after surgery, or both.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Bariatric Surgery Counseling',
+  description: pageDescription,
+  path: '/bariatric-surgery-counseling/',
+  serviceType: 'Bariatric Surgery Counseling'
+});
 ---
 
 <Layout
-  title="Bariatric Surgery Counseling in Illinois | Pre- and Post-Op Emotional Support"
-  description="Bariatric surgery counseling in Illinois for emotional readiness, body image concerns, behavior change, post-op adjustment, and ongoing psychological support."
+  title="Bariatric Surgery Counseling in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -52,10 +85,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Bariatric Surgery Counseling in Illinois
+        Bariatric Surgery Counseling in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Emotional support before and after bariatric surgery for readiness, body image, identity changes, behavior change, and long-term adjustment.
+        Emotional support before and after bariatric surgery for readiness, body image, identity changes, behavior change, and long-term adjustment, with telehealth across Illinois.
       </p>
     </div>
   </section>
@@ -69,6 +102,9 @@ const relatedLinks = [
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
           Counseling can help you prepare emotionally, strengthen coping skills, and navigate the practical and psychological changes that may come with the process.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-6">
+          Clients who want bariatric surgery counseling near Schaumburg can meet in person, while telehealth makes this support available throughout Illinois.
         </p>
       </div>
 
@@ -96,6 +132,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Bariatric Surgery Counseling" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Quick answers about location, fit, and how this service differs from formal evaluations."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

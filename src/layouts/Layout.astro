@@ -2,11 +2,13 @@
 import {
   defaultDescription,
   defaultTitle,
+  getFaqStructuredData,
   getBaseStructuredData,
   resolveMetaImage,
   siteName,
   siteUrl
 } from '../utils/seo';
+import type { FaqItem } from '../utils/seo';
 
 interface Props {
   title?: string;
@@ -16,6 +18,8 @@ interface Props {
   publishedTime?: string;
   author?: string;
   noIndex?: boolean;
+  faqItems?: FaqItem[];
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
@@ -25,11 +29,19 @@ const {
   ogType = 'website',
   publishedTime,
   author = 'Dr. Jelena Djurovic',
-  noIndex = false
+  noIndex = false,
+  faqItems = [],
+  structuredData: customStructuredData
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? siteUrl).toString();
 const socialImage = resolveMetaImage(image);
+
+const customStructuredDataItems = Array.isArray(customStructuredData)
+  ? customStructuredData
+  : customStructuredData
+    ? [customStructuredData]
+    : [];
 
 const structuredData = [
   getBaseStructuredData(description),
@@ -55,7 +67,9 @@ const structuredData = [
         datePublished: publishedTime,
         mainEntityOfPage: canonicalUrl
       }
-    : null
+    : null,
+  faqItems.length > 0 ? getFaqStructuredData(faqItems) : null,
+  ...customStructuredDataItems
 ].filter(Boolean);
 ---
 

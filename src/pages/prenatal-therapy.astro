@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const supportAreas = [
   "Pregnancy-related anxiety and uncertainty",
@@ -29,11 +32,41 @@ const relatedLinks = [
     desc: 'Ask about prenatal therapy in person or through telehealth across Illinois.'
   }
 ];
+
+const pageDescription =
+  'Prenatal therapy in Schaumburg, IL with telehealth across Illinois for pregnancy anxiety, stress, reproductive loss history, relationship changes, medical decision fatigue, and emotional support during pregnancy.';
+
+const faqItems = [
+  {
+    question: 'What is prenatal therapy helpful for?',
+    answer:
+      'Prenatal therapy can help with pregnancy anxiety, medical stress, fear around labor or parenting, reproductive loss history, relationship strain, and the emotional adjustment that can happen during pregnancy.'
+  },
+  {
+    question: 'Do you offer prenatal therapy in Schaumburg, IL and online in Illinois?',
+    answer:
+      'Yes. Prenatal therapy is available in person in Schaumburg and by telehealth for clients anywhere in Illinois.'
+  },
+  {
+    question: 'Can prenatal therapy help if I already have a history of anxiety or trauma?',
+    answer:
+      'Yes. Prenatal therapy may be especially helpful when pregnancy overlaps with prior anxiety, depression, trauma, infertility stress, or reproductive loss.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Prenatal Therapy',
+  description: pageDescription,
+  path: '/prenatal-therapy/',
+  serviceType: 'Prenatal Therapy'
+});
 ---
 
 <Layout
-  title="Prenatal Therapy in Illinois | Support During Pregnancy"
-  description="Prenatal therapy in Illinois for pregnancy anxiety, stress, reproductive loss history, relationship changes, medical decision fatigue, and emotional support during pregnancy."
+  title="Prenatal Therapy in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -42,10 +75,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Prenatal Therapy in Illinois
+        Prenatal Therapy in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Emotional support during pregnancy for anxiety, overwhelm, medical stress, relationship changes, and the many adjustments that can happen before birth.
+        Emotional support during pregnancy for anxiety, overwhelm, medical stress, relationship changes, and the many adjustments that can happen before birth, with telehealth available across Illinois.
       </p>
     </div>
   </section>
@@ -60,6 +93,9 @@ const relatedLinks = [
           </p>
           <p class="text-lg text-gray-700 leading-relaxed">
             Prenatal therapy can help you process what is coming up emotionally while giving you steadier tools for coping, communication, and self-care.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mt-6">
+            If you are looking for prenatal therapy near Schaumburg, sessions can happen in person there or online anywhere in Illinois.
           </p>
         </div>
         <div class="md:w-1/2 bg-[#fcfbf9] p-8 rounded-[2rem] border border-gray-100">
@@ -90,6 +126,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Prenatal Therapy" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Helpful answers about pregnancy support, location, and whether this service may fit."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

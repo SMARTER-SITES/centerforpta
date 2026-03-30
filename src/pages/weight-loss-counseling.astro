@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const topics = [
   {
@@ -39,11 +42,41 @@ const relatedLinks = [
     desc: 'Ask about counseling in Schaumburg or telehealth across Illinois.'
   }
 ];
+
+const pageDescription =
+  'Weight loss counseling in Schaumburg, IL with telehealth across Illinois for emotional eating, body image concerns, behavior change, motivation, and a healthier relationship with food and yourself.';
+
+const faqItems = [
+  {
+    question: 'What does weight loss counseling help with?',
+    answer:
+      'Weight loss counseling can help with emotional eating, shame, all-or-nothing thinking, motivation swings, body image concerns, and the emotional side of behavior change.'
+  },
+  {
+    question: 'Is weight loss counseling available in Schaumburg and online in Illinois?',
+    answer:
+      'Yes. Clients can meet in person in Schaumburg, Illinois or by telehealth from anywhere in Illinois.'
+  },
+  {
+    question: 'Is this the same as bariatric surgery counseling?',
+    answer:
+      'Not exactly. Weight loss counseling is broader and may focus on emotional eating, body image, and long-term behavior change. Bariatric surgery counseling is more specifically centered on pre-op and post-op adjustment.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Weight Loss Counseling',
+  description: pageDescription,
+  path: '/weight-loss-counseling/',
+  serviceType: 'Weight Loss Counseling'
+});
 ---
 
 <Layout
-  title="Weight Loss Counseling in Illinois | Emotional Eating, Body Image, and Behavior Change"
-  description="Weight loss counseling in Illinois for emotional eating, body image concerns, behavior change, motivation, and a healthier relationship with food and yourself."
+  title="Weight Loss Counseling in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -52,10 +85,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Weight Loss Counseling in Illinois
+        Weight Loss Counseling in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Counseling support for emotional eating, body image concerns, motivation, self-criticism, and the emotional ups and downs that often come with trying to make lasting health changes.
+        Counseling support for emotional eating, body image concerns, motivation, self-criticism, and the emotional ups and downs that often come with trying to make lasting health changes, with telehealth across Illinois.
       </p>
     </div>
   </section>
@@ -69,6 +102,9 @@ const relatedLinks = [
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
           Weight loss counseling focuses on the emotional and psychological factors that affect behavior change so that progress can become more sustainable and less driven by guilt.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-6">
+          If you are searching for weight loss counseling near Schaumburg, care is available in person there and online for adults located anywhere in Illinois.
         </p>
       </div>
 
@@ -96,6 +132,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Weight Loss Counseling" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="These answers help clarify what this counseling can cover and how to access it locally."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

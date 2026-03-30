@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const focusAreas = [
   {
@@ -39,11 +42,41 @@ const relatedLinks = [
     desc: 'Reach out to ask about therapy in Schaumburg or telehealth across Illinois.'
   }
 ];
+
+const pageDescription =
+  "Women's mental health therapy in Schaumburg, IL with telehealth across Illinois for reproductive challenges, body image concerns, substance use concerns, life transitions, anxiety, and relationship stress.";
+
+const faqItems = [
+  {
+    question: "Do you offer women's mental health therapy in Schaumburg and online across Illinois?",
+    answer:
+      'Yes. Dr. Jelena Djurovic offers in-person therapy in Schaumburg, Illinois and telehealth sessions for clients located anywhere in Illinois.'
+  },
+  {
+    question: "What concerns can be addressed in women's mental health therapy?",
+    answer:
+      "This work can include support for reproductive challenges, fertility stress, reproductive loss, pregnancy and postpartum concerns, body image distress, relationship stress, substance use concerns, and major life transitions."
+  },
+  {
+    question: "Is this page only for pregnancy-related concerns?",
+    answer:
+      "No. Pregnancy and reproductive concerns are part of this work, but women's mental health therapy can also support anxiety, burnout, identity changes, shame, self-criticism, relationship strain, and other overlapping emotional stressors."
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: "Women's Mental Health Therapy",
+  description: pageDescription,
+  path: '/womens-mental-health-therapy/',
+  serviceType: "Women's Mental Health Therapy"
+});
 ---
 
 <Layout
-  title="Women's Mental Health Therapy in Illinois | Reproductive and Life-Stage Support"
-  description="Women's mental health therapy in Illinois for reproductive challenges, body image concerns, substance use concerns, life transitions, anxiety, and relationship stress."
+  title="Women's Mental Health Therapy in Schaumburg, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -53,10 +86,10 @@ const relatedLinks = [
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Specialized Therapy</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Women's Mental Health Therapy in Illinois
+        Women's Mental Health Therapy in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Support for reproductive challenges, body image concerns, substance use concerns, relationship stress, and the emotional demands that can come with different stages of a woman's life.
+        Support for reproductive challenges, body image concerns, substance use concerns, relationship stress, and the emotional demands that can come with different stages of a woman's life, with telehealth available across Illinois.
       </p>
     </div>
   </section>
@@ -70,6 +103,9 @@ const relatedLinks = [
         </p>
         <p class="text-lg text-gray-700 leading-relaxed">
           Therapy can help you make sense of what you are experiencing, reduce shame, strengthen coping skills, and build a more supportive relationship with yourself while addressing the practical realities of your life.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mt-6">
+          If you are looking for women's mental health therapy near Schaumburg, this care can be offered in person at the office or through telehealth anywhere in Illinois.
         </p>
       </div>
 
@@ -97,6 +133,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+  <LocalServiceArea serviceName="Women's Mental Health Therapy" />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="These answers cover the most common local and service-fit questions people ask before reaching out."
+  />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

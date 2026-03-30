@@ -1,0 +1,36 @@
+---
+interface Props {
+  serviceName: string;
+}
+
+const { serviceName } = Astro.props;
+---
+
+<section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+  <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+    <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
+      <div class="max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">
+          {serviceName} in Schaumburg, IL and Across Illinois
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+          Dr. Jelena Djurovic offers in-person care in Schaumburg, Illinois and telehealth sessions for clients across Illinois. This makes it easier to choose the format that fits your schedule, comfort, and level of support needed.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mb-8">
+          If you are looking for a licensed clinical psychologist near Schaumburg, or you prefer online therapy anywhere in Illinois, you can start by reaching out through the contact page to ask about fit, scheduling, and next steps.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <a href="/contact" class="bg-[#fcfbf9] rounded-[1.5rem] border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Contact and Scheduling</h3>
+          <p class="text-gray-600 leading-relaxed">Ask about availability, in-person sessions in Schaumburg, or telehealth across Illinois.</p>
+        </a>
+        <a href="/rates-and-insurance" class="bg-[#fcfbf9] rounded-[1.5rem] border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Rates and Insurance</h3>
+          <p class="text-gray-600 leading-relaxed">Review insurance information, private pay details, and practical planning before getting started.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
