@@ -1,9 +1,18 @@
 ---
 interface Props {
   serviceName: string;
+  title?: string;
+  paragraphs?: string[];
 }
 
-const { serviceName } = Astro.props;
+const {
+  serviceName,
+  title = `${serviceName} in Schaumburg, IL and Across Illinois`,
+  paragraphs = [
+    'Dr. Jelena Djurovic offers in-person care in Schaumburg, Illinois and telehealth sessions for clients across Illinois. This makes it easier to choose the format that fits your schedule, comfort, and level of support needed.',
+    'If you are looking for a licensed clinical psychologist near Schaumburg, or you prefer online therapy anywhere in Illinois, you can start by reaching out through the contact page to ask about fit, scheduling, and next steps.'
+  ]
+} = Astro.props;
 ---
 
 <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
@@ -11,14 +20,13 @@ const { serviceName } = Astro.props;
     <div class="bg-white p-8 md:p-12 rounded-[2rem] border border-gray-100">
       <div class="max-w-4xl">
         <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">
-          {serviceName} in Schaumburg, IL and Across Illinois
+          {title}
         </h2>
-        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-          Dr. Jelena Djurovic offers in-person care in Schaumburg, Illinois and telehealth sessions for clients across Illinois. This makes it easier to choose the format that fits your schedule, comfort, and level of support needed.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed mb-8">
-          If you are looking for a licensed clinical psychologist near Schaumburg, or you prefer online therapy anywhere in Illinois, you can start by reaching out through the contact page to ask about fit, scheduling, and next steps.
-        </p>
+        {paragraphs.map((paragraph, index) => (
+          <p class:list={['text-lg text-gray-700 leading-relaxed', index === paragraphs.length - 1 ? 'mb-8' : 'mb-6']}>
+            {paragraph}
+          </p>
+        ))}
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">

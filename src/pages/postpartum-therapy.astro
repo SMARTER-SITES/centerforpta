@@ -7,6 +7,8 @@ import LocalServiceArea from '../components/LocalServiceArea.astro';
 import TopicHero from '../components/TopicHero.astro';
 import TopicOverviewSection from '../components/TopicOverviewSection.astro';
 import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const supportAreas = [
@@ -47,26 +49,40 @@ const relatedLinks = [
 ];
 
 const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Postpartum and postnatal support'];
+const featureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person postpartum therapy in Schaumburg with a private setting designed for new parents who need focused support.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Addresses mood changes, identity disruption, relationship strain, and the gap between expectations and reality after birth.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth across Illinois so new parents can access support during naps, breaks, or whenever a session fits the day.'
+  }
+];
 
 const careStyle = [
   {
     title: 'Warm and non-shaming',
-    desc: 'Helpful when new parenthood feels heavier, lonelier, or more disorganizing than expected.'
+    desc: 'Helpful when you feel like you should be handling things better. This is a space where difficulty is expected, not judged.'
   },
   {
     title: 'Emotionally practical',
-    desc: 'Focused on day-to-day overwhelm, relationship strain, identity shifts, and the pressure to keep coping.'
+    desc: 'Focused on day-to-day overwhelm, sleep disruption, relationship friction, and the pressure to appear like you are coping when you are not.'
   },
   {
     title: 'Built for early support',
-    desc: 'Relevant both when symptoms are intense and when you simply know something feels off.'
+    desc: 'You do not need to wait until things are severe. Reaching out when something feels off is often the most effective time to start.'
   }
 ];
 
 const overviewParagraphs = [
+  'This service is for new parents who are struggling more than they expected and need support that goes beyond being told it gets easier. Whether symptoms are intense or you simply feel off, both are valid reasons to reach out.',
   'The postpartum period can be deeply meaningful, but it can also be emotionally disorganizing. Many new parents feel ashamed when they are struggling because they think they should be coping better or feeling differently.',
-  'Postpartum therapy creates space to talk honestly about what is happening while building practical and emotional support for this stage of life.',
-  'If you are searching for postpartum therapy near Schaumburg, in-person sessions are available locally, and telehealth makes postnatal support accessible across Illinois.'
+  'Postpartum therapy creates space to talk honestly about what is happening while building practical and emotional support for this stage of life.'
 ];
 
 const processParagraphs = [
@@ -104,6 +120,11 @@ const faqItems = [
       'Yes. Sessions are available in person in Schaumburg, and telehealth is available for clients throughout Illinois.'
   },
   {
+    question: 'How soon after birth can I start postpartum therapy?',
+    answer:
+      'There is no minimum waiting period. Some clients reach out within the first few weeks after birth, while others start later. The office in Schaumburg is accessible from Arlington Heights, Des Plaines, Rolling Meadows, and surrounding suburbs, and telehealth is available for anyone in Illinois.'
+  },
+  {
     question: 'Is postpartum therapy only for severe symptoms?',
     answer:
       'No. Therapy can be appropriate when symptoms are severe, but it can also be helpful much earlier if you feel emotionally stretched thin, unlike yourself, or overwhelmed after birth.'
@@ -132,8 +153,10 @@ const serviceStructuredData = getServiceStructuredData({
     imageAlt="Therapy office offering postpartum support"
     imageSrc="/images/postpartum-therapy.jpg"
     fitText="support after birth when overwhelm, anxiety, exhaustion, or disconnection start taking up too much space"
+    fitDescription="This service is for new parents who are struggling more than they expected and need support that goes beyond being told it gets easier. Whether symptoms are intense or you simply feel off, both are valid reasons to reach out."
     signals={signals}
     careStyle={careStyle}
+    featureCards={featureCards}
   />
 
   <TopicOverviewSection
@@ -150,7 +173,17 @@ const serviceStructuredData = getServiceStructuredData({
     steps={processSteps}
   />
 
-  <LocalServiceArea serviceName="Postpartum Therapy" />
+  <LocalServiceArea
+    serviceName="Postpartum Therapy"
+    title="Postpartum Therapy in Schaumburg and the Greater Northwest Suburbs"
+    paragraphs={[
+      'Dr. Jelena Djurovic offers postpartum therapy at her Schaumburg office, serving new parents from Arlington Heights, Des Plaines, Mount Prospect, Palatine, Hoffman Estates, and the surrounding area. Her experience with perinatal mental health means the work can begin quickly without spending sessions on background education.',
+      'Telehealth is available statewide for Illinois residents, which many new parents prefer during the postpartum period. If you started with prenatal therapy and want to continue into postpartum care, that continuity is available and often beneficial.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

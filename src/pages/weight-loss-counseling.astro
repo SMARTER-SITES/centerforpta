@@ -7,6 +7,8 @@ import LocalServiceArea from '../components/LocalServiceArea.astro';
 import TopicHero from '../components/TopicHero.astro';
 import TopicOverviewSection from '../components/TopicOverviewSection.astro';
 import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const topics = [
@@ -47,26 +49,40 @@ const relatedLinks = [
 ];
 
 const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Body image and emotional eating support'];
+const featureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person sessions in Schaumburg in a judgment-free, private setting.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Addresses the emotional drivers behind eating patterns, not just the behaviors themselves.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth across Illinois for clients who want consistent support without adding another errand to the week.'
+  }
+];
 
 const careStyle = [
   {
     title: 'Warm and nonjudgmental',
-    desc: 'Built for people who are tired of feeling shamed by weight-related struggles.'
+    desc: 'Designed for people who are tired of feeling shamed by their relationship with food or their body. No weigh-ins, no lectures.'
   },
   {
     title: 'Behavior-aware',
-    desc: 'Focused on what actually interrupts consistency, not just what sounds good on paper.'
+    desc: 'Looks at the emotional patterns behind inconsistency rather than treating motivation as a willpower problem.'
   },
   {
     title: 'Whole-person perspective',
-    desc: 'Useful when food, motivation, anxiety, body image, and self-worth are all tangled together.'
+    desc: 'Useful when food, anxiety, body image, self-worth, and life stress are tangled together and need to be addressed as a system.'
   }
 ];
 
 const overviewParagraphs = [
-  'Many people already know what they are supposed to do, but insight alone does not always translate into change. Stress, shame, perfectionism, trauma history, and a difficult relationship with food or body image can make it hard to stay consistent even when motivation is strong.',
+  'This counseling is for people who already know what they are supposed to do but find that stress, emotions, or self-criticism keep interrupting consistency. The focus is on what is actually getting in the way, not another set of rules.',
   'Weight loss counseling focuses on the emotional and psychological factors that affect behavior change so that progress can become more sustainable and less driven by guilt.',
-  'If you are searching for weight loss counseling near Schaumburg, care is available in person there and online for adults located anywhere in Illinois.'
+  'Many people already know what they are supposed to do, but insight alone does not always translate into change. Stress, shame, perfectionism, trauma history, and a difficult relationship with food or body image can make it hard to stay consistent even when motivation is strong.'
 ];
 
 const processParagraphs = [
@@ -104,6 +120,11 @@ const faqItems = [
       'Yes. Clients can meet in person in Schaumburg, Illinois or by telehealth from anywhere in Illinois.'
   },
   {
+    question: 'Can I do weight loss counseling online if I live outside of Schaumburg?',
+    answer:
+      'Yes. Telehealth sessions are available for adults anywhere in Illinois. In-person sessions are available in Schaumburg, which is also convenient for clients in Hoffman Estates, Roselle, Hanover Park, and Streamwood.'
+  },
+  {
     question: 'Is this the same as bariatric surgery counseling?',
     answer:
       'Not exactly. Weight loss counseling is broader and may focus on emotional eating, body image, and long-term behavior change. Bariatric surgery counseling is more specifically centered on pre-op and post-op adjustment.'
@@ -132,8 +153,10 @@ const serviceStructuredData = getServiceStructuredData({
     imageAlt="Comfortable therapy office in Schaumburg"
     imageSrc="/images/weight-loss-counseling.jpg"
     fitText="support for lasting change when stress, shame, and food are all part of the picture"
+    fitDescription="This counseling is for people who already know what they are supposed to do but find that stress, emotions, or self-criticism keep interrupting consistency. The focus is on what is actually getting in the way, not another set of rules."
     signals={signals}
     careStyle={careStyle}
+    featureCards={featureCards}
   />
 
   <TopicOverviewSection
@@ -150,7 +173,17 @@ const serviceStructuredData = getServiceStructuredData({
     steps={processSteps}
   />
 
-  <LocalServiceArea serviceName="Weight Loss Counseling" />
+  <LocalServiceArea
+    serviceName="Weight Loss Counseling"
+    title="Weight Loss Counseling in Schaumburg and the Surrounding Area"
+    paragraphs={[
+      'Dr. Jelena Djurovic provides weight loss counseling at her Schaumburg office, accessible for clients from Hoffman Estates, Roselle, Hanover Park, Streamwood, and nearby communities. Her background in the mind-body relationship and self-compassion research shapes an approach that goes well beyond behavioral checklists.',
+      'Telehealth sessions are available statewide for Illinois residents. If you are considering bariatric surgery, a related but separate service is also available.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

@@ -7,6 +7,8 @@ import LocalServiceArea from '../components/LocalServiceArea.astro';
 import TopicHero from '../components/TopicHero.astro';
 import TopicOverviewSection from '../components/TopicOverviewSection.astro';
 import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const stages = [
@@ -47,26 +49,40 @@ const relatedLinks = [
 ];
 
 const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Pre-op and post-op emotional support'];
+const featureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person bariatric counseling sessions in Schaumburg in a private and comfortable setting.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Supports the emotional and psychological side of bariatric care, not just medical readiness.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth across Illinois for pre-op and post-op support that fits around your surgical timeline.'
+  }
+];
 
 const careStyle = [
   {
     title: 'Warm and steady',
-    desc: 'Supportive when surgery brings up mixed feelings, pressure, grief, or self-doubt.'
+    desc: 'Supportive when surgery brings up mixed feelings, grief over past attempts, or pressure from family and medical providers.'
   },
   {
     title: 'Practical and emotionally aware',
-    desc: 'Focused on what changes psychologically before and after surgery, not just medically.'
+    desc: 'Focused on what changes psychologically before and after surgery, including eating patterns, identity, and self-image.'
   },
   {
-    title: 'Integrated perspective',
-    desc: 'Useful when body image, motivation, routines, identity, and relationships are all shifting together.'
+    title: 'Integrated with medical care',
+    desc: 'Complements your surgical team by addressing emotional regulation, coping skills, and the behavioral adjustments that support lasting results.'
   }
 ];
 
 const overviewParagraphs = [
+  'This service is for people preparing for or recovering from bariatric surgery who want support with the emotional side of the process. Surgery changes more than your body, and having a space to work through those changes can make a meaningful difference in long-term outcomes.',
   'Bariatric surgery can involve much more than a medical procedure. It can bring up fears, hope, grief, pressure, complicated expectations, and major identity questions before and after surgery.',
-  'Counseling can help you prepare emotionally, strengthen coping skills, and navigate the practical and psychological changes that may come with the process.',
-  'Clients who want bariatric surgery counseling near Schaumburg can meet in person, while telehealth makes this support available throughout Illinois.'
+  'Counseling can help you prepare emotionally, strengthen coping skills, and navigate the practical and psychological changes that may come with the process.'
 ];
 
 const processParagraphs = [
@@ -104,6 +120,11 @@ const faqItems = [
       'Yes. Sessions are available in person in Schaumburg and by telehealth for clients throughout Illinois.'
   },
   {
+    question: 'Do you work with bariatric surgery patients from hospitals outside of Schaumburg?',
+    answer:
+      'Yes. Clients come from surgical programs across the Chicago area and northwest suburbs. Counseling can complement any surgical team and is available in person in Schaumburg or via telehealth throughout Illinois.'
+  },
+  {
     question: 'How is counseling different from a pre-surgical psychological evaluation?',
     answer:
       'A pre-surgical evaluation is typically a formal assessment used for medical clearance. Counseling is ongoing therapeutic support and may happen before surgery, after surgery, or both.'
@@ -132,8 +153,10 @@ const serviceStructuredData = getServiceStructuredData({
     imageAlt="Therapy office prepared for supportive counseling"
     imageSrc="/images/bariatric-surgery-counseling.jpg"
     fitText="a space to work through readiness, adjustment, and the emotional impact of bariatric care"
+    fitDescription="This service is for people preparing for or recovering from bariatric surgery who want support with the emotional side of the process. Surgery changes more than your body, and having a space to work through those changes can make a meaningful difference in long-term outcomes."
     signals={signals}
     careStyle={careStyle}
+    featureCards={featureCards}
   />
 
   <TopicOverviewSection
@@ -150,7 +173,17 @@ const serviceStructuredData = getServiceStructuredData({
     steps={processSteps}
   />
 
-  <LocalServiceArea serviceName="Bariatric Surgery Counseling" />
+  <LocalServiceArea
+    serviceName="Bariatric Surgery Counseling"
+    title="Bariatric Surgery Counseling in Schaumburg and the Greater Chicago Suburbs"
+    paragraphs={[
+      'Dr. Jelena Djurovic provides bariatric surgery counseling at her Schaumburg office, serving clients from Des Plaines, Arlington Heights, Elk Grove Village, Rolling Meadows, and the broader northwest suburbs. She also offers pre-surgical psychological evaluations as a separate service for clients who need formal clearance.',
+      'Telehealth is available for clients anywhere in Illinois who are preparing for surgery or adjusting after the procedure. If you are not sure whether you need an evaluation, counseling, or both, reaching out first can help clarify the next step.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

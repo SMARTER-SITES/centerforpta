@@ -7,15 +7,35 @@ import LocalServiceArea from '../components/LocalServiceArea.astro';
 import TopicHero from '../components/TopicHero.astro';
 import TopicOverviewSection from '../components/TopicOverviewSection.astro';
 import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const patterns = [
-  "Harsh self-criticism and shame",
-  "Perfectionism and burnout",
-  "Difficulty accepting mistakes or limitations",
-  "Feeling never good enough despite high effort",
-  "Negative body image or chronic self-judgment",
-  "Trouble responding to yourself with kindness under stress"
+  {
+    title: 'Harsh self-criticism and shame',
+    desc: 'When your inner voice sounds more like a judge than a coach. Self-criticism may show up as constant second-guessing, replaying conversations, or the feeling that nothing you do is ever good enough.'
+  },
+  {
+    title: 'Perfectionism and burnout',
+    desc: 'When high standards stop being motivating and start becoming exhausting. Perfectionism can quietly drain energy, delay decisions, and make rest feel like failure.'
+  },
+  {
+    title: 'Difficulty accepting mistakes or limitations',
+    desc: 'When even small errors feel disproportionately painful. This can show up as avoidance of new challenges, over-apologizing, or replaying moments of perceived failure.'
+  },
+  {
+    title: 'Feeling never good enough despite high effort',
+    desc: 'When recognition, accomplishments, or other people\'s reassurance never quite lands. The gap between what you achieve and what you feel you deserve can become isolating.'
+  },
+  {
+    title: 'Negative body image or chronic self-judgment',
+    desc: 'When appearance-related distress, aging concerns, or weight-related shame become a daily source of stress that affects confidence, relationships, or willingness to be seen.'
+  },
+  {
+    title: 'Trouble responding to yourself with kindness under stress',
+    desc: 'When you would never speak to a friend the way you speak to yourself. Stress, disappointment, or vulnerability trigger harshness instead of support.'
+  }
 ];
 
 const relatedLinks = [
@@ -37,32 +57,43 @@ const relatedLinks = [
 ];
 
 const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Helpful for anxiety, shame, and burnout'];
+const featureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person sessions in a quiet Schaumburg office where the focus stays entirely on you.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Connects the dots between self-criticism, anxiety, burnout, and the patterns that keep them in place.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth across Illinois when getting to an office feels like one more thing on the list.'
+  }
+];
 
 const careStyle = [
   {
     title: 'Warm and direct',
-    desc: 'A grounded style that makes room for honesty without piling on more self-judgment.'
+    desc: 'A grounded style that makes room for honesty without adding another layer of self-judgment on top.'
   },
   {
     title: 'Practical and reflective',
-    desc: 'Useful when insight helps, but has not been enough to change how you talk to yourself.'
+    desc: 'Helpful when you already have insight into your patterns but that awareness alone has not been enough to shift them.'
   },
   {
     title: 'Built for pressure',
-    desc: 'Especially helpful when perfectionism and chronic self-criticism are draining daily life.'
+    desc: 'Designed for people who hold themselves to high standards and need support that respects ambition without reinforcing perfectionism.'
   }
 ];
 
 const overviewParagraphs = [
+  'This work is for people who are functioning well on the outside but exhausted by the voice inside. If you have tried being harder on yourself and it has not helped, this is a different path.',
   'Self-compassion therapy is not about lowering standards or avoiding accountability. It is about learning how to respond to yourself with honesty, steadiness, and care rather than with punishment, contempt, or relentless pressure.',
-  'This work can be especially helpful when insight alone has not changed the way you treat yourself. Therapy focuses on understanding where the inner critic came from, how it shows up now, and how to build a healthier internal relationship that supports change rather than blocking it.',
-  'For clients near Schaumburg, sessions can happen in person. If you are elsewhere in Illinois, telehealth offers the same focused support in a more flexible format.'
+  'Therapy focuses on understanding where the inner critic came from, how it shows up now, and how to build a healthier internal relationship that supports change rather than blocking it.'
 ];
 
-const overviewCards = patterns.map((pattern) => ({
-  title: pattern,
-  desc: 'A common way harsh self-judgment can show up in everyday functioning, motivation, relationships, or recovery from stress.'
-}));
+const overviewCards = patterns;
 
 const processParagraphs = [
   "This page reflects a central part of Dr. Djurovic's approach. Treatment may include self-compassion-based work, mindfulness-informed interventions, relational therapy, and cognitive-behavioral strategies depending on what is getting in the way of change.",
@@ -99,6 +130,11 @@ const faqItems = [
       'Yes. Sessions are available in person in Schaumburg, and telehealth is available for clients throughout Illinois.'
   },
   {
+    question: 'Is self-compassion therapy available near Elk Grove Village or Mount Prospect?',
+    answer:
+      'Yes. The office in Schaumburg is close to Elk Grove Village, Mount Prospect, Des Plaines, and the surrounding area. Online sessions are available across Illinois.'
+  },
+  {
     question: 'Is self-compassion therapy helpful for anxiety or burnout?',
     answer:
       'Often, yes. This approach can be useful when anxiety, burnout, body image distress, or chronic self-judgment are being made worse by an overly critical inner voice.'
@@ -127,8 +163,10 @@ const serviceStructuredData = getServiceStructuredData({
     imageAlt="Calm therapy office in Schaumburg"
     imageSrc="/images/self-compassion-therapy.jpg"
     fitText="support that helps you move forward without using shame as fuel"
+    fitDescription="This work is for people who are functioning well on the outside but exhausted by the voice inside. If you have tried being harder on yourself and it has not helped, this is a different path."
     signals={signals}
     careStyle={careStyle}
+    featureCards={featureCards}
   />
 
   <TopicOverviewSection
@@ -145,7 +183,17 @@ const serviceStructuredData = getServiceStructuredData({
     steps={processSteps}
   />
 
-  <LocalServiceArea serviceName="Self-Compassion Therapy" />
+  <LocalServiceArea
+    serviceName="Self-Compassion Therapy"
+    title="Self-Compassion Therapy in Schaumburg and Across Illinois"
+    paragraphs={[
+      'Dr. Jelena Djurovic offers self-compassion-focused therapy at her Schaumburg office, a short drive from Palatine, Elk Grove Village, Mount Prospect, and other northwest suburban communities. Her approach draws directly from the research of Dr. Kristin Neff on self-compassion, alongside mindfulness-based interventions and AEDP.',
+      'Telehealth sessions are available for adults anywhere in Illinois. If you are unsure whether this focus fits your situation, reaching out to ask is a good first step.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

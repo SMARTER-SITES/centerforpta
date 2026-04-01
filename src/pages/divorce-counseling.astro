@@ -7,6 +7,8 @@ import LocalServiceArea from '../components/LocalServiceArea.astro';
 import TopicHero from '../components/TopicHero.astro';
 import TopicOverviewSection from '../components/TopicOverviewSection.astro';
 import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const phases = [
@@ -39,26 +41,40 @@ const relatedLinks = [
 ];
 
 const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Support before, during, and after separation'];
+const featureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person divorce counseling in Schaumburg with full confidentiality in a private office.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Addresses the grief, identity disruption, co-parenting stress, and decision fatigue that come with separation.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth across Illinois for clients managing custody schedules, work demands, or limited time.'
+  }
+];
 
 const careStyle = [
   {
     title: 'Grounded and calm',
-    desc: 'Helpful when everything feels emotionally loud, urgent, or hard to sort through.'
+    desc: 'Helpful when everything around you feels urgent, emotionally loud, or impossible to organize into clear thoughts.'
   },
   {
     title: 'Emotionally direct',
-    desc: 'Makes space for grief, anger, relief, and uncertainty without forcing one clean narrative.'
+    desc: 'Makes space for grief, anger, relief, guilt, and uncertainty to coexist without forcing one tidy story about what happened.'
   },
   {
     title: 'Transition-focused',
-    desc: 'Useful when co-parenting, identity, loneliness, and practical decisions are all in motion at once.'
+    desc: 'Useful when co-parenting logistics, financial stress, identity questions, and relationship grief are all active at the same time.'
   }
 ];
 
 const overviewParagraphs = [
+  'This service is for people at any point in the divorce or separation process who need a structured, private space to sort through what they are feeling and make decisions from a steadier place. You do not need to have everything figured out to start.',
   "Divorce can bring grief, relief, fear, anger, confusion, and practical stress all at once. Even when separation is the right decision, it can still be emotionally disorienting.",
   'Therapy offers a structured, supportive space to think clearly, regulate emotions, and move through this transition with more steadiness and less isolation.',
-  'For clients in and around Schaumburg, in-person care is available locally, and telehealth makes divorce counseling accessible across Illinois.'
 ];
 
 const processParagraphs = [
@@ -96,6 +112,11 @@ const faqItems = [
       'Yes. Sessions are available in person in Schaumburg and through telehealth for clients across Illinois.'
   },
   {
+    question: 'Is divorce counseling available for residents of Cook County and DuPage County?',
+    answer:
+      'Yes. The office in Schaumburg serves clients from both Cook and DuPage counties, including Palatine, Hoffman Estates, Roselle, and nearby communities. Telehealth extends access to anyone in Illinois.'
+  },
+  {
     question: 'Is divorce counseling only for people who are sure they want to separate?',
     answer:
       'No. Some clients come in because they are trying to think clearly about what they want, while others come in after separation or divorce to process the emotional aftermath and rebuild stability.'
@@ -124,8 +145,10 @@ const serviceStructuredData = getServiceStructuredData({
     imageAlt="Warm and calm therapy office in Schaumburg"
     imageSrc="/images/divorce-counseling.jpg"
     fitText="support that helps you think clearly while carrying grief, anger, fear, and change all at once"
+    fitDescription="This service is for people at any point in the divorce or separation process who need a structured, private space to sort through what they are feeling and make decisions from a steadier place. You do not need to have everything figured out to start."
     signals={signals}
     careStyle={careStyle}
+    featureCards={featureCards}
   />
 
   <TopicOverviewSection
@@ -142,7 +165,17 @@ const serviceStructuredData = getServiceStructuredData({
     steps={processSteps}
   />
 
-  <LocalServiceArea serviceName="Divorce Counseling" />
+  <LocalServiceArea
+    serviceName="Divorce Counseling"
+    title="Divorce Counseling in Schaumburg and the Northwest Suburbs"
+    paragraphs={[
+      'Dr. Jelena Djurovic offers divorce and separation counseling at her Schaumburg office, serving clients from Palatine, Hoffman Estates, Mount Prospect, Arlington Heights, and surrounding communities in Cook and DuPage counties. Sessions can begin before, during, or after divorce proceedings.',
+      'Telehealth is available for clients throughout Illinois who prefer online sessions. If you are unsure whether individual therapy or a different type of support would be more helpful, reaching out to ask is a reasonable first step.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

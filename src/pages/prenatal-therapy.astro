@@ -7,15 +7,35 @@ import LocalServiceArea from '../components/LocalServiceArea.astro';
 import TopicHero from '../components/TopicHero.astro';
 import TopicOverviewSection from '../components/TopicOverviewSection.astro';
 import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const supportAreas = [
-  "Pregnancy-related anxiety and uncertainty",
-  "Medical stress and decision fatigue",
-  "Fear around labor, parenting, or major life change",
-  "Relationship strain during pregnancy",
-  "History of anxiety, depression, trauma, or reproductive loss",
-  "Identity changes and emotional adjustment to pregnancy"
+  {
+    title: 'Pregnancy-related anxiety and uncertainty',
+    desc: "Persistent worry about the pregnancy, the baby's health, or your ability to cope. Anxiety during pregnancy is common and can feel isolating when people around you expect you to feel only excitement."
+  },
+  {
+    title: 'Medical stress and decision fatigue',
+    desc: 'Navigating complicated test results, specialist appointments, medication decisions, or high-risk pregnancy concerns can create a level of stress that is hard to process alone.'
+  },
+  {
+    title: 'Fear around labor, parenting, or major life change',
+    desc: 'Fear of delivery, fear of not being a good enough parent, or the weight of how much life is about to change. These fears are normal and worth talking through rather than pushing down.'
+  },
+  {
+    title: 'Relationship strain during pregnancy',
+    desc: 'Pregnancy can shift the dynamic between partners. Communication may feel harder, needs may feel unmet, and old conflicts can resurface at a time when emotional resources are already stretched.'
+  },
+  {
+    title: 'History of anxiety, depression, trauma, or reproductive loss',
+    desc: 'When pregnancy is happening in the context of prior mental health challenges, past loss, or difficult fertility experiences, the emotional stakes feel higher and the need for support becomes more specific.'
+  },
+  {
+    title: 'Identity changes and emotional adjustment to pregnancy',
+    desc: 'Shifts in how you see yourself, your body, your career, or your future can create a kind of grief or disorientation that often goes unacknowledged during pregnancy.'
+  }
 ];
 
 const relatedLinks = [
@@ -37,32 +57,43 @@ const relatedLinks = [
 ];
 
 const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Support during pregnancy and reproductive stress'];
+const featureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person prenatal therapy in Schaumburg in a calm, supportive environment.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Makes room for anxiety, grief, medical stress, and relationship changes that pregnancy can intensify.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth across Illinois for clients in any trimester who need support without the added travel.'
+  }
+];
 
 const careStyle = [
   {
     title: 'Warm and stabilizing',
-    desc: 'Helpful when pregnancy feels emotionally vulnerable, uncertain, or more intense than expected.'
+    desc: 'Helpful when pregnancy feels emotionally vulnerable or more intense than you were prepared for, especially with medical uncertainty.'
   },
   {
     title: 'Practical and emotionally aware',
-    desc: 'Makes room for both feelings and the real-life demands of medical decisions, relationships, and change.'
+    desc: 'Makes room for both the feelings and the real-world demands of appointments, decisions, relationships, and preparing for birth.'
   },
   {
     title: 'Built for layered history',
-    desc: 'Especially relevant when pregnancy overlaps with anxiety, trauma, infertility, or reproductive loss.'
+    desc: 'Especially relevant when pregnancy is happening alongside anxiety, prior trauma, fertility treatment, or reproductive loss.'
   }
 ];
 
 const overviewParagraphs = [
+  'This service is for pregnant individuals who are experiencing more emotional difficulty than they expected and want a space where that is taken seriously. Pregnancy does not have to feel joyful every day for you to deserve support.',
   'Pregnancy is often described as a joyful period, but many people also experience fear, grief, irritability, pressure, uncertainty, and emotional vulnerability. That does not mean you are doing anything wrong. It means you are living through a major transition.',
-  'Prenatal therapy can help you process what is coming up emotionally while giving you steadier tools for coping, communication, and self-care.',
-  'If you are looking for prenatal therapy near Schaumburg, sessions can happen in person there or online anywhere in Illinois.'
+  'Prenatal therapy can help you process what is coming up emotionally while giving you steadier tools for coping, communication, and self-care.'
 ];
 
-const overviewCards = supportAreas.map((area) => ({
-  title: area,
-  desc: 'A common way pregnancy can bring more emotional pressure, uncertainty, or vulnerability into daily life.'
-}));
+const overviewCards = supportAreas;
 
 const processParagraphs = [
   'Prenatal therapy may be particularly helpful if pregnancy is happening alongside infertility history, reproductive loss, high stress, trauma history, prior depression or anxiety, or significant family or relationship strain.',
@@ -99,6 +130,11 @@ const faqItems = [
       'Yes. Prenatal therapy is available in person in Schaumburg and by telehealth for clients anywhere in Illinois.'
   },
   {
+    question: 'Can prenatal therapy continue into postpartum support after delivery?',
+    answer:
+      'Yes. Many clients begin therapy during pregnancy and continue into the postpartum period. This continuity allows the work to build on what was already established rather than starting over with a new provider.'
+  },
+  {
     question: 'Can prenatal therapy help if I already have a history of anxiety or trauma?',
     answer:
       'Yes. Prenatal therapy may be especially helpful when pregnancy overlaps with prior anxiety, depression, trauma, infertility stress, or reproductive loss.'
@@ -127,8 +163,10 @@ const serviceStructuredData = getServiceStructuredData({
     imageAlt="Quiet therapy office for prenatal support"
     imageSrc="/images/prenatal-therapy.jpg"
     fitText="support during pregnancy when fear, pressure, grief, or uncertainty need more room and steadiness"
+    fitDescription="This service is for pregnant individuals who are experiencing more emotional difficulty than they expected and want a space where that is taken seriously. Pregnancy does not have to feel joyful every day for you to deserve support."
     signals={signals}
     careStyle={careStyle}
+    featureCards={featureCards}
   />
 
   <TopicOverviewSection
@@ -145,7 +183,17 @@ const serviceStructuredData = getServiceStructuredData({
     steps={processSteps}
   />
 
-  <LocalServiceArea serviceName="Prenatal Therapy" />
+  <LocalServiceArea
+    serviceName="Prenatal Therapy"
+    title="Prenatal Therapy in Schaumburg and Nearby Communities"
+    paragraphs={[
+      'Dr. Jelena Djurovic provides prenatal therapy at her Schaumburg office, accessible for clients from Rolling Meadows, Hanover Park, Elk Grove Village, Streamwood, and other northwest suburban communities. Her doctoral research on the mind-body relationship directly informs her approach to the emotional demands of pregnancy.',
+      'Telehealth is available throughout Illinois for clients in any stage of pregnancy. Prenatal therapy can also be a useful foundation before transitioning to postpartum support after birth.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

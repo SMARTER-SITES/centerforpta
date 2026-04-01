@@ -4,9 +4,9 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
-import { Image } from 'astro:assets';
-import officeImg from '../assets/hero-office.png';
 
 const focusAreas = [
   {
@@ -51,6 +51,11 @@ const quickSignals = [
   'English, Serbian, and Spanish'
 ];
 
+const localSectionParagraphs = [
+  "Dr. Jelena Djurovic provides in-person women's mental health therapy at her Schaumburg office, conveniently located for clients coming from Arlington Heights, Hoffman Estates, Palatine, Rolling Meadows, and the surrounding area. Telehealth sessions are also available for anyone located in Illinois who prefers the flexibility of online therapy.",
+  "If you are looking for a licensed clinical psychologist who specializes in women's mental health near Schaumburg, you can reach out through the contact page to ask about fit, scheduling, and next steps."
+];
+
 const processSteps = [
   {
     title: 'Name What Is Happening',
@@ -74,6 +79,11 @@ const faqItems = [
     question: "Do you offer women's mental health therapy in Schaumburg and online across Illinois?",
     answer:
       'Yes. Dr. Jelena Djurovic offers in-person therapy in Schaumburg, Illinois and telehealth sessions for clients located anywhere in Illinois.'
+  },
+  {
+    question: 'Do you see clients from Arlington Heights, Palatine, and other nearby suburbs?',
+    answer:
+      'Yes. The Schaumburg office is a short drive from Arlington Heights, Palatine, Hoffman Estates, Rolling Meadows, and other communities in the northwest suburbs. Telehealth is also available for anyone in Illinois.'
   },
   {
     question: "What concerns can be addressed in women's mental health therapy?",
@@ -122,7 +132,7 @@ const serviceStructuredData = getServiceStructuredData({
           </h1>
 
           <p class="mt-8 text-lg md:text-2xl text-gray-700 leading-relaxed max-w-2xl">
-            Support for reproductive challenges, body image concerns, substance use concerns, relationship stress, and the emotional demands that can come with different stages of a woman's life.
+            Support for reproductive challenges, body image concerns, substance use concerns, relationship stress, and the emotional demands that can come with different stages of life.
           </p>
 
           <div class="mt-7 flex flex-wrap gap-3">
@@ -146,7 +156,7 @@ const serviceStructuredData = getServiceStructuredData({
           <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
             <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
               <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Local Care</p>
-              <p class="text-sm text-gray-700 leading-relaxed">In-person therapy in Schaumburg with a calm, private setting.</p>
+              <p class="text-sm text-gray-700 leading-relaxed">In-person therapy in Schaumburg with a calm, private office designed for focused clinical work.</p>
             </div>
             <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
               <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Whole-Person Focus</p>
@@ -154,7 +164,7 @@ const serviceStructuredData = getServiceStructuredData({
             </div>
             <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
               <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Flexible Format</p>
-              <p class="text-sm text-gray-700 leading-relaxed">Telehealth available across Illinois when that fits your life better.</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Telehealth available across Illinois for clients who need consistent support without the commute.</p>
             </div>
           </div>
         </div>
@@ -162,14 +172,11 @@ const serviceStructuredData = getServiceStructuredData({
         <div class="relative">
           <div class="relative bg-white/70 backdrop-blur-sm border border-white rounded-[2.25rem] p-4 md:p-5 shadow-[0_24px_70px_rgba(0,0,0,0.08)]">
             <div class="rounded-[1.9rem] overflow-hidden h-[320px] md:h-[460px]">
-              <Image
-                src={officeImg}
-                alt="Therapy office in Schaumburg"
+              <img
+                src="/images/womens-mental-health-therapy.jpg"
+                alt="Women's mental health therapy office in Schaumburg"
                 class="w-full h-full object-cover"
-                format="webp"
-                quality={78}
-                widths={[640, 1200]}
-                sizes="(max-width: 1024px) 100vw, 620px"
+                loading="eager"
               />
             </div>
 
@@ -180,7 +187,7 @@ const serviceStructuredData = getServiceStructuredData({
                   therapy that can hold both emotional pain and the practical realities of daily life
                 </p>
                 <p class="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">
-                  This page is designed for people who want more than generic reassurance and need thoughtful, grounded care.
+                  This service is designed for women navigating overlapping stressors who need more than surface-level reassurance. Whether the concern is reproductive, relational, physical, or emotional, the goal is care that fits the full picture.
                 </p>
               </div>
 
@@ -189,15 +196,15 @@ const serviceStructuredData = getServiceStructuredData({
                 <div class="space-y-4">
                   <div>
                     <p class="text-base font-bold text-[#1a1a1a]">Warm and direct</p>
-                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Support that is emotionally attuned without feeling vague or overly polished.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Support that is emotionally attuned without being vague. You will know where you stand and what the work is focused on.</p>
                   </div>
                   <div>
                     <p class="text-base font-bold text-[#1a1a1a]">Practical and reflective</p>
-                    <p class="text-sm text-gray-600 leading-relaxed mt-1">A mix of insight, coping support, and steadier self-understanding.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">A mix of insight, coping support, and steadier self-understanding that translates into how you actually move through your day.</p>
                   </div>
                   <div>
                     <p class="text-base font-bold text-[#1a1a1a]">Built for complexity</p>
-                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Useful when several stressors overlap instead of fitting neatly into one issue.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Especially helpful when several stressors are overlapping at once and no single label captures what you are dealing with.</p>
                   </div>
                 </div>
               </div>
@@ -279,7 +286,14 @@ const serviceStructuredData = getServiceStructuredData({
     </div>
   </section>
 
-  <LocalServiceArea serviceName="Women's Mental Health Therapy" />
+  <LocalServiceArea
+    serviceName="Women's Mental Health Therapy"
+    title="Women's Mental Health Therapy in Schaumburg and the Greater Northwest Suburbs"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <FaqSection
     faqs={faqItems}

@@ -14,11 +14,39 @@ interface Props {
   imageAlt: string;
   imageSrc?: string;
   fitText: string;
+  fitDescription?: string;
   signals: string[];
   careStyle: CareStyleItem[];
+  featureCards?: CareStyleItem[];
 }
 
-const { title, accent, description, imageAlt, imageSrc, fitText, signals, careStyle } = Astro.props;
+const defaultFeatureCards = [
+  {
+    title: 'Local Care',
+    desc: 'In-person therapy in Schaumburg with a calm, private setting.'
+  },
+  {
+    title: 'Whole-Person Focus',
+    desc: 'Thoughtful support for overlapping emotional, relational, and life-stage stress.'
+  },
+  {
+    title: 'Flexible Format',
+    desc: 'Telehealth available across Illinois when that fits your life better.'
+  }
+];
+
+const {
+  title,
+  accent,
+  description,
+  imageAlt,
+  imageSrc,
+  fitText,
+  fitDescription = 'This page is designed for people who want support that feels thoughtful, grounded, and actually usable in daily life.',
+  signals,
+  careStyle,
+  featureCards = defaultFeatureCards
+} = Astro.props;
 ---
 
 <section class="relative pt-28 md:pt-36 pb-16 md:pb-24 bg-[linear-gradient(180deg,#fcfbf9_0%,#f6f1ea_100%)] overflow-hidden">
@@ -62,18 +90,12 @@ const { title, accent, description, imageAlt, imageSrc, fitText, signals, careSt
         </div>
 
         <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
-          <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
-            <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Local Care</p>
-            <p class="text-sm text-gray-700 leading-relaxed">In-person therapy in Schaumburg with a calm, private setting.</p>
-          </div>
-          <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
-            <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Whole-Person Focus</p>
-            <p class="text-sm text-gray-700 leading-relaxed">Thoughtful support for overlapping emotional, relational, and life-stage stress.</p>
-          </div>
-          <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
-            <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Flexible Format</p>
-            <p class="text-sm text-gray-700 leading-relaxed">Telehealth available across Illinois when that fits your life better.</p>
-          </div>
+          {featureCards.map((card) => (
+            <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">{card.title}</p>
+              <p class="text-sm text-gray-700 leading-relaxed">{card.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -106,9 +128,7 @@ const { title, accent, description, imageAlt, imageSrc, fitText, signals, careSt
               <p class="text-lg md:text-[22px] font-bold leading-snug">
                 {fitText}
               </p>
-              <p class="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">
-                This page is designed for people who want support that feels thoughtful, grounded, and actually usable in daily life.
-              </p>
+              <p class="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">{fitDescription}</p>
             </div>
 
             <div class="rounded-[1.5rem] bg-[#f7faf8] border border-[#dce9e4] p-6 md:p-7">
