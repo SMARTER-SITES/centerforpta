@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import headshotImg from '../assets/Jelena-Djurovic-headshot.png';
+import { providerLicenseNumber } from '../utils/seo';
 
 const conditions = [
   "Marital problems", "Addiction", "Anxiety", "Depression", "OCD", "ADHD", 
@@ -118,6 +119,9 @@ const whoWeTreat = [
           <h2 class="text-3xl md:text-4xl xl:text-[48px] font-extrabold text-[#1a1a1a] xl:leading-snug tracking-tight">
             Dr. Jelena Djurovic, Psy.D.
           </h2>
+          <p class="mt-4 text-sm md:text-base font-semibold uppercase tracking-[0.18em] text-[#2f594f]">
+            Illinois Licensed Clinical Psychologist | License #{providerLicenseNumber}
+          </p>
 
           <div class="mt-8 flex flex-col gap-6 text-[17px] md:text-[19px] text-gray-700 leading-relaxed font-medium">
             <p>

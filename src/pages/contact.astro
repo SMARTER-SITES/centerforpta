@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { providerLicenseNumber } from '../utils/seo';
 ---
 
 <Layout
@@ -60,6 +61,7 @@ import Footer from '../components/Footer.astro';
             <div>
               <p class="text-sm text-[#147b6a] font-bold uppercase tracking-wider mb-2">Our Office</p>
               <p class="text-xl md:text-2xl font-extrabold text-[#1a1a1a] mb-2 leading-tight">1320 Tower Rd, Suite 156<br />Schaumburg, IL 60173</p>
+              <p class="text-sm md:text-base font-semibold text-[#0d5c4e] uppercase tracking-[0.16em]">Illinois License #{providerLicenseNumber}</p>
             </div>
           </div>
         </div>

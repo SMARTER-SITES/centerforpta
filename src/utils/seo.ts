@@ -5,6 +5,7 @@ export const defaultDescription =
   'Psychotherapy, couples therapy, psychological assessments, immigration evaluations, and pre-surgical evaluations in Schaumburg, Illinois.';
 export const defaultOgImage = `${siteUrl}/images/og-default.png`;
 export const logoUrl = `${siteUrl}/images/logo.png`;
+export const providerLicenseNumber = '071-011433';
 
 export interface FaqItem {
   question: string;
@@ -50,7 +51,12 @@ export function getBaseStructuredData(description: string) {
     founder: {
       '@type': 'Person',
       name: 'Dr. Jelena Djurovic',
-      jobTitle: 'Licensed Clinical Psychologist'
+      jobTitle: 'Licensed Clinical Psychologist',
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'Illinois Clinical Psychologist License',
+        value: providerLicenseNumber
+      }
     },
     address: {
       '@type': 'PostalAddress',
