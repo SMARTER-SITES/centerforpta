@@ -1,0 +1,116 @@
+---
+import {
+  practiceProfile,
+  serviceDirectory,
+  webMcpToolSpecs
+} from '../utils/agent-ready-data.js';
+---
+
+<script
+  is:inline
+  define:vars={{
+    practiceProfile,
+    serviceDirectory,
+    webMcpToolSpecs
+  }}
+>
+  const createResponse = (data) => ({
+    ok: true,
+    data
+  });
+
+  const normalizeText = (value = '') => value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+
+  const matchServices = (topic) => {
+    const normalizedTopic = normalizeText(topic);
+
+    if (!normalizedTopic) {
+      return [];
+    }
+
+    return serviceDirectory
+      .map((service) => {
+        const hits = (service.keywords || []).filter((keyword) =>
+          normalizedTopic.includes(normalizeText(keyword))
+        );
+
+        return {
+          service,
+          score: hits.length,
+          hits
+        };
+      })
+      .filter((entry) => entry.score > 0)
+      .sort((left, right) => right.score - left.score || left.service.name.localeCompare(right.service.name))
+      .slice(0, 3)
+      .map((entry) => ({
+        name: entry.service.name,
+        url: `${practiceProfile.homepage.replace(/\/$/, '')}${entry.service.path}`,
+        description: entry.service.description,
+        matchedKeywords: entry.hits
+      }));
+  };
+
+  const toolExecutors = {
+    'get-practice-overview': () =>
+      createResponse({
+        name: practiceProfile.name,
+        provider: practiceProfile.provider,
+        location: practiceProfile.location,
+        languages: practiceProfile.languages,
+        serviceFormats: practiceProfile.serviceFormats,
+        contact: practiceProfile.contact
+      }),
+    'list-services': ({ includeDescriptions = true } = {}) =>
+      createResponse({
+        services: serviceDirectory.map((service) => ({
+          name: service.name,
+          url: `${practiceProfile.homepage.replace(/\/$/, '')}${service.path}`,
+          description: includeDescriptions ? service.description : undefined
+        }))
+      }),
+    'match-service-needs': ({ topic } = {}) =>
+      createResponse({
+        topic,
+        matches: matchServices(topic)
+      }),
+    'get-contact-options': () =>
+      createResponse({
+        contact: practiceProfile.contact,
+        contactPage: practiceProfile.contact.contactPage,
+        bestNextStep: 'Use the contact page, phone, text, or email to ask about fit, scheduling, and next steps.'
+      })
+  };
+
+  const registerWebMcpTools = () => {
+    const modelContext = window.navigator?.modelContext;
+
+    if (!modelContext) {
+      return;
+    }
+
+    const tools = webMcpToolSpecs.map((tool) => ({
+      ...tool,
+      execute: (input = {}) => toolExecutors[tool.name](input)
+    }));
+
+    if (typeof modelContext.provideContext === 'function') {
+      modelContext.provideContext({ tools });
+      return;
+    }
+
+    if (typeof modelContext.registerTool === 'function') {
+      for (const tool of tools) {
+        try {
+          modelContext.unregisterTool?.(tool.name);
+        } catch {
+          // Ignore duplicate cleanup failures so registration can proceed.
+        }
+
+        modelContext.registerTool(tool);
+      }
+    }
+  };
+
+  registerWebMcpTools();
+</script>

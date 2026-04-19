@@ -9,6 +9,7 @@ import {
   siteUrl
 } from '../utils/seo';
 import type { FaqItem } from '../utils/seo';
+import WebMcpProvider from '../components/WebMcpProvider.astro';
 
 interface Props {
   title?: string;
@@ -124,5 +125,6 @@ const structuredData = [
   </head>
   <body class="font-inter bg-white antialiased">
     <slot />
+    <WebMcpProvider />
   </body>
 </html>
