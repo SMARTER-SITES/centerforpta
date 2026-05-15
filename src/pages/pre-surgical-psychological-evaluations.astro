@@ -2,11 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const timeline = [
-  { step: "1. Clinical Interview", desc: "A comprehensive discussion about your medical history, weight loss journey, current lifestyle, and support systems." },
-  { step: "2. Psychological Testing", desc: "Taking standardized questionnaires to assess emotional well-being and identify any potential psychological barriers." },
-  { step: "3. Feedback & Clearance", desc: "A review of the assessment results, providing tailored recommendations and finalizing your psychological clearance." }
+  { step: "1. Clinical Interview", desc: "A comprehensive conversation about medical history, weight-loss journey, current lifestyle, and support systems." },
+  { step: "2. Psychological Testing", desc: "Completion of standardized questionnaires to evaluate emotional functioning and possible psychological barriers." },
+  { step: "3. Feedback and Clearance", desc: "Review of assessment findings, personalized recommendations, and finalization of psychological clearance." }
 ];
 
 const relatedLinks = [
@@ -18,19 +22,64 @@ const relatedLinks = [
   {
     href: '/rates-and-insurance',
     title: 'Rates and Insurance',
-    desc: 'Review current rates, accepted insurance plans, and next steps before scheduling an evaluation.'
+    desc: 'Review current rates, accepted insurance, and next steps before scheduling an evaluation.'
   },
   {
     href: '/contact',
-    title: 'Contact Us',
+    title: 'Contact',
     desc: 'Reach out to schedule a pre-surgical or bariatric psychological evaluation in Schaumburg, IL.'
   }
 ];
+
+const pageDescription =
+  'Pre-surgical and bariatric psychological evaluations in Schaumburg, IL for medical clearance, readiness assessment, and clear reporting for surgical and medical teams.';
+
+const faqItems = [
+  {
+    question: 'Who may need a pre-surgical psychological evaluation?',
+    answer:
+      'Some bariatric programs and medical teams require a psychological evaluation before surgery to understand emotional readiness, behavioral patterns, mental health history, support systems, and areas where additional support may be useful.'
+  },
+  {
+    question: 'Is this the same as bariatric counseling?',
+    answer:
+      'No. A pre-surgical or bariatric psychological evaluation is a structured assessment and report for medical clearance. Bariatric counseling is ongoing therapeutic support before or after surgery for adjustment, body image, behavior change, and emotional coping.'
+  },
+  {
+    question: 'What happens during the evaluation process?',
+    answer:
+      'The process usually includes a clinical interview, review of relevant history, standardized questionnaires when appropriate, feedback, and written documentation for the referring medical or surgical team.'
+  },
+  {
+    question: 'Can the office coordinate with my surgeon or bariatric program?',
+    answer:
+      'Yes. With written consent, the office can coordinate with the program or medical team so the evaluation includes the needed documentation and clinical questions.'
+  },
+  {
+    question: 'Are evaluations available in English, Serbian, and Spanish?',
+    answer:
+      'Yes. Evaluations are available in English, Serbian, and Spanish, which can help clients describe medical, behavioral, and emotional history more accurately.'
+  }
+];
+
+const localSectionParagraphs = [
+  'Pre-surgical and bariatric psychological evaluations are available in person at the Schaumburg office for clients from Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, and nearby northwest suburbs.',
+  'An online format may be available for clients in Illinois when clinically appropriate and accepted by the referring surgical or medical program.'
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Pre-Surgical Psychological Evaluations',
+  description: pageDescription,
+  path: '/pre-surgical-psychological-evaluations/',
+  serviceType: 'Pre-Surgical and Bariatric Psychological Evaluation'
+});
 ---
 
 <Layout
   title="Pre-Surgical and Bariatric Psychological Evaluations in Schaumburg, IL | Dr. Jelena Djurovic"
-  description="Pre-surgical and bariatric psychological evaluations in Schaumburg, IL with clear reporting, timely scheduling, and care available in English, Serbian, and Spanish."
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
@@ -43,7 +92,7 @@ const relatedLinks = [
         Pre-Surgical Psychological Evaluations in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        We provide pre-surgical psychological evaluations in Schaumburg, Illinois for bariatric surgery and other medical procedures that require mental health clearance.
+        We provide pre-surgical psychological evaluations in Schaumburg, Illinois, for bariatric surgery and other medical procedures requiring psychological clearance.
       </p>
     </div>
   </section>
@@ -53,12 +102,12 @@ const relatedLinks = [
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="flex flex-col md:flex-row gap-12 items-center">
         <div class="md:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Why Is an Evaluation Needed?</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Why is an evaluation needed?</h2>
           <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Pre-surgical psychological evaluations help determine emotional readiness, behavioral strengths, and potential areas of concern before a medical procedure. Our goal is to provide a clear, supportive, and efficient evaluation process that helps you move forward with confidence.
+            Pre-surgical psychological evaluations help assess emotional readiness, behavioral strengths, and possible areas of risk before a medical procedure. The goal is a clear, supportive, and efficient process that helps you move forward with more confidence.
           </p>
           <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Dr. Jelena Djurovic conducts thorough clinical interviews, reviews relevant history, and provides clear documentation for surgeons, medical programs, and bariatric teams. Evaluations are available in English, Serbian, and Spanish.
+            Dr. Jelena Djurovic conducts detailed clinical interviews, reviews relevant history, and prepares clear documentation for surgeons, medical programs, and bariatric teams. Evaluations are available in English, Serbian, and Spanish.
           </p>
           <div class="bg-[#d1f3f1] inline-block px-6 py-3 rounded-full text-[#0d5c4e] font-bold">
             Available in English, Spanish, and Serbian
@@ -88,10 +137,46 @@ const relatedLinks = [
 
   <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-16 items-start">
+        <div>
+          <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Support for Medical Clearance</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Readiness Evaluation and Surgical Clearance Report</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            A pre-surgical psychological evaluation is different from general therapy. It is a focused assessment that helps the medical team understand readiness, strengths, risk factors, support needs, and recommendations that can help the client move forward safely.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            These evaluations are often required before bariatric surgery and may also be needed for other medical procedures where emotional readiness and behavioral health are part of the clearance process.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Bariatric readiness</h3>
+            <p class="text-gray-700 leading-relaxed">Assessment of emotional readiness, eating-related patterns, support systems, and coping capacity before bariatric surgery.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Documentation for medical teams</h3>
+            <p class="text-gray-700 leading-relaxed">Clear written documentation can be prepared for surgeons, bariatric programs, and other medical teams.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Evaluation vs. counseling</h3>
+            <p class="text-gray-700 leading-relaxed">An evaluation provides assessment and reporting; ongoing counseling can support adjustment before or after surgery.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Language availability</h3>
+            <p class="text-gray-700 leading-relaxed">Services are available in English, Serbian, and Spanish for clearer communication during the assessment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Helpful Next Steps</h2>
         <p class="text-lg text-gray-700">
-          If you are preparing for surgery, these pages can help you understand the evaluation process, cost, and how to get scheduled quickly.
+          If you are preparing for surgery, these pages can help you understand the evaluation process, cost, and how to schedule quickly.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -105,11 +190,24 @@ const relatedLinks = [
     </div>
   </section>
 
+  <LocalServiceArea
+    serviceName="Pre-Surgical and Bariatric Psychological Evaluations"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <FaqSection
+    title="Pre-Surgical Evaluation FAQ"
+    intro="Common questions about bariatric clearance, medical team coordination, and what the evaluation includes."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+
   <!-- CTA section -->
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Schedule Your Pre-Surgical Evaluation</h2>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Schedule a Pre-Surgical Evaluation</h2>
       <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>

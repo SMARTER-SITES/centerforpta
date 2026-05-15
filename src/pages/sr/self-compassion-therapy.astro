@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import TopicHero from '../../components-sr/TopicHero.astro';
+import TopicOverviewSection from '../../components-sr/TopicOverviewSection.astro';
+import TopicProcessSection from '../../components-sr/TopicProcessSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const patterns = [
+  {
+    title: 'Oštra samokritika i stid',
+    desc: 'Kada unutrašnji glas više zvuči kao sudija nego kao podrška. Samokritika se može pojaviti kao stalno preispitivanje, vraćanje na razgovore ili osećaj da ništa što uradite nije dovoljno dobro.'
+  },
+  {
+    title: 'Perfekcionizam i burnout',
+    desc: 'Kada visoki standardi prestanu da motivišu i počnu da iscrpljuju. Perfekcionizam može tiho trošiti energiju, odlagati odluke i učiniti da odmor deluje kao neuspeh.'
+  },
+  {
+    title: 'Teško prihvatanje grešaka ili ograničenja',
+    desc: 'Kada i male greške bole nesrazmerno mnogo. To se može pokazati kroz izbegavanje novih izazova, preterano izvinjavanje ili stalno vraćanje na trenutke doživljenog neuspeha.'
+  },
+  {
+    title: 'Osećaj da nikada niste dovoljno dobri uprkos velikom trudu',
+    desc: 'Kada priznanje, postignuća ili uveravanja drugih nikada zaista ne dopru do vas. Jaz između onoga što postižete i onoga što osećate da zaslužujete može postati veoma usamljujuć.'
+  },
+  {
+    title: 'Negativna slika tela ili hronično samoosuđivanje',
+    desc: 'Kada stres zbog izgleda, starenja ili težine postane svakodnevni izvor pritiska koji utiče na samopouzdanje, odnose ili spremnost da budete viđeni.'
+  },
+  {
+    title: 'Teškoća da prema sebi budete blagi pod stresom',
+    desc: 'Kada sebi govorite stvari koje nikada ne biste rekli prijatelju. Stres, razočaranje ili ranjivost pokreću strogoću umesto podrške.'
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/womens-mental-health-therapy',
+    title: "Terapija za mentalno zdravlje žena",
+    desc: 'Podrška za sliku tela, reproduktivne izazove i stres u životnim fazama.'
+  },
+  {
+    href: '/sr/therapy',
+    title: 'Terapija',
+    desc: 'Pogledajte širu terapijsku podršku za anksioznost, depresiju, traumu i životne promene.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Javite se da pitate za terapiju uživo ili online širom Illinoisa.'
+  }
+];
+
+const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Korisno za anksioznost, stid i burnout'];
+const featureCards = [
+  {
+    title: 'Lokalna podrška',
+    desc: 'Seanse uživo u mirnoj ordinaciji u Schaumburgu, gde fokus ostaje u potpunosti na vama.'
+  },
+  {
+    title: 'Celovit pristup',
+    desc: 'Povezuje samokritiku, anksioznost, burnout i obrasce koji ih održavaju.'
+  },
+  {
+    title: 'Fleksibilan format',
+    desc: 'Online širom Illinoisa kada odlazak u ordinaciju deluje kao još jedna obaveza na već predugoj listi.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Toplo i direktno',
+    desc: 'Stabilan stil rada koji pravi prostor za iskrenost bez dodatnog sloja samoosuđivanja.'
+  },
+  {
+    title: 'Praktično i reflektivno',
+    desc: 'Korisno kada već razumete svoje obrasce, ali samo razumevanje nije bilo dovoljno da ih promeni.'
+  },
+  {
+    title: 'Za ljude pod pritiskom',
+    desc: 'Za osobe koje od sebe traže mnogo i kojima treba podrška koja poštuje ambiciju, ali ne hrani perfekcionizam.'
+  }
+];
+
+const overviewParagraphs = [
+  'Ovaj rad je za ljude koji spolja funkcionišu dobro, ali ih iznutra iscrpljuje sopstveni glas. Ako ste pokušali da budete stroži prema sebi i to nije pomoglo, ovo je drugačiji put.',
+  'Terapija samosaosećanja nije spuštanje standarda niti izbegavanje odgovornosti. To je učenje kako da prema sebi odgovorite iskreno, stabilno i brižno, umesto kaznom, prezirom ili neprekidnim pritiskom.',
+  'Terapija se fokusira na razumevanje odakle dolazi unutrašnji kritičar, kako se sada pojavljuje i kako izgraditi zdraviji unutrašnji odnos koji podržava promenu umesto da je blokira.'
+];
+
+const overviewCards = patterns;
+
+const processParagraphs = [
+  "Ova stranica odražava važan deo pristupa dr Djurovic. Tretman može uključivati rad zasnovan na samosaosećanju, mindfulness intervencije, relacionu terapiju i kognitivno-bihejvioralne strategije, u zavisnosti od toga šta stoji na putu promene.",
+  'Cilj nije da budete beskrajno pozitivni. Cilj je da budete stabilniji, sa manje stida i sa više jasnoće i emocionalne fleksibilnosti u svakodnevnom životu.'
+];
+
+const processSteps = [
+  {
+    title: 'Prepoznajte unutrašnjeg kritičara',
+    desc: 'Naučite kako vam se samokritika obraća i šta pokušava da kontroliše ili spreči.'
+  },
+  {
+    title: 'Razumite šta ju je oblikovalo',
+    desc: 'Istražite prethodna iskustva, očekivanja i emocionalne navike zbog kojih je strogoća delovala neophodno.'
+  },
+  {
+    title: 'Izgradite drugačiji odgovor',
+    desc: 'Vežbajte stabilniji i podržavajući unutrašnji stav koji promenu čini realnijom i održivijom.'
+  }
+];
+
+const pageDescription =
+  'Terapija samosaosećanja u Schaumburgu, IL uz online seanse širom Illinoisa za samokritiku, stid, perfekcionizam, burnout, probleme slike tela i zdraviji odnos prema sebi.';
+
+const faqItems = [
+  {
+    question: 'Šta je terapija samosaosećanja?',
+    answer:
+      'Terapija samosaosećanja fokusira se na promenu načina na koji se odnosite prema sebi pod stresom. Može pomoći da se smanje oštra samokritika, perfekcionizam, stid i osećaj da nikada ne radite dovoljno.'
+  },
+  {
+    question: 'Da li nudite terapiju samosaosećanja u Schaumburgu, IL?',
+    answer:
+      'Da. Seanse su dostupne uživo u Schaumburgu, a online terapija je dostupna klijentima širom Illinoisa.'
+  },
+  {
+    question: 'Da li je terapija samosaosećanja dostupna blizu Elk Grove Village ili Mount Prospect?',
+    answer:
+      'Da. Ordinacija u Schaumburgu je blizu Elk Grove Village, Mount Prospect, Des Plaines i okolnih mesta. Online seanse su dostupne širom Illinoisa.'
+  },
+  {
+    question: 'Da li terapija samosaosećanja pomaže kod anksioznosti ili burnout-a?',
+    answer:
+      'Često da. Ovaj pristup može biti koristan kada anksioznost, burnout, stres oko slike tela ili hronično samoosuđivanje pojačava previše kritičan unutrašnji glas.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Terapija samosaosećanja',
+  description: pageDescription,
+  path: '/sr/self-compassion-therapy/',
+  serviceType: 'Terapija samosaosećanja'
+});
+---
+
+<Layout
+  title="Terapija samosaosećanja u Schaumburgu, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+  <TopicHero
+    title="Terapija samosaosećanja"
+    accent="za stabilniji unutrašnji glas"
+    description="Terapija za ljude iscrpljene samokritikom, perfekcionizmom, stidom ili stalnim osećajem da bi trebalo bolje da se nose sa životom."
+    imageAlt="Mirna ordinacija za terapiju u Schaumburgu"
+    imageSrc="/images/self-compassion-therapy.jpg"
+    fitText="podrška koja pomaže da idete napred bez stida kao goriva"
+    fitDescription="Ovaj rad je za ljude koji spolja funkcionišu dobro, ali ih iznutra iscrpljuje sopstveni glas. Ako ste pokušali da budete stroži prema sebi i to nije pomoglo, ovo je drugačiji put."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Šta ovaj rad podržava"
+    title="Šta rad na samosaosećanju može promeniti"
+    paragraphs={overviewParagraphs}
+    cards={overviewCards}
+  />
+
+  <TopicProcessSection
+    eyebrow="Kako funkcioniše"
+    title="Bolji odnos prema sebi može postati praktična veština"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Terapija samosaosećanja"
+    title="Terapija samosaosećanja u Schaumburgu i širom Illinoisa"
+    paragraphs={[
+      'Dr Jelena Djurovic nudi terapiju usmerenu na samosaosećanje u ordinaciji u Schaumburgu, kratkom vožnjom od Palatine, Elk Grove Village, Mount Prospect i drugih severozapadnih predgrađa. Njen pristup se direktno oslanja na istraživanja dr Kristin Neff o samosaosećanju, uz mindfulness intervencije i AEDP.',
+      'Online seanse su dostupne odraslima širom Illinoisa. Ako niste sigurni da li ovaj fokus odgovara vašoj situaciji, prvi razuman korak je da se javite i pitate.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Kratki odgovori o tome kako ova usluga funkcioniše i kome može odgovarati."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane stranice</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Blaži odnos prema sebi može promeniti mnogo toga</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

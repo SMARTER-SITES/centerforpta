@@ -25,6 +25,8 @@ const staticPages = [
   '/postpartum-therapy/'
 ];
 
+const srStaticPages = staticPages.map((path) => (path === '/' ? '/sr/' : `/sr${path}`));
+
 const blogModules = import.meta.glob('./blog/*.md', { eager: true }) as Record<
   string,
   { frontmatter?: { date?: string | Date } }
@@ -41,6 +43,11 @@ const blogPages = Object.entries(blogModules).map(([file, module]) => {
   };
 });
 
+const srBlogPages = blogPages.map((page) => ({
+  ...page,
+  path: `/sr${page.path}`
+}));
+
 function toUrl(path: string) {
   return new URL(path, siteUrl).toString();
 }
@@ -48,7 +55,9 @@ function toUrl(path: string) {
 export const GET: APIRoute = () => {
   const urls = [
     ...staticPages.map((path) => ({ path })),
-    ...blogPages
+    ...blogPages,
+    ...srStaticPages.map((path) => ({ path })),
+    ...srBlogPages
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>

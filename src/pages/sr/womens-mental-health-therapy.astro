@@ -1,0 +1,342 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const focusAreas = [
+  {
+    title: "Reproduktivni izazovi",
+    desc: "Terapijska podrška za stres oko plodnosti, neizvesnost u trudnoći, reproduktivni gubitak, medicinske odluke i emocionalni pritisak koji može pratiti pokušaje začeća ili promenu planova."
+  },
+  {
+    title: "Reproduktivno zdravlje",
+    desc: "Podrška za emocionalni uticaj reproduktivnih zdravstvenih tema, promena očekivanja, postpartalnog prilagođavanja i načina na koji reproduktivna iskustva mogu uticati na identitet, odnose i svakodnevno funkcionisanje."
+  },
+  {
+    title: "Slika tela i osećaj sopstvene vrednosti",
+    desc: "Podržavajući prostor za rad kroz stid, oštru samokritiku, stres oko izgleda i pritisak koji mnoge žene osećaju u vezi sa težinom, starenjem i identitetom."
+  },
+  {
+    title: "Upotreba supstanci",
+    desc: "Pristup upotrebi supstanci usmeren na samosaosećanje, koji pravi prostor za stid, samoosuđivanje, emocionalnu preplavljenost i obrasce koji ljude drže zaglavljenim."
+  },
+  {
+    title: "Važne životne faze i tranzicije",
+    desc: "Podrška za anksioznost, burnout, promene uloga, napetost u odnosima, pritisak brige o drugima i promene identiteta kroz različite faze odraslog života."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/prenatal-therapy',
+    title: 'Prenatalna terapija',
+    desc: 'Podrška tokom trudnoće za anksioznost, stres, neizvesnost i emocionalno prilagođavanje.'
+  },
+  {
+    href: '/sr/postpartum-therapy',
+    title: 'Postpartalna terapija',
+    desc: 'Postnatalna podrška za promene raspoloženja, preplavljenost, promene identiteta i oporavak.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Javite se da pitate za terapiju u Schaumburgu ili online širom Illinoisa.'
+  }
+];
+
+const quickSignals = [
+  'Uživo u Schaumburgu',
+  'Online širom Illinoisa',
+  'engleski, srpski i španski'
+];
+
+const localSectionParagraphs = [
+  "Dr Jelena Djurovic pruža terapiju za mentalno zdravlje žena uživo u ordinaciji u Schaumburgu, koja je praktična za klijentkinje iz Arlington Heights, Hoffman Estates, Palatine, Rolling Meadows i okoline. Online seanse su dostupne svima u Illinoisu koji preferiraju fleksibilnost online terapije.",
+  "Ako tražite licenciranog kliničkog psihologa specijalizovanog za mentalno zdravlje žena blizu Schaumburga, možete se javiti preko kontakt stranice i pitati za uklapanje, termine i sledeće korake."
+];
+
+const processSteps = [
+  {
+    title: 'Imenujte šta se dešava',
+    desc: 'Počnite od konkretnih stresora, simptoma i pritisaka koji oblikuju vaše trenutno iskustvo, umesto da sve pokušate da smestite u jednu etiketu.'
+  },
+  {
+    title: 'Razumite obrazac',
+    desc: 'Istražite kako anksioznost, stid, odnosi, istorija i zahtevi životne faze međusobno deluju, kako bi rad bio precizniji i manje preplavljujući.'
+  },
+  {
+    title: 'Izgradite stabilniju podršku',
+    desc: 'Koristite praktične alate nošenja, rad usmeren na uvid i saosećajniji unutrašnji odnos kako bi promena zaista mogla da se održi.'
+  }
+];
+
+const pageDescription =
+  "Terapija za mentalno zdravlje žena u Schaumburgu, IL uz online seanse širom Illinoisa za reproduktivne izazove, reproduktivno zdravlje, sliku tela, upotrebu supstanci, životne promene, anksioznost i stres u odnosima.";
+
+const faqItems = [
+  {
+    question: "Da li nudite terapiju za mentalno zdravlje žena u Schaumburgu i online širom Illinoisa?",
+    answer:
+      'Da. Dr Jelena Djurovic nudi terapiju uživo u Schaumburgu, Illinois, i online seanse za klijentkinje širom Illinoisa.'
+  },
+  {
+    question: 'Da li primate klijentkinje iz Arlington Heights, Palatine i okolnih predgrađa?',
+    answer:
+      'Da. Ordinacija u Schaumburgu je kratka vožnja od Arlington Heights, Palatine, Hoffman Estates, Rolling Meadows i drugih mesta u severozapadnim predgrađima. Online seanse su dostupne svima u Illinoisu.'
+  },
+  {
+    question: "Koje teme se mogu raditi u terapiji za mentalno zdravlje žena?",
+    answer:
+      "Ovaj rad može obuhvatiti reproduktivne izazove, teme reproduktivnog zdravlja, stres oko plodnosti, reproduktivni gubitak, trudnoću i postpartalne teme, stres oko slike tela, stres u odnosima, upotrebu supstanci i velike životne promene."
+  },
+  {
+    question: "Da li se upotreba supstanci tretira odvojeno od reproduktivnog zdravlja?",
+    answer:
+      "Da. Upotreba supstanci i reproduktivno zdravlje mogu se obrađivati zasebno ili kao odvojeni delovi šire kliničke slike. Rad nije ograničen na upotrebu supstanci tokom trudnoće."
+  },
+  {
+    question: "Da li je ova stranica samo za teme vezane za trudnoću?",
+    answer:
+      "Ne. Trudnoća i reproduktivne teme jesu deo ovog rada, ali terapija za mentalno zdravlje žena može podržati i anksioznost, burnout, promene identiteta, stid, samokritiku, napetost u odnosima i druge preklapajuće emocionalne stresore."
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: "Terapija za mentalno zdravlje žena",
+  description: pageDescription,
+  path: '/sr/womens-mental-health-therapy/',
+  serviceType: "Terapija za mentalno zdravlje žena"
+});
+---
+
+<Layout
+  title="Terapija za mentalno zdravlje žena u Schaumburgu, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+
+  <section class="relative pt-28 md:pt-36 pb-16 md:pb-24 bg-[linear-gradient(180deg,#fcfbf9_0%,#f6f1ea_100%)] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[42%] h-[42%] bg-[#e0eae5] rounded-full opacity-70 blur-3xl lg:blur-[100px]"></div>
+    <div class="absolute top-[18%] right-[-8%] w-[30%] h-[40%] bg-[#f4e8e1] rounded-full opacity-60 blur-3xl lg:blur-[100px]"></div>
+    <div class="absolute bottom-[-10%] right-[10%] w-[28%] h-[28%] bg-[#fdf3df] rounded-full opacity-70 blur-3xl lg:blur-[100px]"></div>
+
+    <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 xl:gap-20 items-center">
+        <div>
+          <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-white shadow-sm mb-7">
+            <span class="h-2.5 w-2.5 rounded-full bg-[#2f594f]"></span>
+            <span class="text-[11px] md:text-[13px] font-bold text-gray-600 uppercase tracking-[0.18em]">Specijalizovana terapija</span>
+          </div>
+
+          <h1 class="text-[42px] md:text-[58px] xl:text-[72px] font-extrabold text-[#1a1a1a] leading-[0.98] tracking-[-0.03em] max-w-4xl">
+            Terapija za mentalno zdravlje žena
+            <span class="block text-[#2f594f] italic font-medium mt-2">sa prostorom za složenost</span>
+          </h1>
+
+          <p class="mt-8 text-lg md:text-2xl text-gray-700 leading-relaxed max-w-2xl">
+            Podrška za reproduktivne izazove, reproduktivno zdravlje, sliku tela, upotrebu supstanci, stres u odnosima i emocionalne zahteve različitih životnih faza.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            {quickSignals.map((item) => (
+              <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/85 border border-white shadow-sm text-sm font-semibold text-[#1a1a1a]">
+                <span class="text-[#2f594f]">•</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="/sr/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
+              Zakažite konsultaciju
+            </a>
+            <a href="/sr/rates-and-insurance" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
+              Cene i osiguranje
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+            <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Lokalna podrška</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Terapija uživo u Schaumburgu, u mirnoj privatnoj ordinaciji osmišljenoj za fokusiran klinički rad.</p>
+            </div>
+            <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Celovit pristup</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Korisno kada se stres proteže kroz odnose, identitet, sliku tela i reproduktivne teme.</p>
+            </div>
+            <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
+              <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Fleksibilan format</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Online terapija širom Illinoisa za klijentkinje kojima treba kontinuirana podrška bez putovanja.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="relative bg-white/70 backdrop-blur-sm border border-white rounded-[2.25rem] p-4 md:p-5 shadow-[0_24px_70px_rgba(0,0,0,0.08)]">
+            <div class="rounded-[1.9rem] overflow-hidden h-[320px] md:h-[460px]">
+              <img
+                src="/images/womens-mental-health-therapy.jpg"
+                alt="Ordinacija za terapiju mentalnog zdravlja žena u Schaumburgu"
+                class="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_0.9fr] gap-4 mt-4">
+              <div class="rounded-[1.5rem] bg-[#2f594f] text-white p-6 md:p-7">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#d7ebe5] mb-3">Može biti dobar izbor ako vam treba</p>
+                <p class="text-lg md:text-[22px] font-bold leading-snug">
+                  terapija koja može obuhvatiti i emocionalni bol i praktične realnosti svakodnevnog života
+                </p>
+                <p class="mt-4 text-sm md:text-[15px] leading-relaxed text-white/80">
+                  Ova usluga je osmišljena za žene koje prolaze kroz preklapajuće stresore i kojima treba više od površnog ohrabrenja. Bilo da je tema reproduktivna, relaciona, fizička ili emocionalna, cilj je podrška koja obuhvata celu sliku.
+                </p>
+              </div>
+
+              <div class="rounded-[1.5rem] bg-[#f7faf8] border border-[#dce9e4] p-6 md:p-7">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-3">Stil rada</p>
+                <div class="space-y-4">
+                  <div>
+                    <p class="text-base font-bold text-[#1a1a1a]">Toplo i direktno</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Podrška koja je emocionalno usklađena, ali nije nejasna. Znaćete gde stojite i na šta je rad usmeren.</p>
+                  </div>
+                  <div>
+                    <p class="text-base font-bold text-[#1a1a1a]">Praktično i reflektivno</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Spoj uvida, podrške za nošenje i stabilnijeg razumevanja sebe koji se prenosi u svakodnevno funkcionisanje.</p>
+                  </div>
+                  <div>
+                    <p class="text-base font-bold text-[#1a1a1a]">Za složenost</p>
+                    <p class="text-sm text-gray-600 leading-relaxed mt-1">Posebno korisno kada se više stresora preklapa i nijedna etiketa ne obuhvata u potpunosti ono kroz šta prolazite.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 xl:gap-16 items-start">
+        <div class="lg:sticky lg:top-32">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-4">Zašto ova stranica postoji</p>
+          <h2 class="text-3xl md:text-4xl xl:text-[46px] font-bold text-[#1a1a1a] tracking-tight leading-tight mb-6">
+            Prostor za nijansiranu, saosećajnu podršku
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Mentalno zdravlje žena često oblikuju preklapajuće emocionalne, relacione, kulturne i fizičke realnosti. Možda se nosite sa stresom oko plodnosti, reproduktivnim zdravljem, trudnoćom ili postpartalnim promenama, stresom oko slike tela, teškoćama u odnosima, upotrebom supstanci ili velikim životnim promenama dok i dalje pokušavate da funkcionišete svakodnevno.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Terapija ovde treba da bude stabilna i konkretna. Cilj nije da se iskustvo svede na slogan, već da se razume šta se dešava i da se osećate stabilnije unutar toga.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {focusAreas.map((item, index) => (
+            <div class:list={[
+              'rounded-[2rem] border p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg',
+              index % 2 === 0
+                ? 'bg-[#fcfbf9] border-gray-100'
+                : 'bg-[#f7faf8] border-[#dce9e4]'
+            ]}>
+              <div class="w-11 h-11 rounded-full bg-white border border-gray-200 flex items-center justify-center text-sm font-bold text-[#2f594f] mb-5">
+                0{index + 1}
+              </div>
+              <h3 class="text-2xl font-bold text-[#1a1a1a] mb-4">{item.title}</h3>
+              <p class="text-gray-600 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="rounded-[2.5rem] bg-[#1f3f37] text-white overflow-hidden shadow-[0_24px_60px_rgba(31,63,55,0.18)]">
+        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="p-8 md:p-12 xl:p-16 border-b lg:border-b-0 lg:border-r border-white/10">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#cfe6df] mb-4">Kako podrška može početi</p>
+            <h2 class="text-3xl md:text-4xl xl:text-[44px] font-bold tracking-tight leading-tight mb-6">Kako rad može izgledati</h2>
+            <p class="text-lg text-white/80 leading-relaxed mb-6">
+              Ovaj rad može biti koristan ako se osećate emocionalno iscrpljeno, odvojeno od sebe, preplavljeno očekivanjima, zaglavljeno u samokritici ili usamljeno u onome što nosite.
+            </p>
+            <p class="text-lg text-white/80 leading-relaxed">
+              Mnoge žene traže terapiju ne zato što nešto nije u redu sa njima, već zato što im treba prostor gde se celokupno iskustvo može razumeti bez umanjivanja.
+            </p>
+          </div>
+
+          <div class="p-8 md:p-12 xl:p-16">
+            <div class="space-y-8">
+              {processSteps.map((step, index) => (
+                <div class="flex gap-5 items-start">
+                  <div class="w-12 h-12 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-sm font-bold text-[#fcc13e] flex-none">
+                    0{index + 1}
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-bold mb-3">{step.title}</h3>
+                    <p class="text-white/75 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <LocalServiceArea
+    serviceName="Terapija za mentalno zdravlje žena"
+    title="Terapija za mentalno zdravlje žena u Schaumburgu i širem severozapadnom predgrađu"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Ovi odgovori pokrivaju najčešća lokalna pitanja i pitanja o uklapanju pre javljanja."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezana podrška</h2>
+        <p class="text-lg text-gray-700">
+          Ove stranice mogu biti posebno korisne ako su trenutne brige vezane za trudnoću, postpartalno prilagođavanje ili početak terapije.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ne morate sve nositi sami</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

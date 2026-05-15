@@ -9,42 +9,42 @@ type NavLink = {
 };
 
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
+  { name: 'Početna', href: '/sr/' },
+  { name: 'O nama', href: '/sr/about' },
   { 
-    name: 'Services', 
+    name: 'Usluge', 
     dropdown: [
-      { name: 'Core Services', kind: 'label' },
-      { name: 'Therapy', href: '/therapy' },
-      { name: 'Pre-Surgical Evaluations', href: '/pre-surgical-psychological-evaluations' },
-      { name: 'Psychological Assessment', href: '/psychological-assessment' },
-      { name: 'Immigration Evaluations', href: '/immigration-evaluations' },
-      { name: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching' },
-      { name: 'Therapy Topics', kind: 'label' },
-      { name: "Women's Mental Health", href: '/womens-mental-health-therapy' },
-      { name: 'Self-Compassion', href: '/self-compassion-therapy' },
-      { name: 'Weight Loss Counseling', href: '/weight-loss-counseling' },
-      { name: 'Bariatric Counseling', href: '/bariatric-surgery-counseling' },
-      { name: 'Divorce Counseling', href: '/divorce-counseling' },
-      { name: 'Prenatal Therapy', href: '/prenatal-therapy' },
-      { name: 'Postpartum Therapy', href: '/postpartum-therapy' }
+      { name: 'Glavne usluge', kind: 'label' },
+      { name: 'Terapija', href: '/sr/therapy' },
+      { name: 'Predoperativne evaluacije', href: '/sr/pre-surgical-psychological-evaluations' },
+      { name: 'Psihološka procena', href: '/sr/psychological-assessment' },
+      { name: 'Imigracione evaluacije', href: '/sr/immigration-evaluations' },
+      { name: 'Konsultacije i koučing', href: '/sr/consultation-supervision-and-coaching' },
+      { name: 'Teme u terapiji', kind: 'label' },
+      { name: 'Mentalno zdravlje žena', href: '/sr/womens-mental-health-therapy' },
+      { name: 'Samosaosećanje', href: '/sr/self-compassion-therapy' },
+      { name: 'Savetovanje za mršavljenje', href: '/sr/weight-loss-counseling' },
+      { name: 'Barijatrijsko savetovanje', href: '/sr/bariatric-surgery-counseling' },
+      { name: 'Savetovanje tokom razvoda', href: '/sr/divorce-counseling' },
+      { name: 'Prenatalna terapija', href: '/sr/prenatal-therapy' },
+      { name: 'Postpartalna terapija', href: '/sr/postpartum-therapy' }
     ] as NavLink[]
   },
   {
-    name: 'Resources',
+    name: 'Resursi',
     dropdown: [
-      { name: 'Book Recommendations', href: '/book-recommendations' },
-      { name: 'Our Partners', href: '/our-partners' },
-      { name: 'Useful Links', href: '/useful-links' }
+      { name: 'Preporučene knjige', href: '/sr/book-recommendations' },
+      { name: 'Naši partneri', href: '/sr/our-partners' },
+      { name: 'Korisni linkovi', href: '/sr/useful-links' }
     ]
   },
-  { name: 'Rates and Insurance', href: '/rates-and-insurance' },
-  { name: 'Blog', href: '/blog/' },
-  { name: 'Contact Us', href: '/contact' }
+  { name: 'Cene i osiguranje', href: '/sr/rates-and-insurance' },
+  { name: 'Blog', href: '/sr/blog/' },
+  { name: 'Kontakt', href: '/sr/contact' }
 ];
 
-const srPath = Astro.url.pathname === '/' ? '/sr/' : `/sr${Astro.url.pathname}`;
-const srSwitchHref = `${srPath}?lang=sr`;
+const enPath = Astro.url.pathname.replace(/^\/sr(?=\/|$)/, '') || '/';
+const enSwitchHref = `${enPath}?lang=en`;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-4 transition-all duration-300" id="navbar">
@@ -52,10 +52,10 @@ const srSwitchHref = `${srPath}?lang=sr`;
     <nav class="flex items-center justify-between w-full px-5 py-3.5 bg-white border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)] rounded-2xl md:rounded-full relative z-20">
       
       <!-- Brand -->
-      <a href="/" class="flex flex-col ml-2">
+      <a href="/sr/" class="flex flex-col ml-2">
         <Image 
           src={logoImg} 
-          alt="Center for Psychological Treatment and Assessment Logo" 
+          alt="Logo Centra za psihološki tretman i procenu" 
           class="h-12 md:h-14 w-auto object-contain" 
           loading="eager" 
           fetchpriority="high" 
@@ -77,16 +77,16 @@ const srSwitchHref = `${srPath}?lang=sr`;
               </button>
               <div class:list={[
                 "absolute top-[120%] left-0 bg-white border border-gray-100 shadow-xl rounded-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:top-full group-hover:visible transition-all duration-300 z-50",
-                item.name === 'Services' ? 'w-[30rem]' : 'w-64'
+                item.name === 'Usluge' ? 'w-[30rem]' : 'w-64'
               ]}>
                 <div class:list={[
-                  item.name === 'Services' ? 'grid grid-cols-2 gap-x-2' : 'flex flex-col'
+                  item.name === 'Usluge' ? 'grid grid-cols-2 gap-x-2' : 'flex flex-col'
                 ]}>
                   {item.dropdown.map(subItem => (
                     subItem.kind === 'label' ? (
                       <div class:list={[
                         "px-5 pt-3 pb-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2f594f]",
-                        item.name === 'Services' ? 'col-span-2 first:pt-1' : ''
+                        item.name === 'Usluge' ? 'col-span-2 first:pt-1' : ''
                       ]}>
                         {subItem.name}
                       </div>
@@ -113,18 +113,18 @@ const srSwitchHref = `${srPath}?lang=sr`;
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
           (847) 230-0045
         </a>
-        <a href="/contact" class="hidden lg:flex items-center justify-center px-6 md:px-7 py-2.5 md:py-3 bg-[#2f594f] text-white text-sm md:text-base font-semibold rounded-full shadow-lg shadow-[#2f594f]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none">
-          Book Consultation
+        <a href="/sr/contact" class="hidden lg:flex items-center justify-center px-6 md:px-7 py-2.5 md:py-3 bg-[#2f594f] text-white text-sm md:text-base font-semibold rounded-full shadow-lg shadow-[#2f594f]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none">
+          Zakažite konsultaciju
         </a>
-        <a href={srSwitchHref} class="hidden lg:flex items-center justify-center px-4 py-2.5 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Switch to Serbian">
-          SR
+        <a href={enSwitchHref} class="hidden lg:flex items-center justify-center px-4 py-2.5 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Prebacite na engleski">
+          EN
         </a>
-        <a href={srSwitchHref} class="lg:hidden flex items-center justify-center w-11 h-11 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Switch to Serbian">
-          SR
+        <a href={enSwitchHref} class="lg:hidden flex items-center justify-center w-11 h-11 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Prebacite na engleski">
+          EN
         </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-[#2f594f] transition-colors focus:outline-none" aria-label="Toggle Menu">
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-600 hover:text-[#2f594f] transition-colors focus:outline-none" aria-label="Otvori meni">
           <svg id="icon-menu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -171,11 +171,11 @@ const srSwitchHref = `${srPath}?lang=sr`;
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
             (847) 230-0045
           </a>
-          <a href="/contact" class="flex items-center justify-center px-6 py-3 bg-[#2f594f] text-white text-base font-bold rounded-full">
-            Book Consultation
+          <a href="/sr/contact" class="flex items-center justify-center px-6 py-3 bg-[#2f594f] text-white text-base font-bold rounded-full">
+            Zakažite konsultaciju
           </a>
-          <a href={srSwitchHref} class="flex items-center justify-center px-6 py-3 border border-gray-200 text-[#2f594f] text-base font-bold rounded-full" aria-label="Switch to Serbian">
-            Srpski
+          <a href={enSwitchHref} class="flex items-center justify-center px-6 py-3 border border-gray-200 text-[#2f594f] text-base font-bold rounded-full" aria-label="Prebacite na engleski">
+            English
           </a>
         </div>
       </div>

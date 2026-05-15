@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import TopicHero from '../../components-sr/TopicHero.astro';
+import TopicOverviewSection from '../../components-sr/TopicOverviewSection.astro';
+import TopicProcessSection from '../../components-sr/TopicProcessSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const supportAreas = [
+  {
+    title: "Promene raspoloženja i preplavljenost",
+    desc: "Podrška za postpartalnu depresiju, postpartalnu anksioznost, razdražljivost, plačljivost, ubrzane misli ili osećaj da je sve odjednom teže nego što ste očekivali."
+  },
+  {
+    title: "Promene identiteta i odnosa",
+    desc: "Podrška u obradi emocionalnih promena koje dolaze sa roditeljstvom, promena u partnerstvu, preopterećenosti ulogama i osećaja da niste svoji."
+  },
+  {
+    title: "Oporavak i prilagođavanje",
+    desc: "Prostor za razgovor o poremećenom snu, stresu, samokritici, gubitku rutine i izazovu brige o sebi dok brinete o bebi."
+  },
+  {
+    title: "Postnatalna emocionalna podrška",
+    desc: "Postnatalna terapija može pomoći kada vam treba stabilna podrška posle porođaja, bilo da su simptomi jaki ili se jednostavno osećate emocionalno istanjeno."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/prenatal-therapy',
+    title: 'Prenatalna terapija',
+    desc: 'Podrška tokom trudnoće za anksioznost, neizvesnost i stres tranzicije.'
+  },
+  {
+    href: '/sr/womens-mental-health-therapy',
+    title: "Terapija za mentalno zdravlje žena",
+    desc: 'Šira podrška za reproduktivne teme, sliku tela i izazove životnih faza.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Pitajte za postpartalnu terapiju uživo ili online u Illinoisu.'
+  }
+];
+
+const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Postpartalna i postnatalna podrška'];
+const featureCards = [
+  {
+    title: 'Lokalna podrška',
+    desc: 'Postpartalna terapija uživo u Schaumburgu, u privatnom prostoru za nove roditelje kojima treba fokusirana podrška.'
+  },
+  {
+    title: 'Celovit pristup',
+    desc: 'Bavi se promenama raspoloženja, promenama identiteta, napetošću u odnosima i razlikom između očekivanja i realnosti posle porođaja.'
+  },
+  {
+    title: 'Fleksibilan format',
+    desc: 'Online širom Illinoisa so new parents can access support during naps, breaks, or whenever a session fits the day.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Toplo i bez posramljivanja',
+    desc: 'Korisno kada osećate da biste trebalo bolje da se snalazite. Ovo je prostor gde se teškoća očekuje, ne osuđuje.'
+  },
+  {
+    title: 'Emocionalno praktično',
+    desc: 'Fokusirano na svakodnevnu preplavljenost, poremećen san, trenje u odnosima i pritisak da delujete kao da se snalazite kada to nije slučaj.'
+  },
+  {
+    title: 'Za ranu podršku',
+    desc: 'Ne morate čekati da stvari postanu ozbiljne. Javljanje kada nešto deluje pogrešno često je najefikasniji trenutak za početak.'
+  }
+];
+
+const overviewParagraphs = [
+  'Ova usluga je za nove roditelje kojima je teže nego što su očekivali i kojima treba podrška dublja od rečenice da će biti lakše. Bilo da su simptomi intenzivni ili se jednostavno ne osećate kao vi, oba su validan razlog da se javite.',
+  'Postpartalni period može biti duboko značajan, ali i emocionalno dezorganizujući. Mnogi novi roditelji osećaju stid kada im je teško jer misle da bi trebalo bolje da se nose ili da se osećaju drugačije.',
+  'Postpartalna terapija stvara prostor da iskreno govorite o tome šta se dešava, uz praktičnu i emocionalnu podršku za ovu fazu života.'
+];
+
+const processParagraphs = [
+  'Terapija može biti korisna kada su simptomi ozbiljni, ali može pomoći i mnogo ranije, kada jednostavno primetite da se posle porođaja osećate preplavljeno, nepovezano, iscrpljeno ili kao da niste svoji.',
+  'Podrška se može fokusirati na emocionalnu stabilizaciju, samosaosećanje, komunikaciju, realna očekivanja i vraćanje snažnijeg osećaja sebe tokom zahtevne faze.'
+];
+
+const processSteps = [
+  {
+    title: 'Iskreno razgovarajte o tome šta se promenilo',
+    desc: 'Napravite prostor za preplavljenost, tugu, anksioznost ili nepovezanost bez umanjivanja onoga što postpartalni period može doneti.'
+  },
+  {
+    title: 'Stabilizujte ono što deluje nestabilno',
+    desc: 'Podržite stres vezan za san, emocionalnu reaktivnost, napetost u odnosima i osećaj da niste sasvim svoji.'
+  },
+  {
+    title: 'Povratite stabilniji osećaj sebe',
+    desc: 'Izgradite realnija očekivanja i više podrške oko verzije života koju sada zaista živite.'
+  }
+];
+
+const pageDescription =
+  'Postpartalna terapija u Schaumburgu, IL uz online seanse širom Illinoisa za postpartalnu anksioznost, postpartalnu depresiju, preplavljenost, promene identiteta, stres u odnosima i postnatalnu emocionalnu podršku.';
+
+const faqItems = [
+  {
+    question: 'U čemu može pomoći postpartalna terapija?',
+    answer:
+      'Postpartalna terapija može pomoći kod postpartalne anksioznosti, postpartalne depresije, razdražljivosti, preplavljenosti, promena identiteta, napetosti u odnosima, poremećenog sna i emocionalnog prilagođavanja posle porođaja.'
+  },
+  {
+    question: 'Da li nudite postpartalnu terapiju u Schaumburgu, IL i online?',
+    answer:
+      'Da. Seanse su dostupne uživo u Schaumburgu, a online terapija je dostupna klijentima širom Illinoisa.'
+  },
+  {
+    question: 'Koliko brzo posle porođaja mogu početi postpartalnu terapiju?',
+    answer:
+      'Ne postoji minimalni period čekanja. Neke klijentkinje se jave u prvih nekoliko nedelja posle porođaja, a druge kasnije. Ordinacija u Schaumburgu dostupna je iz Arlington Heights, Des Plaines, Rolling Meadows i okolnih predgrađa, a online terapija je dostupna svima u Illinoisu.'
+  },
+  {
+    question: 'Da li je postpartalna terapija samo za teške simptome?',
+    answer:
+      'Ne. Terapija može biti prikladna kada su simptomi teški, ali može pomoći i mnogo ranije ako se posle porođaja osećate emocionalno istanjeno, kao da niste svoji ili preplavljeno.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Postpartalna terapija',
+  description: pageDescription,
+  path: '/sr/postpartum-therapy/',
+  serviceType: 'Postpartalna terapija'
+});
+---
+
+<Layout
+  title="Postpartalna terapija u Schaumburgu, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+  <TopicHero
+    title="Postpartalna terapija"
+    accent="kada je period posle porođaja teži nego što ste očekivali"
+    description="Postnatalna podrška mentalnom zdravlju za postpartalnu anksioznost, postpartalnu depresiju, preplavljenost, promene identiteta, stres u odnosima i emocionalni oporavak posle porođaja."
+    imageAlt="Ordinacija za terapiju koja pruža postpartalnu podršku"
+    imageSrc="/images/postpartum-therapy.jpg"
+    fitText="podrška posle porođaja kada preplavljenost, anksioznost, iscrpljenost ili nepovezanost zauzmu previše prostora"
+    fitDescription="Ova usluga je za nove roditelje kojima je teže nego što su očekivali i kojima treba podrška dublja od rečenice da će biti lakše. Bilo da su simptomi intenzivni ili se jednostavno ne osećate kao vi, oba su validan razlog da se javite."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Postpartalna podrška"
+    title="Kada postpartalni period emocionalno deluje teže nego što ste očekivali"
+    paragraphs={overviewParagraphs}
+    cards={supportAreas}
+  />
+
+  <TopicProcessSection
+    eyebrow="Rana podrška je važna"
+    title="Ne morate čekati krizu"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Postpartalna terapija"
+    title="Postpartalna terapija u Schaumburgu i širem severozapadnom predgrađu"
+    paragraphs={[
+      'Dr Jelena Djurovic nudi postpartalnu terapiju u ordinaciji u Schaumburgu za nove roditelje iz Arlington Heights, Des Plaines, Mount Prospect, Palatine, Hoffman Estates i okoline. Njeno iskustvo sa perinatalnim mentalnim zdravljem omogućava da rad počne brzo, bez trošenja seansi na osnovna objašnjenja.',
+      'Online terapija je dostupna širom Illinoisa, što mnogi novi roditelji preferiraju u postpartalnom periodu. Ako ste počeli prenatalnu terapiju i želite da nastavite u postpartalnu podršku, taj kontinuitet je dostupan i često koristan.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Nekoliko čestih pitanja o postpartalnoj i postnatalnoj podršci, lokaciji i vremenu početka."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane stranice</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Postpartalna podrška je prava podrška</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

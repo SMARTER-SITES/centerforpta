@@ -1,0 +1,224 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const cases = [
+  { title: "Slučajevi azila", desc: "Dokumentovanje psihološke traume, PTSP-a ili drugih posledica po mentalno zdravlje zbog progona ili straha od progona u zemlji porekla." },
+  { title: "Extreme hardship waiver slučajevi", desc: "Prikazivanje izuzetnih i neuobičajeno teških posledica koje bi američki državljanin ili stalni rezident mogao pretrpeti ako član porodice bude deportovan." },
+  { title: "VAWA (Violence Against Women Act)", desc: "Pružanje kliničkih dokaza o emocionalnom i psihološkom zlostavljanju kod osoba koje su bile u nasilnom odnosu sa američkim državljaninom ili stalnim rezidentom." },
+  { title: "U vize i T vize", desc: "Procena posledica po mentalno zdravlje kod osoba koje su bile žrtve ozbiljnog fizičkog ili psihološkog zlostavljanja, trgovine ljudima ili drugih ozbiljnih krivičnih dela." },
+  { title: "Cancellation of Removal", desc: "Procena ozbiljnog psihološkog uticaja koji bi deportacija imala na podnosioca zahteva, decu ili druge kvalifikovane članove porodice." }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/contact',
+    title: 'Zatražite konsultaciju za imigracionu evaluaciju',
+    desc: 'Kontaktirajte ordinaciju da pitate za zakazivanje, rokove, dostupne jezike ili saradnju sa vašim advokatom.'
+  },
+  {
+    href: '/sr/rates-and-insurance',
+    title: 'Cene i informacije o plaćanju',
+    desc: 'Pogledajte cene evaluacije i praktične informacije pre zakazivanja imigracione procene.'
+  },
+  {
+    href: '/sr/therapy',
+    title: 'Terapijske usluge',
+    desc: 'Pogledajte kontinuiranu terapijsku podršku za anksioznost, traumu, tugu i velike životne promene.'
+  }
+];
+
+const pageDescription =
+  'Imigracione psihološke evaluacije u Schaumburgu i širom Illinoisa za azil, hardship waiver, VAWA, U vize, T vize i cancellation of removal, uz izveštaje dostupne na engleskom, srpskom i španskom jeziku.';
+
+const faqItems = [
+  {
+    question: 'Koje vrste imigracionih slučajeva psihološka evaluacija može podržati?',
+    answer:
+      'Psihološka evaluacija može podržati slučajeve azila, extreme hardship waiver-a, VAWA, U vize, T vize i cancellation of removal kada je dokumentacija o mentalnom zdravlju klinički relevantna za predmet.'
+  },
+  {
+    question: 'Da li sarađujete sa imigracionim advokatima?',
+    answer:
+      'Da. Kada klijent odobri komunikaciju, dr Jelena Djurovic može koordinisati sa advokatom kako bi evaluacija odgovorila na referalno pitanje i klinički relevantne aspekte slučaja.'
+  },
+  {
+    question: 'Koliko košta imigraciona psihološka evaluacija?',
+    answer:
+      'Imigracione evaluacije počinju od $1,500. Konačni obim može zavisiti od vrste slučaja, dokumentacije za pregled, koordinacije sa advokatom i rokova.'
+  },
+  {
+    question: 'Da li su imigracione evaluacije dostupne na srpskom, engleskom i španskom jeziku?',
+    answer:
+      'Da. Testiranje i procena dostupni su na srpskom, engleskom i španskom jeziku, što je posebno važno kada se govori o traumi, hardship okolnostima i porodičnoj istoriji.'
+  },
+  {
+    question: 'Da li evaluacija može biti urađena online u Illinoisu?',
+    answer:
+      'Termini uživo dostupni su u Schaumburgu, a online format može biti dostupan za klijente koji se nalaze u Illinoisu kada je klinički prikladan za evaluaciju.'
+  }
+];
+
+const localSectionParagraphs = [
+  'Ordinacija u Schaumburgu nalazi se na adresi 1320 Tower Rd, Suite 156, što je praktično za klijente i advokate iz Schaumburga, Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village i šireg severozapadnog predgrađa.',
+  'Imigracione evaluacije mogu biti dostupne i online za klijente u drugim delovima Illinoisa kada je taj format klinički prikladan i u skladu sa potrebama slučaja.'
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Imigracione psihološke evaluacije',
+  description: pageDescription,
+  path: '/sr/immigration-evaluations/',
+  serviceType: 'Imigraciona psihološka evaluacija'
+});
+---
+
+<Layout
+  title="Imigracione psihološke evaluacije u Schaumburgu, IL | Dr. Jelena Djurovic"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Imigracione psihološke evaluacije u Schaumburgu, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Klinički temeljne imigracione evaluacije za azil, hardship waiver, VAWA, U vize, T vize i cancellation of removal slučajeve širom Illinoisa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Temeljne kliničke evaluacije koje podržavaju imigracione slučajeve</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Dobro pripremljena imigraciona psihološka evaluacija može biti važan deo snažnog pravnog slučaja. Pružamo detaljne, klinički utemeljene evaluacije koje jasno i profesionalno dokumentuju traumu, hardship okolnosti i uticaj na mentalno zdravlje.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            Proces uključuje klinički intervju, psihološko testiranje kada je prikladno i pisani izveštaj prilagođen pravnim potrebama slučaja. Dr Jelena Djurovic redovno sarađuje sa advokatima i razume važnost jasnoće, kredibiliteta i pravovremene komunikacije.
+          </p>
+          <div class="bg-[#e0eae5] border-l-4 border-[#147b6a] p-6 rounded-r-xl">
+             <p class="text-[17px] text-[#0d5c4e] font-bold">
+              Testiranje i procene nudimo na srpskom, engleskom i španskom jeziku.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 w-full space-y-4">
+          <h3 class="text-2xl font-bold text-[#1a1a1a] mb-6">Vrste imigracionih slučajeva koje podržavamo</h3>
+          {cases.map(type => (
+            <div class="bg-[#fcfbf9] border border-gray-100 p-6 rounded-2xl hover:shadow-md transition-shadow">
+              <h4 class="text-xl font-bold text-[#2f594f] mb-2">{type.title}</h4>
+              <p class="text-gray-600 leading-relaxed">{type.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-16 items-start">
+        <div>
+          <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Za advokate i klijente</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Klinička dokumentacija za imigracione predmete</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Imigracione psihološke evaluacije treba da budu klinički utemeljene, jasne i usmerene na pravno pitanje. Cilj nije generički terapijski jezik, već pažljiva evaluacija koja dokumentuje simptome, istoriju traume, hardship okolnosti, funkcionisanje i relevantne kliničke nalaze.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Uz pisanu saglasnost, ordinacija može koordinisati sa advokatom oko rokova, vrste slučaja, dokumentacije i specifičnih kliničkih pitanja na koja evaluacija treba da odgovori.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Koordinacija sa advokatom</h3>
+            <p class="text-gray-700 leading-relaxed">Referalna pitanja, rokovi, dokumentacija i specifične brige vezane za slučaj mogu se razmotriti kada klijent odobri komunikaciju.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Detaljan izveštaj</h3>
+            <p class="text-gray-700 leading-relaxed">Izveštaji se pripremaju tako da jasno dokumentuju kliničke nalaze za imigracioni postupak i advokatski pregled.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Dostupnost jezika</h3>
+            <p class="text-gray-700 leading-relaxed">Evaluacije su dostupne na srpskom, engleskom i španskom jeziku kako bi klijenti mogli preciznije da opišu ličnu istoriju.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Dostupno u Illinoisu</h3>
+            <p class="text-gray-700 leading-relaxed">Dođite uživo u Schaumburg ili pitajte da li je online format prikladan za evaluaciju u Illinoisu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="bg-white border border-gray-100 rounded-[2rem] p-8 md:p-10 shadow-sm">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Proces imigracione evaluacije</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Proces obično uključuje početnu konsultaciju, detaljan klinički intervju, psihološko testiranje kada je klinički indicirano i pisani izveštaj pripremljen za imigracioni postupak. Pažljivo koordiniramo sa klijentima i, kada je prikladno, njihovim advokatima kako bi evaluacija odgovorila na potrebe slučaja.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <LocalServiceArea
+    serviceName="Imigracione psihološke evaluacije"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <FaqSection
+    title="Česta pitanja o imigracionoj evaluaciji"
+    intro="Česta pitanja o vrstama slučajeva, koordinaciji sa advokatom, ceni, jezicima i lokaciji."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezani resursi</h2>
+        <p class="text-lg text-gray-700">
+          Ove stranice mogu pomoći da se pripremite za proces evaluacije i brzo kontaktirate ordinaciju.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ojačajte svoj slučaj na vreme</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

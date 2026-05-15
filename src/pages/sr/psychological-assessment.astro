@@ -1,0 +1,148 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+
+const assessments = [
+  { title: "Kognitivna i intelektualna procena", desc: "Prepoznajte lične snage i slabosti, procenite opšte intelektualne sposobnosti i stilove učenja." },
+  { title: "ADHD i izvršne funkcije", desc: "Procena teškoća sa fokusom, organizacijom, impulsivnošću i povezanim izazovima u svakodnevnom životu." },
+  { title: "Neurokognitivne procene", desc: "Procena značajnijeg gubitka pamćenja ili teškoća u prepoznavanju poznatih ljudi, mesta ili situacija." },
+  { title: "Ličnost i emocionalno funkcionisanje", desc: "Razjasnite ponavljajuće probleme u odnosima, promene raspoloženja i dublje emocionalne teškoće." },
+  { title: "Barijatrijsko i medicinsko odobrenje", desc: "Sveobuhvatne predoperativne psihološke evaluacije potrebne za barijatrijske ili druge medicinske procedure." },
+  { title: "Spektar autizma", desc: "Procena uzroka senzorne osetljivosti, socijalne nespretnosti i teškoća u razumevanju interpersonalnih signala." }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/pre-surgical-psychological-evaluations',
+    title: 'Predoperativne evaluacije',
+    desc: 'Saznajte više o barijatrijskim i medicinskim evaluacijama za odobrenje u Schaumburgu, IL.'
+  },
+  {
+    href: '/sr/therapy',
+    title: 'Terapijske usluge',
+    desc: 'Pogledajte individualnu, partnersku, porodičnu i online terapiju nakon testiranja ili dijagnostičkog razjašnjenja.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite procenu',
+    desc: 'Kontaktirajte ordinaciju da pitate za ADHD testiranje, procenu autizma ili procenu za prilagođavanja u školi ili na poslu.'
+  }
+];
+---
+
+<Layout
+  title="Psihološko testiranje i procena u Schaumburgu, IL | Dr Jelena Djurovic"
+  description="Psihološko testiranje i procena u Schaumburgu, IL za ADHD, autizam, kognitivne teškoće, školske ili radne adaptacije i dijagnostičko razjašnjenje."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Psihološko testiranje i procena u Schaumburgu, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Sveobuhvatno testiranje za ADHD, autizam, dijagnostičko razjašnjenje, kognitivne teškoće i školske ili radne adaptacije.
+      </p>
+    </div>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <div class="bg-[#fcfbf9] p-8 md:p-10 rounded-[2rem] border border-gray-100 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#e0eae5] rounded-bl-full opacity-50 z-0"></div>
+            <h2 class="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 relative z-10">Zašto uraditi procenu?</h2>
+            <ul class="space-y-4 relative z-10">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Dobijte preciznu i formalnu dijagnozu.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Usmerite efikasan i prilagođen terapijski tretman.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Dobijte preporuke za prilagođavanja u školi ili na poslu.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-[#147b6a] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                <span class="text-gray-700">Razjasnite uzrok dugotrajnih emocionalnih ili ponašajnih teškoća.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Odgovori, jasnoća i praktičan sledeći korak</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Psihološka procena može pomoći kada osećate da nešto nije u redu, ali još nemate jasno objašnjenje. Kroz intervju, standardizovano testiranje i pažljivu interpretaciju, pomažemo da se prepoznaju obrasci iza pažnje, raspoloženja, ponašanja i kognitivnih teškoća.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Dr Jelena Djurovic osmišljava evaluacije tako da pruže jasnu dijagnostičku sliku i praktične preporuke prilagođene pitanju zbog kog dolazite.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Types Section -->
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Česti razlozi za testiranje</h2>
+        <p class="text-lg text-gray-700">Nudimo specijalizovane test baterije prilagođene konkretnim dijagnostičkim, obrazovnim, radnim i terapijskim pitanjima.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+        {assessments.map(item => (
+          <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div class="w-12 h-12 bg-[#e0eae5] rounded-full flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-[#147b6a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+            <p class="text-[15px] text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane usluge</h2>
+        <p class="text-lg text-gray-700">
+          Ako tražite testiranje, preporuke za tretman ili podršku za sledeći korak, ove stranice su dobar nastavak.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Spremni za jasnoću?</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import TopicHero from '../../components-sr/TopicHero.astro';
+import TopicOverviewSection from '../../components-sr/TopicOverviewSection.astro';
+import TopicProcessSection from '../../components-sr/TopicProcessSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const stages = [
+  {
+    title: "Pre operacije",
+    desc: "Obradite strah, očekivanja, pitanja spremnosti, dinamiku odnosa, brige oko slike tela i promene životnog stila koje operacija može zahtevati."
+  },
+  {
+    title: "Posle operacije",
+    desc: "Prilagođavanje emocionalnim, ponašajnim i identitetskim promenama nakon operacije, uključujući obrasce ishrane, sliku o sebi i socijalne ili porodične uloge."
+  },
+  {
+    title: "Kada motivacija postane komplikovana",
+    desc: "Napravite prostor za pomešana osećanja, zastoje, obeshrabrenost ili stid, bez gubljenja iz vida dugoročnih ciljeva."
+  },
+  {
+    title: "Integrisana podrška",
+    desc: "Terapija može dopuniti medicinsku negu kroz emocionalnu regulaciju, veštine nošenja, promenu ponašanja i održiviji odnos prema sebi."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/pre-surgical-psychological-evaluations',
+    title: 'Predoperativne psihološke evaluacije',
+    desc: 'Psihološke evaluacije za odobrenje barijatrijske operacije i drugih medicinskih procedura.'
+  },
+  {
+    href: '/sr/weight-loss-counseling',
+    title: 'Savetovanje za mršavljenje',
+    desc: 'Podrška za emocionalno jedenje, sliku tela, motivaciju i promenu ponašanja.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Javite se za barijatrijsko savetovanje u Schaumburgu ili online u Illinoisu.'
+  }
+];
+
+const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Emocionalna podrška pre i posle operacije'];
+const featureCards = [
+  {
+    title: 'Lokalna podrška',
+    desc: 'Barijatrijsko savetovanje uživo u Schaumburgu, u privatnom i udobnom prostoru.'
+  },
+  {
+    title: 'Celovit pristup',
+    desc: 'Podržava emocionalnu i psihološku stranu barijatrijske nege, ne samo medicinsku spremnost.'
+  },
+  {
+    title: 'Fleksibilan format',
+    desc: 'Online podrška širom Illinoisa pre i posle operacije, usklađena sa vašim hirurškim rasporedom.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Toplo i stabilno',
+    desc: 'Podržavajuće kada operacija pokrene pomešana osećanja, tugu zbog ranijih pokušaja ili pritisak porodice i medicinskih timova.'
+  },
+  {
+    title: 'Praktično i emocionalno svesno',
+    desc: 'Usmereno na psihološke promene pre i posle operacije, uključujući obrasce ishrane, identitet i sliku o sebi.'
+  },
+  {
+    title: 'Usklađeno sa medicinskom negom',
+    desc: 'Dopunjuje rad hirurškog tima kroz emocionalnu regulaciju, veštine nošenja i ponašajna prilagođavanja koja podržavaju trajne rezultate.'
+  }
+];
+
+const overviewParagraphs = [
+  'Ova usluga je za osobe koje se pripremaju za barijatrijsku operaciju ili se oporavljaju od nje i žele podršku za emocionalnu stranu procesa. Operacija menja više od tela, a prostor za obradu tih promena može značajno uticati na dugoročne ishode.',
+  'Barijatrijska operacija može uključivati mnogo više od medicinske procedure. Može pokrenuti strahove, nadu, tugu, pritisak, složena očekivanja i velika pitanja identiteta pre i posle operacije.',
+  'Savetovanje može pomoći da se emocionalno pripremite, ojačate veštine nošenja i prođete kroz praktične i psihološke promene koje mogu doći sa tim procesom.'
+];
+
+const processParagraphs = [
+  'Nekim klijentima je potrebna formalna predoperativna psihološka evaluacija za odobrenje. Drugima je potrebna terapija ili podržavajuće savetovanje pre ili posle operacije. To su povezane, ali različite usluge.',
+  'Ako niste sigurni šta odgovara vašoj situaciji, prvi razgovor može pomoći da se razjasni da li vam je potrebna evaluacija, kontinuirano savetovanje ili oboje.'
+];
+
+const processSteps = [
+  {
+    title: 'Pripremite se za emocionalnu promenu',
+    desc: 'Napravite prostor za očekivanja, anksioznost, pitanja spremnosti i lično značenje koje operacija ima za vas.'
+  },
+  {
+    title: 'Prilagodite se posle operacije',
+    desc: 'Obradite promene identiteta, obrasce ishrane, reakcije na sliku tela i promene u odnosima kako se budu pojavljivale.'
+  },
+  {
+    title: 'Ostanite povezani sa dugoročnim ciljevima',
+    desc: 'Radite kroz obeshrabrenost, stid ili zastoje bez gubljenja šire slike vaše brige o sebi.'
+  }
+];
+
+const pageDescription =
+  'Barijatrijsko savetovanje u Schaumburgu, IL uz online seanse širom Illinoisa za emocionalnu spremnost, sliku tela, promenu ponašanja, prilagođavanje posle operacije i kontinuiranu psihološku podršku.';
+
+const faqItems = [
+  {
+    question: 'Šta je barijatrijsko savetovanje?',
+    answer:
+      'Barijatrijsko savetovanje fokusira se na emocionalnu stranu procesa pre i posle operacije, uključujući spremnost, očekivanja, promene identiteta, sliku tela i dugoročno prilagođavanje.'
+  },
+  {
+    question: 'Da li nudite barijatrijsko savetovanje u Schaumburgu, IL?',
+    answer:
+      'Da. Seanse su dostupne uživo u Schaumburgu i online za klijente širom Illinoisa.'
+  },
+  {
+    question: 'Da li radite sa pacijentima iz bolnica van Schaumburga?',
+    answer:
+      'Da. Klijenti dolaze iz hirurških programa širom Chicaga i severozapadnih predgrađa. Savetovanje može dopuniti rad bilo kog hirurškog tima i dostupno je uživo u Schaumburgu ili online širom Illinoisa.'
+  },
+  {
+    question: 'Kako se savetovanje razlikuje od predoperativne psihološke evaluacije?',
+    answer:
+      'Predoperativna evaluacija je obično formalna procena za medicinsko odobrenje. Savetovanje je kontinuirana terapijska podrška i može se odvijati pre operacije, posle operacije ili u oba perioda.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Barijatrijsko savetovanje',
+  description: pageDescription,
+  path: '/sr/bariatric-surgery-counseling/',
+  serviceType: 'Barijatrijsko savetovanje'
+});
+---
+
+<Layout
+  title="Barijatrijsko savetovanje u Schaumburgu, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+  <TopicHero
+    title="Barijatrijsko savetovanje"
+    accent="pre i posle velike promene"
+    description="Emocionalna podrška pre i posle barijatrijske operacije za spremnost, sliku tela, promene identiteta, promenu ponašanja i dugoročno prilagođavanje."
+    imageAlt="Ordinacija za podržavajuće savetovanje"
+    imageSrc="/images/bariatric-surgery-counseling.jpg"
+    fitText="prostor za rad na spremnosti, prilagođavanju i emocionalnom uticaju barijatrijske nege"
+    fitDescription="Ova usluga je za osobe koje se pripremaju za barijatrijsku operaciju ili se oporavljaju od nje i žele podršku za emocionalnu stranu procesa. Operacija menja više od tela, a prostor za obradu tih promena može značajno uticati na dugoročne ishode."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Barijatrijska nega"
+    title="Podrška za emocionalnu stranu operacije"
+    paragraphs={overviewParagraphs}
+    cards={stages}
+  />
+
+  <TopicProcessSection
+    eyebrow="Razjašnjenje usluge"
+    title="Savetovanje i evaluacija su povezani, ali nisu isto"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Barijatrijsko savetovanje"
+    title="Barijatrijsko savetovanje u Schaumburgu i širem području Chicaga"
+    paragraphs={[
+      'Dr Jelena Djurovic pruža barijatrijsko savetovanje u ordinaciji u Schaumburgu, za klijente iz Des Plaines, Arlington Heights, Elk Grove Village, Rolling Meadows i šireg područja severozapadnih predgrađa. Takođe nudi predoperativne psihološke evaluacije kao zasebnu uslugu za klijente kojima je potrebno formalno odobrenje.',
+      'Online terapija je dostupna klijentima širom Illinoisa koji se pripremaju za operaciju ili se prilagođavaju posle procedure. Ako niste sigurni da li vam treba evaluacija, savetovanje ili oboje, prvi kontakt može pomoći da se razjasni sledeći korak.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Kratki odgovori o lokaciji, uklapanju i razlici između ove usluge i formalnih evaluacija."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane stranice</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Stabilna emocionalna podrška je važna i ovde</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const timeline = [
+  { step: "1. Klinički intervju", desc: "Sveobuhvatan razgovor o medicinskoj istoriji, putu mršavljenja, trenutnom načinu života i sistemima podrške." },
+  { step: "2. Psihološko testiranje", desc: "Popunjavanje standardizovanih upitnika radi procene emocionalnog stanja i mogućih psiholoških prepreka." },
+  { step: "3. Povratna informacija i odobrenje", desc: "Pregled rezultata procene, prilagođene preporuke i finalizacija psihološkog odobrenja." }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/psychological-assessment',
+    title: 'Psihološka procena',
+    desc: 'Saznajte više o dijagnostičkom testiranju, kognitivnim teškoćama i preporukama za tretman ili prilagođavanja.'
+  },
+  {
+    href: '/sr/rates-and-insurance',
+    title: 'Cene i osiguranje',
+    desc: 'Pogledajte trenutne cene, prihvaćena osiguranja i sledeće korake pre zakazivanja evaluacije.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Kontakt',
+    desc: 'Javite se da zakažete predoperativnu ili barijatrijsku psihološku evaluaciju u Schaumburgu, IL.'
+  }
+];
+
+const pageDescription =
+  'Predoperativne i barijatrijske psihološke evaluacije u Schaumburgu, IL za medicinsko odobrenje, procenu spremnosti i jasan izveštaj za hirurške i medicinske timove.';
+
+const faqItems = [
+  {
+    question: 'Kome može biti potrebna predoperativna psihološka evaluacija?',
+    answer:
+      'Neki barijatrijski programi i medicinski timovi traže psihološku evaluaciju pre operacije kako bi razumeli emocionalnu spremnost, ponašajne obrasce, istoriju mentalnog zdravlja, sisteme podrške i oblasti gde dodatna podrška može biti korisna.'
+  },
+  {
+    question: 'Da li je ovo isto što i barijatrijsko savetovanje?',
+    answer:
+      'Ne. Predoperativna ili barijatrijska psihološka evaluacija je strukturisana procena i izveštaj za medicinsko odobrenje. Barijatrijsko savetovanje je kontinuirana terapijska podrška pre ili posle operacije za prilagođavanje, sliku tela, promenu ponašanja i emocionalno nošenje.'
+  },
+  {
+    question: 'Šta se dešava tokom procesa evaluacije?',
+    answer:
+      'Proces obično uključuje klinički intervju, pregled relevantne istorije, standardizovane upitnike kada je prikladno, povratnu informaciju i pisanu dokumentaciju za medicinski ili hirurški tim koji je uputio klijenta.'
+  },
+  {
+    question: 'Da li ordinacija može koordinisati sa mojim hirurgom ili barijatrijskim programom?',
+    answer:
+      'Da. Uz pisanu saglasnost, ordinacija može koordinisati sa programom ili medicinskim timom kako bi evaluacija obuhvatila potrebnu dokumentaciju i klinička pitanja.'
+  },
+  {
+    question: 'Da li su evaluacije dostupne na engleskom, srpskom i španskom jeziku?',
+    answer:
+      'Da. Evaluacije su dostupne na engleskom, srpskom i španskom jeziku, što može pomoći klijentima da preciznije opišu medicinsku, ponašajnu i emocionalnu istoriju.'
+  }
+];
+
+const localSectionParagraphs = [
+  'Predoperativne i barijatrijske psihološke evaluacije dostupne su uživo u ordinaciji u Schaumburgu za klijente iz Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village i okolnih severozapadnih predgrađa.',
+  'Online format može biti dostupan za klijente u Illinoisu kada je klinički prikladan i prihvaćen od strane hirurškog ili medicinskog programa koji upućuje klijenta.'
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Predoperativne psihološke evaluacije',
+  description: pageDescription,
+  path: '/sr/pre-surgical-psychological-evaluations/',
+  serviceType: 'Predoperativna i barijatrijska psihološka evaluacija'
+});
+---
+
+<Layout
+  title="Predoperativne i barijatrijske psihološke evaluacije u Schaumburgu, IL | Dr. Jelena Djurovic"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Predoperativne psihološke evaluacije u Schaumburgu, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Pružamo predoperativne psihološke evaluacije u Schaumburgu, Illinois, za barijatrijsku hirurgiju i druge medicinske procedure koje zahtevaju psihološko odobrenje.
+      </p>
+    </div>
+  </section>
+
+  <!-- Explanation Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Zašto je evaluacija potrebna?</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Predoperativne psihološke evaluacije pomažu da se procene emocionalna spremnost, ponašajne snage i potencijalne oblasti rizika pre medicinske procedure. Cilj je jasan, podržavajući i efikasan proces koji vam pomaže da nastavite sa više sigurnosti.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Dr Jelena Djurovic sprovodi detaljne kliničke intervjue, pregleda relevantnu istoriju i priprema jasnu dokumentaciju za hirurge, medicinske programe i barijatrijske timove. Evaluacije su dostupne na engleskom, srpskom i španskom jeziku.
+          </p>
+          <div class="bg-[#d1f3f1] inline-block px-6 py-3 rounded-full text-[#0d5c4e] font-bold">
+            Dostupno na engleskom, španskom i srpskom jeziku
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <div class="bg-[#fcfbf9] p-8 md:p-10 rounded-[2rem] border border-gray-100 relative">
+            <h2 class="text-2xl font-bold text-[#1a1a1a] mb-8">Šta možete očekivati</h2>
+            <div class="space-y-8">
+              {timeline.map((item, index) => (
+                <div class="flex gap-4">
+                  <div class="flex-shrink-0 w-12 h-12 bg-[#2f594f] rounded-full flex items-center justify-center text-white font-bold shadow-md">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">{item.step.split('. ')[1]}</h3>
+                    <p class="text-gray-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-16 items-start">
+        <div>
+          <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Podrška za medicinsko odobrenje</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Evaluacija i izveštaj o spremnosti za operaciju</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Predoperativna psihološka evaluacija razlikuje se od opšte terapije. To je fokusirana procena koja pomaže medicinskom timu da razume spremnost, snage, faktore rizika, potrebe za podrškom i preporuke koje mogu pomoći klijentu da bezbedno nastavi dalje.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Ove evaluacije se često traže pre barijatrijske operacije, a mogu biti potrebne i za druge medicinske procedure gde su emocionalna spremnost i ponašajno zdravlje deo procesa odobrenja.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Barijatrijska spremnost</h3>
+            <p class="text-gray-700 leading-relaxed">Procena emocionalne spremnosti, obrazaca vezanih za ishranu, sistema podrške i kapaciteta za nošenje pre barijatrijske operacije.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Dokumentacija za medicinski tim</h3>
+            <p class="text-gray-700 leading-relaxed">Jasna pisana dokumentacija može biti pripremljena za hirurge, barijatrijske programe i druge medicinske timove.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Evaluacija naspram savetovanja</h3>
+            <p class="text-gray-700 leading-relaxed">Evaluacija pruža procenu i izveštaj; kontinuirano savetovanje može podržati prilagođavanje pre ili posle operacije.</p>
+          </div>
+          <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7 shadow-sm">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">Dostupnost jezika</h3>
+            <p class="text-gray-700 leading-relaxed">Usluge su dostupne na engleskom, srpskom i španskom jeziku radi jasnije komunikacije tokom procene.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Korisni sledeći koraci</h2>
+        <p class="text-lg text-gray-700">
+          Ako se pripremate za operaciju, ove stranice mogu vam pomoći da razumete proces evaluacije, cenu i kako da brzo zakažete termin.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <LocalServiceArea
+    serviceName="Predoperativna i barijatrijska psihološka evaluacija"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <FaqSection
+    title="Česta pitanja o predoperativnoj evaluaciji"
+    intro="Česta pitanja o barijatrijskom odobrenju, koordinaciji sa medicinskim timom i tome šta evaluacija uključuje."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Zakažite predoperativnu evaluaciju</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

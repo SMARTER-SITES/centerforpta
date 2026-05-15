@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import TopicHero from '../../components-sr/TopicHero.astro';
+import TopicOverviewSection from '../../components-sr/TopicOverviewSection.astro';
+import TopicProcessSection from '../../components-sr/TopicProcessSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const supportAreas = [
+  {
+    title: 'Anksioznost i neizvesnost u trudnoći',
+    desc: "Uporna briga o trudnoći, zdravlju bebe ili sopstvenoj sposobnosti da izdržite. Anksioznost u trudnoći je česta i može biti usamljena kada okolina očekuje samo radost."
+  },
+  {
+    title: 'Medicinski stres i zamor od odluka',
+    desc: 'Suočavanje sa komplikovanim rezultatima, specijalističkim pregledima, odlukama o lekovima ili visokorizičnom trudnoćom može stvoriti stres koji je teško nositi samostalno.'
+  },
+  {
+    title: 'Strah od porođaja, roditeljstva ili velike životne promene',
+    desc: 'Strah od porođaja, strah da nećete biti dovoljno dobar roditelj ili težina spoznaje koliko se život menja. Ovi strahovi su normalni i vredi ih obraditi umesto potiskivati.'
+  },
+  {
+    title: 'Napetost u odnosu tokom trudnoće',
+    desc: 'Trudnoća može promeniti dinamiku između partnera. Komunikacija može biti teža, potrebe neispunjene, a stari konflikti se mogu vratiti kada su emocionalni resursi već opterećeni.'
+  },
+  {
+    title: 'Istorija anksioznosti, depresije, traume ili reproduktivnog gubitka',
+    desc: 'Kada se trudnoća odvija uz ranije psihološke teškoće, prethodni gubitak ili teška iskustva sa plodnošću, emocionalni ulog je veći i potreba za podrškom specifičnija.'
+  },
+  {
+    title: 'Promene identiteta i emocionalno prilagođavanje trudnoći',
+    desc: 'Promene u tome kako vidite sebe, telo, karijeru ili budućnost mogu doneti vrstu tuge ili dezorijentacije koja tokom trudnoće često ostaje neizgovorena.'
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/postpartum-therapy',
+    title: 'Postpartalna terapija',
+    desc: 'Podrška posle porođaja za promene raspoloženja, preplavljenost i postnatalno prilagođavanje.'
+  },
+  {
+    href: '/sr/womens-mental-health-therapy',
+    title: "Terapija za mentalno zdravlje žena",
+    desc: 'Šira podrška za reproduktivne izazove, stres životnih faza i probleme slike tela.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Pitajte za prenatalnu terapiju uživo ili online širom Illinoisa.'
+  }
+];
+
+const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Podrška tokom trudnoće i reproduktivnog stresa'];
+const featureCards = [
+  {
+    title: 'Lokalna podrška',
+    desc: 'Prenatalna terapija uživo u Schaumburgu, u mirnom i podržavajućem okruženju.'
+  },
+  {
+    title: 'Celovit pristup',
+    desc: 'Pravi prostor za anksioznost, tugu, medicinski stres i promene u odnosima koje trudnoća može pojačati.'
+  },
+  {
+    title: 'Fleksibilan format',
+    desc: 'Online širom Illinoisa za klijentkinje u bilo kom trimestru kojima treba podrška bez dodatnog putovanja.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Toplo i stabilizujuće',
+    desc: 'Korisno kada je trudnoća emocionalno ranjivija ili intenzivnija nego što ste očekivali, posebno uz medicinsku neizvesnost.'
+  },
+  {
+    title: 'Praktično i emocionalno svesno',
+    desc: 'Pravi prostor i za osećanja i za realne zahteve pregleda, odluka, odnosa i pripreme za porođaj.'
+  },
+  {
+    title: 'Za slojevitu životnu istoriju',
+    desc: 'Posebno relevantno kada trudnoća dolazi uz anksioznost, raniju traumu, tretmane plodnosti ili reproduktivni gubitak.'
+  }
+];
+
+const overviewParagraphs = [
+  'Ova usluga je za trudnice koje imaju više emocionalnih teškoća nego što su očekivale i žele prostor gde će to biti shvaćeno ozbiljno. Trudnoća ne mora biti radosna svakog dana da biste zaslužili podršku.',
+  'Trudnoća se često opisuje kao radostan period, ali mnogi ljudi istovremeno osećaju strah, tugu, razdražljivost, pritisak, neizvesnost i emocionalnu ranjivost. To ne znači da radite nešto pogrešno. To znači da prolazite kroz veliku životnu promenu.',
+  'Prenatalna terapija može pomoći da obradite ono što se emocionalno pojavljuje, uz stabilnije alate za nošenje, komunikaciju i brigu o sebi.'
+];
+
+const overviewCards = supportAreas;
+
+const processParagraphs = [
+  'Prenatalna terapija može biti naročito korisna ako se trudnoća odvija uz istoriju neplodnosti, reproduktivni gubitak, visok stres, traumu, raniju depresiju ili anksioznost, ili značajnu porodičnu ili partnersku napetost.',
+  'Cilj nije da se forsira određeno emocionalno iskustvo, već da kroz trudnoću prolazite sa više podrške, jasnoće i unutrašnje stabilnosti.'
+];
+
+const processSteps = [
+  {
+    title: 'Imenujte ono što je teško',
+    desc: 'Dajte reči anksioznosti, medicinskom stresu, tuzi ili neizvesnosti umesto da ih nosite u tišini.'
+  },
+  {
+    title: 'Podržite nervni sistem',
+    desc: 'Gradite stabilnije alate za nošenje sa zamorom od odluka, strahom, razdražljivošću i emocionalnim preopterećenjem.'
+  },
+  {
+    title: 'Pripremite se za ono što dolazi',
+    desc: 'Ojačajte komunikaciju, brigu o sebi i emocionalnu spremnost za sledeću fazu trudnoće i porođaj.'
+  }
+];
+
+const pageDescription =
+  'Prenatalna terapija u Schaumburgu, IL uz online seanse širom Illinoisa za anksioznost u trudnoći, stres, istoriju reproduktivnog gubitka, promene u odnosima, zamor od medicinskih odluka i emocionalnu podršku tokom trudnoće.';
+
+const faqItems = [
+  {
+    question: 'Za šta je prenatalna terapija korisna?',
+    answer:
+      'Prenatalna terapija može pomoći kod anksioznosti u trudnoći, medicinskog stresa, straha od porođaja ili roditeljstva, istorije reproduktivnog gubitka, napetosti u odnosu i emocionalnog prilagođavanja u trudnoći.'
+  },
+  {
+    question: 'Da li nudite prenatalnu terapiju u Schaumburgu, IL i online u Illinoisu?',
+    answer:
+      'Da. Prenatalna terapija je dostupna uživo u Schaumburgu i online za klijentkinje širom Illinoisa.'
+  },
+  {
+    question: 'Može li prenatalna terapija da se nastavi u postpartalnu podršku posle porođaja?',
+    answer:
+      'Da. Mnoge klijentkinje započnu terapiju tokom trudnoće i nastave u postpartalnom periodu. Taj kontinuitet omogućava da se rad nadoveže na ono što je već izgrađeno.'
+  },
+  {
+    question: 'Može li prenatalna terapija pomoći ako već imam istoriju anksioznosti ili traume?',
+    answer:
+      'Da. Prenatalna terapija može biti posebno korisna kada se trudnoća preklapa sa ranijom anksioznošću, depresijom, traumom, stresom zbog neplodnosti ili reproduktivnim gubitkom.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Prenatalna terapija',
+  description: pageDescription,
+  path: '/sr/prenatal-therapy/',
+  serviceType: 'Prenatalna terapija'
+});
+---
+
+<Layout
+  title="Prenatalna terapija u Schaumburgu, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+  <TopicHero
+    title="Prenatalna terapija"
+    accent="kada trudnoća donosi više od radosti"
+    description="Emocionalna podrška tokom trudnoće za anksioznost, preplavljenost, medicinski stres, promene u odnosima i brojna prilagođavanja pre porođaja."
+    imageAlt="Quiet therapy office for prenatal support"
+    imageSrc="/images/prenatal-therapy.jpg"
+    fitText="podrška tokom trudnoće kada strahu, pritisku, tuzi ili neizvesnosti treba više prostora i stabilnosti"
+    fitDescription="Ova usluga je za trudnice koje imaju više emocionalnih teškoća nego što su očekivale i žele prostor gde će to biti shvaćeno ozbiljno. Trudnoća ne mora biti radosna svakog dana da biste zaslužili podršku."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Podrška u trudnoći"
+    title="Trudnoća može biti značajna i teška u isto vreme"
+    paragraphs={overviewParagraphs}
+    cards={overviewCards}
+  />
+
+  <TopicProcessSection
+    eyebrow="Kada dodatna podrška pomaže"
+    title="Posebno korisno kada u pozadini postoji dodatna istorija"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Prenatalna terapija"
+    title="Prenatalna terapija u Schaumburgu i okolnim zajednicama"
+    paragraphs={[
+      'Dr Jelena Djurovic pruža prenatalnu terapiju u ordinaciji u Schaumburgu, dostupnoj klijentkinjama iz Rolling Meadows, Hanover Park, Elk Grove Village, Streamwood i drugih severozapadnih predgrađa. Njeno doktorsko istraživanje odnosa uma i tela direktno informiše pristup emocionalnim zahtevima trudnoće.',
+      'Online terapija je dostupna širom Illinoisa za klijentkinje u bilo kojoj fazi trudnoće. Prenatalna terapija može biti i korisna osnova pre prelaska na postpartalnu podršku posle porođaja.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Korisni odgovori o podršci u trudnoći, lokaciji i tome da li ova usluga može odgovarati."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane stranice</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Podrška tokom trudnoće može napraviti stvarnu razliku</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

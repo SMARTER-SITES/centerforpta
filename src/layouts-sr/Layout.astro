@@ -7,9 +7,9 @@ import {
   resolveMetaImage,
   siteName,
   siteUrl
-} from '../utils/seo';
-import type { FaqItem } from '../utils/seo';
-import WebMcpProvider from '../components/WebMcpProvider.astro';
+} from '../utils-sr/seo';
+import type { FaqItem } from '../utils-sr/seo';
+import WebMcpProvider from '../components-sr/WebMcpProvider.astro';
 
 interface Props {
   title?: string;
@@ -36,8 +36,8 @@ const {
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? siteUrl).toString();
-const srPath = Astro.url.pathname === '/' ? '/sr/' : `/sr${Astro.url.pathname}`;
-const srAlternateUrl = new URL(srPath, Astro.site ?? siteUrl).toString();
+const englishPath = Astro.url.pathname.replace(/^\/sr(?=\/|$)/, '') || '/';
+const englishAlternateUrl = new URL(englishPath, Astro.site ?? siteUrl).toString();
 const socialImage = resolveMetaImage(image);
 
 const customStructuredDataItems = Array.isArray(customStructuredData)
@@ -77,7 +77,7 @@ const structuredData = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="sr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -100,9 +100,9 @@ const structuredData = [
     <meta name="description" content={description} />
     <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="alternate" hreflang="en" href={canonicalUrl} />
-    <link rel="alternate" hreflang="sr" href={srAlternateUrl} />
-    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+    <link rel="alternate" hreflang="sr" href={canonicalUrl} />
+    <link rel="alternate" hreflang="en" href={englishAlternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={englishAlternateUrl} />
     <meta name="theme-color" content="#2f594f" />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={title} />

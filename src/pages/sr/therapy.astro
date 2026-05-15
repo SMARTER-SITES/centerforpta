@@ -1,0 +1,198 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+
+const concerns = [
+  { title: "Anksioznost i stres", desc: "Naučite kako da upravljate preplavljujućom brigom, paničnim napadima i svakodnevnim stresom kroz strategije zasnovane na dokazima." },
+  { title: "Depresija i raspoloženje", desc: "Pronađite nadu i motivaciju kada se osećate tužno, beznadežno ili zaglavljeno. Pomažemo vam da ojačate emocionalnu otpornost." },
+  { title: "Trauma i PTSP", desc: "Rad na oporavku od prošlih iskustava u bezbednom, trauma-informed okruženju, uz proverene terapijske pristupe." },
+  { title: "Odnosi", desc: "Unapredite komunikaciju, obnovite poverenje i efikasnije se nosite sa porodičnim ili bračnim izazovima." },
+  { title: "Životne promene", desc: "Dobijte podršku tokom promena u karijeri, gubitka, tuge, separacije ili drugih značajnih životnih promena." },
+  { title: "Upotreba supstanci", desc: "Povratite osećaj kontrole nad alkoholom ili drogama uz saosećajnu podršku bez osuđivanja i efikasne intervencije." },
+  { title: "ADHD i fokus", desc: "Naučite kako da se efikasnije nosite sa rasutim mislima i unapredite svakodnevno funkcionisanje i kvalitet života." },
+  { title: "Hronični bol i bolest", desc: "Istražite vezu uma i tela i naučite intervencije koje vam pomažu da živite što slobodnije." }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/rates-and-insurance',
+    title: 'Cene i osiguranje',
+    desc: 'Pogledajte osiguranja, privatno plaćanje i sledeće korake pre zakazivanja terapije.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Javite se da pitate za individualnu, partnersku, porodičnu ili online terapiju u Illinoisu.'
+  },
+  {
+    href: '/sr/psychological-assessment',
+    title: 'Psihološka procena',
+    desc: 'Pogledajte testiranje za ADHD, autizam, dijagnostičko razjašnjenje i školska ili radna prilagođavanja.'
+  }
+];
+
+const specialtyLinks = [
+  {
+    href: '/sr/womens-mental-health-therapy',
+    title: "Terapija za mentalno zdravlje žena",
+    desc: 'Podrška za reproduktivne izazove, sliku tela i stres u životnim fazama.'
+  },
+  {
+    href: '/sr/self-compassion-therapy',
+    title: 'Terapija samosaosećanja',
+    desc: 'Pomoć kod oštre samokritike, stida, perfekcionizma i burnout-a.'
+  },
+  {
+    href: '/sr/weight-loss-counseling',
+    title: 'Savetovanje za mršavljenje',
+    desc: 'Podrška za emocionalno jedenje, sliku tela i trajnu promenu ponašanja.'
+  },
+  {
+    href: '/sr/bariatric-surgery-counseling',
+    title: 'Barijatrijsko savetovanje',
+    desc: 'Emocionalna podrška pre i posle barijatrijske operacije.'
+  },
+  {
+    href: '/sr/divorce-counseling',
+    title: 'Savetovanje tokom razvoda',
+    desc: 'Podrška pre separacije i posle razvoda tokom velike životne promene.'
+  },
+  {
+    href: '/sr/prenatal-therapy',
+    title: 'Prenatalna terapija',
+    desc: 'Terapijska podrška tokom trudnoće za stres, anksioznost i emocionalno prilagođavanje.'
+  },
+  {
+    href: '/sr/postpartum-therapy',
+    title: 'Postpartalna terapija',
+    desc: 'Postnatalna podrška za promene raspoloženja, preplavljenost i oporavak posle porođaja.'
+  }
+];
+---
+
+<Layout
+  title="Terapija u Schaumburgu, IL | Individualna, partnerska, porodična i online terapija"
+  description="Terapija u Schaumburgu, IL za pojedince, parove i porodice, uz online seanse širom Illinoisa za anksioznost, traumu, ADHD, tugu i probleme u odnosima."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
+      <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Terapija u Schaumburgu, IL
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Individualna, partnerska, porodična i online terapija za anksioznost, depresiju, traumu, ADHD, probleme u odnosima, tugu i životne promene.
+      </p>
+    </div>
+  </section>
+
+  <!-- Approach Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="md:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Individualizovan pristup terapiji</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Početak terapije može delovati preplavljujuće, ali ne morate sami prolaziti kroz teške emocije ili životne promene. Nudimo podržavajući prostor bez osuđivanja, u kome možete bolje razumeti ono kroz šta prolazite i postepeno graditi stvarnu promenu.
+          </p>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Dr Jelena Djurovic pruža terapiju zasnovanu na dokazima, prilagođenu vašim potrebama, ciljevima, životnoj istoriji i snagama, kako biste se kretali ka većoj stabilnosti, zdravijim odnosima i dubljem razumevanju sebe.
+          </p>
+        </div>
+        <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Individualna terapija</h3>
+            <p class="text-gray-600">Seanse jedan na jedan usmerene na lični rast, oporavak i vaše konkretne psihološke potrebe.</p>
+          </div>
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Partnerska terapija</h3>
+            <p class="text-gray-600">Učenje efikasnije komunikacije i strategija za rešavanje problema radi jačanja odnosa.</p>
+          </div>
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Porodična terapija</h3>
+            <p class="text-gray-600">Rad na konfliktima i porodičnoj dinamici kroz vođen, konstruktivan dijalog.</p>
+          </div>
+          <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Online terapija</h3>
+            <p class="text-gray-600">Sigurne i praktične online seanse iz udobnosti vašeg doma.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sa čime radimo Section -->
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Sa čime radimo</h2>
+        <p class="text-lg text-gray-700">Nudimo specijalizovan tretman za širok spektar emocionalnih, ponašajnih i psiholoških teškoća.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
+        {concerns.map(concern => (
+          <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{concern.title}</h3>
+            <p class="text-[15px] text-gray-600 leading-relaxed">{concern.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Specijalizovane teme u terapiji</h2>
+        <p class="text-lg text-gray-700">
+          Ako tražite podršku za konkretniju temu, ove stranice mogu pomoći da brže pronađete pravi pravac.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {specialtyLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Planiranje sledećeg koraka</h2>
+        <p class="text-lg text-gray-700">
+          Ove stranice mogu vam pomoći da razumete cenu, zakazivanje i da li je za vas bolji izbor terapija ili procena.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Započnite put oporavka</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

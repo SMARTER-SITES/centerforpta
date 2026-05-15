@@ -1,0 +1,211 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import TopicHero from '../../components-sr/TopicHero.astro';
+import TopicOverviewSection from '../../components-sr/TopicOverviewSection.astro';
+import TopicProcessSection from '../../components-sr/TopicProcessSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const phases = [
+  {
+    title: "Savetovanje pre razvoda",
+    desc: "Podrška dok razvrstavate strah, neizvesnost, tugu, bes, pitanja granica i praktični emocionalni uticaj odluke o sledećem koraku."
+  },
+  {
+    title: "Savetovanje posle razvoda",
+    desc: "Podrška za oporavak, stres oko zajedničkog roditeljstva, ponovno građenje identiteta, usamljenost, brige oko novih odnosa, poverenje i prilagođavanje drugačijoj životnoj strukturi."
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/therapy',
+    title: 'Terapija',
+    desc: 'Pogledajte širu podršku za anksioznost, depresiju, tugu, traumu i stres u odnosima.'
+  },
+  {
+    href: '/sr/self-compassion-therapy',
+    title: 'Terapija samosaosećanja',
+    desc: 'Korisno kada su razvod ili separacija pojačali stid, samooptuživanje ili oštro samoosuđivanje.'
+  },
+  {
+    href: '/sr/contact',
+    title: 'Zakažite konsultaciju',
+    desc: 'Javite se da pitate za savetovanje tokom razvoda uživo ili online.'
+  }
+];
+
+const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Podrška pre, tokom i posle separacije'];
+const featureCards = [
+  {
+    title: 'Lokalna podrška',
+    desc: 'Savetovanje tokom razvoda uživo u Schaumburgu, uz punu poverljivost u privatnoj ordinaciji.'
+  },
+  {
+    title: 'Celovit pristup',
+    desc: 'Bavi se tugom, poremećajem identiteta, stresom oko zajedničkog roditeljstva i zamorom od odluka koji dolaze sa separacijom.'
+  },
+  {
+    title: 'Fleksibilan format',
+    desc: 'Online širom Illinoisa za klijente koji usklađuju rasporede oko starateljstva, posao ili ograničeno vreme.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Stabilno i smireno',
+    desc: 'Korisno kada sve oko vas deluje hitno, emocionalno glasno ili nemoguće organizovati u jasne misli.'
+  },
+  {
+    title: 'Emocionalno direktno',
+    desc: 'Pravi prostor da tuga, bes, olakšanje, krivica i neizvesnost koegzistiraju bez forsiranja jedne uredne priče o tome šta se dogodilo.'
+  },
+  {
+    title: 'Fokusirano na tranziciju',
+    desc: 'Korisno kada su logistika zajedničkog roditeljstva, finansijski stres, pitanja identiteta i tuga za odnosom aktivni u isto vreme.'
+  }
+];
+
+const overviewParagraphs = [
+  'Ova usluga je za ljude u bilo kojoj fazi razvoda ili separacije kojima treba strukturisan, privatan prostor da razumeju šta osećaju i donose odluke iz stabilnijeg mesta. Ne morate imati sve razjašnjeno da biste počeli.',
+  "Razvod može istovremeno doneti tugu, olakšanje, strah, bes, konfuziju i praktični stres. Čak i kada je separacija prava odluka, emocionalno može biti dezorijentišuća.",
+  'Terapija nudi strukturisan, podržavajući prostor za jasnije razmišljanje, regulaciju emocija i prolazak kroz ovu tranziciju sa više stabilnosti i manje izolacije.',
+];
+
+const processParagraphs = [
+  'Savetovanje tokom razvoda može se fokusirati na donošenje odluka, tugu, komunikacione granice, stres oko zajedničkog roditeljstva, emocionalni oporavak, obnavljanje samopouzdanja i razumevanje obrazaca koje ne želite da ponavljate.',
+  'Može biti korisno i kada je separacija pokrenula anksioznost, depresiju, poremećaj sna, telesni stres ili bolan pad osećaja sopstvene vrednosti.'
+];
+
+const processSteps = [
+  {
+    title: 'Stvorite stabilnost usred neizvesnosti',
+    desc: 'Napravite prostor za suprotstavljena osećanja dok jasnije razumete šta vam treba i šta sledi.'
+  },
+  {
+    title: 'Zaštitite energiju i granice',
+    desc: 'Radite na komunikaciji, zajedničkom roditeljstvu i emocionalnim granicama kada konflikt ili kontakt iscrpljuju.'
+  },
+  {
+    title: 'Obnova posle prekida',
+    desc: 'Podržite oporavak, poverenje u sebe i stabilniji osećaj identiteta u sledećem poglavlju.'
+  }
+];
+
+const pageDescription =
+  'Savetovanje tokom razvoda u Schaumburgu, IL uz online seanse širom Illinoisa za podršku pre razvoda, posle razvoda, stres oko zajedničkog roditeljstva, tugu, gubitak odnosa i velike životne promene.';
+
+const faqItems = [
+  {
+    question: 'Može li savetovanje pomoći pre nego što je razvod finalizovan?',
+    answer:
+      'Da. Savetovanje tokom razvoda može biti korisno u fazi odlučivanja, tokom separacije i posle razvoda, kada su tuga, bes, konfuzija ili praktični stres i dalje veoma prisutni.'
+  },
+  {
+    question: 'Da li nudite savetovanje tokom razvoda u Schaumburgu, IL i online?',
+    answer:
+      'Da. Seanse su dostupne uživo u Schaumburgu i online za klijente širom Illinoisa.'
+  },
+  {
+    question: 'Da li je savetovanje dostupno stanovnicima Cook County i DuPage County?',
+    answer:
+      'Da. Ordinacija u Schaumburgu prima klijente iz Cook i DuPage okruga, uključujući Palatine, Hoffman Estates, Roselle i okolna mesta. Online terapija proširuje dostupnost na ceo Illinois.'
+  },
+  {
+    question: 'Da li je savetovanje samo za ljude koji su sigurni da žele separaciju?',
+    answer:
+      'Ne. Neki klijenti dolaze jer žele jasnije da razmisle šta žele, dok drugi dolaze posle separacije ili razvoda da obrade emocionalne posledice i ponovo izgrade stabilnost.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Savetovanje tokom razvoda',
+  description: pageDescription,
+  path: '/sr/divorce-counseling/',
+  serviceType: 'Savetovanje tokom razvoda'
+});
+---
+
+<Layout
+  title="Savetovanje tokom razvoda u Schaumburgu, IL"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+  <TopicHero
+    title="Savetovanje tokom razvoda"
+    accent="za jednu od najtežih životnih promena"
+    description="Terapijska podrška pre razvoda, tokom separacije i posle razvoda za tugu, preplavljenost, stres oko zajedničkog roditeljstva, promene identiteta i obnovu stabilnosti."
+    imageAlt="Topla i mirna ordinacija za terapiju u Schaumburgu"
+    imageSrc="/images/divorce-counseling.jpg"
+    fitText="podrška koja pomaže da jasnije mislite dok istovremeno nosite tugu, bes, strah i promenu"
+    fitDescription="Ova usluga je za ljude u bilo kojoj fazi razvoda ili separacije kojima treba strukturisan, privatan prostor da razumeju šta osećaju i donose odluke iz stabilnijeg mesta. Ne morate imati sve razjašnjeno da biste počeli."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Podrška u životnoj tranziciji"
+    title="Strukturisan prostor kada je sve emocionalno pomešano"
+    paragraphs={overviewParagraphs}
+    cards={phases}
+  />
+
+  <TopicProcessSection
+    eyebrow="Šta savetovanje može obuhvatiti"
+    title="Česte teme pre i posle separacije"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Savetovanje tokom razvoda"
+    title="Savetovanje tokom razvoda u Schaumburgu i severozapadnim predgrađima"
+    paragraphs={[
+      'Dr Jelena Djurovic nudi savetovanje tokom razvoda i separacije u ordinaciji u Schaumburgu, za klijente iz Palatine, Hoffman Estates, Mount Prospect, Arlington Heights i okolnih mesta u Cook i DuPage okruzima. Seanse mogu početi pre, tokom ili posle razvoda.',
+      'Online terapija je dostupna klijentima širom Illinoisa koji preferiraju online seanse. Ako niste sigurni da li bi individualna terapija ili druga vrsta podrške bila korisnija, javljanje sa pitanjem je razuman prvi korak.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Česta pitanja o tajmingu, uklapanju i pristupu podršci vezanoj za razvod."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane stranice</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Podrška može učiniti ovu tranziciju manje preplavljujućom</h2>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Kontakt
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

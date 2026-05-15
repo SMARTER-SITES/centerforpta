@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+
+const facts = [
+  "83% pacijenata prijavljuje značajno poboljšanje simptoma",
+  "63% postiže punu remisiju simptoma depresije",
+  "Pokriveno kod većine velikih osiguravajućih kuća",
+  "FDA odobreno i bez lekova"
+];
+---
+
+<Layout
+  title="Naši partneri | Center for Psychological Treatment and Assessment"
+  description="Saznajte više o pouzdanim partnerima koje preporučuje Center for Psychological Treatment and Assessment, uključujući R Hope Treatment u Evanstonu, IL."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
+    <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resursi</p>
+      <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
+        Naši partneri
+      </h1>
+      <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        Sarađujemo sa vodećim zdravstvenim stručnjacima kako bismo pružili sveobuhvatnu podršku.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start bg-[#fcfbf9] border border-gray-100 rounded-[3rem] p-8 md:p-12 xl:p-16 shadow-lg">
+        
+        <div class="lg:w-1/2">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-[#147b6a] mb-6">R Hope Treatment</h2>
+          <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6">TMS klinika</h3>
+          
+          <div class="space-y-4 text-gray-700 text-[15px] md:text-lg leading-relaxed font-medium">
+            <p>R Hope Treatment je regionalni lider u pružanju standardne i personalizovane terapije transkranijalnom magnetnom stimulacijom (TMS), inovativnog, neinvazivnog tretmana bez lekova koji je odobren od strane FDA za stanja mentalnog zdravlja.</p>
+            <p>TMS terapija koristi blage magnetne impulse za stimulaciju manje aktivnih delova mozga koji regulišu raspoloženje, bez upotrebe lekova. Tipična seansa traje manje od 20 minuta, a tretman se obično sprovodi tokom 6-8 nedelja.</p>
+            <p>Klinika u Evanstonu, IL, specijalizovana je za tretman depresije i anksioznosti, a pomaže i pacijentima sa PTSP-om, OKP-om, ADHD-om i drugim poremećajima raspoloženja.</p>
+            <p>Takođe nude potpuno opremljenu mobilnu TMS kliniku za pacijente koji ne mogu redovno da dolaze na glavnu lokaciju. Mobilna jedinica donosi isti kvalitet nege direktno do pacijenta, bilo kod kuće, u ustanovi za negu ili na drugoj pogodnoj lokaciji.</p>
+            <p>R Hope Treatment nudi standardne TMS protokole i napredne personalizovane TMS (PrTMS) protokole uz EEG mapiranje mozga. To omogućava prilagođavanje tretmana jedinstvenoj moždanoj aktivnosti svakog pacijenta, radi preciznije i efikasnije nege.</p>
+          </div>
+          
+          <div class="mt-8 pt-6 border-t border-gray-200">
+            <p class="font-bold text-[#1a1a1a]">R Hope Treatment</p>
+            <p class="text-gray-600 mt-1">1335 Dodge Ave, Evanston, IL 60201</p>
+            <p class="text-gray-600 mt-1">📞 847-868-9369 | 📧 office@RHopeTreatment.com</p>
+          </div>
+        </div>
+
+        <div class="lg:w-1/2 bg-white rounded-3xl p-8 xl:p-10 shadow-sm border border-gray-100 w-full">
+          <h3 class="text-2xl font-bold text-[#1a1a1a] mb-8 flex items-center">
+            <svg class="w-8 h-8 text-[#fcc13e] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            Ključne činjenice
+          </h3>
+          <div class="space-y-6">
+            {facts.map(fact => (
+              <div class="flex items-start gap-4">
+                <div class="w-8 h-8 rounded-full bg-[#d1f3f1] text-[#147b6a] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <p class="text-lg text-gray-800 font-medium leading-relaxed">{fact}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
