@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const concerns = [
   { title: "Anxiety & Stress", desc: "Learn to manage overwhelming worry, panic attacks, and daily stress with evidence-based coping strategies." },
@@ -69,11 +70,22 @@ const specialtyLinks = [
     desc: 'Postnatal support for mood changes, overwhelm, and recovery after birth.'
   }
 ];
+
+const pageDescription =
+  'Therapy in Schaumburg, IL for individuals, couples, and families, with telehealth available across Illinois for anxiety, trauma, ADHD, grief, and relationship concerns.';
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Therapy in Schaumburg, IL',
+  description: pageDescription,
+  path: '/therapy/',
+  serviceType: 'Psychotherapy'
+});
 ---
 
 <Layout
   title="Therapy in Schaumburg, IL | Individual, Couples, Family, and Telehealth Therapy"
-  description="Therapy in Schaumburg, IL for individuals, couples, and families, with telehealth available across Illinois for anxiety, trauma, ADHD, grief, and relationship concerns."
+  description={pageDescription}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 

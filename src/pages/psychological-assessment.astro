@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { getServiceStructuredData } from '../utils/seo';
 
 const assessments = [
   { title: "Cognitive & Intellectual", desc: "Discover personal strengths and weaknesses, assess general intellectual ability, and identify learning styles." },
@@ -29,11 +30,22 @@ const relatedLinks = [
     desc: 'Contact the office to ask about ADHD testing, autism evaluation, or accommodations-related assessment.'
   }
 ];
+
+const pageDescription =
+  'Psychological testing and assessment in Schaumburg, IL for ADHD, autism, cognitive concerns, school or workplace accommodations, and diagnostic clarification.';
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Psychological Testing and Assessment',
+  description: pageDescription,
+  path: '/psychological-assessment/',
+  serviceType: 'Psychological Assessment'
+});
 ---
 
 <Layout
   title="Psychological Testing and Assessment in Schaumburg, IL | Dr. Jelena Djurovic"
-  description="Psychological testing and assessment in Schaumburg, IL for ADHD, autism, cognitive concerns, school or workplace accommodations, and diagnostic clarification."
+  description={pageDescription}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 

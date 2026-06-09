@@ -2,6 +2,7 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
 
 const concerns = [
   { title: "Anksioznost i stres", desc: "Naučite kako da upravljate preplavljujućom brigom, paničnim napadima i svakodnevnim stresom kroz strategije zasnovane na dokazima." },
@@ -69,11 +70,22 @@ const specialtyLinks = [
     desc: 'Postnatalna podrška za promene raspoloženja, preplavljenost i oporavak posle porođaja.'
   }
 ];
+
+const pageDescription =
+  'Terapija u Schaumburgu, IL za pojedince, parove i porodice, uz online seanse širom Illinoisa za anksioznost, traumu, ADHD, tugu i probleme u odnosima.';
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Terapija u Schaumburgu, IL',
+  description: pageDescription,
+  path: '/sr/therapy/',
+  serviceType: 'Psihoterapija'
+});
 ---
 
 <Layout
   title="Terapija u Schaumburgu, IL | Individualna, partnerska, porodična i online terapija"
-  description="Terapija u Schaumburgu, IL za pojedince, parove i porodice, uz online seanse širom Illinoisa za anksioznost, traumu, ADHD, tugu i probleme u odnosima."
+  description={pageDescription}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 

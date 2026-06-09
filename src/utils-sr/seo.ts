@@ -6,6 +6,8 @@ export const defaultDescription =
 export const defaultOgImage = `${siteUrl}/images/og-default.png`;
 export const logoUrl = `${siteUrl}/images/logo.png`;
 export const providerLicenseNumber = '071-011433';
+export const mapUrl =
+  'https://www.google.com/maps/search/?api=1&query=1320%20Tower%20Rd%20Suite%20156%20Schaumburg%20IL%2060173';
 
 export interface FaqItem {
   question: string;
@@ -38,13 +40,17 @@ export function resolveMetaImage(image?: string) {
 export function getBaseStructuredData(description: string) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'ProfessionalService',
+    '@type': ['MedicalBusiness', 'ProfessionalService'],
     '@id': `${siteUrl}/#professional-service`,
     name: siteName,
+    alternateName: 'Center for PTA',
     description,
     url: siteUrl,
     logo: logoUrl,
     image: defaultOgImage,
+    hasMap: mapUrl,
+    medicalSpecialty: ['Clinical Psychology', 'Psychotherapy', 'Psychological Assessment'],
+    knowsLanguage: ['English', 'Serbian', 'Spanish'],
     telephone: '+1-847-230-0045',
     email: 'info@centerforpta.com',
     priceRange: '$$',

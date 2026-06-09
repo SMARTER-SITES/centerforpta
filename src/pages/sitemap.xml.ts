@@ -1,31 +1,5 @@
 import type { APIRoute } from 'astro';
-import { siteUrl } from '../utils/seo';
-
-const staticPages = [
-  '/',
-  '/about/',
-  '/therapy/',
-  '/psychological-assessment/',
-  '/pre-surgical-psychological-evaluations/',
-  '/immigration-evaluations/',
-  '/consultation-supervision-and-coaching/',
-  '/rates-and-insurance/',
-  '/book-recommendations/',
-  '/our-partners/',
-  '/useful-links/',
-  '/privacy-policy/',
-  '/contact/',
-  '/blog/',
-  '/womens-mental-health-therapy/',
-  '/self-compassion-therapy/',
-  '/weight-loss-counseling/',
-  '/bariatric-surgery-counseling/',
-  '/divorce-counseling/',
-  '/prenatal-therapy/',
-  '/postpartum-therapy/'
-];
-
-const srStaticPages = staticPages.map((path) => (path === '/' ? '/sr/' : `/sr${path}`));
+import { buildSitemapXml, createSitemapEntries } from '../utils/sitemap-data.js';
 
 const blogModules = import.meta.glob('./blog/*.md', { eager: true }) as Record<
   string,
@@ -43,34 +17,8 @@ const blogPages = Object.entries(blogModules).map(([file, module]) => {
   };
 });
 
-const srBlogPages = blogPages.map((page) => ({
-  ...page,
-  path: `/sr${page.path}`
-}));
-
-function toUrl(path: string) {
-  return new URL(path, siteUrl).toString();
-}
-
 export const GET: APIRoute = () => {
-  const urls = [
-    ...staticPages.map((path) => ({ path })),
-    ...blogPages,
-    ...srStaticPages.map((path) => ({ path })),
-    ...srBlogPages
-  ];
-
-  const body = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls
-  .map(
-    ({ path, lastmod }) => `  <url>
-    <loc>${toUrl(path)}</loc>
-${lastmod ? `    <lastmod>${lastmod}</lastmod>` : ''}
-  </url>`
-  )
-  .join('\n')}
-</urlset>`;
+  const body = buildSitemapXml(createSitemapEntries(blogPages));
 
   return new Response(body, {
     headers: {

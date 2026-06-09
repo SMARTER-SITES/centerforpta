@@ -2,6 +2,7 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
 
 const assessments = [
   { title: "Kognitivna i intelektualna procena", desc: "Prepoznajte lične snage i slabosti, procenite opšte intelektualne sposobnosti i stilove učenja." },
@@ -29,11 +30,22 @@ const relatedLinks = [
     desc: 'Kontaktirajte ordinaciju da pitate za ADHD testiranje, procenu autizma ili procenu za prilagođavanja u školi ili na poslu.'
   }
 ];
+
+const pageDescription =
+  'Psihološko testiranje i procena u Schaumburgu, IL za ADHD, autizam, kognitivne teškoće, školske ili radne adaptacije i dijagnostičko razjašnjenje.';
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Psihološko testiranje i procena',
+  description: pageDescription,
+  path: '/sr/psychological-assessment/',
+  serviceType: 'Psihološka procena'
+});
 ---
 
 <Layout
   title="Psihološko testiranje i procena u Schaumburgu, IL | Dr Jelena Djurovic"
-  description="Psihološko testiranje i procena u Schaumburgu, IL za ADHD, autizam, kognitivne teškoće, školske ili radne adaptacije i dijagnostičko razjašnjenje."
+  description={pageDescription}
+  structuredData={serviceStructuredData}
 >
   <Navbar />
 
