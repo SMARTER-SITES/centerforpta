@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const assessments = [
@@ -32,7 +36,35 @@ const relatedLinks = [
 ];
 
 const pageDescription =
-  'Psychological testing and assessment in Schaumburg, IL for ADHD, autism, cognitive concerns, school or workplace accommodations, and diagnostic clarification.';
+  'ADHD testing and psychological assessment in Schaumburg, IL for autism evaluation, cognitive concerns, school or workplace accommodations, and diagnostic clarification.';
+
+const faqItems = [
+  {
+    question: 'Do you provide ADHD testing in Schaumburg, IL?',
+    answer:
+      'Yes. Psychological assessment can evaluate ADHD and executive functioning concerns through clinical interview, standardized testing, and careful interpretation of how attention and organization difficulties affect daily life.'
+  },
+  {
+    question: 'Can psychological testing help with school or workplace accommodations?',
+    answer:
+      'Yes. When clinically appropriate, assessment can clarify diagnoses and provide recommendations that may support school, university, or workplace accommodation requests.'
+  },
+  {
+    question: 'Do you offer autism evaluations?',
+    answer:
+      'Yes. Autism spectrum evaluation can be part of psychological assessment when social communication, sensory patterns, flexibility, or related concerns need diagnostic clarification.'
+  },
+  {
+    question: 'Is testing available in person and by telehealth?',
+    answer:
+      'Many evaluations are completed in person at the Schaumburg office. Some parts of the process may be available by telehealth in Illinois when clinically appropriate for the referral question.'
+  }
+];
+
+const localSectionParagraphs = [
+  'Psychological testing and ADHD assessment are available at the Schaumburg office for clients from Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, Streamwood, Des Plaines, and nearby northwest suburbs.',
+  'The evaluation process is designed to answer a specific referral question, such as ADHD, autism, cognitive concerns, diagnostic clarification, or accommodation planning.'
+];
 
 const serviceStructuredData = getServiceStructuredData({
   name: 'Psychological Testing and Assessment',
@@ -43,8 +75,9 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Psychological Testing and Assessment in Schaumburg, IL | Dr. Jelena Djurovic"
+  title="ADHD Testing and Psychological Assessment in Schaumburg, IL"
   description={pageDescription}
+  faqItems={faqItems}
   structuredData={serviceStructuredData}
 >
   <Navbar />
@@ -55,10 +88,10 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Psychological Testing and Assessment in Schaumburg, IL
+        ADHD Testing and Psychological Assessment in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Comprehensive testing for ADHD, autism, diagnostic clarification, cognitive concerns, and school or workplace accommodations.
+        Comprehensive testing for ADHD, autism, diagnostic clarification, cognitive concerns, and school or workplace accommodations in the northwest suburbs of Chicago.
       </p>
     </div>
   </section>
@@ -125,6 +158,21 @@ const serviceStructuredData = getServiceStructuredData({
       </div>
     </div>
   </section>
+
+  <LocalServiceArea
+    serviceName="Psychological Testing and Assessment"
+    title="Psychological Testing in Schaumburg and Nearby Northwest Suburbs"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <FaqSection
+    title="Psychological Assessment FAQ"
+    intro="Common questions about ADHD testing, autism evaluation, accommodations, and location."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">

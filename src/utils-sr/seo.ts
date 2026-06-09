@@ -6,8 +6,67 @@ export const defaultDescription =
 export const defaultOgImage = `${siteUrl}/images/og-default.png`;
 export const logoUrl = `${siteUrl}/images/logo.png`;
 export const providerLicenseNumber = '071-011433';
+export const contactPhone = '+1-847-230-0045';
+export const textPhone = '+1-847-929-7040';
+export const contactEmail = 'info@centerforpta.com';
 export const mapUrl =
   'https://www.google.com/maps/search/?api=1&query=1320%20Tower%20Rd%20Suite%20156%20Schaumburg%20IL%2060173';
+
+export const localServiceArea = [
+  { '@type': 'City', name: 'Schaumburg' },
+  { '@type': 'City', name: 'Hoffman Estates' },
+  { '@type': 'City', name: 'Arlington Heights' },
+  { '@type': 'City', name: 'Palatine' },
+  { '@type': 'City', name: 'Rolling Meadows' },
+  { '@type': 'City', name: 'Elk Grove Village' },
+  { '@type': 'City', name: 'Streamwood' },
+  { '@type': 'City', name: 'Des Plaines' },
+  { '@type': 'AdministrativeArea', name: 'Illinois' },
+  { '@type': 'AdministrativeArea', name: 'Chicagoland' }
+];
+
+const coreServiceOffers = [
+  {
+    name: 'Psihoterapija u Schaumburgu, IL',
+    serviceType: 'Psychotherapy',
+    path: '/sr/therapy/'
+  },
+  {
+    name: 'Psihološko testiranje i procena',
+    serviceType: 'Psychological Assessment',
+    path: '/sr/psychological-assessment/'
+  },
+  {
+    name: 'Imigracione psihološke evaluacije',
+    serviceType: 'Immigration Psychological Evaluation',
+    path: '/sr/immigration-evaluations/'
+  },
+  {
+    name: 'Predoperativne i bariatrijske psihološke evaluacije',
+    serviceType: 'Pre-Surgical Psychological Evaluation',
+    path: '/sr/pre-surgical-psychological-evaluations/'
+  },
+  {
+    name: 'Terapija tokom trudnoće i prenatalno savetovanje',
+    serviceType: 'Prenatal Therapy',
+    path: '/sr/prenatal-therapy/'
+  },
+  {
+    name: 'Postporođajna terapija',
+    serviceType: 'Postpartum Therapy',
+    path: '/sr/postpartum-therapy/'
+  },
+  {
+    name: 'Mentalno zdravlje žena',
+    serviceType: "Women's Mental Health Therapy",
+    path: '/sr/womens-mental-health-therapy/'
+  },
+  {
+    name: 'Savetovanje pre i posle bariatrijske operacije',
+    serviceType: 'Bariatric Surgery Counseling',
+    path: '/sr/bariatric-surgery-counseling/'
+  }
+];
 
 export interface FaqItem {
   question: string;
@@ -51,8 +110,18 @@ export function getBaseStructuredData(description: string) {
     hasMap: mapUrl,
     medicalSpecialty: ['Clinical Psychology', 'Psychotherapy', 'Psychological Assessment'],
     knowsLanguage: ['English', 'Serbian', 'Spanish'],
-    telephone: '+1-847-230-0045',
-    email: 'info@centerforpta.com',
+    knowsAbout: [
+      'Psihoterapija u Schaumburgu, IL',
+      'Psihološko testiranje',
+      'Imigracione psihološke evaluacije',
+      'Predoperativne psihološke evaluacije',
+      'Terapija tokom trudnoće',
+      'Postporođajna terapija',
+      'Bariatrijsko savetovanje',
+      'Mentalno zdravlje žena'
+    ],
+    telephone: contactPhone,
+    email: contactEmail,
     priceRange: '$$',
     founder: {
       '@type': 'Person',
@@ -72,26 +141,35 @@ export function getBaseStructuredData(description: string) {
       postalCode: '60173',
       addressCountry: 'US'
     },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Schaumburg'
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Illinois'
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Chicagoland'
-      }
-    ],
+    areaServed: localServiceArea,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Usluge kliničke psihologije u Schaumburgu i Illinoisu',
+      itemListElement: coreServiceOffers.map((service) => ({
+        '@type': 'Offer',
+        url: absoluteUrl(service.path),
+        itemOffered: {
+          '@type': 'Service',
+          name: service.name,
+          serviceType: service.serviceType,
+          url: absoluteUrl(service.path),
+          areaServed: localServiceArea
+        }
+      }))
+    },
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        contactType: 'podrška za klijente',
-        telephone: '+1-847-230-0045',
-        email: 'info@centerforpta.com',
+        contactType: 'zakazivanje i upiti klijenata',
+        telephone: contactPhone,
+        email: contactEmail,
+        areaServed: 'US',
+        availableLanguage: ['engleski', 'srpski', 'španski']
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'tekstualni upiti',
+        telephone: textPhone,
         areaServed: 'US',
         availableLanguage: ['engleski', 'srpski', 'španski']
       }
@@ -127,23 +205,28 @@ export function getServiceStructuredData({
     serviceType,
     description,
     url: absoluteUrl(path),
+    mainEntityOfPage: absoluteUrl(path),
+    category: 'Mental health service',
     provider: {
       '@id': `${siteUrl}/#professional-service`
     },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Schaumburg'
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Illinois'
+    areaServed: localServiceArea,
+    availableLanguage: ['engleski', 'srpski', 'španski'],
+    offers: {
+      '@type': 'Offer',
+      url: absoluteUrl('/sr/contact/'),
+      availability: 'https://schema.org/InStock',
+      itemOffered: {
+        '@type': 'Service',
+        name,
+        serviceType,
+        areaServed: localServiceArea
       }
-    ],
+    },
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: absoluteUrl('/sr/contact'),
-      servicePhone: '+1-847-230-0045',
+      serviceUrl: absoluteUrl('/sr/contact/'),
+      servicePhone: contactPhone,
       availableLanguage: ['engleski', 'srpski', 'španski']
     }
   };

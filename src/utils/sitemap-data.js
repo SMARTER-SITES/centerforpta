@@ -1,4 +1,5 @@
 export const siteUrl = 'https://centerforpta.com';
+export const staticLastmod = '2026-06-09T00:00:00.000Z';
 
 export const staticPages = [
   '/',
@@ -65,7 +66,7 @@ export function createSitemapEntries(extraPages = []) {
 
   function addEntry(page) {
     const path = normalizePath(typeof page === 'string' ? page : page.path);
-    const lastmod = typeof page === 'string' ? undefined : page.lastmod;
+    const lastmod = typeof page === 'string' ? staticLastmod : page.lastmod || staticLastmod;
 
     if (!entries.has(path)) {
       entries.set(path, { path, lastmod });

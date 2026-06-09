@@ -2,12 +2,72 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import { providerLicenseNumber } from '../utils/seo';
+import FaqSection from '../components/FaqSection.astro';
+import { absoluteUrl, contactEmail, contactPhone, providerLicenseNumber, siteUrl, textPhone } from '../utils/seo';
+
+const pageDescription =
+  'Contact Dr. Jelena Djurovic and the Center for Psychological Treatment and Assessment in Schaumburg, IL for therapy, psychological testing, immigration evaluations, or pre-surgical evaluations.';
+
+const faqItems = [
+  {
+    question: 'How do I schedule a consultation with Center for PTA?',
+    answer:
+      'You can call, text, email, or use the secure contact form. The office will help clarify the service you need, availability, and whether in-person care in Schaumburg or telehealth in Illinois is the better fit.'
+  },
+  {
+    question: 'Where is the office located?',
+    answer:
+      'The office is located at 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. The location is accessible from Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, and nearby northwest suburbs.'
+  },
+  {
+    question: 'Can I ask about therapy, testing, or evaluation services from this page?',
+    answer:
+      'Yes. You can ask about therapy, psychological testing, immigration psychological evaluations, pre-surgical or bariatric evaluations, prenatal therapy, postpartum therapy, and other services offered by the practice.'
+  },
+  {
+    question: 'Is telehealth available?',
+    answer:
+      'Telehealth is available for clients located in Illinois when clinically appropriate for the service requested.'
+  }
+];
+
+const contactStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Center for Psychological Treatment and Assessment',
+  url: absoluteUrl('/contact/'),
+  description: pageDescription,
+  about: {
+    '@id': `${siteUrl}/#professional-service`
+  },
+  mainEntity: {
+    '@id': `${siteUrl}/#professional-service`
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'appointments and patient inquiries',
+      telephone: contactPhone,
+      email: contactEmail,
+      areaServed: 'US',
+      availableLanguage: ['English', 'Serbian', 'Spanish']
+    },
+    {
+      '@type': 'ContactPoint',
+      contactType: 'text inquiries',
+      telephone: textPhone,
+      areaServed: 'US',
+      availableLanguage: ['English', 'Serbian', 'Spanish']
+    }
+  ]
+};
 ---
 
 <Layout
-  title="Contact Us | Center for Psychological Treatment and Assessment"
-  description="Contact the Center for Psychological Treatment and Assessment in Schaumburg, IL by phone, text, email, or online form to schedule a consultation."
+  title="Contact a Schaumburg, IL Psychologist | Center for PTA"
+  description={pageDescription}
+  faqItems={faqItems}
+  structuredData={contactStructuredData}
 >
   <Navbar />
 
@@ -17,11 +77,16 @@ import { providerLicenseNumber } from '../utils/seo';
     <div class="absolute bottom-[20%] right-[-10%] w-[30%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Get In Touch
+        Contact a Schaumburg, IL Psychologist
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        We can't wait to hear from you! Reach out via phone, email, or through our contact form.
+        Reach out to ask about therapy, psychological testing, immigration evaluations, pre-surgical evaluations, or telehealth care across Illinois.
       </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3 text-sm md:text-base font-semibold text-[#1a1a1a]">
+        <span class="rounded-full bg-white px-4 py-2 border border-gray-100">Schaumburg office</span>
+        <span class="rounded-full bg-white px-4 py-2 border border-gray-100">Telehealth across Illinois</span>
+        <span class="rounded-full bg-white px-4 py-2 border border-gray-100">English, Serbian, and Spanish</span>
+      </div>
     </div>
   </section>
 
@@ -71,6 +136,7 @@ import { providerLicenseNumber } from '../utils/seo';
           <div class="bg-white rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 h-full">
             <h2 class="text-3xl font-extrabold text-[#1a1a1a] mb-8">Send us a message</h2>
             <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="flex flex-col gap-5">
+              <input type="hidden" name="form-name" value="contact" />
               <p class="hidden">
                 <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
               </p>
@@ -117,6 +183,37 @@ import { providerLicenseNumber } from '../utils/seo';
       </div>
     </div>
   </section>
+
+  <section class="py-16 xl:py-24 bg-[#fcfbf9] relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7">
+          <h2 class="text-xl font-bold text-[#1a1a1a] mb-3">For Therapy</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Ask about individual, couples, family, prenatal, postpartum, women&apos;s mental health, or telehealth therapy in Illinois.
+          </p>
+        </div>
+        <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7">
+          <h2 class="text-xl font-bold text-[#1a1a1a] mb-3">For Testing</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Ask about ADHD testing, autism evaluation, diagnostic clarification, cognitive concerns, or accommodations-related assessment.
+          </p>
+        </div>
+        <div class="bg-white rounded-[1.75rem] border border-gray-100 p-7">
+          <h2 class="text-xl font-bold text-[#1a1a1a] mb-3">For Evaluations</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Ask about immigration psychological evaluations, pre-surgical evaluations, bariatric psychological evaluations, reports, and timelines.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FaqSection
+    title="Contact and Scheduling FAQ"
+    intro="Common questions about location, services, and the best way to start."
+    faqs={faqItems}
+  />
 
   <Footer />
 </Layout>

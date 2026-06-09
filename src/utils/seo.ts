@@ -6,8 +6,67 @@ export const defaultDescription =
 export const defaultOgImage = `${siteUrl}/images/og-default.png`;
 export const logoUrl = `${siteUrl}/images/logo.png`;
 export const providerLicenseNumber = '071-011433';
+export const contactPhone = '+1-847-230-0045';
+export const textPhone = '+1-847-929-7040';
+export const contactEmail = 'info@centerforpta.com';
 export const mapUrl =
   'https://www.google.com/maps/search/?api=1&query=1320%20Tower%20Rd%20Suite%20156%20Schaumburg%20IL%2060173';
+
+export const localServiceArea = [
+  { '@type': 'City', name: 'Schaumburg' },
+  { '@type': 'City', name: 'Hoffman Estates' },
+  { '@type': 'City', name: 'Arlington Heights' },
+  { '@type': 'City', name: 'Palatine' },
+  { '@type': 'City', name: 'Rolling Meadows' },
+  { '@type': 'City', name: 'Elk Grove Village' },
+  { '@type': 'City', name: 'Streamwood' },
+  { '@type': 'City', name: 'Des Plaines' },
+  { '@type': 'AdministrativeArea', name: 'Illinois' },
+  { '@type': 'AdministrativeArea', name: 'Chicagoland' }
+];
+
+const coreServiceOffers = [
+  {
+    name: 'Therapy in Schaumburg, IL',
+    serviceType: 'Psychotherapy',
+    path: '/therapy/'
+  },
+  {
+    name: 'Psychological Testing and Assessment',
+    serviceType: 'Psychological Assessment',
+    path: '/psychological-assessment/'
+  },
+  {
+    name: 'Immigration Psychological Evaluations',
+    serviceType: 'Immigration Psychological Evaluation',
+    path: '/immigration-evaluations/'
+  },
+  {
+    name: 'Pre-Surgical and Bariatric Psychological Evaluations',
+    serviceType: 'Pre-Surgical Psychological Evaluation',
+    path: '/pre-surgical-psychological-evaluations/'
+  },
+  {
+    name: 'Pregnancy Therapy and Prenatal Counseling',
+    serviceType: 'Prenatal Therapy',
+    path: '/prenatal-therapy/'
+  },
+  {
+    name: 'Postpartum Therapy',
+    serviceType: 'Postpartum Therapy',
+    path: '/postpartum-therapy/'
+  },
+  {
+    name: "Women's Mental Health Therapy",
+    serviceType: "Women's Mental Health Therapy",
+    path: '/womens-mental-health-therapy/'
+  },
+  {
+    name: 'Bariatric Surgery Counseling',
+    serviceType: 'Bariatric Surgery Counseling',
+    path: '/bariatric-surgery-counseling/'
+  }
+];
 
 export interface FaqItem {
   question: string;
@@ -51,8 +110,18 @@ export function getBaseStructuredData(description: string) {
     hasMap: mapUrl,
     medicalSpecialty: ['Clinical Psychology', 'Psychotherapy', 'Psychological Assessment'],
     knowsLanguage: ['English', 'Serbian', 'Spanish'],
-    telephone: '+1-847-230-0045',
-    email: 'info@centerforpta.com',
+    knowsAbout: [
+      'Therapy in Schaumburg, IL',
+      'Psychological testing',
+      'Immigration psychological evaluations',
+      'Pre-surgical psychological evaluations',
+      'Pregnancy therapy',
+      'Postpartum therapy',
+      'Bariatric surgery counseling',
+      "Women's mental health therapy"
+    ],
+    telephone: contactPhone,
+    email: contactEmail,
     priceRange: '$$',
     founder: {
       '@type': 'Person',
@@ -72,26 +141,35 @@ export function getBaseStructuredData(description: string) {
       postalCode: '60173',
       addressCountry: 'US'
     },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Schaumburg'
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Illinois'
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Chicagoland'
-      }
-    ],
+    areaServed: localServiceArea,
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Clinical psychology services in Schaumburg and Illinois',
+      itemListElement: coreServiceOffers.map((service) => ({
+        '@type': 'Offer',
+        url: absoluteUrl(service.path),
+        itemOffered: {
+          '@type': 'Service',
+          name: service.name,
+          serviceType: service.serviceType,
+          url: absoluteUrl(service.path),
+          areaServed: localServiceArea
+        }
+      }))
+    },
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        contactType: 'customer support',
-        telephone: '+1-847-230-0045',
-        email: 'info@centerforpta.com',
+        contactType: 'appointments and patient inquiries',
+        telephone: contactPhone,
+        email: contactEmail,
+        areaServed: 'US',
+        availableLanguage: ['English', 'Serbian', 'Spanish']
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'text inquiries',
+        telephone: textPhone,
         areaServed: 'US',
         availableLanguage: ['English', 'Serbian', 'Spanish']
       }
@@ -127,23 +205,28 @@ export function getServiceStructuredData({
     serviceType,
     description,
     url: absoluteUrl(path),
+    mainEntityOfPage: absoluteUrl(path),
+    category: 'Mental health service',
     provider: {
       '@id': `${siteUrl}/#professional-service`
     },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Schaumburg'
-      },
-      {
-        '@type': 'AdministrativeArea',
-        name: 'Illinois'
+    areaServed: localServiceArea,
+    availableLanguage: ['English', 'Serbian', 'Spanish'],
+    offers: {
+      '@type': 'Offer',
+      url: absoluteUrl('/contact/'),
+      availability: 'https://schema.org/InStock',
+      itemOffered: {
+        '@type': 'Service',
+        name,
+        serviceType,
+        areaServed: localServiceArea
       }
-    ],
+    },
     availableChannel: {
       '@type': 'ServiceChannel',
-      serviceUrl: absoluteUrl('/contact'),
-      servicePhone: '+1-847-230-0045',
+      serviceUrl: absoluteUrl('/contact/'),
+      servicePhone: contactPhone,
       availableLanguage: ['English', 'Serbian', 'Spanish']
     }
   };

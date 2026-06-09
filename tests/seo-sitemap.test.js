@@ -30,4 +30,5 @@ test('sitemap XML exposes hreflang alternates for multilingual discovery', () =>
     xml,
     /<xhtml:link rel="alternate" hreflang="x-default" href="https:\/\/centerforpta\.com\/immigration-evaluations\/" \/>/
   );
+  assert.match(xml, /<lastmod>2026-06-09T00:00:00.000Z<\/lastmod>/);
 });
