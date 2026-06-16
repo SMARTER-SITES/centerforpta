@@ -32,3 +32,24 @@ test('sitemap XML exposes hreflang alternates for multilingual discovery', () =>
   );
   assert.match(xml, /<lastmod>2026-06-09T00:00:00.000Z<\/lastmod>/);
 });
+
+test('sitemap entries can omit hreflang alternates for untranslated blog posts', () => {
+  const xml = buildSitemapXml(
+    createSitemapEntries([
+      {
+        path: '/blog/what-to-expect-during-an-immigration-psychological-evaluation/',
+        lastmod: '2026-06-16T09:00:00.000Z',
+        alternates: false
+      }
+    ])
+  );
+
+  assert.match(
+    xml,
+    /<loc>https:\/\/centerforpta\.com\/blog\/what-to-expect-during-an-immigration-psychological-evaluation\/<\/loc>/
+  );
+  assert.doesNotMatch(
+    xml,
+    /href="https:\/\/centerforpta\.com\/sr\/blog\/what-to-expect-during-an-immigration-psychological-evaluation\/"/
+  );
+});

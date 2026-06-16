@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts-sr/Layout.astro';
+import Navbar from './Navbar.astro';
+import Footer from './Footer.astro';
+
+type Post = {
+  frontmatter: {
+    date: string;
+    title: string;
+    description?: string;
+    image?: string;
+    imageAlt?: string;
+    category?: string;
+  };
+  url: string;
+};
+
+interface Props {
+  posts: Post[];
+  currentPage: number;
+  totalPages: number;
+  totalPosts: number;
+}
+
+const { posts, currentPage, totalPages, totalPosts } = Astro.props;
+const featuredPost = currentPage === 1 ? posts[0] : undefined;
+const gridPosts = currentPage === 1 ? posts.slice(1) : posts;
+const previousHref = currentPage === 2 ? '/sr/blog/' : `/sr/blog/page/${currentPage - 1}/`;
+const nextHref = `/sr/blog/page/${currentPage + 1}/`;
+
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('sr-Latn-RS', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
+}
+---
+
+<Layout
+  title={currentPage === 1 ? 'Klinički uvidi | Center for PTA' : `Klinički uvidi, strana ${currentPage} | Center for PTA`}
+  description="Korisni tekstovi o terapiji, psihološkoj proceni, imigracionim evaluacijama i mentalnom zdravlju u Šamburgu i širom Ilinoisa."
+>
+  <Navbar />
+
+  <section class="pt-32 md:pt-40 pb-14 md:pb-20 bg-[#fbfaf7] border-b border-[#e8e2d8]">
+    <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16">
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-10 xl:gap-16 items-end">
+        <div>
+          <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-[1.02] tracking-tight max-w-4xl">
+            Klinički uvidi
+          </h1>
+          <p class="mt-7 text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl">
+            Stručno napisane smernice o terapiji, psihološkom testiranju, imigracionim evaluacijama i brizi o mentalnom zdravlju u Ilinoisu.
+          </p>
+        </div>
+        <div class="border-l-4 border-[#2f594f] pl-6 py-2">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#8b7a56] mb-3">SEO hub</p>
+          <p class="text-base text-gray-700 leading-relaxed">
+            Klinički pregledani resursi Center for Psychological Treatment and Assessment u Šamburgu, IL.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-3 text-sm font-semibold">
+        <a href="/sr/immigration-evaluations/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Imigracione evaluacije</a>
+        <a href="/sr/psychological-assessment/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Psihološko testiranje</a>
+        <a href="/sr/therapy/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Terapija</a>
+        <a href="/sr/contact/" class="px-4 py-2 rounded-full bg-[#2f594f] text-white hover:bg-[#24473f] transition-colors">Pitajte za zakazivanje</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 xl:py-24 bg-white">
+    <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16">
+      {featuredPost && (
+        <a href={featuredPost.url} class="group grid lg:grid-cols-[1.08fr_0.92fr] gap-0 overflow-hidden rounded-2xl border border-[#e8e2d8] shadow-[0_22px_70px_rgba(47,89,79,0.12)] mb-12 md:mb-16 bg-white">
+          {featuredPost.frontmatter.image ? (
+            <img
+              src={featuredPost.frontmatter.image}
+              alt={featuredPost.frontmatter.imageAlt || featuredPost.frontmatter.title}
+              class="w-full h-full min-h-[280px] lg:min-h-[430px] object-cover"
+            />
+          ) : (
+            <div class="min-h-[280px] lg:min-h-[430px] bg-[#f3f0e9]"></div>
+          )}
+          <div class="p-7 md:p-10 xl:p-12 flex flex-col justify-center">
+            <div class="flex flex-wrap items-center gap-3 mb-5 text-sm font-bold text-[#2f594f]">
+              <span>{featuredPost.frontmatter.category || 'Klinički uvid'}</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#c8b98d]" aria-hidden="true"></span>
+              <time datetime={featuredPost.frontmatter.date}>{formatDate(featuredPost.frontmatter.date)}</time>
+            </div>
+            <h2 class="text-3xl md:text-4xl xl:text-5xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight group-hover:text-[#2f594f] transition-colors">
+              {featuredPost.frontmatter.title}
+            </h2>
+            {featuredPost.frontmatter.description && (
+              <p class="mt-5 text-base md:text-lg text-gray-700 leading-relaxed">
+                {featuredPost.frontmatter.description}
+              </p>
+            )}
+            <div class="mt-8 inline-flex items-center gap-2 text-sm font-bold text-[#2f594f]">
+              Pročitajte vodič
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </div>
+          </div>
+        </a>
+      )}
+
+      {totalPosts === 0 ? (
+        <div class="text-center py-20 border border-dashed border-[#d8d0c2] rounded-2xl">
+          <p class="text-xl text-gray-600 font-medium">Novi klinički uvidi stižu uskoro.</p>
+        </div>
+      ) : (
+        <>
+          {gridPosts.length > 0 && (
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+              {gridPosts.map((post) => (
+                <a href={post.url} class="group flex flex-col h-full bg-white border border-[#e8e2d8] rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_18px_55px_rgba(47,89,79,0.12)] transition-all duration-300 hover:-translate-y-1">
+                  {post.frontmatter.image ? (
+                    <img
+                      src={post.frontmatter.image}
+                      alt={post.frontmatter.imageAlt || post.frontmatter.title}
+                      class="w-full aspect-[16/10] object-cover"
+                    />
+                  ) : (
+                    <div class="w-full aspect-[16/10] bg-[#f3f0e9]"></div>
+                  )}
+                  <div class="flex flex-col flex-1 p-6">
+                    <div class="flex flex-wrap items-center gap-2 mb-4 text-xs font-bold uppercase tracking-[0.12em] text-[#2f594f]">
+                      <span>{post.frontmatter.category || 'Klinički uvid'}</span>
+                      <span class="text-[#c8b98d]">/</span>
+                      <time datetime={post.frontmatter.date}>{formatDate(post.frontmatter.date)}</time>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#1a1a1a] leading-snug group-hover:text-[#2f594f] transition-colors">
+                      {post.frontmatter.title}
+                    </h3>
+                    {post.frontmatter.description && (
+                      <p class="mt-4 text-sm text-gray-600 leading-relaxed">
+                        {post.frontmatter.description}
+                      </p>
+                    )}
+                    <div class="mt-auto pt-6 inline-flex items-center gap-2 text-sm font-bold text-[#2f594f]">
+                      Pročitajte više
+                      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+
+          <nav class="mt-14 md:mt-16 pt-8 border-t border-[#e8e2d8] flex flex-col md:flex-row md:items-center md:justify-between gap-5" aria-label="Paginacija uvida">
+            <p class="text-sm font-semibold text-gray-600">
+              Strana {currentPage} od {totalPages} · {totalPosts} {totalPosts === 1 ? 'uvid' : 'uvida'}
+            </p>
+            <div class="flex items-center gap-3">
+              {currentPage > 1 ? (
+                <a href={previousHref} class="inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-[#d8d0c2] text-sm font-bold text-[#2f594f] hover:border-[#2f594f] transition-colors">Prethodna</a>
+              ) : (
+                <span class="inline-flex items-center justify-center px-4 py-2.5 rounded-full border border-[#e8e2d8] text-sm font-bold text-gray-400" aria-disabled="true">Prethodna</span>
+              )}
+              {currentPage < totalPages ? (
+                <a href={nextHref} class="inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-[#2f594f] text-sm font-bold text-white hover:bg-[#24473f] transition-colors">Sledeća</a>
+              ) : (
+                <span class="inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-[#edf2ef] text-sm font-bold text-gray-400" aria-disabled="true">Sledeća</span>
+              )}
+            </div>
+          </nav>
+        </>
+      )}
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

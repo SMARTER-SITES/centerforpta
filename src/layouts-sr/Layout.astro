@@ -17,7 +17,10 @@ interface Props {
   image?: string;
   ogType?: 'website' | 'article';
   publishedTime?: string;
+  modifiedTime?: string;
   author?: string;
+  reviewedBy?: string;
+  schemaType?: 'Article' | 'BlogPosting';
   noIndex?: boolean;
   faqItems?: FaqItem[];
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
@@ -29,7 +32,10 @@ const {
   image,
   ogType = 'website',
   publishedTime,
+  modifiedTime,
   author = 'Dr. Jelena Djurovic',
+  reviewedBy,
+  schemaType = 'Article',
   noIndex = false,
   faqItems = [],
   structuredData: customStructuredData
@@ -51,7 +57,7 @@ const structuredData = [
   ogType === 'article'
     ? {
         '@context': 'https://schema.org',
-        '@type': 'Article',
+        '@type': schemaType,
         headline: title,
         description,
         image: socialImage,
@@ -68,6 +74,13 @@ const structuredData = [
           }
         },
         datePublished: publishedTime,
+        dateModified: modifiedTime || publishedTime,
+        reviewedBy: reviewedBy
+          ? {
+              '@type': 'Person',
+              name: reviewedBy
+            }
+          : undefined,
         mainEntityOfPage: canonicalUrl
       }
     : null,

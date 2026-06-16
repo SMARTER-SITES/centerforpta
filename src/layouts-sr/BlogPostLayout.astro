@@ -4,47 +4,80 @@ import Navbar from '../components-sr/Navbar.astro';
 import Footer from '../components-sr/Footer.astro';
 
 const { frontmatter } = Astro.props;
+const articleTitle = frontmatter.metaTitle || `${frontmatter.title} | Center for Psychological Treatment and Assessment`;
+const displayDate = frontmatter.date
+  ? new Date(frontmatter.date).toLocaleDateString('sr-Latn-RS', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric'
+    })
+  : '';
+const category = frontmatter.category || 'Klinički uvid';
+const reviewedBy = frontmatter.reviewedBy || 'Dr. Jelena Djurovic, Psy.D.';
 ---
 
 <Layout
-  title={`${frontmatter.title} | Center for Psychological Treatment and Assessment`}
+  title={articleTitle}
   description={frontmatter.description}
   image={frontmatter.image}
   ogType="article"
   publishedTime={frontmatter.date}
+  modifiedTime={frontmatter.updatedDate || frontmatter.date}
   author={frontmatter.author}
+  reviewedBy={reviewedBy}
+  schemaType="BlogPosting"
+  faqItems={frontmatter.faqItems || []}
+  structuredData={frontmatter.structuredData}
 >
   <Navbar />
 
-  <!-- Hero Section -->
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
-    <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    <div class="absolute bottom-[20%] right-[-10%] w-[30%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
-    
-    <div class="max-w-[800px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[14px] font-bold text-[#2f594f] uppercase tracking-widest mb-4">
-        {frontmatter.date ? new Date(frontmatter.date).toLocaleDateString() : ''}
-      </p>
-      <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        {frontmatter.title}
-      </h1>
-      {frontmatter.author && (
-        <p class="text-base text-gray-500 font-medium">Autor: {frontmatter.author}</p>
-      )}
+  <section class="pt-32 md:pt-40 bg-[#fbfaf7] border-b border-[#e8e2d8]">
+    <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16 pb-14 md:pb-20">
+      <a href="/sr/blog/" class="inline-flex items-center gap-2 text-sm font-bold text-[#2f594f] hover:text-[#1a1a1a] transition-colors mb-10">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Uvidi
+      </a>
+
+      <div class="grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 xl:gap-16 items-end">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6 text-sm font-semibold text-[#2f594f]">
+            <span>{category}</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#c8b98d]" aria-hidden="true"></span>
+            <time datetime={frontmatter.date}>{displayDate}</time>
+          </div>
+          <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-[1.04] tracking-tight max-w-4xl">
+            {frontmatter.title}
+          </h1>
+          {frontmatter.description && (
+            <p class="mt-7 text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl">
+              {frontmatter.description}
+            </p>
+          )}
+        </div>
+
+        <aside class="border-l-4 border-[#2f594f] pl-6 py-2">
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#8b7a56] mb-3">Klinički pregledano</p>
+          <p class="text-base font-bold text-[#1a1a1a] leading-snug">{reviewedBy}</p>
+          {frontmatter.lastReviewed && (
+            <p class="mt-2 text-sm text-gray-600">Poslednji pregled: {frontmatter.lastReviewed}</p>
+          )}
+          <p class="mt-5 text-sm text-gray-600 leading-relaxed">
+            Edukativne smernice Center for Psychological Treatment and Assessment u Šamburgu, IL.
+          </p>
+        </aside>
+      </div>
     </div>
   </section>
 
-  <!-- Content Section -->
-  <section class="py-16 xl:py-24 bg-white relative">
-    <div class="max-w-[800px] mx-auto px-5 md:px-10">
+  <section class="py-12 xl:py-20 bg-white relative">
+    <div class="max-w-[1120px] mx-auto px-5 md:px-10 xl:px-16">
       {frontmatter.image && (
-        <div class="mb-12 rounded-3xl overflow-hidden shadow-lg border border-gray-100">
-          <img src={frontmatter.image} alt={frontmatter.title} class="w-full h-auto object-cover" />
+        <div class="mb-12 overflow-hidden rounded-2xl border border-[#e8e2d8] shadow-[0_24px_80px_rgba(47,89,79,0.12)]">
+          <img src={frontmatter.image} alt={frontmatter.imageAlt || frontmatter.title} class="w-full aspect-[16/9] object-cover" />
         </div>
       )}
 
-      <!-- Prose wrapper for premium markdown styling -->
-      <article class="prose prose-lg md:prose-xl prose-stone max-w-none 
+      <article class="prose prose-lg md:prose-xl prose-stone max-w-[820px] mx-auto
           prose-headings:text-[#1a1a1a] prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:mb-6 prose-headings:mt-12
           prose-h2:text-3xl md:prose-h2:text-4xl 
           prose-h3:text-2xl md:prose-h3:text-3xl prose-h3:text-[#147b6a]
@@ -56,10 +89,13 @@ const { frontmatter } = Astro.props;
         <slot />
       </article>
       
-      <div class="mt-16 pt-8 border-t border-gray-200">
+      <div class="max-w-[820px] mx-auto mt-16 pt-8 border-t border-gray-200 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <a href="/sr/blog/" class="inline-flex items-center text-[#2f594f] font-bold hover:text-[#1a1a1a] transition-colors">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path></svg>
-          Back to all posts
+          Nazad na uvide
+        </a>
+        <a href="/sr/contact/" class="inline-flex items-center justify-center px-5 py-3 bg-[#2f594f] text-white text-sm font-bold rounded-full shadow-lg shadow-[#2f594f]/15 hover:bg-[#24473f] transition-colors">
+          Kontaktirajte ordinaciju
         </a>
       </div>
     </div>

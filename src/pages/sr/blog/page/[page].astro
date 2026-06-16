@@ -1,0 +1,46 @@
+---
+import InsightsListing from '../../../../components-sr/InsightsListing.astro';
+
+export function getStaticPaths() {
+  const postsPerPage = 6;
+  const allPosts = Object.values(import.meta.glob('../*.md', { eager: true })) as Array<{
+    frontmatter: {
+      date: string;
+      title: string;
+      description?: string;
+      image?: string;
+      imageAlt?: string;
+      category?: string;
+    };
+    url: string;
+  }>;
+
+  const sortedPosts = allPosts.sort((a, b) => {
+    return new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf();
+  });
+  const totalPages = Math.max(1, Math.ceil(sortedPosts.length / postsPerPage));
+
+  if (totalPages <= 1) {
+    return [];
+  }
+
+  return Array.from({ length: totalPages - 1 }, (_, index) => {
+    const page = index + 2;
+    const start = (page - 1) * postsPerPage;
+
+    return {
+      params: { page: String(page) },
+      props: {
+        page,
+        posts: sortedPosts.slice(start, start + postsPerPage),
+        totalPages,
+        totalPosts: sortedPosts.length
+      }
+    };
+  });
+}
+
+const { page, posts, totalPages, totalPosts } = Astro.props;
+---
+
+<InsightsListing posts={posts} currentPage={page} totalPages={totalPages} totalPosts={totalPosts} />

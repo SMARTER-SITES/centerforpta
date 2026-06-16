@@ -67,14 +67,19 @@ export function createSitemapEntries(extraPages = []) {
   function addEntry(page) {
     const path = normalizePath(typeof page === 'string' ? page : page.path);
     const lastmod = typeof page === 'string' ? staticLastmod : page.lastmod || staticLastmod;
+    const includeAlternates = typeof page === 'string' ? true : page.alternates !== false;
 
     if (!entries.has(path)) {
-      entries.set(path, { path, lastmod });
+      entries.set(path, { path, lastmod, alternates: includeAlternates });
+    }
+
+    if (!includeAlternates) {
+      return;
     }
 
     const alternatePath = getAlternatePath(path);
     if (!entries.has(alternatePath)) {
-      entries.set(alternatePath, { path: alternatePath, lastmod });
+      entries.set(alternatePath, { path: alternatePath, lastmod, alternates: true });
     }
   }
 
@@ -119,19 +124,20 @@ function createAlternateLinks(path) {
 
 export function buildSitemapXml(entries) {
   const urls = entries
-    .map(({ path, lastmod }) => {
+    .map(({ path, lastmod, alternates = true }) => {
       const formattedLastmod = formatLastmod(lastmod);
-      const alternateLinks = createAlternateLinks(path)
-        .map(
-          ({ hreflang, href }) =>
-            `    <xhtml:link rel="alternate" hreflang="${escapeXml(hreflang)}" href="${escapeXml(href)}" />`
-        )
-        .join('\n');
+      const alternateLinks = alternates
+        ? createAlternateLinks(path)
+            .map(
+              ({ hreflang, href }) =>
+                `    <xhtml:link rel="alternate" hreflang="${escapeXml(hreflang)}" href="${escapeXml(href)}" />`
+            )
+            .join('\n')
+        : '';
 
       return `  <url>
     <loc>${escapeXml(toAbsoluteUrl(path))}</loc>
-${alternateLinks}
-${formattedLastmod ? `    <lastmod>${escapeXml(formattedLastmod)}</lastmod>` : ''}
+${alternateLinks ? `${alternateLinks}\n` : ''}${formattedLastmod ? `    <lastmod>${escapeXml(formattedLastmod)}</lastmod>` : ''}
   </url>`;
     })
     .join('\n');
