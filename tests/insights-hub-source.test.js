@@ -33,6 +33,18 @@ test('blog post layout emits BlogPosting and optional faq metadata', () => {
   assert.match(srBlogPostLayout, /faqItems=\{frontmatter\.faqItems \|\| \[\]\}/);
 });
 
+test('blog post layouts render scrollable heading navigation from markdown headings', () => {
+  assert.match(blogPostLayout, /tocHeadings/);
+  assert.match(blogPostLayout, /In This Article/);
+  assert.match(blogPostLayout, /href=\{`#\$\{heading\.slug\}`\}/);
+  assert.match(blogPostLayout, /lg:sticky/);
+  assert.match(blogPostLayout, /overflow-y-auto/);
+  assert.match(blogPostLayout, /scroll-behavior: smooth/);
+  assert.match(srBlogPostLayout, /Sadržaj/);
+  assert.match(srBlogPostLayout, /aria-label="Sadržaj članka"/);
+  assert.match(srBlogPostLayout, /href=\{`#\$\{heading\.slug\}`\}/);
+});
+
 test('immigration evaluation article includes local seo, license, and media details', () => {
   assert.match(immigrationPost, /Immigration Psychological Evaluation in Illinois/);
   assert.match(immigrationPost, /immigration-psychological-evaluation-schaumburg\.jpg/);
