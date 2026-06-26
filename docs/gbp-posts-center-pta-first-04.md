@@ -1,4 +1,4 @@
-# Center PTA - First 4 GBP Posts for Approval
+# Center PTA - First 8 GBP Posts for Approval
 
 ## Short Intro for Dr. Djurovic
 
@@ -46,3 +46,50 @@ Link: https://centerforpta.com/postpartum-therapy/
 
 Image direction: Gentle, general image about new routines, care, and emotional adjustment. Avoid showing babies' faces, breastfeeding imagery, distressed parents, or anything that feels too intimate for a public business post.
 
+## Post 05 - Attorney Coordination for Immigration Evaluations
+
+When clients provide written consent, Dr. Jelena Djurovic can coordinate with an immigration attorney about referral questions, relevant records, deadlines, and the clinical issues most important to the evaluation. This helps keep the psychological evaluation process organized while maintaining appropriate privacy and clinical boundaries.
+
+Center PTA provides immigration psychological evaluations in Schaumburg and across Illinois when telehealth is clinically appropriate. Services are available in English, Serbian, and Spanish.
+
+Link: https://centerforpta.com/immigration-evaluations/
+
+Image: /images/gbp/gbp-005-attorney-coordination.png
+
+Image direction: Calm professional office image connected to clinical documentation and coordination. Avoid flags, court imagery, legal symbols, passport closeups, distressed people, or readable private documents.
+
+## Post 06 - Immigration Evaluation Case Types
+
+Immigration psychological evaluations may be relevant for asylum, hardship waiver, VAWA, U visa, T visa, and cancellation of removal matters when clinical documentation is appropriate. The evaluation focuses on psychological history, emotional impact, current functioning, symptoms, and clinically relevant context.
+
+Center PTA provides evaluations in Schaumburg and across Illinois when telehealth is clinically appropriate. The evaluation is clinical documentation, not legal advice or a guarantee of any immigration outcome.
+
+Link: https://centerforpta.com/immigration-evaluations/
+
+Image: /images/gbp/gbp-006-immigration-case-types.png
+
+Image direction: Organized clinical documentation image showing neutral folders, notes, or planning materials. Avoid legal symbols, flags, passports, court imagery, distressed people, or readable private documents.
+
+## Post 07 - Multilingual Evaluation Support
+
+Discussing trauma, hardship, family history, and emotional symptoms can be easier when language is not a barrier. Center PTA provides psychological evaluation services in English, Serbian, and Spanish, helping clients communicate important clinical information with more clarity and comfort.
+
+Evaluations are available at the Schaumburg office, with Illinois telehealth options when clinically appropriate. Attorney coordination is available with the client's written consent.
+
+Link: https://centerforpta.com/immigration-evaluations/
+
+Image: /images/gbp/gbp-007-multilingual-evaluation-support.png
+
+Image direction: Warm, inclusive clinical-office image suggesting clear communication across languages. Avoid flags, country symbols, maps with labels, stereotypes, legal symbols, or readable text.
+
+## Post 08 - Illinois Telehealth for Immigration Evaluations
+
+Immigration psychological evaluations are available in person at the Schaumburg office, and telehealth may be available for clients who are physically located in Illinois when the appointment occurs and when remote evaluation is clinically appropriate.
+
+The process may include an initial consultation, clinical interview, relevant history review, standardized measures when appropriate, and a written report. Some situations may be better suited for in-person evaluation.
+
+Link: https://centerforpta.com/immigration-evaluations/
+
+Image: /images/gbp/gbp-008-illinois-telehealth.png
+
+Image direction: Calm telehealth image with a laptop, notes, and private clinical workspace. Avoid showing faces, readable screen text, maps, flags, legal symbols, or anything that suggests emergency or hospital care.
