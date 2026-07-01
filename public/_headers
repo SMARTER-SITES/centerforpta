@@ -3,6 +3,12 @@
   Vary: Accept
   Content-Signal: ai-train=no, search=yes, ai-input=yes
 
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=604800
+
 /.well-known/api-catalog
   Content-Type: application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"; charset=utf-8
 
