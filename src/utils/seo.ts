@@ -33,6 +33,11 @@ const coreServiceOffers = [
     path: '/therapy/'
   },
   {
+    name: 'Couples Therapy in Schaumburg, IL',
+    serviceType: 'Couples Therapy',
+    path: '/couples-therapy/'
+  },
+  {
     name: 'Psychological Testing and Assessment',
     serviceType: 'Psychological Assessment',
     path: '/psychological-assessment/'
@@ -113,6 +118,7 @@ export function getBaseStructuredData(description: string) {
     knowsLanguage: ['English', 'Serbian'],
     knowsAbout: [
       'Therapy in Schaumburg, IL',
+      'Couples therapy in Schaumburg, IL',
       'Psychological testing',
       'Immigration psychological evaluations',
       'Pre-surgical psychological evaluations',

@@ -33,6 +33,11 @@ const coreServiceOffers = [
     path: '/sr/therapy/'
   },
   {
+    name: 'Partnerska terapija u Schaumburgu, IL',
+    serviceType: 'Couples Therapy',
+    path: '/sr/couples-therapy/'
+  },
+  {
     name: 'Psihološko testiranje i procena',
     serviceType: 'Psychological Assessment',
     path: '/sr/psychological-assessment/'
@@ -113,6 +118,7 @@ export function getBaseStructuredData(description: string) {
     knowsLanguage: ['English', 'Serbian'],
     knowsAbout: [
       'Psihoterapija u Schaumburgu, IL',
+      'Partnerska terapija u Schaumburgu, IL',
       'Psihološko testiranje',
       'Imigracione psihološke evaluacije',
       'Predoperativne psihološke evaluacije',

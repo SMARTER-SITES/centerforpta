@@ -76,6 +76,13 @@ test('service matcher returns therapy for anxiety-related needs', () => {
   assert.equal(matches[0].name, 'Therapy');
 });
 
+test('service matcher returns couples therapy for relationship counseling needs', () => {
+  const matches = matchServices('We need couples therapy for communication and recurring conflict');
+
+  assert.ok(matches.length > 0);
+  assert.equal(matches[0].name, 'Couples Therapy');
+});
+
 test('webmcp tools stay aligned with the public read-only API surface', () => {
   assert.equal(webMcpToolSpecs.length, 4);
   assert.deepEqual(

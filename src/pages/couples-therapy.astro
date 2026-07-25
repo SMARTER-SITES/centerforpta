@@ -1,0 +1,237 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import TopicHero from '../components/TopicHero.astro';
+import TopicOverviewSection from '../components/TopicOverviewSection.astro';
+import TopicProcessSection from '../components/TopicProcessSection.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
+import { getServiceStructuredData } from '../utils/seo';
+
+const focusAreas = [
+  {
+    title: 'Communication patterns',
+    desc: 'Notice the cycles that leave one or both partners feeling unheard, defensive, dismissed, or alone.'
+  },
+  {
+    title: 'Recurring conflict',
+    desc: 'Slow down arguments, understand what keeps repeating, and practice more constructive ways to respond.'
+  },
+  {
+    title: 'Trust and connection',
+    desc: 'Make space for hurt, emotional distance, or a breach of trust without rushing past what needs attention.'
+  },
+  {
+    title: 'Major transitions',
+    desc: 'Navigate parenthood, work stress, caregiving, relocation, cultural differences, or other changes affecting the relationship.'
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/therapy',
+    title: 'Individual Therapy',
+    desc: 'Explore one-on-one support for anxiety, depression, trauma, grief, and major life transitions.'
+  },
+  {
+    href: '/divorce-counseling',
+    title: 'Divorce Counseling',
+    desc: 'Support before, during, or after separation when an individual space is the better fit.'
+  },
+  {
+    href: '/rates-and-insurance',
+    title: 'Rates and Insurance',
+    desc: 'Review practical information about payment, insurance, and getting started.'
+  }
+];
+
+const signals = ['In-person in Schaumburg', 'Illinois telehealth', 'English and Serbian'];
+
+const featureCards = [
+  {
+    title: 'A private setting',
+    desc: 'Meet in a calm Schaumburg office where difficult conversations can have more structure.'
+  },
+  {
+    title: 'Both voices included',
+    desc: 'The work makes room for each partner without reducing the relationship to one person being the problem.'
+  },
+  {
+    title: 'Clear next steps',
+    desc: 'Identify patterns and practical changes you can continue noticing and practicing outside the session.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Balanced and respectful',
+    desc: 'Each partner has space to describe their experience and what they need from the relationship.'
+  },
+  {
+    title: 'Curious about patterns',
+    desc: 'The focus stays on what happens between you, especially the cycles that keep pulling you into the same conflict.'
+  },
+  {
+    title: 'Grounded in usable change',
+    desc: 'Insight is connected to communication, boundaries, repair, and choices that matter in daily life.'
+  }
+];
+
+const overviewParagraphs = [
+  'Couples therapy offers a structured setting for partners who want to understand what is happening between them and have conversations that feel difficult to manage alone.',
+  'You do not need to wait until the relationship is in crisis. Couples may seek therapy for recurring arguments, emotional distance, trust concerns, mismatched expectations, parenting stress, cultural differences, or a major transition.',
+  'The goal is not to assign blame or promise a particular outcome. Therapy can help both partners see the relationship more clearly, communicate with greater intention, and decide what a healthier way forward looks like.'
+];
+
+const processParagraphs = [
+  'Early sessions focus on understanding each partner, the history of the relationship, current stressors, and the interaction patterns that bring you into therapy.',
+  'From there, the work may include slowing down conflict, naming underlying emotions and needs, practicing repair, strengthening boundaries, and building more direct communication.'
+];
+
+const processSteps = [
+  {
+    title: 'Understand the cycle',
+    desc: 'Map what tends to happen before, during, and after conflict so both partners can recognize the pattern sooner.'
+  },
+  {
+    title: 'Create room for a different response',
+    desc: 'Practice listening, speaking more directly, and staying engaged without escalating or shutting down.'
+  },
+  {
+    title: 'Strengthen repair and connection',
+    desc: 'Build more reliable ways to address hurt, make decisions, and reconnect after difficult moments.'
+  }
+];
+
+const pageDescription =
+  'Couples therapy in Schaumburg, IL for communication, conflict, trust, emotional distance, and life transitions, with Illinois telehealth available.';
+
+const faqItems = [
+  {
+    question: 'Do we need to be married to start couples therapy?',
+    answer:
+      'No. Couples therapy may be appropriate for married, engaged, dating, or long-term partners who want support with their relationship.'
+  },
+  {
+    question: 'Do both partners attend couples therapy?',
+    answer:
+      'Couples therapy generally involves both partners. The consultation is a good time to discuss participation, goals, and whether this format is an appropriate fit for your situation.'
+  },
+  {
+    question: 'Do you offer online couples therapy in Illinois?',
+    answer:
+      'Telehealth may be available when clinically appropriate. Because Dr. Jelena Djurovic is licensed in Illinois, both partners must be physically located in Illinois during every online session.'
+  },
+  {
+    question: 'Is couples therapy available in Serbian?',
+    answer:
+      'Clinical services are available in English and Serbian. Contact the practice to discuss language fit for both partners before scheduling.'
+  },
+  {
+    question: 'What concerns can we bring to couples therapy?',
+    answer:
+      'Common concerns include communication difficulties, recurring arguments, emotional distance, trust after a rupture, parenting stress, cultural differences, intimacy concerns, and major life transitions. Fit is discussed during the initial consultation.'
+  },
+  {
+    question: 'Where is the office located?',
+    answer:
+      'In-person couples therapy is available at 1320 Tower Rd, Suite 156, Schaumburg, IL 60173, serving Schaumburg and nearby Cook and DuPage County communities.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Couples Therapy in Schaumburg, IL',
+  description: pageDescription,
+  path: '/couples-therapy/',
+  serviceType: 'Couples Therapy'
+});
+---
+
+<Layout
+  title="Couples Therapy in Schaumburg, IL | Relationship Counseling"
+  description={pageDescription}
+  image="/images/couples-therapy.jpg"
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+
+  <TopicHero
+    title="Couples Therapy"
+    accent="for clearer communication and connection"
+    description="Relationship counseling for recurring conflict, emotional distance, trust concerns, and major transitions, with a balanced space for both partners."
+    imageAlt="Adult couple talking during a therapy session in a warm private office"
+    imageSrc="/images/couples-therapy.jpg"
+    fitText="a calmer way to understand recurring conflict, communicate more directly, and decide what your relationship needs next"
+    fitDescription="You can begin before a crisis. Couples therapy can help when the same argument keeps returning, closeness has changed, trust has been strained, or a transition is placing new pressure on the relationship."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Relationship Support"
+    title="A structured space for conversations that keep getting stuck"
+    paragraphs={overviewParagraphs}
+    cards={focusAreas}
+  />
+
+  <TopicProcessSection
+    eyebrow="What the Work Can Include"
+    title="From recognizing the pattern to practicing repair"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Couples Therapy"
+    title="Couples Therapy in Schaumburg and the Northwest Suburbs"
+    paragraphs={[
+      'Dr. Jelena Djurovic provides in-person couples therapy at her Schaumburg office for partners from Schaumburg, Palatine, Hoffman Estates, Arlington Heights, Roselle, and nearby Cook and DuPage County communities.',
+      'Telehealth may be available when clinically appropriate, but both partners must be physically located in Illinois during every online session. Clinical services are available in English and Serbian. Contact the practice to discuss fit, scheduling, and language needs.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Common questions about who couples therapy is for, how sessions work, and where care is available."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Pages</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">
+        A different conversation can start here
+      </h2>
+      <p class="max-w-2xl mx-auto text-lg text-white/80 mb-8">
+        Reach out to ask whether couples therapy in Schaumburg or Illinois telehealth is the right fit for both of you.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Request a Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -25,7 +25,7 @@ export const practiceProfile = {
   languageNote: 'Dr. Djurovic speaks conversational Spanish. Contact the practice to discuss language needs.',
   serviceFormats: [
     'In-person sessions in Schaumburg, Illinois',
-    'Telehealth sessions across Illinois'
+    'Telehealth sessions when all participating clients are physically located in Illinois'
   ],
   contact: {
     email: 'info@centerforpta.com',
@@ -47,6 +47,22 @@ export const serviceDirectory = [
     description:
       'Therapy support for anxiety, depression, trauma, grief, life transitions, and other concerns that benefit from a steady, compassionate space.',
     keywords: ['therapy', 'anxiety', 'depression', 'trauma', 'grief', 'stress', 'healing', 'life transition']
+  },
+  {
+    slug: 'couples-therapy',
+    name: 'Couples Therapy',
+    path: '/couples-therapy',
+    description:
+      'Couples therapy in Schaumburg for communication difficulties, recurring conflict, trust concerns, emotional distance, and major life transitions.',
+    keywords: [
+      'couples therapy',
+      'marriage counseling',
+      'relationship counseling',
+      'communication',
+      'conflict',
+      'trust',
+      'relationship'
+    ]
   },
   {
     slug: 'psychological-assessment',

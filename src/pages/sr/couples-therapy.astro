@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import TopicHero from '../../components-sr/TopicHero.astro';
+import TopicOverviewSection from '../../components-sr/TopicOverviewSection.astro';
+import TopicProcessSection from '../../components-sr/TopicProcessSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import { getServiceStructuredData } from '../../utils-sr/seo';
+
+const focusAreas = [
+  {
+    title: 'Obrasci komunikacije',
+    desc: 'Prepoznajte cikluse zbog kojih se jedan ili oba partnera osećaju neshvaćeno, odbačeno, defanzivno ili usamljeno.'
+  },
+  {
+    title: 'Konflikti koji se ponavljaju',
+    desc: 'Usporite raspravu, razumite šta se stalno vraća i vežbajte konstruktivnije načine reagovanja.'
+  },
+  {
+    title: 'Poverenje i bliskost',
+    desc: 'Napravite prostor za povredu, emocionalnu udaljenost ili narušeno poverenje bez preskakanja onoga što traži pažnju.'
+  },
+  {
+    title: 'Velike životne promene',
+    desc: 'Prođite kroz roditeljstvo, stres na poslu, brigu o porodici, preseljenje, kulturne razlike ili druge promene koje utiču na odnos.'
+  }
+];
+
+const relatedLinks = [
+  {
+    href: '/sr/therapy',
+    title: 'Individualna terapija',
+    desc: 'Pogledajte podršku jedan na jedan za anksioznost, depresiju, traumu, tugu i velike životne promene.'
+  },
+  {
+    href: '/sr/divorce-counseling',
+    title: 'Savetovanje tokom razvoda',
+    desc: 'Podrška pre, tokom ili posle separacije kada je individualni prostor prikladniji izbor.'
+  },
+  {
+    href: '/sr/rates-and-insurance',
+    title: 'Cene i osiguranje',
+    desc: 'Pogledajte praktične informacije o plaćanju, osiguranju i početku rada.'
+  }
+];
+
+const signals = ['Uživo u Šamburgu', 'Online u Illinoisu', 'Srpski i engleski'];
+
+const featureCards = [
+  {
+    title: 'Privatan prostor',
+    desc: 'Sastanite se u mirnoj ordinaciji u Šamburgu, gde teški razgovori mogu dobiti više strukture.'
+  },
+  {
+    title: 'Oba glasa su važna',
+    desc: 'Rad daje prostor svakom partneru, bez svođenja odnosa na ideju da je samo jedna osoba problem.'
+  },
+  {
+    title: 'Jasni naredni koraci',
+    desc: 'Prepoznajte obrasce i praktične promene koje možete nastaviti da primećujete i vežbate van seanse.'
+  }
+];
+
+const careStyle = [
+  {
+    title: 'Uravnotežen i pun poštovanja',
+    desc: 'Svaki partner ima prostor da opiše svoje iskustvo i ono što mu je potrebno u odnosu.'
+  },
+  {
+    title: 'Usmeren na obrasce',
+    desc: 'Fokus je na onome što se dešava između vas, posebno na ciklusima koji vas vraćaju u isti konflikt.'
+  },
+  {
+    title: 'Primenljiv u svakodnevnom životu',
+    desc: 'Uvid se povezuje sa komunikacijom, granicama, popravljanjem odnosa i izborima koji su važni iz dana u dan.'
+  }
+];
+
+const overviewParagraphs = [
+  'Partnerska terapija pruža strukturisan prostor partnerima koji žele da razumeju šta se događa između njih i da vode razgovore koje je teško voditi bez podrške.',
+  'Ne morate čekati da odnos dođe do krize. Parovi se mogu javiti zbog ponavljajućih rasprava, emocionalne udaljenosti, pitanja poverenja, različitih očekivanja, roditeljskog stresa, kulturnih razlika ili velike životne promene.',
+  'Cilj nije pronalaženje krivca niti obećavanje određenog ishoda. Terapija može pomoći partnerima da jasnije vide odnos, komuniciraju promišljenije i odluče kako za njih izgleda zdraviji naredni korak.'
+];
+
+const processParagraphs = [
+  'Početne seanse usmerene su na razumevanje oba partnera, istorije odnosa, trenutnih stresora i obrazaca interakcije zbog kojih ste se javili.',
+  'Dalji rad može obuhvatiti usporavanje konflikta, prepoznavanje dubljih emocija i potreba, popravljanje odnosa posle povrede, jačanje granica i direktniju komunikaciju.'
+];
+
+const processSteps = [
+  {
+    title: 'Razumejte ciklus',
+    desc: 'Uočite šta se obično događa pre, tokom i posle konflikta kako biste obrazac ranije prepoznali.'
+  },
+  {
+    title: 'Napravite prostor za drugačiji odgovor',
+    desc: 'Vežbajte slušanje, direktnije izražavanje i ostajanje u razgovoru bez eskalacije ili povlačenja.'
+  },
+  {
+    title: 'Ojačajte popravljanje odnosa i bliskost',
+    desc: 'Gradite pouzdanije načine da rešavate povrede, donosite odluke i ponovo se povežete posle teških trenutaka.'
+  }
+];
+
+const pageDescription =
+  'Partnerska terapija u Šamburgu, IL za komunikaciju, konflikte, poverenje, emocionalnu udaljenost i životne promene, uz online rad u Illinoisu.';
+
+const faqItems = [
+  {
+    question: 'Da li moramo biti u braku da bismo krenuli na partnersku terapiju?',
+    answer:
+      'Ne. Partnerska terapija može odgovarati bračnim, verenim i nevenčanim parovima, kao i partnerima u dugoj vezi koji žele podršku za svoj odnos.'
+  },
+  {
+    question: 'Da li oba partnera dolaze na partnersku terapiju?',
+    answer:
+      'Partnerska terapija uglavnom uključuje oba partnera. Konsultacija je pravo mesto da razgovarate o učešću, ciljevima i tome da li ovaj format odgovara vašoj situaciji.'
+  },
+  {
+    question: 'Da li nudite online partnersku terapiju u Illinoisu?',
+    answer:
+      'Online seanse mogu biti dostupne kada je to klinički prikladno. Pošto dr Jelena Djurovic ima dozvolu za rad u Illinoisu, oba partnera moraju biti fizički u Illinoisu tokom svake online seanse.'
+  },
+  {
+    question: 'Da li je partnerska terapija dostupna na srpskom?',
+    answer:
+      'Kliničke usluge dostupne su na srpskom i engleskom jeziku. Pre zakazivanja kontaktirajte ordinaciju da razgovarate o tome koji jezik odgovara oboma.'
+  },
+  {
+    question: 'Koje teme možemo doneti na partnersku terapiju?',
+    answer:
+      'Česte teme su teškoće u komunikaciji, rasprave koje se ponavljaju, emocionalna udaljenost, poverenje posle povrede, roditeljski stres, kulturne razlike, intimnost i velike životne promene. Uklapanje se razmatra tokom početne konsultacije.'
+  },
+  {
+    question: 'Gde se nalazi ordinacija?',
+    answer:
+      'Partnerska terapija uživo dostupna je na adresi 1320 Tower Rd, Suite 156, Schaumburg, IL 60173, za klijente iz Šamburga i okolnih mesta u Cook i DuPage okruzima.'
+  }
+];
+
+const serviceStructuredData = getServiceStructuredData({
+  name: 'Partnerska terapija u Šamburgu, IL',
+  description: pageDescription,
+  path: '/sr/couples-therapy/',
+  serviceType: 'Partnerska terapija'
+});
+---
+
+<Layout
+  title="Partnerska terapija u Šamburgu, IL | Savetovanje za parove"
+  description={pageDescription}
+  image="/images/couples-therapy.jpg"
+  faqItems={faqItems}
+  structuredData={serviceStructuredData}
+>
+  <Navbar />
+
+  <TopicHero
+    title="Partnerska terapija"
+    accent="za jasniju komunikaciju i povezanost"
+    description="Savetovanje za parove kod ponavljajućih konflikata, emocionalne udaljenosti, pitanja poverenja i velikih promena, uz uravnotežen prostor za oba partnera."
+    imageAlt="Odrasli par razgovara tokom terapijske seanse u toploj i privatnoj ordinaciji"
+    imageSrc="/images/couples-therapy.jpg"
+    fitText="mirniji način da razumete konflikte koji se ponavljaju, govorite direktnije i odlučite šta je vašem odnosu sledeće potrebno"
+    fitDescription="Možete početi pre nego što nastupi kriza. Partnerska terapija može pomoći kada se ista rasprava stalno vraća, bliskost se promenila, poverenje je narušeno ili nova životna faza stvara dodatni pritisak."
+    signals={signals}
+    careStyle={careStyle}
+    featureCards={featureCards}
+  />
+
+  <TopicOverviewSection
+    eyebrow="Podrška za odnose"
+    title="Strukturisan prostor za razgovore koji stalno zapinju"
+    paragraphs={overviewParagraphs}
+    cards={focusAreas}
+  />
+
+  <TopicProcessSection
+    eyebrow="Šta rad može obuhvatiti"
+    title="Od prepoznavanja obrasca do popravljanja odnosa"
+    paragraphs={processParagraphs}
+    steps={processSteps}
+  />
+
+  <LocalServiceArea
+    serviceName="Partnerska terapija"
+    title="Partnerska terapija u Šamburgu i severozapadnim predgrađima"
+    paragraphs={[
+      'Dr Jelena Djurovic pruža partnersku terapiju uživo u ordinaciji u Šamburgu za parove iz Šamburga, Palatina, Hoffman Estatesa, Arlington Heightsa, Rosellea i okolnih mesta u Cook i DuPage okruzima.',
+      'Online seanse mogu biti dostupne kada je to klinički prikladno, ali oba partnera moraju biti fizički u Illinoisu tokom svake online seanse. Kliničke usluge dostupne su na srpskom i engleskom. Javite se da razgovarate o uklapanju, terminima i jeziku.'
+    ]}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
+  <FaqSection
+    faqs={faqItems}
+    intro="Česta pitanja o tome kome je partnerska terapija namenjena, kako seanse izgledaju i gde je podrška dostupna."
+  />
+
+  <section class="py-16 xl:py-24 bg-white relative">
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Povezane stranice</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{link.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">
+        Drugačiji razgovor može početi ovde
+      </h2>
+      <p class="max-w-2xl mx-auto text-lg text-white/80 mb-8">
+        Javite se da pitate da li je partnerska terapija u Šamburgu ili online u Illinoisu dobar izbor za vas oboje.
+      </p>
+      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        Zatražite konsultaciju
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

@@ -6,6 +6,10 @@ export const staticPages = [
   '/about/',
   '/dr-jelena-djurovic/',
   '/therapy/',
+  {
+    path: '/couples-therapy/',
+    lastmod: '2026-07-25T00:00:00.000Z'
+  },
   '/psychological-assessment/',
   '/pre-surgical-psychological-evaluations/',
   '/immigration-evaluations/',

@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 
 const servicePages = [
   'src/pages/therapy.astro',
+  'src/pages/couples-therapy.astro',
   'src/pages/psychological-assessment.astro',
   'src/pages/consultation-supervision-and-coaching.astro',
   'src/pages/prenatal-therapy.astro',
@@ -13,6 +14,7 @@ const servicePages = [
   'src/pages/pre-surgical-psychological-evaluations.astro',
   'src/pages/immigration-evaluations.astro',
   'src/pages/sr/therapy.astro',
+  'src/pages/sr/couples-therapy.astro',
   'src/pages/sr/psychological-assessment.astro',
   'src/pages/sr/consultation-supervision-and-coaching.astro'
 ];
