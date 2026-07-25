@@ -8,6 +8,8 @@ const englishSeo = readFileSync('src/utils/seo.ts', 'utf8');
 const serbianSeo = readFileSync('src/utils-sr/seo.ts', 'utf8');
 const headers = readFileSync('public/_headers', 'utf8');
 const contactPage = readFileSync('src/pages/contact.astro', 'utf8');
+const providerPage = readFileSync('src/pages/dr-jelena-djurovic.astro', 'utf8');
+const serbianProviderPage = readFileSync('src/pages/sr/dr-jelena-djurovic.astro', 'utf8');
 
 test('layouts expose Open Graph locale and image dimensions', () => {
   assert.match(englishLayout, /property="og:locale" content="en_US"/);
@@ -41,4 +43,21 @@ test('crawl and contact surfaces expose local SEO signals', () => {
   assert.match(contactPage, /'@type': 'ContactPage'/);
   assert.match(contactPage, /Contact a Schaumburg, IL Psychologist/);
   assert.match(contactPage, /faqItems=\{faqItems\}/);
+});
+
+test('dedicated provider pages expose verifiable Person entity data', () => {
+  assert.match(providerPage, /'@type': 'Person'/);
+  assert.match(providerPage, /National Provider Identifier/);
+  assert.match(providerPage, /providerNpiNumber/);
+  assert.match(providerPage, /Psychologist in Schaumburg, IL/);
+  assert.match(providerPage, /psychologytoday\.com\/us\/therapists\/jelena-djurovic-schaumburg-il\/1611370/);
+  assert.match(serbianProviderPage, /'@type': 'Person'/);
+  assert.match(serbianProviderPage, /Konverzacijski španski/);
+});
+
+test('structured data only advertises confirmed clinical service languages', () => {
+  assert.match(englishSeo, /availableLanguage: \['English', 'Serbian'\]/);
+  assert.match(serbianSeo, /availableLanguage: \['engleski', 'srpski'\]/);
+  assert.doesNotMatch(englishSeo, /availableLanguage: \[[^\]]*Spanish/);
+  assert.doesNotMatch(serbianSeo, /availableLanguage: \[[^\]]*španski/);
 });

@@ -1,0 +1,302 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import headshotImg from '../../assets/Jelena-Djurovic-headshot.png';
+import {
+  providerLicenseNumber,
+  providerNpiNumber,
+  siteName,
+  siteUrl
+} from '../../utils-sr/seo';
+
+const providerUrl = `${siteUrl}/dr-jelena-djurovic/`;
+const providerImage = new URL(headshotImg.src, siteUrl).toString();
+
+const providerStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': `${providerUrl}#person`,
+  name: 'Dr. Jelena Djurovic',
+  honorificPrefix: 'Dr.',
+  honorificSuffix: 'Psy.D.',
+  url: providerUrl,
+  image: providerImage,
+  jobTitle: 'Licencirani klinički psiholog u Ilinoisu',
+  description:
+    'Dr Jelena Djurovic je licencirani klinički psiholog u Ilinoisu i pruža psihoterapiju, psihološke procene, imigracione evaluacije i predoperativne evaluacije u Šamburgu.',
+  worksFor: {
+    '@id': `${siteUrl}/#professional-service`,
+    name: siteName
+  },
+  identifier: [
+    {
+      '@type': 'PropertyValue',
+      propertyID: 'Illinois Clinical Psychologist License',
+      value: providerLicenseNumber
+    },
+    {
+      '@type': 'PropertyValue',
+      propertyID: 'National Provider Identifier',
+      value: providerNpiNumber
+    }
+  ],
+  knowsLanguage: ['English', 'Serbian'],
+  sameAs: [
+    'https://www.psychologytoday.com/us/therapists/jelena-djurovic-schaumburg-il/1611370'
+  ]
+};
+
+const focusAreas = [
+  {
+    title: 'Psihoterapija',
+    description:
+      'Individualna terapija i terapija za parove za anksioznost, depresiju, traumu, odnose, samosaosećanje, sliku tela i velike životne promene.',
+    href: '/sr/therapy/'
+  },
+  {
+    title: 'Imigracione evaluacije',
+    description:
+      'Klinički utemeljene psihološke evaluacije za odgovarajuće imigracione postupke, uz koordinaciju sa advokatom kada je to prikladno i odobreno.',
+    href: '/sr/immigration-evaluations/'
+  },
+  {
+    title: 'Predoperativne evaluacije',
+    description:
+      'Psihološke evaluacije za barijatrijske i druge hirurške programe, sa jasnom kliničkom dokumentacijom za medicinski tim.',
+    href: '/sr/pre-surgical-psychological-evaluations/'
+  },
+  {
+    title: 'Mentalno zdravlje žena',
+    description:
+      'Podrška za reproduktivna pitanja, prenatalne i postpartalne promene, sliku tela, odnose i samosaosećanje.',
+    href: '/sr/womens-mental-health-therapy/'
+  }
+];
+---
+
+<Layout
+  title="Dr Jelena Djurovic, PsyD | Psiholog u Šamburgu, IL"
+  description="Upoznajte dr Jelenu Djurovic, licenciranog kliničkog psihologa u Ilinoisu koji pruža terapiju i psihološke evaluacije u Šamburgu."
+  image={headshotImg.src}
+  structuredData={providerStructuredData}
+>
+  <Navbar />
+
+  <main>
+    <section class="relative min-h-[720px] flex items-end overflow-hidden bg-[#1a2824]">
+      <Image
+        src={headshotImg}
+        alt="Dr Jelena Djurovic, licencirani klinički psiholog u Ilinoisu"
+        class="absolute inset-0 h-full w-full object-cover object-[55%_18%] md:object-[70%_20%]"
+        loading="eager"
+        fetchpriority="high"
+        format="webp"
+        quality={88}
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+      />
+      <div class="absolute inset-0 bg-[#10201c]/70"></div>
+
+      <div class="relative z-10 w-full px-5 pb-16 pt-40 md:px-10 md:pb-20 xl:px-24">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="max-w-3xl">
+            <p class="mb-5 text-sm font-bold uppercase tracking-[0.16em] text-[#f7c95e]">
+              Upoznajte svog psihologa
+            </p>
+            <h1 class="text-4xl font-extrabold leading-tight text-white md:text-6xl xl:text-[76px]">
+              Dr Jelena Djurovic
+            </h1>
+            <p class="mt-5 text-xl font-semibold text-white md:text-2xl">
+              Licencirani klinički psiholog u Ilinoisu, Psy.D.
+            </p>
+            <p class="mt-6 max-w-2xl text-base leading-relaxed text-white/85 md:text-xl">
+              Psihoterapija, psihološka procena, imigracione evaluacije i
+              predoperativne evaluacije u Šamburgu, Ilinois.
+            </p>
+            <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="/sr/contact/"
+                class="inline-flex min-h-12 items-center justify-center rounded-full bg-[#fcc13e] px-7 py-3 font-bold text-[#17231f] transition-transform hover:-translate-y-0.5"
+              >
+                Zatražite konsultaciju
+              </a>
+              <a
+                href="/sr/therapy/"
+                class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/50 px-7 py-3 font-bold text-white transition-colors hover:bg-white hover:text-[#17231f]"
+              >
+                Pogledajte usluge
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-gray-200 bg-white">
+      <div class="mx-auto grid max-w-[1440px] grid-cols-1 px-5 py-8 sm:grid-cols-2 md:px-10 lg:grid-cols-4 xl:px-24">
+        <div class="py-4 lg:pr-8">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Licenca</p>
+          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">Ilinois #{providerLicenseNumber}</p>
+        </div>
+        <div class="border-gray-200 py-4 sm:border-l sm:pl-8">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">NPI</p>
+          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">{providerNpiNumber}</p>
+        </div>
+        <div class="border-gray-200 py-4 lg:border-l lg:pl-8">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Jezici</p>
+          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">Srpski i engleski</p>
+          <p class="mt-1 text-sm text-gray-600">Konverzacijski španski</p>
+        </div>
+        <div class="border-gray-200 py-4 sm:border-l sm:pl-8">
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Lokacija</p>
+          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">Šamburg, Ilinois</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#fcfbf9] py-16 md:py-24">
+      <div class="mx-auto grid max-w-[1200px] gap-10 px-5 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#2f594f]">Obrazovanje i iskustvo</p>
+          <h2 class="mt-4 text-3xl font-extrabold leading-tight text-[#1a1a1a] md:text-5xl">
+            Klinička podrška zasnovana na dokazima, kulturi i saosećanju
+          </h2>
+        </div>
+        <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+          <p>
+            Dr Jelena Djurovic je licencirani klinički psiholog u Ilinoisu sa više
+            od deset godina kliničkog iskustva u psihoterapiji i psihološkoj proceni
+            osoba različitog porekla.
+          </p>
+          <p>
+            Doktorirala je kliničku psihologiju na The Chicago School of Professional
+            Psychology, a master studije završila na Illinois School of Professional
+            Psychology. Njeno istraživanje obuhvatilo je odnos uma i tela,
+            samosaosećanje, mindfulness, depresiju i kvalitet života.
+          </p>
+          <p>
+            Kao imigrantkinja i izvorna govornica srpskog jezika, dr Djurovic lično
+            razume emocionalne, kulturne i praktične izazove koji mogu pratiti
+            imigraciju i akulturaciju. Srpski joj je maternji, engleski govori tečno,
+            a španski konverzacijski.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 md:py-24">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#2f594f]">Oblasti rada</p>
+          <h2 class="mt-4 text-3xl font-extrabold text-[#1a1a1a] md:text-5xl">
+            Specijalizovana podrška sa jasnim narednim korakom
+          </h2>
+        </div>
+
+        <div class="mt-12 grid gap-0 border-y border-gray-200 md:grid-cols-2">
+          {focusAreas.map((area, index) => (
+            <a
+              href={area.href}
+              class:list={[
+                'group block border-gray-200 py-8 transition-colors hover:bg-[#f7faf8] md:p-9',
+                index % 2 === 1 ? 'md:border-l' : '',
+                index > 1 ? 'border-t' : index > 0 ? 'border-t md:border-t-0' : ''
+              ]}
+            >
+              <h3 class="text-2xl font-bold text-[#1a1a1a] group-hover:text-[#2f594f]">
+                {area.title}
+              </h3>
+              <p class="mt-4 leading-relaxed text-gray-600">{area.description}</p>
+              <span class="mt-6 inline-flex items-center gap-2 font-bold text-[#2f594f]">
+                Saznajte više
+                <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#24483f] py-16 text-white md:py-24">
+      <div class="mx-auto grid max-w-[1200px] gap-10 px-5 md:px-10 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#f7c95e]">Klinički pristup</p>
+          <h2 class="mt-4 text-3xl font-extrabold leading-tight md:text-5xl">
+            Saradnički odnos zasnovan na poštovanju
+          </h2>
+        </div>
+        <div class="space-y-6 text-lg leading-relaxed text-white/85">
+          <p>
+            Dr Djurovic psihoterapiju vidi kao partnerstvo. U radu pomaže klijentima
+            da jasnije razumeju sebe, izgrade zdravije granice i razviju podržavajući
+            odnos prema sebi.
+          </p>
+          <p>
+            Njen integrativni pristup oslanja se na metode zasnovane na dokazima,
+            uključujući istraživanja samosaosećanja, mindfulness intervencije, AEDP
+            i kognitivno-bihejvioralne tehnike kada su prikladne.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#fcfbf9] py-16 md:py-24">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10">
+        <div class="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#2f594f]">Mediji i edukacija</p>
+            <h2 class="mt-4 text-3xl font-extrabold text-[#1a1a1a] md:text-5xl">
+              Javni razgovori koji proširuju kliničku podršku
+            </h2>
+          </div>
+          <div class="divide-y divide-gray-200 border-y border-gray-200">
+            <a
+              href="https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/"
+              target="_blank"
+              rel="noreferrer"
+              class="group block py-7"
+            >
+              <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#2f594f]">Serbian Times</p>
+              <h3 class="mt-3 text-xl font-bold text-[#1a1a1a] group-hover:text-[#2f594f]">
+                Intervju o mentalnom zdravlju imigranata i psihološkim evaluacijama
+              </h3>
+            </a>
+            <a
+              href="https://www.youtube.com/watch?v=4xS8Sm2lOh4"
+              target="_blank"
+              rel="noreferrer"
+              class="group block py-7"
+            >
+              <p class="text-sm font-bold uppercase tracking-[0.14em] text-[#2f594f]">SBN Chicago News</p>
+              <h3 class="mt-3 text-xl font-bold text-[#1a1a1a] group-hover:text-[#2f594f]">
+                Nije Bitno Gde Sam Već Ko Sam — razgovor sa dr Jelenom Djurovic
+              </h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 md:py-24">
+      <div class="mx-auto max-w-[900px] px-5 text-center md:px-10">
+        <h2 class="text-3xl font-extrabold text-[#1a1a1a] md:text-5xl">
+          Pitajte da li usluge dr Djurovic odgovaraju vašim potrebama
+        </h2>
+        <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">
+          Kontaktirajte ordinaciju radi informacija o dostupnosti, osiguranju,
+          jezičkim potrebama i odgovarajućem sledećem koraku za terapiju ili evaluaciju.
+        </p>
+        <a
+          href="/sr/contact/"
+          class="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#2f594f] px-8 py-3 font-bold text-white transition-transform hover:-translate-y-0.5"
+        >
+          Kontaktirajte ordinaciju
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

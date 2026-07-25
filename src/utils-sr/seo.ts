@@ -6,6 +6,7 @@ export const defaultDescription =
 export const defaultOgImage = `${siteUrl}/images/og-default.png`;
 export const logoUrl = `${siteUrl}/images/logo.png`;
 export const providerLicenseNumber = '071-011433';
+export const providerNpiNumber = '1306636089';
 export const contactPhone = '+1-847-230-0045';
 export const textPhone = '+1-847-929-7040';
 export const contactEmail = 'info@centerforpta.com';
@@ -109,7 +110,7 @@ export function getBaseStructuredData(description: string) {
     image: defaultOgImage,
     hasMap: mapUrl,
     medicalSpecialty: ['Clinical Psychology', 'Psychotherapy', 'Psychological Assessment'],
-    knowsLanguage: ['English', 'Serbian', 'Spanish'],
+    knowsLanguage: ['English', 'Serbian'],
     knowsAbout: [
       'Psihoterapija u Schaumburgu, IL',
       'Psihološko testiranje',
@@ -124,14 +125,7 @@ export function getBaseStructuredData(description: string) {
     email: contactEmail,
     priceRange: '$$',
     founder: {
-      '@type': 'Person',
-      name: 'Dr. Jelena Djurovic',
-      jobTitle: 'Licencirani klinički psiholog',
-      identifier: {
-        '@type': 'PropertyValue',
-        propertyID: 'Licenca kliničkog psihologa u Illinoisu',
-        value: providerLicenseNumber
-      }
+      '@id': `${siteUrl}/dr-jelena-djurovic/#person`
     },
     address: {
       '@type': 'PostalAddress',
@@ -164,14 +158,14 @@ export function getBaseStructuredData(description: string) {
         telephone: contactPhone,
         email: contactEmail,
         areaServed: 'US',
-        availableLanguage: ['engleski', 'srpski', 'španski']
+        availableLanguage: ['engleski', 'srpski']
       },
       {
         '@type': 'ContactPoint',
         contactType: 'tekstualni upiti',
         telephone: textPhone,
         areaServed: 'US',
-        availableLanguage: ['engleski', 'srpski', 'španski']
+        availableLanguage: ['engleski', 'srpski']
       }
     ]
   };
@@ -211,7 +205,7 @@ export function getServiceStructuredData({
       '@id': `${siteUrl}/#professional-service`
     },
     areaServed: localServiceArea,
-    availableLanguage: ['engleski', 'srpski', 'španski'],
+    availableLanguage: ['engleski', 'srpski'],
     offers: {
       '@type': 'Offer',
       url: absoluteUrl('/sr/contact/'),
@@ -227,7 +221,7 @@ export function getServiceStructuredData({
       '@type': 'ServiceChannel',
       serviceUrl: absoluteUrl('/sr/contact/'),
       servicePhone: contactPhone,
-      availableLanguage: ['engleski', 'srpski', 'španski']
+      availableLanguage: ['engleski', 'srpski']
     }
   };
 }

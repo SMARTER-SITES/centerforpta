@@ -21,7 +21,8 @@ export const practiceProfile = {
     postalCode: '60173',
     country: 'US'
   },
-  languages: ['engleski', 'srpski', 'španski'],
+  languages: ['engleski', 'srpski'],
+  languageNote: 'Dr Djurovic govori konverzacijski španski. Kontaktirajte ordinaciju radi dogovora o jezičkim potrebama.',
   serviceFormats: [
     'Seanse uživo u Schaumburgu, Illinois',
     'Online seanse širom Illinoisa'

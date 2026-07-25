@@ -21,8 +21,8 @@ faqItems:
     answer: "Telehealth may be available only when the client is physically located in Illinois at the time of the appointment. Clients who live outside Illinois may be seen for in-person psychological testing or evaluation if they are able to travel to the Schaumburg, IL office."
   - question: "What documents should I prepare for an immigration psychological evaluation?"
     answer: "Documents vary by case, but may include attorney referral letters, personal statements, medical or mental health records, prior evaluations, police reports or protective orders when relevant, and documents related to family, hardship, or trauma history. Your attorney can help identify what is legally relevant."
-  - question: "Is the evaluation available in Serbian or Spanish?"
-    answer: "Center for Psychological Treatment and Assessment offers care in English, Serbian, and Spanish. Clients from outside Illinois who need an evaluation in Serbian may be seen in person if they are able to travel to the Schaumburg office and are physically present in Illinois for the evaluation."
+  - question: "What languages are available for the evaluation?"
+    answer: "Evaluations are available in English and Serbian. Dr. Djurovic speaks conversational Spanish; contact the practice to discuss whether Spanish-language support is appropriate for your needs. Clients from outside Illinois who need an evaluation in Serbian may be seen in person if they are able to travel to the Schaumburg office and are physically present in Illinois for the evaluation."
   - question: "Does a psychological evaluation guarantee that my immigration case will be approved?"
     answer: "No. A psychological evaluation can provide clinical documentation, but it does not guarantee any immigration outcome. Immigration decisions are made by legal or government authorities. Clients should speak with their attorney about how the evaluation may be used in their case."
 ---
@@ -199,11 +199,11 @@ For legal questions, clients should speak with a qualified immigration attorney.
 
 ## Immigration psychological evaluations in Schaumburg, IL
 
-Center for Psychological Treatment and Assessment provides immigration psychological evaluations from its office in Schaumburg, IL. The practice is led by [Dr. Jelena Djurovic, Psy.D.](/about/), an Illinois Licensed Clinical Psychologist.
+Center for Psychological Treatment and Assessment provides immigration psychological evaluations from its office in Schaumburg, IL. The practice is led by [Dr. Jelena Djurovic, Psy.D.](/dr-jelena-djurovic/), an Illinois Licensed Clinical Psychologist.
 
 Telehealth evaluations may be available only when the client is physically located in Illinois at the time of the appointment. Clients from outside Illinois may be seen in person if they are able to travel to the Schaumburg office for the evaluation.
 
-Services are available in English, Serbian, and Spanish. This may be especially helpful for clients who need to explain sensitive personal or family experiences in a language they can use comfortably. Clients from across the United States who are seeking an immigration psychological evaluation in Serbian may contact the practice about in-person evaluation options in Schaumburg, IL.
+Evaluations are available in English and Serbian. Dr. Djurovic speaks conversational Spanish, and clients should contact the practice to discuss whether Spanish-language support is appropriate for their needs. Clients from across the United States who are seeking an immigration psychological evaluation in Serbian may contact the practice about in-person evaluation options in Schaumburg, IL.
 
 The office is located at:
 
@@ -235,9 +235,9 @@ Telehealth may be available only when the client is physically located in Illino
 
 Documents vary by case, but may include attorney referral letters, personal statements, medical or mental health records, prior evaluations, police reports or protective orders when relevant, and documents related to family, hardship, or trauma history. Your attorney can help identify what is legally relevant, while the psychologist determines what is clinically useful for the evaluation.
 
-### Is the evaluation available in Serbian or Spanish?
+### What languages are available for the evaluation?
 
-Center for Psychological Treatment and Assessment offers care in English, Serbian, and Spanish. Clients from outside Illinois who need an evaluation in Serbian may be seen in person if they are able to travel to the Schaumburg office and are physically present in Illinois for the evaluation.
+Evaluations are available in English and Serbian. Dr. Djurovic speaks conversational Spanish; contact the practice to discuss whether Spanish-language support is appropriate for your needs. Clients from outside Illinois who need an evaluation in Serbian may be seen in person if they are able to travel to the Schaumburg office and are physically present in Illinois for the evaluation.
 
 ### Does a psychological evaluation guarantee that my immigration case will be approved?
 

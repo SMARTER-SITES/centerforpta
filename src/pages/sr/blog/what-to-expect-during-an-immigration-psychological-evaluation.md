@@ -21,8 +21,8 @@ faqItems:
     answer: "Telehealth može biti dostupan samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti koji žive van Ilinoisa mogu biti viđeni uživo za psihološko testiranje ili evaluaciju ako mogu da doputuju u ordinaciju u Šamburgu, IL."
   - question: "Koja dokumenta treba pripremiti za imigracionu psihološku evaluaciju?"
     answer: "Dokumenta zavise od slučaja, ali mogu uključivati pismo advokata, ličnu izjavu, medicinsku ili psihijatrijsku dokumentaciju, ranije evaluacije, policijske izveštaje ili zaštitne mere kada su relevantni, kao i dokumenta povezana sa porodicom, hardship okolnostima ili traumom. Vaš advokat može pomoći da se odredi šta je pravno relevantno."
-  - question: "Da li je evaluacija dostupna na srpskom ili španskom jeziku?"
-    answer: "Center for Psychological Treatment and Assessment pruža usluge na engleskom, srpskom i španskom jeziku. Klijenti van Ilinoisa kojima je potrebna evaluacija na srpskom jeziku mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu i ako su fizički prisutni u Ilinoisu tokom evaluacije."
+  - question: "Na kojim jezicima je evaluacija dostupna?"
+    answer: "Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverzacijski španski; kontaktirajte ordinaciju da proverite da li podrška na španskom odgovara vašim potrebama. Klijenti van Ilinoisa kojima je potrebna evaluacija na srpskom jeziku mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu i ako su fizički prisutni u Ilinoisu tokom evaluacije."
   - question: "Da li psihološka evaluacija garantuje odobrenje imigracionog slučaja?"
     answer: "Ne. Psihološka evaluacija može pružiti kliničku dokumentaciju, ali ne garantuje nijedan imigracioni ishod. Odluke u imigracionim postupcima donose pravni ili državni organi. Klijenti treba da razgovaraju sa svojim advokatom o tome kako se evaluacija može koristiti u njihovom slučaju."
 ---
@@ -199,11 +199,11 @@ Za pravna pitanja, klijenti treba da razgovaraju sa kvalifikovanim imigracionim 
 
 ## Imigracione psihološke evaluacije u Šamburgu, IL
 
-Center for Psychological Treatment and Assessment pruža imigracione psihološke evaluacije iz svoje ordinacije u Šamburgu, IL. Ordinaciju vodi [Dr. Jelena Djurovic, Psy.D.](/sr/about/), licencirani klinički psiholog u Ilinoisu.
+Center for Psychological Treatment and Assessment pruža imigracione psihološke evaluacije iz svoje ordinacije u Šamburgu, IL. Ordinaciju vodi [Dr Jelena Djurovic, Psy.D.](/sr/dr-jelena-djurovic/), licencirani klinički psiholog u Ilinoisu.
 
 Telehealth evaluacije mogu biti dostupne samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti iz drugih saveznih država mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu za evaluaciju.
 
-Usluge su dostupne na engleskom, srpskom i španskom jeziku. Ovo može biti posebno važno za klijente koji treba da objasne osetljiva lična ili porodična iskustva na jeziku koji mogu da koriste prirodno i udobno. Klijenti iz cele Amerike kojima je potrebna imigraciona psihološka evaluacija na srpskom jeziku mogu kontaktirati ordinaciju da pitaju za mogućnost evaluacije uživo u Šamburgu, IL.
+Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverzacijski španski, a klijenti treba da kontaktiraju ordinaciju da provere da li podrška na španskom odgovara njihovim potrebama. Klijenti iz cele Amerike kojima je potrebna imigraciona psihološka evaluacija na srpskom jeziku mogu kontaktirati ordinaciju da pitaju za mogućnost evaluacije uživo u Šamburgu, IL.
 
 Adresa ordinacije je:
 
@@ -235,9 +235,9 @@ Telehealth može biti dostupan samo kada se klijent fizički nalazi u Ilinoisu u
 
 Dokumenta zavise od slučaja, ali mogu uključivati pismo advokata, ličnu izjavu, medicinsku ili psihijatrijsku dokumentaciju, ranije evaluacije, policijske izveštaje ili zaštitne mere kada su relevantni, kao i dokumenta povezana sa porodicom, hardship okolnostima ili traumom. Vaš advokat može pomoći da se odredi šta je pravno relevantno, dok psiholog određuje šta je klinički korisno za evaluaciju.
 
-### Da li je evaluacija dostupna na srpskom ili španskom jeziku?
+### Na kojim jezicima je evaluacija dostupna?
 
-Center for Psychological Treatment and Assessment pruža usluge na engleskom, srpskom i španskom jeziku. Klijenti van Ilinoisa kojima je potrebna evaluacija na srpskom jeziku mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu i ako su fizički prisutni u Ilinoisu tokom evaluacije.
+Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverzacijski španski; kontaktirajte ordinaciju da proverite da li podrška na španskom odgovara vašim potrebama. Klijenti van Ilinoisa kojima je potrebna evaluacija na srpskom jeziku mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu i ako su fizički prisutni u Ilinoisu tokom evaluacije.
 
 ### Da li psihološka evaluacija garantuje da će moj imigracioni slučaj biti odobren?
 

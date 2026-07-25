@@ -4,6 +4,7 @@ export const staticLastmod = '2026-06-09T00:00:00.000Z';
 export const staticPages = [
   '/',
   '/about/',
+  '/dr-jelena-djurovic/',
   '/therapy/',
   '/psychological-assessment/',
   '/pre-surgical-psychological-evaluations/',

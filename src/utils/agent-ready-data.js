@@ -21,7 +21,8 @@ export const practiceProfile = {
     postalCode: '60173',
     country: 'US'
   },
-  languages: ['English', 'Serbian', 'Spanish'],
+  languages: ['English', 'Serbian'],
+  languageNote: 'Dr. Djurovic speaks conversational Spanish. Contact the practice to discuss language needs.',
   serviceFormats: [
     'In-person sessions in Schaumburg, Illinois',
     'Telehealth sessions across Illinois'
