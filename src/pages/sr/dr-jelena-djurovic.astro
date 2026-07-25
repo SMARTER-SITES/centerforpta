@@ -12,7 +12,7 @@ import {
 } from '../../utils-sr/seo';
 
 const providerUrl = `${siteUrl}/dr-jelena-djurovic/`;
-const providerImage = new URL(headshotImg.src, siteUrl).toString();
+const providerImage = `${siteUrl}/images/dr-jelena-djurovic-schaumburg.png`;
 
 const providerStructuredData = {
   '@context': 'https://schema.org',
@@ -79,7 +79,7 @@ const focusAreas = [
 <Layout
   title="Dr Jelena Djurovic, PsyD | Psiholog u Šamburgu, IL"
   description="Upoznajte dr Jelenu Djurovic, licenciranog kliničkog psihologa u Ilinoisu koji pruža terapiju i psihološke evaluacije u Šamburgu."
-  image={headshotImg.src}
+  image="/images/dr-jelena-djurovic-schaumburg.png"
   structuredData={providerStructuredData}
 >
   <Navbar />

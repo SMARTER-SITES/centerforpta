@@ -12,7 +12,7 @@ import {
 } from '../utils/seo';
 
 const providerUrl = `${siteUrl}/dr-jelena-djurovic/`;
-const providerImage = new URL(headshotImg.src, siteUrl).toString();
+const providerImage = `${siteUrl}/images/dr-jelena-djurovic-schaumburg.png`;
 
 const providerStructuredData = {
   '@context': 'https://schema.org',
@@ -99,7 +99,7 @@ const focusAreas = [
 <Layout
   title="Dr. Jelena Djurovic, PsyD | Psychologist in Schaumburg, IL"
   description="Meet Dr. Jelena Djurovic, an Illinois Licensed Clinical Psychologist in Schaumburg providing therapy, psychological assessments, immigration evaluations, and pre-surgical evaluations."
-  image={headshotImg.src}
+  image="/images/dr-jelena-djurovic-schaumburg.png"
   structuredData={providerStructuredData}
   srAlternatePath="/sr/dr-jelena-djurovic/"
 >
