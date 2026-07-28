@@ -172,3 +172,12 @@ Link: https://centerforpta.com/contact/
 
 Image: src/assets/hero-office.jpg
 
+### 21 - Why Am I So Hard on Myself?
+
+Text: Why can self-criticism feel productive, even when it leaves you anxious or exhausted? Our new clinically reviewed guide explores how perfectionism, shame, and the inner critic can develop, what self-compassion actually means, and when therapy may help.
+
+Center for Psychological Treatment and Assessment offers in-person therapy in Schaumburg, Illinois. Telehealth is available only when the client is physically located in Illinois at the time of the session. Services are available in English and Serbian.
+
+Link: https://centerforpta.com/blog/why-am-i-so-hard-on-myself/
+
+Image: public/images/gbp/gbp-009-self-compassion-guide.jpg
