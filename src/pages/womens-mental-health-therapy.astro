@@ -33,6 +33,11 @@ const focusAreas = [
 
 const relatedLinks = [
   {
+    href: '/blog/why-am-i-so-hard-on-myself',
+    title: 'Why Am I So Hard on Myself?',
+    desc: 'A psychologist-reviewed guide to harsh self-criticism, perfectionism, and a more supportive response.'
+  },
+  {
     href: '/prenatal-therapy',
     title: 'Prenatal Therapy',
     desc: 'Support during pregnancy for anxiety, stress, uncertainty, and emotional adjustment.'
@@ -317,7 +322,7 @@ const serviceStructuredData = getServiceStructuredData({
           These pages may be especially helpful if your current concerns are centered around pregnancy, postpartum adjustment, or getting started with therapy.
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {relatedLinks.map((link) => (
           <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>

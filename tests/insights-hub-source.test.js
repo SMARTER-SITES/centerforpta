@@ -23,6 +23,16 @@ const srSelfCompassionPost = readFileSync(
   'src/pages/sr/blog/why-am-i-so-hard-on-myself.md',
   'utf8'
 );
+const selfCompassionService = readFileSync('src/pages/self-compassion-therapy.astro', 'utf8');
+const srSelfCompassionService = readFileSync('src/pages/sr/self-compassion-therapy.astro', 'utf8');
+const womensMentalHealthService = readFileSync(
+  'src/pages/womens-mental-health-therapy.astro',
+  'utf8'
+);
+const srWomensMentalHealthService = readFileSync(
+  'src/pages/sr/womens-mental-health-therapy.astro',
+  'utf8'
+);
 
 test('site navigation and hub present the blog as Clinical Insights', () => {
   assert.match(nav, /Insights/);
@@ -82,4 +92,11 @@ test('self-compassion guide keeps bilingual seo, review, location, and media sig
   assert.match(srSelfCompassionPost, /\/sr\/self-compassion-therapy\//);
   assert.match(srSelfCompassionPost, /\/sr\/womens-mental-health-therapy\//);
   assert.match(srSelfCompassionPost, /self-compassion-reflection-schaumburg\.webp/);
+});
+
+test('self-compassion topic cluster links service pages back to the bilingual guide', () => {
+  assert.match(selfCompassionService, /href: '\/blog\/why-am-i-so-hard-on-myself'/);
+  assert.match(womensMentalHealthService, /href: '\/blog\/why-am-i-so-hard-on-myself'/);
+  assert.match(srSelfCompassionService, /href: '\/sr\/blog\/why-am-i-so-hard-on-myself'/);
+  assert.match(srWomensMentalHealthService, /href: '\/sr\/blog\/why-am-i-so-hard-on-myself'/);
 });

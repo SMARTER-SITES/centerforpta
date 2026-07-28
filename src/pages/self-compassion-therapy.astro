@@ -40,6 +40,11 @@ const patterns = [
 
 const relatedLinks = [
   {
+    href: '/blog/why-am-i-so-hard-on-myself',
+    title: 'Why Am I So Hard on Myself?',
+    desc: 'Read the clinically reviewed guide to self-criticism, perfectionism, and self-compassion.'
+  },
+  {
     href: '/womens-mental-health-therapy',
     title: "Women's Mental Health Therapy",
     desc: 'Support for body image, reproductive challenges, and life-stage stress.'
@@ -205,7 +210,7 @@ const serviceStructuredData = getServiceStructuredData({
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Related Pages</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {relatedLinks.map((link) => (
           <a href={link.href} class="bg-[#fcfbf9] p-8 rounded-3xl border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <h3 class="text-xl font-bold text-[#1a1a1a] mb-3">{link.title}</h3>
