@@ -15,6 +15,14 @@ const srImmigrationPost = readFileSync(
   'src/pages/sr/blog/what-to-expect-during-an-immigration-psychological-evaluation.md',
   'utf8'
 );
+const selfCompassionPost = readFileSync(
+  'src/pages/blog/why-am-i-so-hard-on-myself.md',
+  'utf8'
+);
+const srSelfCompassionPost = readFileSync(
+  'src/pages/sr/blog/why-am-i-so-hard-on-myself.md',
+  'utf8'
+);
 
 test('site navigation and hub present the blog as Clinical Insights', () => {
   assert.match(nav, /Insights/);
@@ -58,4 +66,20 @@ test('immigration evaluation article includes local seo, license, and media deta
   assert.match(srImmigrationPost, /evaluacija ili testiranje na srpskom jeziku/);
   assert.match(srImmigrationPost, /\/sr\/immigration-evaluations\//);
   assert.match(srImmigrationPost, /immigration-psychological-evaluation-schaumburg\.jpg/);
+});
+
+test('self-compassion guide keeps bilingual seo, review, location, and media signals', () => {
+  assert.match(selfCompassionPost, /Why Am I So Hard on Myself\? \| Self-Compassion/);
+  assert.match(selfCompassionPost, /reviewedBy: "Dr\. Jelena Djurovic, Psy\.D\."/);
+  assert.match(selfCompassionPost, /self-compassion-reflection-schaumburg\.webp/);
+  assert.match(selfCompassionPost, /self-compassion-journal-practice\.webp/);
+  assert.match(selfCompassionPost, /physically located in Illinois at the time of the session/);
+  assert.match(selfCompassionPost, /\/self-compassion-therapy\//);
+  assert.match(selfCompassionPost, /\/womens-mental-health-therapy\//);
+  assert.match(selfCompassionPost, /srPath: "\/sr\/blog\/why-am-i-so-hard-on-myself\/"/);
+  assert.match(srSelfCompassionPost, /Zašto sam stroga prema sebi\? \| Samosaosećanje/);
+  assert.match(srSelfCompassionPost, /fizički nalazi u Ilinoisu u trenutku termina/);
+  assert.match(srSelfCompassionPost, /\/sr\/self-compassion-therapy\//);
+  assert.match(srSelfCompassionPost, /\/sr\/womens-mental-health-therapy\//);
+  assert.match(srSelfCompassionPost, /self-compassion-reflection-schaumburg\.webp/);
 });
