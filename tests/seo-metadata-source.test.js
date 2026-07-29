@@ -10,6 +10,8 @@ const headers = readFileSync('public/_headers', 'utf8');
 const contactPage = readFileSync('src/pages/contact.astro', 'utf8');
 const providerPage = readFileSync('src/pages/dr-jelena-djurovic.astro', 'utf8');
 const serbianProviderPage = readFileSync('src/pages/sr/dr-jelena-djurovic.astro', 'utf8');
+const prenatalPage = readFileSync('src/pages/prenatal-therapy.astro', 'utf8');
+const serbianPrenatalPage = readFileSync('src/pages/sr/prenatal-therapy.astro', 'utf8');
 
 test('layouts expose Open Graph locale and image dimensions', () => {
   assert.match(englishLayout, /property="og:locale" content="en_US"/);
@@ -60,4 +62,12 @@ test('structured data only advertises confirmed clinical service languages', () 
   assert.match(serbianSeo, /availableLanguage: \['engleski', 'srpski'\]/);
   assert.doesNotMatch(englishSeo, /availableLanguage: \[[^\]]*Spanish/);
   assert.doesNotMatch(serbianSeo, /availableLanguage: \[[^\]]*španski/);
+});
+
+test('prenatal pages follow the approved reproductive stress scope', () => {
+  assert.doesNotMatch(prenatalPage, /unplanned pregnancy|pregnancy options counseling/i);
+  assert.doesNotMatch(serbianPrenatalPage, /neplanirane trudnoće/i);
+  assert.match(prenatalPage, /fertility-treatment stress/);
+  assert.match(prenatalPage, /reproductive loss/);
+  assert.match(serbianPrenatalPage, /stres zbog neplodnosti/);
 });
