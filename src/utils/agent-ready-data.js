@@ -1,5 +1,5 @@
 export const siteBaseUrl = 'https://centerforpta.com';
-export const siteName = 'Center for Psychological Treatment and Assessment';
+export const siteName = 'Center for PTA';
 export const contentSignal = 'ai-train=no, search=yes, ai-input=yes';
 export const homepageLinkHeader =
   '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/openapi+json", </api/docs.md>; rel="service-doc"; type="text/markdown", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"';
@@ -297,7 +297,7 @@ export function createOpenApiSpec() {
       title: 'Center for PTA Public Site API',
       version: '1.0.0',
       description:
-        'A read-only public API describing Center for Psychological Treatment and Assessment practice, services, and contact options.'
+        'A read-only public API describing Center for PTA practice, services, and contact options.'
     },
     servers: [
       {
@@ -486,11 +486,11 @@ Keep summaries factual and grounded in the published site. When a user asks for 
   {
     name: 'contact-paths',
     description:
-      'Use when you need the site-approved contact channels for Center for Psychological Treatment and Assessment.',
+      'Use when you need the site-approved contact channels for Center for PTA.',
     path: '/.well-known/agent-skills/contact-paths/SKILL.md',
     content: `---
 name: contact-paths
-description: Use when you need the site-approved contact channels for Center for Psychological Treatment and Assessment.
+description: Use when you need the site-approved contact channels for Center for PTA.
 ---
 
 # Contact Paths

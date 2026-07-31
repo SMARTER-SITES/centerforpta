@@ -45,6 +45,26 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? siteUrl).toString
 const englishPath = Astro.url.pathname.replace(/^\/sr(?=\/|$)/, '') || '/';
 const englishAlternateUrl = new URL(englishPath, Astro.site ?? siteUrl).toString();
 const socialImage = resolveMetaImage(image);
+const articleAuthor = author === siteName
+  ? {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#professional-service`,
+      name: siteName,
+      url: siteUrl
+    }
+  : {
+      '@type': 'Person',
+      name: author,
+      url: author.includes('Jelena Djurovic') ? `${siteUrl}/dr-jelena-djurovic/` : undefined
+    };
+const articleReviewer = reviewedBy
+  ? {
+      '@type': 'Person',
+      '@id': `${siteUrl}/dr-jelena-djurovic/#person`,
+      name: reviewedBy,
+      url: `${siteUrl}/dr-jelena-djurovic/`
+    }
+  : undefined;
 
 const customStructuredDataItems = Array.isArray(customStructuredData)
   ? customStructuredData
@@ -61,10 +81,7 @@ const structuredData = [
         headline: title,
         description,
         image: socialImage,
-        author: {
-          '@type': 'Person',
-          name: author
-        },
+        author: articleAuthor,
         publisher: {
           '@type': 'Organization',
           name: siteName,
@@ -75,12 +92,7 @@ const structuredData = [
         },
         datePublished: publishedTime,
         dateModified: modifiedTime || publishedTime,
-        reviewedBy: reviewedBy
-          ? {
-              '@type': 'Person',
-              name: reviewedBy
-            }
-          : undefined,
+        reviewedBy: articleReviewer,
         mainEntityOfPage: canonicalUrl
       }
     : null,

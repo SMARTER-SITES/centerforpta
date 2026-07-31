@@ -30,7 +30,7 @@ test('robots.txt includes sitemap, content signal, and AI crawler groups', () =>
 test('homepage markdown includes contact details and token estimate', () => {
   const markdown = createHomepageMarkdown();
 
-  assert.match(markdown, /# Center for Psychological Treatment and Assessment/);
+  assert.match(markdown, /# Center for PTA/);
   assert.match(markdown, /info@centerforpta\.com/);
   assert.ok(estimateMarkdownTokens(markdown) > 10);
 });

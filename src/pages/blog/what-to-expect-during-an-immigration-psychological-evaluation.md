@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "What to Expect During an Immigration Psychological Evaluation"
 metaTitle: "Immigration Psychological Evaluation in Illinois | Center for PTA"
 date: 2026-06-16T09:00:00.000Z
-author: "Center for Psychological Treatment and Assessment"
+author: "Center for PTA"
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."
 lastReviewed: "June 2026"
 category: "Immigration Evaluations"
@@ -29,9 +29,9 @@ faqItems:
 
 Immigration psychological evaluations can feel unfamiliar, especially when they are connected to a legal process, personal history, family stress, trauma, or uncertainty about the future. Many people are not sure what the evaluation involves, what they will be asked, or how the final report may be used.
 
-This guide explains what to expect during an [immigration psychological evaluation](/immigration-evaluations/), how the process usually works, and how Center for Psychological Treatment and Assessment supports clients in Schaumburg, IL.
+This guide explains what to expect during an [immigration psychological evaluation](/immigration-evaluations/), how the process usually works, and how Center for PTA supports clients in Schaumburg, IL.
 
-Center for Psychological Treatment and Assessment provides immigration psychological evaluations for individuals involved in certain immigration matters, including cases where clinical documentation may help explain a person's emotional, psychological, or family circumstances. Evaluations can be coordinated with an immigration attorney when appropriate and authorized by the client.
+Center for PTA provides immigration psychological evaluations for individuals involved in certain immigration matters, including cases where clinical documentation may help explain a person's emotional, psychological, or family circumstances. Evaluations can be coordinated with an immigration attorney when appropriate and authorized by the client.
 
 > **Important location note:** Dr. Djurovic is licensed to practice in Illinois. Telehealth evaluations are available only when the client is physically located in Illinois at the time of the appointment. Clients who live outside Illinois may be seen for in-person psychological testing or evaluation if they are able to travel to the Schaumburg, IL office.
 
@@ -91,7 +91,7 @@ During this first contact, the practice may ask for basic information such as:
 - language needs
 - whether the appointment will be in person or, when clinically appropriate, by telehealth
 
-Center for Psychological Treatment and Assessment is located in Schaumburg, IL. Telehealth appointments may be available only when the client is physically located in Illinois at the time of the appointment. Clients who live outside Illinois may be able to schedule an in-person evaluation if they can travel to the Schaumburg office.
+Center for PTA is located in Schaumburg, IL. Telehealth appointments may be available only when the client is physically located in Illinois at the time of the appointment. Clients who live outside Illinois may be able to schedule an in-person evaluation if they can travel to the Schaumburg office.
 
 If you are ready to ask about scheduling, you can [contact the practice](/contact/) to discuss availability and next steps.
 
@@ -199,7 +199,7 @@ For legal questions, clients should speak with a qualified immigration attorney.
 
 ## Immigration psychological evaluations in Schaumburg, IL
 
-Center for Psychological Treatment and Assessment provides immigration psychological evaluations from its office in Schaumburg, IL. The practice is led by [Dr. Jelena Djurovic, Psy.D.](/dr-jelena-djurovic/), an Illinois Licensed Clinical Psychologist.
+Center for PTA provides immigration psychological evaluations from its office in Schaumburg, IL. The practice is led by [Dr. Jelena Djurovic, Psy.D.](/dr-jelena-djurovic/), an Illinois Licensed Clinical Psychologist.
 
 Telehealth evaluations may be available only when the client is physically located in Illinois at the time of the appointment. Clients from outside Illinois may be seen in person if they are able to travel to the Schaumburg office for the evaluation.
 
@@ -207,7 +207,7 @@ Evaluations are available in English and Serbian. Dr. Djurovic speaks conversati
 
 The office is located at:
 
-Center for Psychological Treatment and Assessment  
+Center for PTA  
 1320 Tower Rd, Suite 156  
 Schaumburg, IL 60173
 
@@ -243,11 +243,11 @@ Evaluations are available in English and Serbian. Dr. Djurovic speaks conversati
 
 No. A psychological evaluation can provide clinical documentation, but it does not guarantee any immigration outcome. Immigration decisions are made by legal or government authorities. Clients should speak with their attorney about how the evaluation may be used in their case.
 
-## How Center for Psychological Treatment and Assessment can help
+## How Center for PTA can help
 
-Center for Psychological Treatment and Assessment provides immigration psychological evaluations for clients in Schaumburg, IL. Evaluations are completed with attention to clinical accuracy, respect for the client's history, and clear communication with attorneys when appropriate and authorized by the client.
+Center for PTA provides immigration psychological evaluations for clients in Schaumburg, IL. Evaluations are completed with attention to clinical accuracy, respect for the client's history, and clear communication with attorneys when appropriate and authorized by the client.
 
-If you or your attorney are seeking an immigration psychological evaluation in Illinois, you can [contact Center for Psychological Treatment and Assessment](/contact/) to ask about availability and next steps.
+If you or your attorney are seeking an immigration psychological evaluation in Illinois, you can [contact Center for PTA](/contact/) to ask about availability and next steps.
 
 ## Clinically reviewed by
 

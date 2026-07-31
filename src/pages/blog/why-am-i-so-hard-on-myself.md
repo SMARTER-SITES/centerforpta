@@ -3,7 +3,7 @@ layout: ../../layouts/BlogPostLayout.astro
 title: "Why Am I So Hard on Myself? A Psychologist's Guide to Self-Compassion"
 metaTitle: "Why Am I So Hard on Myself? | Self-Compassion"
 date: 2026-07-28T09:00:00.000Z
-author: "Center for Psychological Treatment and Assessment"
+author: "Center for PTA"
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."
 lastReviewed: "July 2026"
 category: "Self-Compassion"
@@ -146,7 +146,7 @@ Self-compassion-focused therapy is not built around repeating positive statement
 
 ## Getting support
 
-Center for Psychological Treatment and Assessment offers in-person therapy at 1320 Tower Road, Suite 156, Schaumburg, Illinois, serving Schaumburg and nearby northwest suburban communities.
+Center for PTA offers in-person therapy at 1320 Tower Road, Suite 156, Schaumburg, Illinois, serving Schaumburg and nearby northwest suburban communities.
 
 If the patterns described here feel familiar, learn more about [self-compassion therapy at Center for PTA](/self-compassion-therapy/) or explore [women's mental health therapy](/womens-mental-health-therapy/). You can also read about [Dr. Jelena Djurovic's background and approach](/about/).
 

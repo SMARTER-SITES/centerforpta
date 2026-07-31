@@ -1,5 +1,5 @@
 export const siteBaseUrl = 'https://centerforpta.com';
-export const siteName = 'Center for Psychological Treatment and Assessment';
+export const siteName = 'Center for PTA';
 export const contentSignal = 'ai-train=no, search=yes, ai-input=yes';
 export const homepageLinkHeader =
   '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/openapi+json", </api/docs.md>; rel="service-doc"; type="text/markdown", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"';
@@ -281,7 +281,7 @@ export function createOpenApiSpec() {
       title: 'Center for PTA javni API sajta',
       version: '1.0.0',
       description:
-        'Javni API samo za čitanje koji opisuje praksu, usluge i kontakt opcije Center for Psychological Treatment and Assessment.'
+        'Javni API samo za čitanje koji opisuje praksu, usluge i kontakt opcije Center for PTA.'
     },
     servers: [
       {
@@ -470,11 +470,11 @@ Sažetke držite činjeničnim i zasnovanim na objavljenom sajtu. Kada korisnik 
   {
     name: 'contact-paths',
     description:
-      'Koristite kada vam trebaju kontakt kanali odobreni na sajtu za Center for Psychological Treatment and Assessment.',
+      'Koristite kada vam trebaju kontakt kanali odobreni na sajtu za Center for PTA.',
     path: '/sr/.well-known/agent-skills/contact-paths/SKILL.md',
     content: `---
 name: contact-paths
-description: Koristite kada vam trebaju kontakt kanali odobreni na sajtu za Center for Psychological Treatment and Assessment.
+description: Koristite kada vam trebaju kontakt kanali odobreni na sajtu za Center for PTA.
 ---
 
 # Kontakt putanje

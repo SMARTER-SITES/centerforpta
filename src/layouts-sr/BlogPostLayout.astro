@@ -4,7 +4,7 @@ import Navbar from '../components-sr/Navbar.astro';
 import Footer from '../components-sr/Footer.astro';
 
 const { frontmatter } = Astro.props;
-const articleTitle = frontmatter.metaTitle || `${frontmatter.title} | Center for Psychological Treatment and Assessment`;
+const articleTitle = frontmatter.metaTitle || `${frontmatter.title} | Center for PTA`;
 const displayDate = frontmatter.date
   ? new Date(frontmatter.date).toLocaleDateString('sr-Latn-RS', {
       month: 'long',
@@ -63,7 +63,7 @@ const tocHeadings = (Astro.props.headings || []).filter((heading) => heading.dep
             <p class="mt-2 text-sm text-gray-600">Poslednji pregled: {frontmatter.lastReviewed}</p>
           )}
           <p class="mt-5 text-sm text-gray-600 leading-relaxed">
-            Edukativne smernice Center for Psychological Treatment and Assessment u Šamburgu, IL.
+            Edukativne smernice Center for PTA u Šamburgu, IL.
           </p>
         </aside>
       </div>

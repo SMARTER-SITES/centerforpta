@@ -3,7 +3,7 @@ layout: ../../../layouts-sr/BlogPostLayout.astro
 title: "Zašto sam toliko stroga prema sebi? Psihološki vodič kroz samosaosećanje"
 metaTitle: "Zašto sam stroga prema sebi? | Samosaosećanje"
 date: 2026-07-28T09:00:00.000Z
-author: "Center for Psychological Treatment and Assessment"
+author: "Center for PTA"
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."
 lastReviewed: "Jul 2026"
 category: "Samosaosećanje"
@@ -145,7 +145,7 @@ Terapija usmerena na samosaosećanje ne zasniva se na ponavljanju pozitivnih izj
 
 ## Podrška u Šamburgu
 
-Center for Psychological Treatment and Assessment pruža terapiju uživo na adresi 1320 Tower Road, Suite 156, Schaumburg, Illinois, za osobe iz Šamburga i okolnih severozapadnih predgrađa.
+Center for PTA pruža terapiju uživo na adresi 1320 Tower Road, Suite 156, Schaumburg, Illinois, za osobe iz Šamburga i okolnih severozapadnih predgrađa.
 
 Ako su vam opisani obrasci poznati, pročitajte više o [terapiji usmerenoj na samosaosećanje](/sr/self-compassion-therapy/) ili istražite [terapiju za mentalno zdravlje žena](/sr/womens-mental-health-therapy/). Možete pročitati i više o [iskustvu i pristupu Dr. Jelene Djurovic](/sr/about/).
 

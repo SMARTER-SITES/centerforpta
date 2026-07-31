@@ -3,7 +3,7 @@ layout: ../../../layouts-sr/BlogPostLayout.astro
 title: "Šta očekivati tokom imigracione psihološke evaluacije"
 metaTitle: "Imigraciona psihološka evaluacija u Ilinoisu | Center for PTA"
 date: 2026-06-16T09:00:00.000Z
-author: "Center for Psychological Treatment and Assessment"
+author: "Center for PTA"
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."
 lastReviewed: "Jun 2026"
 category: "Imigracione evaluacije"
@@ -29,9 +29,9 @@ faqItems:
 
 Imigracione psihološke evaluacije mogu delovati nepoznato, posebno kada su povezane sa pravnim postupkom, ličnom istorijom, porodičnim stresom, traumom ili neizvesnošću oko budućnosti. Mnogi ljudi nisu sigurni šta evaluacija uključuje, koja pitanja mogu očekivati ili kako se završni izveštaj može koristiti.
 
-Ovaj vodič objašnjava šta možete očekivati tokom [imigracione psihološke evaluacije](/sr/immigration-evaluations/), kako proces najčešće izgleda i kako Center for Psychological Treatment and Assessment podržava klijente u Šamburgu, IL.
+Ovaj vodič objašnjava šta možete očekivati tokom [imigracione psihološke evaluacije](/sr/immigration-evaluations/), kako proces najčešće izgleda i kako Center for PTA podržava klijente u Šamburgu, IL.
 
-Center for Psychological Treatment and Assessment pruža imigracione psihološke evaluacije za osobe uključene u određene imigracione postupke, uključujući slučajeve u kojima klinička dokumentacija može pomoći da se objasne emocionalne, psihološke ili porodične okolnosti osobe. Evaluacije se mogu koordinisati sa imigracionim advokatom kada je to prikladno i kada klijent to odobri.
+Center for PTA pruža imigracione psihološke evaluacije za osobe uključene u određene imigracione postupke, uključujući slučajeve u kojima klinička dokumentacija može pomoći da se objasne emocionalne, psihološke ili porodične okolnosti osobe. Evaluacije se mogu koordinisati sa imigracionim advokatom kada je to prikladno i kada klijent to odobri.
 
 > **Važna napomena o lokaciji:** Dr. Djurovic ima dozvolu za rad u Ilinoisu. Telehealth evaluacije su dostupne samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti koji žive van Ilinoisa mogu biti viđeni uživo za psihološko testiranje ili evaluaciju ako mogu da doputuju u ordinaciju u Šamburgu, IL.
 
@@ -91,7 +91,7 @@ Tokom prvog kontakta, ordinacija može pitati za osnovne informacije kao što su
 - jezičke potrebe
 - da li će termin biti uživo ili, kada je klinički prikladno, putem telehealth-a
 
-Center for Psychological Treatment and Assessment nalazi se u Šamburgu, IL. Telehealth termini mogu biti dostupni samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti koji žive van Ilinoisa mogu zakazati evaluaciju uživo ako mogu da doputuju u ordinaciju u Šamburgu.
+Center for PTA nalazi se u Šamburgu, IL. Telehealth termini mogu biti dostupni samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti koji žive van Ilinoisa mogu zakazati evaluaciju uživo ako mogu da doputuju u ordinaciju u Šamburgu.
 
 Ako ste spremni da pitate za zakazivanje, možete [kontaktirati ordinaciju](/sr/contact/) da razgovarate o dostupnosti i narednim koracima.
 
@@ -199,7 +199,7 @@ Za pravna pitanja, klijenti treba da razgovaraju sa kvalifikovanim imigracionim 
 
 ## Imigracione psihološke evaluacije u Šamburgu, IL
 
-Center for Psychological Treatment and Assessment pruža imigracione psihološke evaluacije iz svoje ordinacije u Šamburgu, IL. Ordinaciju vodi [Dr Jelena Djurovic, Psy.D.](/sr/dr-jelena-djurovic/), licencirani klinički psiholog u Ilinoisu.
+Center for PTA pruža imigracione psihološke evaluacije iz svoje ordinacije u Šamburgu, IL. Ordinaciju vodi [Dr Jelena Djurovic, Psy.D.](/sr/dr-jelena-djurovic/), licencirani klinički psiholog u Ilinoisu.
 
 Telehealth evaluacije mogu biti dostupne samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti iz drugih saveznih država mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu za evaluaciju.
 
@@ -207,7 +207,7 @@ Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverz
 
 Adresa ordinacije je:
 
-Center for Psychological Treatment and Assessment  
+Center for PTA  
 1320 Tower Rd, Suite 156  
 Schaumburg, IL 60173
 
@@ -243,11 +243,11 @@ Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverz
 
 Ne. Psihološka evaluacija može pružiti kliničku dokumentaciju, ali ne garantuje nijedan imigracioni ishod. Odluke u imigracionim postupcima donose pravni ili državni organi. Klijenti treba da razgovaraju sa svojim advokatom o tome kako se evaluacija može koristiti u njihovom slučaju.
 
-## Kako Center for Psychological Treatment and Assessment može pomoći
+## Kako Center for PTA može pomoći
 
-Center for Psychological Treatment and Assessment pruža imigracione psihološke evaluacije za klijente u Šamburgu, IL. Evaluacije se rade sa pažnjom prema kliničkoj tačnosti, poštovanjem prema istoriji klijenta i jasnom komunikacijom sa advokatima kada je to prikladno i kada klijent to odobri.
+Center for PTA pruža imigracione psihološke evaluacije za klijente u Šamburgu, IL. Evaluacije se rade sa pažnjom prema kliničkoj tačnosti, poštovanjem prema istoriji klijenta i jasnom komunikacijom sa advokatima kada je to prikladno i kada klijent to odobri.
 
-Ako vi ili vaš advokat tražite imigracionu psihološku evaluaciju u Ilinoisu, možete [kontaktirati Center for Psychological Treatment and Assessment](/sr/contact/) da pitate za dostupnost i naredne korake.
+Ako vi ili vaš advokat tražite imigracionu psihološku evaluaciju u Ilinoisu, možete [kontaktirati Center for PTA](/sr/contact/) da pitate za dostupnost i naredne korake.
 
 ## Klinički pregledano od strane
 

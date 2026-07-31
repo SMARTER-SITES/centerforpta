@@ -1,5 +1,5 @@
 export const siteUrl = 'https://centerforpta.com';
-export const siteName = 'Center for Psychological Treatment and Assessment';
+export const siteName = 'Center for PTA';
 export const defaultTitle = `${siteName} | Dr. Jelena Djurovic`;
 export const defaultDescription =
   'Psihoterapija, partnerska terapija, psihološke procene, imigracione evaluacije i predoperativne psihološke evaluacije u Schaumburgu, Illinois.';
@@ -108,7 +108,7 @@ export function getBaseStructuredData(description: string) {
     '@type': ['MedicalBusiness', 'ProfessionalService'],
     '@id': `${siteUrl}/#professional-service`,
     name: siteName,
-    alternateName: 'Center for PTA',
+    alternateName: 'Center for Psychological Treatment and Assessment',
     description,
     url: siteUrl,
     logo: logoUrl,
