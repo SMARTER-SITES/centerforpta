@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 
 const prices = [
   { service: "Individual therapy", details: "60 min (53 clinical min)", price: "$200" },
@@ -11,11 +14,35 @@ const prices = [
   { service: "Immigration Evaluations", details: "Detailed legal reporting", price: "Starting at $1,500" },
   { service: "Consultation and Supervision", details: "Professional coaching", price: "Call for pricing" }
 ];
+
+const faqItems = [
+  {
+    question: 'Which insurance plans does Center for PTA accept?',
+    answer:
+      'Center for PTA currently lists BCBS PPO, Aetna, and UnitedHealthcare. Network participation, covered services, deductibles, copays, and other patient responsibility depend on the specific plan. Please verify current benefits with your insurer and Center for PTA before starting services.'
+  },
+  {
+    question: 'What is a superbill, and does it guarantee reimbursement?',
+    answer:
+      'A superbill is documentation that may be submitted to an insurance company for possible out-of-network reimbursement. Providing a superbill does not guarantee payment. Reimbursement depends on the terms of the individual insurance plan.'
+  },
+  {
+    question: 'How can I confirm the expected cost before an appointment?',
+    answer:
+      'Contact Center for PTA to confirm the current rate for the requested service and discuss whether insurance or private pay may apply. Assessment and evaluation fees may vary with the scope of the referral question, testing, records, and reporting required.'
+  },
+  {
+    question: 'Where are in-person services offered, and is telehealth available outside Illinois?',
+    answer:
+      'In-person services are offered at 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Telehealth may be available only when every participating client is physically located in Illinois during the session and the format is clinically appropriate. Clients who live elsewhere may travel to Schaumburg for an in-person evaluation.'
+  }
+];
 ---
 
 <Layout
   title="Rates & Insurance | Center for PTA"
   description="View therapy, assessment, and immigration evaluation rates, plus accepted insurance plans including BCBS PPO, Aetna, and UnitedHealthcare."
+  faqItems={faqItems}
 >
   <Navbar />
 
@@ -23,11 +50,12 @@ const prices = [
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Rates and Insurance" align="center" />
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Rates and Insurance
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Transparent pricing and flexible payment options to ensure you get the care you need.
+        Review current rates, insurance information, and payment options before scheduling care.
       </p>
     </div>
   </section>
@@ -38,6 +66,9 @@ const prices = [
       <div class="max-w-4xl mb-12">
         <p class="text-lg text-gray-700 leading-relaxed">
           We offer transparent rates for therapy, psychological assessment, immigration evaluations, and pre-surgical evaluations in Schaumburg, IL. We currently accept BCBS PPO, Aetna, and UnitedHealthcare, and we can provide superbills for out-of-network reimbursement when appropriate.
+        </p>
+        <p class="mt-4 text-base text-gray-600 leading-relaxed">
+          Coverage, network status, deductibles, copays, and reimbursement depend on your specific plan. Please confirm current benefits with your insurer and Center for PTA before beginning services.
         </p>
       </div>
       
@@ -82,11 +113,19 @@ const prices = [
     </div>
   </section>
 
+  <FaqSection
+    title="Rates and Insurance FAQ"
+    intro="Practical answers about insurance verification, superbills, costs, the Schaumburg office, and telehealth boundaries."
+    faqs={faqItems}
+  />
+
+  <PageAddressCard />
+
   <!-- CTA section -->
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Got questions?</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

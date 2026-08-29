@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts-sr/BlogPostLayout.astro
 title: "Šta očekivati tokom imigracione psihološke evaluacije"
-metaTitle: "Imigraciona psihološka evaluacija u Ilinoisu | Center for PTA"
+metaTitle: "Imigraciona psihološka evaluacija | Ilinois"
 date: 2026-06-16T09:00:00.000Z
 author: "Center for PTA"
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."
@@ -18,12 +18,12 @@ faqItems:
   - question: "Da li psiholog može razgovarati sa mojim advokatom?"
     answer: "Psiholog može komunicirati sa vašim advokatom ako date pisanu saglasnost. To može pomoći da se razjasni svrha evaluacije i da izveštaj odgovori na relevantna klinička pitanja."
   - question: "Da li se imigraciona psihološka evaluacija može obaviti putem telehealth-a?"
-    answer: "Telehealth može biti dostupan samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Klijenti koji žive van Ilinoisa mogu biti viđeni uživo za psihološko testiranje ili evaluaciju ako mogu da doputuju u ordinaciju u Šamburgu, IL."
+    answer: "Telehealth može biti dostupan samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Neke situacije mogu biti prikladnije za evaluaciju uživo. Klijenti koji žive van Ilinoisa mogu biti viđeni uživo za psihološko testiranje ili evaluaciju ako mogu da doputuju u ordinaciju u Šamburgu."
   - question: "Koja dokumenta treba pripremiti za imigracionu psihološku evaluaciju?"
     answer: "Dokumenta zavise od slučaja, ali mogu uključivati pismo advokata, ličnu izjavu, medicinsku ili psihijatrijsku dokumentaciju, ranije evaluacije, policijske izveštaje ili zaštitne mere kada su relevantni, kao i dokumenta povezana sa porodicom, hardship okolnostima ili traumom. Vaš advokat može pomoći da se odredi šta je pravno relevantno."
   - question: "Na kojim jezicima je evaluacija dostupna?"
     answer: "Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverzacijski španski; kontaktirajte ordinaciju da proverite da li podrška na španskom odgovara vašim potrebama. Klijenti van Ilinoisa kojima je potrebna evaluacija na srpskom jeziku mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu i ako su fizički prisutni u Ilinoisu tokom evaluacije."
-  - question: "Da li psihološka evaluacija garantuje odobrenje imigracionog slučaja?"
+  - question: "Da li psihološka evaluacija garantuje da će moj imigracioni slučaj biti odobren?"
     answer: "Ne. Psihološka evaluacija može pružiti kliničku dokumentaciju, ali ne garantuje nijedan imigracioni ishod. Odluke u imigracionim postupcima donose pravni ili državni organi. Klijenti treba da razgovaraju sa svojim advokatom o tome kako se evaluacija može koristiti u njihovom slučaju."
 ---
 

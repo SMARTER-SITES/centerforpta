@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 import Footer from '../../components-sr/Footer.astro';
 import FaqSection from '../../components-sr/FaqSection.astro';
 import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
@@ -15,24 +16,34 @@ const timeline = [
 
 const relatedLinks = [
   {
-    href: '/sr/psychological-assessment',
+    href: '/sr/psychological-assessment/',
     title: 'Psihološka procena',
     desc: 'Saznajte više o dijagnostičkom testiranju, kognitivnim teškoćama i preporukama za tretman ili prilagođavanja.'
   },
   {
-    href: '/sr/rates-and-insurance',
+    href: '/sr/bariatric-surgery-counseling/',
+    title: 'Barijatrijsko savetovanje',
+    desc: 'Pogledajte kontinuiranu terapijsku podršku pre ili posle operacije za prilagođavanje, sliku tela i promenu ponašanja.'
+  },
+  {
+    href: '/sr/weight-loss-counseling/',
+    title: 'Savetovanje za mršavljenje',
+    desc: 'Saznajte više o podršci za održivu promenu ponašanja, emocionalne obrasce i mentalnu stranu ciljeva povezanih sa težinom.'
+  },
+  {
+    href: '/sr/rates-and-insurance/',
     title: 'Cene i osiguranje',
     desc: 'Pogledajte trenutne cene, prihvaćena osiguranja i sledeće korake pre zakazivanja evaluacije.'
   },
   {
-    href: '/sr/contact',
+    href: '/sr/contact/',
     title: 'Kontakt',
     desc: 'Javite se da zakažete predoperativnu ili barijatrijsku psihološku evaluaciju u Schaumburgu, IL.'
   }
 ];
 
 const pageDescription =
-  'Predoperativne i barijatrijske psihološke evaluacije u Schaumburgu, IL za medicinsko odobrenje, procenu spremnosti i jasan izveštaj za hirurške i medicinske timove.';
+  'Predoperativne i barijatrijske psihološke evaluacije u Šamburgu, sa procenom spremnosti i jasnim izveštajem za medicinski tim.';
 
 const faqItems = [
   {
@@ -76,7 +87,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Predoperativne i barijatrijske psihološke evaluacije u Schaumburgu, IL | Dr. Jelena Djurovic"
+  title="Barijatrijska psihološka evaluacija | Šamburg, IL"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -87,6 +98,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Predoperativne psihološke evaluacije u Schaumburgu, IL" homeLabel="Početna" homePath="/sr/" ariaLabel="Putanja stranice" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Predoperativne psihološke evaluacije u Schaumburgu, IL
@@ -208,7 +220,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Zakažite predoperativnu evaluaciju</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

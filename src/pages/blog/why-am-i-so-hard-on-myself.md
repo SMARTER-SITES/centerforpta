@@ -11,6 +11,13 @@ image: "/images/blog/self-compassion-reflection-schaumburg.webp"
 imageAlt: "Editorial image of a woman pausing with a hand over her chest in a calm room"
 description: "Harsh self-criticism is often learned, not a flaw. A licensed Schaumburg psychologist explains self-compassion and when therapy may help."
 srPath: "/sr/blog/why-am-i-so-hard-on-myself/"
+citations:
+  - name: "Neff (2023): Self-Compassion: Theory, Method, Research, and Intervention"
+    url: "https://doi.org/10.1146/annurev-psych-032420-031047"
+  - name: "Han and Kim (2023): Self-compassion interventions meta-analysis"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10239723/"
+  - name: "Vidal and Soldevilla (2023): Compassion-focused therapy meta-analysis"
+    url: "https://doi.org/10.1111/bjc.12394"
 faqItems:
   - question: "Can self-compassion make me less motivated?"
     answer: "Self-compassion does not require giving up goals or standards. It changes how you respond to setbacks so that motivation does not depend entirely on fear, shame, or self-punishment."
@@ -142,13 +149,13 @@ Some patterns developed in relationships or unsafe environments and are easier t
 
 Self-compassion-focused therapy is not built around repeating positive statements you do not believe. Depending on your needs, the work may involve identifying triggers, understanding the experiences that shaped the critical voice, noticing how thoughts and emotions show up in the body, practicing more balanced internal language, and building accountability that does not depend on shame.
 
-[Dr. Jelena Djurovic's approach](/about/) draws on Kristin Neff's self-compassion research, mindfulness-informed interventions, principles of AEDP, and cognitive-behavioral techniques when clinically appropriate. Her doctoral research examined the mind-body relationship and how mindfulness-related skills may affect depression and quality of life.
+[Dr. Jelena Djurovic's approach](/dr-jelena-djurovic/) draws on Kristin Neff's self-compassion research, mindfulness-informed interventions, principles of AEDP, and cognitive-behavioral techniques when clinically appropriate. Her doctoral research examined the mind-body relationship and how mindfulness-related skills may affect depression and quality of life.
 
 ## Getting support
 
-Center for PTA offers in-person therapy at 1320 Tower Road, Suite 156, Schaumburg, Illinois, serving Schaumburg and nearby northwest suburban communities.
+Center for PTA offers in-person therapy at 1320 Tower Rd, Suite 156, Schaumburg, IL 60173, serving Schaumburg and nearby northwest suburban communities.
 
-If the patterns described here feel familiar, learn more about [self-compassion therapy at Center for PTA](/self-compassion-therapy/) or explore [women's mental health therapy](/womens-mental-health-therapy/). You can also read about [Dr. Jelena Djurovic's background and approach](/about/).
+If the patterns described here feel familiar, learn more about [self-compassion therapy at Center for PTA](/self-compassion-therapy/) or explore [women's mental health therapy](/womens-mental-health-therapy/). You can also read about [Dr. Jelena Djurovic's background and approach](/dr-jelena-djurovic/).
 
 > **Important location note:** Telehealth is available only when the client is physically located in Illinois at the time of the session. Services are available in English and Serbian.
 

@@ -10,6 +10,13 @@ category: "Samosaosećanje"
 image: "/images/blog/self-compassion-reflection-schaumburg.webp"
 imageAlt: "Urednička fotografija žene koja zastaje sa rukom na grudima u mirnoj prostoriji"
 description: "Oštra samokritika je često naučena, a ne lična mana. Psiholog iz Šamburga objašnjava samosaosećanje i kada terapija može pomoći."
+citations:
+  - name: "Neff (2023): Self-Compassion: Theory, Method, Research, and Intervention"
+    url: "https://doi.org/10.1146/annurev-psych-032420-031047"
+  - name: "Han i Kim (2023): Meta-analiza intervencija samosaosećanja"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10239723/"
+  - name: "Vidal i Soldevilla (2023): Meta-analiza terapije usmerene na saosećanje"
+    url: "https://doi.org/10.1111/bjc.12394"
 faqItems:
   - question: "Da li zbog samosaosećanja mogu postati manje motivisana?"
     answer: "Samosaosećanje ne zahteva odustajanje od ciljeva ili standarda. Ono menja način na koji reagujete na neuspehe, tako da motivacija ne zavisi isključivo od straha, stida ili samokažnjavanja."
@@ -141,13 +148,13 @@ Neki obrasci su se razvili u odnosima ili nebezbednim okruženjima i lakše ih j
 
 Terapija usmerena na samosaosećanje ne zasniva se na ponavljanju pozitivnih izjava u koje ne verujete. U zavisnosti od vaših potreba, rad može uključivati prepoznavanje okidača, razumevanje iskustava koja su oblikovala kritički glas, uočavanje načina na koji se misli i emocije javljaju u telu, vežbanje uravnoteženijeg unutrašnjeg govora i izgradnju odgovornosti koja ne zavisi od stida.
 
-[Pristup Dr. Jelene Djurovic](/sr/about/) oslanja se na istraživanja Kristin Neff o samosaosećanju, intervencije zasnovane na svesnoj pažnji, principe AEDP-a i kognitivno-bihejvioralne tehnike kada su klinički prikladne. Njeno doktorsko istraživanje bavilo se odnosom uma i tela i načinom na koji veštine povezane sa svesnom pažnjom mogu uticati na depresiju i kvalitet života.
+[Pristup Dr. Jelene Djurovic](/sr/dr-jelena-djurovic/) oslanja se na istraživanja Kristin Neff o samosaosećanju, intervencije zasnovane na svesnoj pažnji, principe AEDP-a i kognitivno-bihejvioralne tehnike kada su klinički prikladne. Njeno doktorsko istraživanje bavilo se odnosom uma i tela i načinom na koji veštine povezane sa svesnom pažnjom mogu uticati na depresiju i kvalitet života.
 
 ## Podrška u Šamburgu
 
-Center for PTA pruža terapiju uživo na adresi 1320 Tower Road, Suite 156, Schaumburg, Illinois, za osobe iz Šamburga i okolnih severozapadnih predgrađa.
+Center for PTA pruža terapiju uživo na adresi 1320 Tower Rd, Suite 156, Schaumburg, IL 60173, za osobe iz Šamburga i okolnih severozapadnih predgrađa.
 
-Ako su vam opisani obrasci poznati, pročitajte više o [terapiji usmerenoj na samosaosećanje](/sr/self-compassion-therapy/) ili istražite [terapiju za mentalno zdravlje žena](/sr/womens-mental-health-therapy/). Možete pročitati i više o [iskustvu i pristupu Dr. Jelene Djurovic](/sr/about/).
+Ako su vam opisani obrasci poznati, pročitajte više o [terapiji usmerenoj na samosaosećanje](/sr/self-compassion-therapy/) ili istražite [terapiju za mentalno zdravlje žena](/sr/womens-mental-health-therapy/). Možete pročitati i više o [iskustvu i pristupu Dr. Jelene Djurovic](/sr/dr-jelena-djurovic/).
 
 > **Važna napomena o lokaciji:** Telehealth je dostupan samo kada se klijent fizički nalazi u Ilinoisu u trenutku termina. Usluge su dostupne na engleskom i srpskom jeziku.
 

@@ -2,18 +2,50 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 
 const facts = [
-  "83% pacijenata prijavljuje značajno poboljšanje simptoma",
-  "63% postiže punu remisiju simptoma depresije",
-  "Pokriveno kod većine velikih osiguravajućih kuća",
-  "FDA odobreno i bez lekova"
+  'TMS i PrTMS klinika u Evanstonu, Illinois',
+  'FDA-cleared TMS može biti razmatran za odgovarajuće pacijente sa depresijom otpornom na lečenje, u zavisnosti od uređaja i indikacije',
+  'R Hope navodi personalizovano planiranje, mogućnosti ubrzanog rasporeda i mobilnu TMS podršku',
+  'Podobnost, očekivana korist, rizici, troškovi i osiguranje moraju se potvrditi direktno sa kliničkim timom R Hope'
+];
+
+const faqItems = [
+  {
+    question: 'Da li je R Hope Treatment deo Center for PTA?',
+    answer:
+      'Ne. Center for PTA i R Hope Treatment su dve zasebne kliničke prakse. Center for PTA se nalazi u Schaumburgu, dok se R Hope Treatment nalazi u Evanstonu.'
+  },
+  {
+    question: 'Da li Center for PTA pruža TMS?',
+    answer:
+      'Ne. Center for PTA pruža psihoterapiju i psihološku procenu u okviru sopstvenog domena rada. R Hope Treatment zasebno pruža TMS i određuje da li njihova medicinska usluga može biti prikladna.'
+  },
+  {
+    question: 'Gde se nalaze Center for PTA i R Hope Treatment?',
+    answer:
+      'Center for PTA se nalazi na adresi 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. R Hope Treatment navodi adresu klinike 1335 Dodge Ave, Evanston, IL 60201.'
+  },
+  {
+    question: 'Ko određuje da li je TMS prikladan i da li osiguranje može da ga pokrije?',
+    answer:
+      'Klinički i administrativni tim R Hope određuje podobnost, plan tretmana, raspored, troškove i proveru osiguranja za njihove usluge. Center for PTA ne donosi te odluke i ne obećava pokriće osiguranja.'
+  },
+  {
+    question: 'Gde treba proveriti aktuelne R Hope usluge i kontakt podatke?',
+    answer:
+      'Aktuelne usluge, kliničke informacije, dostupnost i podatke o osiguranju proverite direktno sa R Hope Treatment ili na njihovom zvaničnom sajtu za Evanston, jer se ti podaci mogu menjati.'
+  }
 ];
 ---
 
 <Layout
-  title="Naši partneri | Center for PTA"
-  description="Saznajte više o pouzdanim partnerima koje preporučuje Center for PTA, uključujući R Hope Treatment u Evanstonu, IL."
+  title="R Hope Treatment: TMS i upućivanje | Center for PTA"
+  description="Saznajte više o R Hope Treatment, zasebnoj TMS klinici u Evanstonu, i razlici između njihovih usluga i podrške koju pruža Center for PTA."
+  faqItems={faqItems}
 >
   <Navbar />
 
@@ -21,12 +53,19 @@ const facts = [
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resursi</p>
+      <PageBreadcrumbs
+        currentLabel="R Hope Treatment: informacije o upućivanju"
+        homeLabel="Početna"
+        homePath="/sr/"
+        ariaLabel="Putanja stranice"
+        align="center"
+      />
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Zaseban resurs za upućivanje</p>
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Naši partneri
+        R Hope Treatment: informacije o TMS-u i upućivanju
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Sarađujemo sa vodećim zdravstvenim stručnjacima kako bismo pružili sveobuhvatnu podršku.
+        Jasne informacije o spoljnim uslugama koje mogu biti važne kada su potrebe klijenta izvan domena psihoterapije ili psihološke procene.
       </p>
     </div>
   </section>
@@ -38,27 +77,30 @@ const facts = [
         
         <div class="lg:w-1/2">
           <h2 class="text-3xl md:text-4xl font-extrabold text-[#147b6a] mb-6">R Hope Treatment</h2>
-          <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6">TMS klinika</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6">Zasebna TMS klinika u Evanstonu</h3>
           
           <div class="space-y-4 text-gray-700 text-[15px] md:text-lg leading-relaxed font-medium">
-            <p>R Hope Treatment je regionalni lider u pružanju standardne i personalizovane terapije transkranijalnom magnetnom stimulacijom (TMS), inovativnog, neinvazivnog tretmana bez lekova koji je odobren od strane FDA za stanja mentalnog zdravlja.</p>
-            <p>TMS terapija koristi blage magnetne impulse za stimulaciju manje aktivnih delova mozga koji regulišu raspoloženje, bez upotrebe lekova. Tipična seansa traje manje od 20 minuta, a tretman se obično sprovodi tokom 6-8 nedelja.</p>
-            <p>Klinika u Evanstonu, IL, specijalizovana je za tretman depresije i anksioznosti, a pomaže i pacijentima sa PTSP-om, OKP-om, ADHD-om i drugim poremećajima raspoloženja.</p>
-            <p>Takođe nude potpuno opremljenu mobilnu TMS kliniku za pacijente koji ne mogu redovno da dolaze na glavnu lokaciju. Mobilna jedinica donosi isti kvalitet nege direktno do pacijenta, bilo kod kuće, u ustanovi za negu ili na drugoj pogodnoj lokaciji.</p>
-            <p>R Hope Treatment nudi standardne TMS protokole i napredne personalizovane TMS (PrTMS) protokole uz EEG mapiranje mozga. To omogućava prilagođavanje tretmana jedinstvenoj moždanoj aktivnosti svakog pacijenta, radi preciznije i efikasnije nege.</p>
+            <p>R Hope Treatment je zasebna klinička praksa u Evanstonu koja pruža transkranijalnu magnetnu stimulaciju (TMS) i usluge zasnovane na PrTMS pristupu. Na svom zvaničnom sajtu navode FDA-cleared TMS za odgovarajuće pacijente sa depresijom otpornom na lečenje, kao i personalizovano planiranje, razgovore o ubrzanom rasporedu i mobilnu TMS podršku.</p>
+            <p>TMS je medicinski tretman. Da li je prikladan zavisi od individualne kliničke procene, uređaja i indikacije, medicinske istorije i drugih faktora koje razmatra tim koji pruža tretman. Center for PTA ne pruža TMS i ne određuje podobnost za usluge R Hope.</p>
+            <p>Center for PTA može pružati psihoterapiju ili psihološku procenu u okviru sopstvenog domena rada. R Hope zasebno sprovodi medicinsku procenu, planiranje tretmana, proces informisanog pristanka, zakazivanje, naplatu i proveru osiguranja.</p>
+            <p>Ova stranica pomaže posetiocima da razumeju razliku između dve prakse. Ona nije preporuka tretmana, potvrda podobnosti, obećanje pokrića osiguranja niti garancija rezultata.</p>
           </div>
           
           <div class="mt-8 pt-6 border-t border-gray-200">
             <p class="font-bold text-[#1a1a1a]">R Hope Treatment</p>
             <p class="text-gray-600 mt-1">1335 Dodge Ave, Evanston, IL 60201</p>
-            <p class="text-gray-600 mt-1">📞 847-868-9369 | 📧 office@RHopeTreatment.com</p>
+            <p class="text-gray-600 mt-1"><a href="tel:+18478689369" class="font-semibold hover:text-[#2f594f]">(847) 868-9369</a> · <a href="mailto:office@rhopetreatment.com" class="font-semibold hover:text-[#2f594f]">office@rhopetreatment.com</a></p>
+            <a href="https://rhopetreatment.com/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 font-bold text-[#0d5c4e] hover:text-[#2f594f]">
+              Proverite aktuelne usluge na zvaničnom sajtu R Hope Evanston <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Javni podaci su poslednji put provereni 29. avgusta 2026. Aktuelne kliničke i informacije o osiguranju potvrdite direktno sa R Hope.</p>
           </div>
         </div>
 
         <div class="lg:w-1/2 bg-white rounded-3xl p-8 xl:p-10 shadow-sm border border-gray-100 w-full">
           <h3 class="text-2xl font-bold text-[#1a1a1a] mb-8 flex items-center">
             <svg class="w-8 h-8 text-[#fcc13e] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            Ključne činjenice
+            Šta treba potvrditi direktno
           </h3>
           <div class="space-y-6">
             {facts.map(fact => (
@@ -75,6 +117,14 @@ const facts = [
       </div>
     </div>
   </section>
+
+  <FaqSection
+    title="Česta pitanja o R Hope Treatment i TMS-u"
+    intro="Odgovori koji jasno razlikuju dve prakse, njihove lokacije i odgovornost za odluke o TMS-u."
+    faqs={faqItems}
+  />
+
+  <PageAddressCard />
 
   <Footer />
 </Layout>

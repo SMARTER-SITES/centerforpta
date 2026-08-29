@@ -1,40 +1,106 @@
+import {
+  googleBusinessProfileFacts,
+  nearbyCommunities,
+  serbianLocalFaqItems
+} from '../utils/local-practice-data.js';
+
 export const siteBaseUrl = 'https://centerforpta.com';
 export const siteName = 'Center for PTA';
-export const contentSignal = 'ai-train=no, search=yes, ai-input=yes';
+export const contentSignal = 'ai-train=no, search=yes, ai-input=yes, use=reference';
 export const homepageLinkHeader =
-  '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/openapi+json", </api/docs.md>; rel="service-doc"; type="text/markdown", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json"';
+  '</.well-known/api-catalog>; rel="api-catalog", </api/openapi.json>; rel="service-desc"; type="application/openapi+json", </api/docs.md>; rel="service-doc"; type="text/markdown", </.well-known/agent-skills/index.json>; rel="describedby"; type="application/json", </llms.txt>; rel="describedby"; type="text/markdown"';
 
 export const practiceProfile = {
   name: siteName,
   homepage: `${siteBaseUrl}/sr/`,
   description:
-    'Psihoterapija, partnerska terapija, psihološke procene, imigracione evaluacije i predoperativne psihološke evaluacije u Schaumburgu, Illinois.',
+    'Psihoterapija usmerena na mentalno zdravlje žena, samosaosećanje, reproduktivni stres i podršku parovima, uz psihološke i imigracione evaluacije u Schaumburgu, Illinois.',
+  organization: {
+    publicName: siteName,
+    legalName: 'Center for Psychological Treatment and Assessment',
+    npi: '1306636089',
+    npiType: 'NPI-2',
+    registryUrl: 'https://npiregistry.cms.hhs.gov/provider-view/1306636089'
+  },
+  googleBusinessProfile: googleBusinessProfileFacts,
   provider: {
     name: 'Dr. Jelena Djurovic, Psy.D.',
     title: 'Licencirani klinički psiholog',
-    license: '071-011433'
+    license: '071-011433',
+    npi: '1770377095',
+    npiType: 'NPI-1',
+    registryUrl: 'https://npiregistry.cms.hhs.gov/provider-view/1770377095',
+    profileUrl: `${siteBaseUrl}/sr/dr-jelena-djurovic/`,
+    psychologyTodayUrl:
+      'https://www.psychologytoday.com/us/therapists/jelena-djurovic-schaumburg-il/1611370',
+    mediaAppearances: [
+      {
+        type: 'NewsArticle',
+        title:
+          'Srpkinja psiholog u Čikagu: Od čega najviše pate naši ljudi u Americi i kako im psiholog može pomoći da dobiju "papire" (VIDEO)',
+        publisher: 'Serbian Times',
+        datePublished: '2025-07-07',
+        url:
+          'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/'
+      },
+      {
+        type: 'VideoObject',
+        title: 'Nije Bitno Gde Sam Već Ko Sam S2: EP1 Jelena Djurović Psiholog',
+        publisher: 'SBN Chicago News',
+        url: 'https://www.youtube.com/watch?v=4xS8Sm2lOh4'
+      }
+    ]
   },
   location: {
+    pageUrl: `${siteBaseUrl}/schaumburg-office/`,
+    serbianPageUrl: `${siteBaseUrl}/sr/schaumburg-office/`,
     addressLine1: '1320 Tower Rd, Suite 156',
     city: 'Schaumburg',
     region: 'IL',
     postalCode: '60173',
-    country: 'US'
+    country: 'US',
+    mapUrl: 'https://www.google.com/maps?cid=12782923666205133006',
+    geo: {
+      latitude: 42.057142,
+      longitude: -88.0468025
+    },
+    timeZone: 'America/Chicago',
+    openingHours: [
+      {
+        days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '20:00'
+      }
+    ],
+    closedDays: ['Saturday', 'Sunday']
   },
   languages: ['engleski', 'srpski'],
   languageNote: 'Dr Djurovic govori konverzacijski španski. Kontaktirajte ordinaciju radi dogovora o jezičkim potrebama.',
   serviceFormats: [
     'Seanse uživo u Schaumburgu, Illinois',
-    'Online seanse širom Illinoisa'
+    'Online seanse kada se svi klijenti fizički nalaze u Ilinoisu u trenutku seanse'
   ],
+  availability: {
+    status: 'contact_required',
+    note: 'Kontaktirajte Center for PTA da potvrdite trenutnu dostupnost tražene usluge.'
+  },
+  insurance: {
+    listedPlans: ['BCBS PPO', 'Aetna', 'UnitedHealthcare'],
+    verificationRequired: true,
+    note:
+      'Status u mreži, pokrivene usluge, deductible, copay i obaveze pacijenta zavise od konkretnog plana. Pre početka usluge proverite aktuelne benefite sa osiguranjem i Center for PTA.'
+  },
+  serviceArea: ['Schaumburg', ...nearbyCommunities, 'Illinois'],
+  locationFaq: serbianLocalFaqItems,
   contact: {
     email: 'info@centerforpta.com',
     phone: '+1-847-230-0045',
     text: '+1-847-929-7040',
-    contactPage: `${siteBaseUrl}/sr/contact`
+    fax: '+1-847-874-6273',
+    contactPage: `${siteBaseUrl}/sr/contact/`
   },
   cta: {
-    consultation: 'Zakažite besplatnu konsultaciju',
+    consultation: 'Pitajte za uklapanje i trenutnu dostupnost',
     services: 'Pogledajte usluge'
   }
 };
@@ -43,126 +109,196 @@ export const serviceDirectory = [
   {
     slug: 'therapy',
     name: 'Terapija',
-    path: '/sr/therapy',
+    path: '/sr/therapy/',
     description:
       'Terapijska podrška za anksioznost, depresiju, traumu, tugu, životne promene i druge teme kojima prija stabilan, saosećajan prostor.',
-    keywords: ['therapy', 'anxiety', 'depression', 'trauma', 'grief', 'stress', 'healing', 'life transition']
+    keywords: ['terapija', 'anksioznost', 'depresija', 'trauma', 'tuga', 'stres', 'oporavak', 'životna promena']
+  },
+  {
+    slug: 'couples-therapy',
+    name: 'Partnerska terapija',
+    path: '/sr/couples-therapy/',
+    description:
+      'Partnerska terapija u Schaumburgu za teškoće u komunikaciji, ponavljajuće konflikte, probleme sa poverenjem, emocionalnu udaljenost i velike životne promene.',
+    keywords: ['partnerska terapija', 'odnos', 'komunikacija', 'konflikt', 'poverenje', 'parovi']
+  },
+  {
+    slug: 'family-therapy',
+    name: 'Porodična terapija',
+    path: '/sr/therapy/',
+    description:
+      'Porodična terapija u Schaumburgu za rad na konfliktima i porodičnoj dinamici kroz vođen, konstruktivan dijalog.',
+    keywords: ['porodična terapija', 'porodično savetovanje', 'porodični konflikt', 'porodična dinamika']
   },
   {
     slug: 'psychological-assessment',
     name: 'Psihološka procena',
-    path: '/sr/psychological-assessment',
+    path: '/sr/psychological-assessment/',
     description:
       'Procena pažnje, dijagnostičko razjašnjenje i razumevanje obrazaca koji utiču na svakodnevno funkcionisanje.',
-    keywords: ['assessment', 'adhd', 'attention', 'diagnosis', 'clarity', 'evaluation', 'focus']
+    keywords: ['psihološka procena', 'psihološko testiranje', 'procena', 'testiranje', 'dijagnostičko razjašnjenje', 'pažnja', 'adhd']
   },
   {
     slug: 'immigration-evaluations',
     name: 'Imigracione evaluacije',
-    path: '/sr/immigration-evaluations',
+    path: '/sr/immigration-evaluations/',
     description:
       'Psihološke evaluacije za imigracione slučajeve kod klijenata koji se suočavaju sa stresnim pravnim i životnim okolnostima u SAD.',
-    keywords: ['immigration', 'legal', 'evaluation', 'hardship', 'visa', 'asylum']
+    keywords: ['imigraciona evaluacija', 'imigracione evaluacije', 'imigracija', 'azil', 'viza', 'hardship']
   },
   {
     slug: 'consultation-supervision-and-coaching',
     name: 'Konsultacije, supervizija i koučing',
-    path: '/sr/consultation-supervision-and-coaching',
+    path: '/sr/consultation-supervision-and-coaching/',
     description:
-      'Profesionalne konsultacije, supervizija i koučing za kliničare koji grade veštine, sate i sigurnost u praksi.',
-    keywords: ['consultation', 'supervision', 'coaching', 'clinician', 'clinical hours', 'career']
+      'Profesionalne konsultacije, klinička supervizija, EPPP priprema i karijerni koučing kroz Center for PTA u Schaumburgu, Illinois. Da li se supervizija računa za licencu zavisi od zahteva nadležnog odbora i programa i mora se potvrditi pre početka.',
+    keywords: ['konsultacije', 'supervizija', 'koučing', 'kliničar', 'klinički sati', 'karijera', 'eppp']
   },
   {
     slug: 'pre-surgical-psychological-evaluations',
     name: 'Predoperativne psihološke evaluacije',
-    path: '/sr/pre-surgical-psychological-evaluations',
+    path: '/sr/pre-surgical-psychological-evaluations/',
     description:
       'Predoperativne evaluacije koje pomažu pacijentima i timovima da procene spremnost i potrebe za podrškom pre procedure.',
-    keywords: ['pre surgical', 'surgery', 'evaluation', 'readiness', 'clearance']
+    keywords: ['predoperativna procena', 'predoperativna evaluacija', 'barijatrijska evaluacija', 'operacija', 'spremnost']
   },
   {
     slug: 'womens-mental-health-therapy',
     name: "Mentalno zdravlje žena",
-    path: '/sr/womens-mental-health-therapy',
+    path: '/sr/womens-mental-health-therapy/',
     description:
-      "Usmerena terapijska podrška za reproduktivne izazove, brige oko slike tela, upotrebu supstanci i emocionalno zahtevne životne faze.",
-    keywords: ['womens health', 'women', 'reproductive', 'body image', 'fertility', 'substance use']
+      'Usmerena terapijska podrška kod neplodnosti, stresa tokom tretmana fertiliteta, reproduktivnog gubitka, prenatalnih i postpartalnih promena, slike tela i samosaosećanja.',
+    keywords: [
+      'mentalno zdravlje žena',
+      'reproduktivni stres',
+      'neplodnost',
+      'neplodnosti',
+      'tretman fertiliteta',
+      'reproduktivni gubitak',
+      'prenatalno',
+      'postpartalno',
+      'slika tela',
+      'samosaosećanje'
+    ]
   },
   {
     slug: 'self-compassion-therapy',
     name: 'Terapija samosaosećanja',
-    path: '/sr/self-compassion-therapy',
+    path: '/sr/self-compassion-therapy/',
     description:
       'Podrška za oštru samokritiku, stid, perfekcionizam, burnout i građenje zdravijeg unutrašnjeg odnosa.',
-    keywords: ['self compassion', 'shame', 'perfectionism', 'burnout', 'self criticism']
+    keywords: ['samosaosećanje', 'samokritika', 'stid', 'perfekcionizam', 'burnout']
   },
   {
     slug: 'prenatal-therapy',
     name: 'Prenatalna terapija',
-    path: '/sr/prenatal-therapy',
+    path: '/sr/prenatal-therapy/',
     description:
       'Terapijska podrška tokom trudnoće za anksioznost, prilagođavanje, emocionalnu preplavljenost i pripremu za roditeljstvo.',
-    keywords: ['prenatal', 'pregnancy', 'parenthood', 'anxiety', 'adjustment']
+    keywords: ['prenatalna terapija', 'trudnoća', 'roditeljstvo', 'anksioznost u trudnoći', 'prilagođavanje']
   },
   {
     slug: 'postpartum-therapy',
     name: 'Postpartalna terapija',
-    path: '/sr/postpartum-therapy',
+    path: '/sr/postpartum-therapy/',
     description:
-      'Postpartalna podrška za promene raspoloženja, stres, promene identiteta i zahteve ranog roditeljstva.',
-    keywords: ['postpartum', 'new parent', 'parenthood', 'mood', 'stress']
+      'Postpartalna terapija u Schaumburgu za postpartalnu depresiju, anksioznost, promene raspoloženja, identiteta i odnosa, kao i prilagođavanje posle porođaja.',
+    keywords: [
+      'postpartalna terapija',
+      'postporođajna terapija',
+      'postpartalna depresija',
+      'postpartalna anksioznost',
+      'postnatalna podrška',
+      'posle porođaja',
+      'novi roditelj',
+      'raspoloženje'
+    ]
   },
   {
     slug: 'divorce-counseling',
     name: 'Savetovanje tokom razvoda',
-    path: '/sr/divorce-counseling',
+    path: '/sr/divorce-counseling/',
     description:
       'Savetodavna podrška pre, tokom i posle razvoda za tugu, stres oko zajedničkog roditeljstva i obnovu stabilnosti.',
-    keywords: ['divorce', 'separation', 'co parenting', 'grief', 'transition']
+    keywords: ['razvod', 'razdvajanje', 'zajedničko roditeljstvo', 'tuga', 'životna promena']
   },
   {
     slug: 'bariatric-surgery-counseling',
     name: 'Barijatrijsko savetovanje',
-    path: '/sr/bariatric-surgery-counseling',
+    path: '/sr/bariatric-surgery-counseling/',
     description:
       'Savetodavna podrška oko barijatrijske operacije za spremnost, prilagođavanje, sliku tela i dugoročnu promenu.',
-    keywords: ['bariatric', 'surgery', 'body image', 'adjustment', 'readiness']
+    keywords: ['barijatrijsko savetovanje', 'barijatrijska operacija', 'slika tela', 'prilagođavanje', 'spremnost']
   },
   {
     slug: 'weight-loss-counseling',
     name: 'Savetovanje za mršavljenje',
-    path: '/sr/weight-loss-counseling',
+    path: '/sr/weight-loss-counseling/',
     description:
       'Savetodavna podrška za održivu promenu ponašanja, emocionalne obrasce i mentalnu stranu ciljeva povezanih sa težinom.',
-    keywords: ['weight loss', 'behavior change', 'counseling', 'nutrition mindset']
+    keywords: ['mršavljenje', 'gubitak težine', 'promena ponašanja', 'savetovanje', 'odnos prema hrani']
   }
 ];
 
-export const aiCrawlerUserAgents = [
-  'GPTBot',
+export const aiSearchCrawlerUserAgents = [
+  'OAI-SearchBot',
   'ChatGPT-User',
-  'Google-Extended',
-  'anthropic-ai',
+  'Claude-SearchBot',
+  'Claude-User',
+  'PerplexityBot',
+  'Perplexity-User',
+  'Meta-ExternalFetcher'
+];
+
+export const aiTrainingCrawlerUserAgents = [
+  'GPTBot',
   'ClaudeBot',
   'CCBot',
-  'PerplexityBot',
-  'Bytespider',
-  'Meta-ExternalAgent',
-  'Meta-ExternalFetcher',
   'Applebot-Extended'
 ];
 
-export function buildRobotsTxt() {
-  const lines = ['User-agent: *', 'Allow: /', ''];
+// Ovi tokeni kombinuju vise namena ili nemaju javno razdvojene namene.
+// Ostaju dostupni za AI otkrivanje, dok Content-Signal zadrzava pravo na trening.
+export const aiMixedPurposeCrawlerUserAgents = [
+  'Google-Extended',
+  'anthropic-ai',
+  'Bytespider',
+  'Meta-ExternalAgent',
+];
 
-  for (const userAgent of aiCrawlerUserAgents) {
+export const aiCrawlerUserAgents = [
+  ...aiSearchCrawlerUserAgents,
+  ...aiTrainingCrawlerUserAgents,
+  ...aiMixedPurposeCrawlerUserAgents
+];
+
+export function buildRobotsTxt() {
+  const lines = [
+    'User-agent: *',
+    `Content-Signal: ${contentSignal}`,
+    'Allow: /',
+    'Disallow: /admin/',
+    ''
+  ];
+
+  for (const userAgent of [
+    ...aiSearchCrawlerUserAgents,
+    ...aiMixedPurposeCrawlerUserAgents
+  ]) {
     lines.push(`User-agent: ${userAgent}`);
+    lines.push(`Content-Signal: ${contentSignal}`);
     lines.push('Allow: /');
+    lines.push('Disallow: /admin/');
     lines.push('');
   }
 
-  lines.push(`Content-Signal: ${contentSignal}`);
-  lines.push('');
+  for (const userAgent of aiTrainingCrawlerUserAgents) {
+    lines.push(`User-agent: ${userAgent}`);
+    lines.push(`Content-Signal: ${contentSignal}`);
+    lines.push('Disallow: /');
+    lines.push('');
+  }
+
   lines.push(`Sitemap: ${siteBaseUrl}/sitemap.xml`);
   lines.push('');
 
@@ -170,16 +306,34 @@ export function buildRobotsTxt() {
 }
 
 export function createHomepageMarkdown() {
-  const serviceList = serviceDirectory
-    .slice(0, 6)
+  const featuredServiceSlugs = [
+    'therapy',
+    'womens-mental-health-therapy',
+    'self-compassion-therapy',
+    'couples-therapy',
+    'bariatric-surgery-counseling',
+    'immigration-evaluations'
+  ];
+  const serviceList = featuredServiceSlugs
+    .map((slug) => serviceDirectory.find((service) => service.slug === slug))
+    .filter(Boolean)
     .map((service) => `- [${service.name}](${siteBaseUrl}${service.path}) - ${service.description}`)
     .join('\n');
+  const locationFaq = practiceProfile.locationFaq
+    .map((item) => `### ${item.question}\n\n${item.answer}`)
+    .join('\n\n');
+  const mediaAppearances = practiceProfile.provider.mediaAppearances
+    .map((item) => `[${item.publisher}](${item.url})`)
+    .join('; ');
 
   return `---
 title: ${siteName}
-url: ${siteBaseUrl}/
+url: ${practiceProfile.homepage}
 provider: ${practiceProfile.provider.name}
 license: ${practiceProfile.provider.license}
+provider_npi: ${practiceProfile.provider.npi}
+legal_name: ${practiceProfile.organization.legalName}
+organization_npi: ${practiceProfile.organization.npi}
 location: ${practiceProfile.location.city}, ${practiceProfile.location.region}
 languages:
   - ${practiceProfile.languages.join('\n  - ')}
@@ -189,6 +343,7 @@ contact:
   email: ${practiceProfile.contact.email}
   phone: ${practiceProfile.contact.phone}
   text: ${practiceProfile.contact.text}
+  fax: ${practiceProfile.contact.fax}
 ---
 
 # ${siteName}
@@ -197,21 +352,37 @@ ${practiceProfile.description}
 
 ## Sažetak prakse
 
+- Javni naziv: ${practiceProfile.organization.publicName}
+- Pravni naziv: ${practiceProfile.organization.legalName}
+- NPI organizacije (NPI-2): [${practiceProfile.organization.npi}](${practiceProfile.organization.registryUrl})
 - Terapeut: ${practiceProfile.provider.name}, ${practiceProfile.provider.title}
-- Licenca u Illinoisu: ${practiceProfile.provider.license}
+- Licenca u Ilinoisu: ${practiceProfile.provider.license}
+- NPI terapeuta (NPI-1): [${practiceProfile.provider.npi}](${practiceProfile.provider.registryUrl})
+- Profil doktorke: [Dr Jelena Djurovic](${practiceProfile.provider.profileUrl})
+- Psychology Today profil: [Dr Jelena Djurovic u Schaumburgu](${practiceProfile.provider.psychologyTodayUrl})
+- Nezavisna medijska gostovanja: ${mediaAppearances}
 - Lokacija: ${practiceProfile.location.addressLine1}, ${practiceProfile.location.city}, ${practiceProfile.location.region} ${practiceProfile.location.postalCode}
+- Google Maps: [Center for PTA u Schaumburgu](${practiceProfile.location.mapUrl})
+- Radno vreme: ponedeljak-petak, 9:00-20:00 (${practiceProfile.location.timeZone}); subotom i nedeljom zatvoreno
 - Jezici: ${practiceProfile.languages.join(', ')}
 - Formati: ${practiceProfile.serviceFormats.join('; ')}
+- Trenutna dostupnost: ${practiceProfile.availability.note}
+- Navedeni planovi osiguranja: ${practiceProfile.insurance.listedPlans.join(', ')}. ${practiceProfile.insurance.note}
 
 ## Glavne usluge
 
 ${serviceList}
+
+## Ordinacija u Schaumburgu i pitanja o lokaciji
+
+${locationFaq}
 
 ## Kontakt
 
 - Email: ${practiceProfile.contact.email}
 - Telefon: ${practiceProfile.contact.phone}
 - SMS: ${practiceProfile.contact.text}
+- Fax: ${practiceProfile.contact.fax}
 - Kontakt stranica: ${practiceProfile.contact.contactPage}
 
 ## Najbolji sledeći korak
@@ -237,7 +408,8 @@ export function createPracticePayload() {
       contact: `${siteBaseUrl}/api/contact.json`,
       status: `${siteBaseUrl}/api/status.json`,
       openapi: `${siteBaseUrl}/api/openapi.json`,
-      docs: `${siteBaseUrl}/api/docs.md`
+      docs: `${siteBaseUrl}/api/docs.md`,
+      llms: `${siteBaseUrl}/llms.txt`
     }
   };
 }
@@ -257,7 +429,7 @@ export function createServicesPayload() {
 export function createContactPayload() {
   return {
     ...practiceProfile.contact,
-    contactPage: `${siteBaseUrl}/sr/contact`,
+    contactPage: `${siteBaseUrl}/sr/contact/`,
     preferredUse:
       'Koristite kontakt stranicu, telefon, SMS ili email da pitate za uklapanje, termine i sledeće korake.'
   };
@@ -359,7 +531,22 @@ Base URL: ${siteBaseUrl}/api
 }
 
 function normalizeText(value) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  return value
+    .normalize('NFKD')
+    .replace(/\p{M}/gu, '')
+    .toLocaleLowerCase('sr-Latn')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+}
+
+function matchesKeyword(normalizedTopic, topicTokens, keyword) {
+  const normalizedKeyword = normalizeText(keyword);
+  if (!normalizedKeyword) return false;
+
+  const keywordTokens = normalizedKeyword.split(' ').filter(Boolean);
+  return keywordTokens.length === 1
+    ? topicTokens.includes(keywordTokens[0])
+    : ` ${normalizedTopic} `.includes(` ${normalizedKeyword} `);
 }
 
 export function matchServices(topic) {
@@ -373,7 +560,7 @@ export function matchServices(topic) {
   return serviceDirectory
     .map((service) => {
       const keywordHits = service.keywords.filter((keyword) =>
-        normalizedTopic.includes(normalizeText(keyword))
+        matchesKeyword(normalizedTopic, topicTokens, keyword)
       );
 
       return {
@@ -450,7 +637,7 @@ export const agentSkills = [
     name: 'site-overview',
     description:
       'Koristite kada vam treba činjeničan pregled prakse, terapeuta, lokacije, jezika i javnih usluga na centerforpta.com.',
-    path: '/sr/.well-known/agent-skills/site-overview/SKILL.md',
+    path: '/.well-known/agent-skills/site-overview/SKILL.md',
     content: `---
 name: site-overview
 description: Koristite kada vam treba činjeničan pregled prakse, terapeuta, lokacije, jezika i javnih usluga na centerforpta.com.
@@ -471,7 +658,7 @@ Sažetke držite činjeničnim i zasnovanim na objavljenom sajtu. Kada korisnik 
     name: 'contact-paths',
     description:
       'Koristite kada vam trebaju kontakt kanali odobreni na sajtu za Center for PTA.',
-    path: '/sr/.well-known/agent-skills/contact-paths/SKILL.md',
+    path: '/.well-known/agent-skills/contact-paths/SKILL.md',
     content: `---
 name: contact-paths
 description: Koristite kada vam trebaju kontakt kanali odobreni na sajtu za Center for PTA.

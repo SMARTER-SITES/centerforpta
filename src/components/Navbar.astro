@@ -2,6 +2,10 @@
 import { Image } from 'astro:assets';
 import logoImg from '../assets/logo.png';
 
+interface Props {
+  alternatePath?: string;
+}
+
 type NavLink = {
   name: string;
   href?: string;
@@ -10,41 +14,43 @@ type NavLink = {
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Dr. Jelena', href: '/dr-jelena-djurovic' },
+  { name: 'Dr. Jelena', href: '/dr-jelena-djurovic/' },
   { 
     name: 'Services', 
     dropdown: [
       { name: 'Core Services', kind: 'label' },
-      { name: 'Therapy', href: '/therapy' },
-      { name: 'Couples Therapy', href: '/couples-therapy' },
-      { name: 'Pre-Surgical Evaluations', href: '/pre-surgical-psychological-evaluations' },
-      { name: 'Psychological Assessment', href: '/psychological-assessment' },
-      { name: 'Immigration Evaluations', href: '/immigration-evaluations' },
-      { name: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching' },
+      { name: 'Therapy', href: '/therapy/' },
+      { name: 'Couples Therapy', href: '/couples-therapy/' },
+      { name: 'Pre-Surgical Evaluations', href: '/pre-surgical-psychological-evaluations/' },
+      { name: 'Psychological Assessment', href: '/psychological-assessment/' },
+      { name: 'Immigration Evaluations', href: '/immigration-evaluations/' },
+      { name: 'Consultation & Coaching', href: '/consultation-supervision-and-coaching/' },
       { name: 'Therapy Topics', kind: 'label' },
-      { name: "Women's Mental Health", href: '/womens-mental-health-therapy' },
-      { name: 'Self-Compassion', href: '/self-compassion-therapy' },
-      { name: 'Weight Loss Counseling', href: '/weight-loss-counseling' },
-      { name: 'Bariatric Counseling', href: '/bariatric-surgery-counseling' },
-      { name: 'Divorce Counseling', href: '/divorce-counseling' },
-      { name: 'Prenatal Therapy', href: '/prenatal-therapy' },
-      { name: 'Postpartum Therapy', href: '/postpartum-therapy' }
+      { name: "Women's Mental Health", href: '/womens-mental-health-therapy/' },
+      { name: 'Self-Compassion', href: '/self-compassion-therapy/' },
+      { name: 'Weight Loss Counseling', href: '/weight-loss-counseling/' },
+      { name: 'Bariatric Counseling', href: '/bariatric-surgery-counseling/' },
+      { name: 'Divorce Counseling', href: '/divorce-counseling/' },
+      { name: 'Prenatal Therapy', href: '/prenatal-therapy/' },
+      { name: 'Postpartum Therapy', href: '/postpartum-therapy/' }
     ] as NavLink[]
   },
   {
     name: 'Resources',
     dropdown: [
-      { name: 'Book Recommendations', href: '/book-recommendations' },
-      { name: 'Our Partners', href: '/our-partners' },
-      { name: 'Useful Links', href: '/useful-links' }
+      { name: 'Schaumburg Office', href: '/schaumburg-office/' },
+      { name: 'Book Recommendations', href: '/book-recommendations/' },
+      { name: 'Our Partners', href: '/our-partners/' },
+      { name: 'Useful Links', href: '/useful-links/' }
     ]
   },
-  { name: 'Rates and Insurance', href: '/rates-and-insurance' },
+  { name: 'Rates and Insurance', href: '/rates-and-insurance/' },
   { name: 'Insights', href: '/blog/' },
-  { name: 'Contact Us', href: '/contact' }
+  { name: 'Contact Us', href: '/contact/' }
 ];
 
-const srPath = Astro.url.pathname === '/' ? '/sr/' : `/sr${Astro.url.pathname}`;
+const { alternatePath } = Astro.props;
+const srPath = alternatePath || (Astro.url.pathname === '/' ? '/sr/' : `/sr${Astro.url.pathname}`);
 const srSwitchHref = `${srPath}?lang=sr`;
 ---
 
@@ -57,7 +63,7 @@ const srSwitchHref = `${srPath}?lang=sr`;
         <Image 
           src={logoImg} 
           alt="Center for PTA Logo"
-          class="h-11 2xl:h-12 w-auto object-contain" 
+          class="h-10 sm:h-11 2xl:h-12 w-auto max-w-[128px] sm:max-w-none object-contain"
           loading="eager" 
           fetchpriority="high" 
           format="webp"
@@ -114,18 +120,21 @@ const srSwitchHref = `${srPath}?lang=sr`;
           <svg class="w-4 h-4 2xl:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
           <span class="hidden 2xl:inline">(847) 230-0045</span>
         </a>
-        <a href="/contact" class="hidden min-[1100px]:flex items-center justify-center px-5 py-3 bg-[#2f594f] text-white text-sm font-semibold rounded-full shadow-lg shadow-[#2f594f]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none whitespace-nowrap">
-          Book
+        <a href="/contact/" class="hidden min-[1100px]:flex items-center justify-center px-5 py-3 bg-[#2f594f] text-white text-sm font-semibold rounded-full shadow-lg shadow-[#2f594f]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none whitespace-nowrap">
+          Request
         </a>
-        <a href={srSwitchHref} class="hidden min-[1100px]:flex items-center justify-center w-11 h-11 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Switch to Serbian">
+        <a href={srSwitchHref} class="hidden min-[1100px]:flex items-center justify-center w-11 h-11 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Switch to Serbian" title="Switch to Serbian">
           SR
         </a>
-        <a href={srSwitchHref} class="min-[1100px]:hidden flex items-center justify-center w-11 h-11 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Switch to Serbian">
+        <a href="tel:+18472300045" class="min-[1100px]:hidden flex items-center justify-center w-10 h-10 bg-[#f3f0e9] text-[#2f594f] rounded-full hover:bg-[#e8e2d2] transition-colors" aria-label="Call Center for PTA" title="Call Center for PTA">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        </a>
+        <a href={srSwitchHref} class="min-[1100px]:hidden flex items-center justify-center w-10 h-10 border border-gray-200 text-[#2f594f] text-sm font-bold rounded-full hover:bg-[#f3f0e9] transition-colors" aria-label="Switch to Serbian" title="Switch to Serbian">
           SR
         </a>
 
         <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-btn" class="min-[1100px]:hidden p-2 text-gray-600 hover:text-[#2f594f] transition-colors focus:outline-none" aria-label="Toggle Menu">
+        <button id="mobile-menu-btn" class="min-[1100px]:hidden p-2 text-gray-600 hover:text-[#2f594f] transition-colors focus:outline-none" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
           <svg id="icon-menu" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
@@ -137,7 +146,7 @@ const srSwitchHref = `${srPath}?lang=sr`;
     </nav>
     
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="min-[1100px]:hidden absolute top-20 left-0 w-full bg-white shadow-xl rounded-2xl py-6 px-6 opacity-0 invisible translate-y-[-10px] transition-all duration-300 z-10">
+    <div id="mobile-menu" aria-hidden="true" class="min-[1100px]:hidden absolute top-20 left-0 w-full bg-white shadow-xl rounded-2xl py-6 px-6 opacity-0 invisible translate-y-[-10px] transition-all duration-300 z-10">
       <div class="flex flex-col gap-4 max-h-[70vh] overflow-y-auto">
         {navItems.map((item) => (
           item.dropdown ? (
@@ -172,10 +181,10 @@ const srSwitchHref = `${srPath}?lang=sr`;
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
             (847) 230-0045
           </a>
-          <a href="/contact" class="flex items-center justify-center px-6 py-3 bg-[#2f594f] text-white text-base font-bold rounded-full">
-            Book Consultation
+          <a href="/contact/" class="flex items-center justify-center px-6 py-3 bg-[#2f594f] text-white text-base font-bold rounded-full">
+            Request Consultation
           </a>
-          <a href={srSwitchHref} class="flex items-center justify-center px-6 py-3 border border-gray-200 text-[#2f594f] text-base font-bold rounded-full" aria-label="Switch to Serbian">
+          <a href={srSwitchHref} class="flex items-center justify-center px-6 py-3 border border-gray-200 text-[#2f594f] text-base font-bold rounded-full" aria-label="Switch to Serbian" title="Switch to Serbian">
             Srpski
           </a>
         </div>
@@ -212,6 +221,8 @@ const srSwitchHref = `${srPath}?lang=sr`;
   if (mobileMenuBtn && mobileMenu && iconMenu && iconClose) {
     mobileMenuBtn.addEventListener('click', () => {
       isMenuOpen = !isMenuOpen;
+      mobileMenuBtn.setAttribute('aria-expanded', String(isMenuOpen));
+      mobileMenu.setAttribute('aria-hidden', String(!isMenuOpen));
       
       if (isMenuOpen) {
         mobileMenu.classList.remove('opacity-0', 'invisible', 'translate-y-[-10px]');

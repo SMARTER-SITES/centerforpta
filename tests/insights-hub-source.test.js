@@ -33,14 +33,29 @@ const srWomensMentalHealthService = readFileSync(
   'src/pages/sr/womens-mental-health-therapy.astro',
   'utf8'
 );
+const englishTherapy = readFileSync('src/pages/therapy.astro', 'utf8');
+const serbianTherapy = readFileSync('src/pages/sr/therapy.astro', 'utf8');
+const englishImmigration = readFileSync('src/pages/immigration-evaluations.astro', 'utf8');
+const serbianImmigration = readFileSync('src/pages/sr/immigration-evaluations.astro', 'utf8');
+const generatedSiteAudit = readFileSync('scripts/audit-generated-site.mjs', 'utf8');
+const layout = readFileSync('src/layouts/Layout.astro', 'utf8');
+const srLayout = readFileSync('src/layouts-sr/Layout.astro', 'utf8');
 
 test('site navigation and hub present the blog as Clinical Insights', () => {
   assert.match(nav, /Insights/);
   assert.match(insightsListing, /Clinical Insights/);
   assert.match(insightsListing, /Insights pagination/);
   assert.match(insightsListing, /postsPerPage|Page \{currentPage\} of \{totalPages\}/);
+  assert.match(insightsListing, /<main>/);
   assert.match(srInsightsListing, /Klinički uvidi/);
   assert.match(srInsightsListing, /Paginacija uvida/);
+  assert.match(srInsightsListing, /<main>/);
+  assert.match(insightsListing, /\/womens-mental-health-therapy\//);
+  assert.match(insightsListing, /\/pre-surgical-psychological-evaluations\//);
+  assert.match(srInsightsListing, /\/sr\/womens-mental-health-therapy\//);
+  assert.match(srInsightsListing, /\/sr\/pre-surgical-psychological-evaluations\//);
+  assert.match(womensMentalHealthService, /href: '\/therapy\/'/);
+  assert.match(srWomensMentalHealthService, /href: '\/sr\/therapy\/'/);
 });
 
 test('blog post layout emits BlogPosting and optional faq metadata', () => {
@@ -63,15 +78,32 @@ test('blog post layouts render scrollable heading navigation from markdown headi
   assert.match(srBlogPostLayout, /href=\{`#\$\{heading\.slug\}`\}/);
 });
 
+test('bilingual insight hubs expose collection schema and pagination discovery links', () => {
+  for (const source of [insightsListing, srInsightsListing]) {
+    assert.match(source, /'@type': 'CollectionPage'/);
+    assert.match(source, /'@type': 'Blog'/);
+    assert.match(source, /'@type': 'ItemList'/);
+    assert.match(source, /structuredData=\{collectionStructuredData\}/);
+    assert.match(source, /previousPath=\{previousHref\}/);
+    assert.match(source, /nextPath=\{nextHref\}/);
+    assert.match(source, /pageDescription = currentPage === 1/);
+  }
+
+  for (const source of [layout, srLayout]) {
+    assert.match(source, /<link rel="prev" href=\{previousUrl\}/);
+    assert.match(source, /<link rel="next" href=\{nextUrl\}/);
+  }
+});
+
 test('immigration evaluation article includes local seo, license, and media details', () => {
-  assert.match(immigrationPost, /Immigration Psychological Evaluation in Illinois/);
+  assert.match(immigrationPost, /Immigration Psychological Evaluation \| Illinois/);
   assert.match(immigrationPost, /immigration-psychological-evaluation-schaumburg\.jpg/);
   assert.match(immigrationPost, /physically located in Illinois at the time of the appointment/);
   assert.match(immigrationPost, /Clients who live outside Illinois may be seen for in-person psychological testing or evaluation/);
   assert.match(immigrationPost, /\/immigration-evaluations\//);
   assert.match(immigrationPost, /\/contact\//);
   assert.doesNotMatch(immigrationPost, /srAlternatePath: false/);
-  assert.match(srImmigrationPost, /Imigraciona psihološka evaluacija u Ilinoisu/);
+  assert.match(srImmigrationPost, /Imigraciona psihološka evaluacija \| Ilinois/);
   assert.match(srImmigrationPost, /fizički nalazi u Ilinoisu u trenutku termina/);
   assert.match(srImmigrationPost, /evaluacija ili testiranje na srpskom jeziku/);
   assert.match(srImmigrationPost, /\/sr\/immigration-evaluations\//);
@@ -95,8 +127,35 @@ test('self-compassion guide keeps bilingual seo, review, location, and media sig
 });
 
 test('self-compassion topic cluster links service pages back to the bilingual guide', () => {
-  assert.match(selfCompassionService, /href: '\/blog\/why-am-i-so-hard-on-myself'/);
-  assert.match(womensMentalHealthService, /href: '\/blog\/why-am-i-so-hard-on-myself'/);
-  assert.match(srSelfCompassionService, /href: '\/sr\/blog\/why-am-i-so-hard-on-myself'/);
-  assert.match(srWomensMentalHealthService, /href: '\/sr\/blog\/why-am-i-so-hard-on-myself'/);
+  assert.match(selfCompassionService, /href: '\/blog\/why-am-i-so-hard-on-myself\/'/);
+  assert.match(womensMentalHealthService, /href: '\/blog\/why-am-i-so-hard-on-myself\/'/);
+  assert.match(srSelfCompassionService, /href: '\/sr\/blog\/why-am-i-so-hard-on-myself\/'/);
+  assert.match(srWomensMentalHealthService, /href: '\/sr\/blog\/why-am-i-so-hard-on-myself\/'/);
+});
+
+test('core service pages send authority to matching clinical guides', () => {
+  for (const path of [
+    '/blog/2026-03-01-why-seek-psychotherapy/',
+    '/blog/2026-03-02-how-do-i-find-the-right-therapist/',
+    '/blog/why-am-i-so-hard-on-myself/'
+  ]) {
+    assert.ok(englishTherapy.includes(path));
+    assert.ok(serbianTherapy.includes(`/sr${path}`));
+  }
+
+  assert.match(
+    englishImmigration,
+    /\/blog\/what-to-expect-during-an-immigration-psychological-evaluation\//
+  );
+  assert.match(
+    serbianImmigration,
+    /\/sr\/blog\/what-to-expect-during-an-immigration-psychological-evaluation\//
+  );
+});
+
+test('generated-site audit protects crawl depth and blog internal authority', () => {
+  assert.match(generatedSiteAudit, /crawlDepth/);
+  assert.match(generatedSiteAudit, /weakInternalLinks/);
+  assert.match(generatedSiteAudit, /depth > 3/);
+  assert.match(generatedSiteAudit, /count < 3/);
 });

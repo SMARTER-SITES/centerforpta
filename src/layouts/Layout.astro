@@ -4,6 +4,8 @@ import {
   defaultTitle,
   getFaqStructuredData,
   getBaseStructuredData,
+  getWebPageStructuredData,
+  getWebSiteStructuredData,
   resolveMetaImage,
   siteName,
   siteUrl
@@ -11,17 +13,28 @@ import {
 import type { FaqItem } from '../utils/seo';
 import WebMcpProvider from '../components/WebMcpProvider.astro';
 
+interface CitationItem {
+  name: string;
+  url: string;
+}
+
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   ogType?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
   reviewedBy?: string;
+  citations?: CitationItem[];
   schemaType?: 'Article' | 'BlogPosting';
+  canonicalPath?: string;
   srAlternatePath?: string | false;
+  previousPath?: string;
+  nextPath?: string;
   noIndex?: boolean;
   faqItems?: FaqItem[];
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
@@ -31,23 +44,32 @@ const {
   title = defaultTitle,
   description = defaultDescription,
   image,
+  imageWidth,
+  imageHeight,
   ogType = 'website',
   publishedTime,
   modifiedTime,
   author = 'Dr. Jelena Djurovic',
   reviewedBy,
+  citations = [],
   schemaType = 'Article',
+  canonicalPath,
   srAlternatePath,
+  previousPath,
+  nextPath,
   noIndex = false,
   faqItems = [],
   structuredData: customStructuredData
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? siteUrl).toString();
+const canonicalUrl = new URL(canonicalPath ?? Astro.url.pathname, Astro.site ?? siteUrl).toString();
+const isSiteHomepage = Astro.url.pathname === '/';
 const defaultSrPath = Astro.url.pathname === '/' ? '/sr/' : `/sr${Astro.url.pathname}`;
 const hasSrAlternate = srAlternatePath !== false;
 const srPath = typeof srAlternatePath === 'string' ? srAlternatePath : defaultSrPath;
 const srAlternateUrl = new URL(srPath, Astro.site ?? siteUrl).toString();
+const previousUrl = previousPath ? new URL(previousPath, Astro.site ?? siteUrl).toString() : undefined;
+const nextUrl = nextPath ? new URL(nextPath, Astro.site ?? siteUrl).toString() : undefined;
 const socialImage = resolveMetaImage(image);
 const articleAuthor = author === siteName
   ? {
@@ -58,6 +80,7 @@ const articleAuthor = author === siteName
     }
   : {
       '@type': 'Person',
+      '@id': author.includes('Jelena Djurovic') ? `${siteUrl}/dr-jelena-djurovic/#person` : undefined,
       name: author,
       url: author.includes('Jelena Djurovic') ? `${siteUrl}/dr-jelena-djurovic/` : undefined
     };
@@ -76,18 +99,47 @@ const customStructuredDataItems = Array.isArray(customStructuredData)
     ? [customStructuredData]
     : [];
 
+const webPageSchemaTypes = new Set([
+  'AboutPage',
+  'CollectionPage',
+  'ContactPage',
+  'MedicalWebPage',
+  'ProfilePage',
+  'SearchResultsPage',
+  'WebPage'
+]);
+const hasCustomWebPageEntity = customStructuredDataItems.some((item) => {
+  const itemTypes = Array.isArray(item['@type']) ? item['@type'] : [item['@type']];
+  return itemTypes.some((itemType) => typeof itemType === 'string' && webPageSchemaTypes.has(itemType));
+});
+const webPageStructuredData = !noIndex && !hasCustomWebPageEntity
+  ? getWebPageStructuredData({
+      name: title,
+      description,
+      url: canonicalUrl,
+      language: 'en-US',
+      image: socialImage
+    })
+  : null;
+
 const structuredData = [
-  getBaseStructuredData(description),
+  isSiteHomepage ? getWebSiteStructuredData() : null,
+  getBaseStructuredData(),
+  webPageStructuredData,
   ogType === 'article'
     ? {
         '@context': 'https://schema.org',
         '@type': schemaType,
+        '@id': `${canonicalUrl}#article`,
+        url: canonicalUrl,
         headline: title,
         description,
+        inLanguage: 'en-US',
         image: socialImage,
         author: articleAuthor,
         publisher: {
           '@type': 'Organization',
+          '@id': `${siteUrl}/#professional-service`,
           name: siteName,
           logo: {
             '@type': 'ImageObject',
@@ -97,10 +149,23 @@ const structuredData = [
         datePublished: publishedTime,
         dateModified: modifiedTime || publishedTime,
         reviewedBy: articleReviewer,
-        mainEntityOfPage: canonicalUrl
+        ...(citations.length > 0
+          ? {
+              citation: citations.map((citation) => ({
+                '@type': 'CreativeWork',
+                name: citation.name,
+                url: citation.url
+              }))
+            }
+          : {}),
+        mainEntityOfPage: {
+          '@id': `${canonicalUrl}#webpage`
+        }
       }
     : null,
-  faqItems.length > 0 ? getFaqStructuredData(faqItems) : null,
+  faqItems.length > 0
+    ? getFaqStructuredData(faqItems, { pageUrl: canonicalUrl, language: 'en-US' })
+    : null,
   ...customStructuredDataItems
 ].filter(Boolean);
 ---
@@ -129,6 +194,9 @@ const structuredData = [
     <meta name="description" content={description} />
     <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="describedby" href="/llms.txt" type="text/markdown" />
+    {previousUrl && <link rel="prev" href={previousUrl} />}
+    {nextUrl && <link rel="next" href={nextUrl} />}
     <link rel="alternate" hreflang="en" href={canonicalUrl} />
     {hasSrAlternate && <link rel="alternate" hreflang="sr" href={srAlternateUrl} />}
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
@@ -141,8 +209,8 @@ const structuredData = [
     <meta property="og:locale" content="en_US" />
     {hasSrAlternate && <meta property="og:locale:alternate" content="sr_RS" />}
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:width" content="640" />
-    <meta property="og:image:height" content="640" />
+    {imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+    {imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
     <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

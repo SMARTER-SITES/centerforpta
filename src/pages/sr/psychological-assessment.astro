@@ -1,7 +1,12 @@
 ---
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
 import { getServiceStructuredData } from '../../utils-sr/seo';
 
 const assessments = [
@@ -15,24 +20,52 @@ const assessments = [
 
 const relatedLinks = [
   {
-    href: '/sr/pre-surgical-psychological-evaluations',
+    href: '/sr/pre-surgical-psychological-evaluations/',
     title: 'Predoperativne evaluacije',
-    desc: 'Saznajte više o barijatrijskim i medicinskim evaluacijama za odobrenje u Schaumburgu, IL.'
+    desc: 'Saznajte više o barijatrijskim i medicinskim evaluacijama za odobrenje u Šamburgu, IL.'
   },
   {
-    href: '/sr/therapy',
+    href: '/sr/therapy/',
     title: 'Terapijske usluge',
     desc: 'Pogledajte individualnu, partnersku, porodičnu i online terapiju nakon testiranja ili dijagnostičkog razjašnjenja.'
   },
   {
-    href: '/sr/contact',
+    href: '/sr/contact/',
     title: 'Zakažite procenu',
-    desc: 'Kontaktirajte ordinaciju da pitate za ADHD testiranje, procenu autizma ili procenu za prilagođavanja u školi ili na poslu.'
+    desc: 'Kontaktirajte ordinaciju da razgovarate o pitanju za procenu, formatu evaluacije i trenutnoj dostupnosti.'
   }
 ];
 
 const pageDescription =
-  'Psihološko testiranje i procena u Schaumburgu, IL za ADHD, autizam, kognitivne teškoće, školske ili radne adaptacije i dijagnostičko razjašnjenje.';
+  'Psihološko testiranje i procena u Šamburgu, IL za dijagnostičko razjašnjenje, kognitivne i emocionalne teškoće i prilagođavanja u školi ili na poslu.';
+
+const faqItems = [
+  {
+    question: 'Koja pitanja psihološka procena može da razjasni?',
+    answer:
+      'Evaluacija se bira prema konkretnom pitanju i može obuhvatiti pažnju i izvršne funkcije, autizam, kognitivne teškoće, emocionalno funkcionisanje, dijagnostičko razjašnjenje ili planiranje prilagođavanja. Kontaktirajte ordinaciju da potvrdite da li je tražena vrsta procene trenutno dostupna i prikladna.'
+  },
+  {
+    question: 'Može li psihološko testiranje pomoći kod prilagođavanja u školi ili na poslu?',
+    answer:
+      'Kada je klinički prikladno, procena može razjasniti dijagnozu i dati preporuke koje mogu podržati zahtev za prilagođavanje u školi, na fakultetu ili na radnom mestu.'
+  },
+  {
+    question: 'Da li je psihološka procena dostupna na srpskom jeziku?',
+    answer:
+      'Dr Jelena Djurovic govori srpski, ali jezik kliničkog intervjua, standardizovanih instrumenata i završnog izveštaja zavisi od konkretnog pitanja i dostupnih validiranih mera. Jezičke potrebe treba potvrditi sa ordinacijom pre zakazivanja.'
+  },
+  {
+    question: 'Da li se procena radi uživo ili putem telehealth-a?',
+    answer:
+      'Mnoge evaluacije se obavljaju uživo u ordinaciji u Šamburgu. Pojedini delovi procesa mogu biti dostupni putem telehealth-a kada se klijent fizički nalazi u Ilinoisu i kada je taj format klinički prikladan za konkretno pitanje.'
+  }
+];
+
+const localSectionParagraphs = [
+  'Psihološko testiranje i procena dostupni su u ordinaciji u Šamburgu osobama iz Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, Streamwood, Des Plaines i okolnih severozapadnih predgrađa.',
+  'Proces se planira tako da odgovori na konkretno pitanje, kao što su dijagnostičko razjašnjenje, kognitivne ili emocionalne teškoće i planiranje školskih ili radnih prilagođavanja.'
+];
 
 const serviceStructuredData = getServiceStructuredData({
   name: 'Psihološko testiranje i procena',
@@ -43,8 +76,9 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Psihološko testiranje i procena u Schaumburgu, IL | Dr Jelena Djurovic"
+  title="Psihološko testiranje i procena u Šamburgu, IL"
   description={pageDescription}
+  faqItems={faqItems}
   structuredData={serviceStructuredData}
 >
   <Navbar />
@@ -53,12 +87,13 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Psihološko testiranje i procena u Šamburgu, IL" homeLabel="Početna" homePath="/sr/" ariaLabel="Putanja stranice" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Psihološko testiranje i procena u Schaumburgu, IL
+        Psihološko testiranje i procena u Šamburgu, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Sveobuhvatno testiranje za ADHD, autizam, dijagnostičko razjašnjenje, kognitivne teškoće i školske ili radne adaptacije.
+        Sveobuhvatno testiranje za dijagnostičko razjašnjenje, kognitivne i emocionalne teškoće, pažnju, autizam i prilagođavanja u školi ili na poslu.
       </p>
     </div>
   </section>
@@ -126,6 +161,21 @@ const serviceStructuredData = getServiceStructuredData({
     </div>
   </section>
 
+  <LocalServiceArea
+    serviceName="Psihološko testiranje i procena"
+    title="Psihološko testiranje u Šamburgu i okolnim severozapadnim predgrađima"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <FaqSection
+    title="Česta pitanja o psihološkoj proceni"
+    intro="Najčešća pitanja o cilju procene, jeziku, formatu i lokaciji."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="text-center max-w-3xl mx-auto mb-12">
@@ -150,7 +200,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Spremni za jasnoću?</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

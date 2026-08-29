@@ -1,16 +1,16 @@
-# Center PTA - First 8 GBP Posts for Approval
+# Center for PTA - First 8 GBP Posts for Approval
 
 ## Short Intro for Dr. Djurovic
 
 We recommend using a medium-length format for Google Business Profile posts rather than very short updates or long blog-style text. Each post is long enough to give Google and prospective clients clear context about the service, location, clinical focus, and next step, but still short enough to be read quickly in a local search result.
 
-This length also helps the posts feel professional and educational without sounding promotional or overwhelming. The goal is not to explain an entire service in one post, but to create consistent local signals around Center PTA's strongest services: immigration psychological evaluations, pre-surgical and bariatric evaluations, women's mental health, and postpartum support.
+This length also helps the posts feel professional and educational without sounding promotional or overwhelming. The goal is not to explain an entire service in one post, but to create consistent local signals around Center for PTA's strongest services: immigration psychological evaluations, pre-surgical and bariatric evaluations, women's mental health, and postpartum support.
 
 ## Post 01 - Immigration Psychological Evaluations in Schaumburg
 
-Center for Psychological Treatment and Assessment offers immigration psychological evaluations in Schaumburg and across Illinois for asylum, hardship waiver, VAWA, U visa, T visa, and cancellation of removal matters. These evaluations may include a clinical interview, review of relevant history, standardized measures when appropriate, and a written report focused on psychological functioning and emotional impact.
+Center for PTA offers immigration psychological evaluations in Schaumburg and across Illinois for asylum, hardship waiver, VAWA, U visa, T visa, and cancellation of removal matters. These evaluations may include a clinical interview, review of relevant history, standardized measures when appropriate, and a written report focused on psychological functioning and emotional impact.
 
-With client consent, Dr. Jelena Djurovic can coordinate with immigration attorneys about referral questions, records, and deadlines. Services are available in English, Serbian, and Spanish.
+With client consent, Dr. Jelena Djurovic can coordinate with immigration attorneys about referral questions, records, and deadlines. Clinical services are available in English and Serbian. Dr. Djurovic also speaks conversational Spanish; please confirm language needs before scheduling.
 
 Link: https://centerforpta.com/immigration-evaluations/
 
@@ -18,9 +18,9 @@ Image direction: General, professional image connected to documentation, transit
 
 ## Post 02 - Women's Mental Health Therapy
 
-Women's mental health therapy can provide support during seasons of stress, change, self-doubt, reproductive concerns, body image challenges, relationship strain, anxiety, depression, or emotional exhaustion. At Center PTA in Schaumburg, therapy focuses on understanding what a client is carrying, building healthier coping patterns, and creating space for self-compassion and steadier emotional functioning.
+Women's mental health therapy can provide support during seasons of stress, change, self-doubt, reproductive concerns, body image challenges, relationship strain, anxiety, depression, or emotional exhaustion. At Center for PTA in Schaumburg, therapy focuses on understanding what a client is carrying, building healthier coping patterns, and creating space for self-compassion and steadier emotional functioning.
 
-Appointments may be available in person or by Illinois telehealth when appropriate. Services are available in English, Serbian, and Spanish.
+Appointments may be available in person or by Illinois telehealth when appropriate. Clinical services are available in English and Serbian. Dr. Djurovic also speaks conversational Spanish; please confirm language needs before scheduling.
 
 Link: https://centerforpta.com/womens-mental-health-therapy/
 
@@ -28,7 +28,7 @@ Image direction: General visual about reflection, steadiness, and support. Avoid
 
 ## Post 03 - Pre-Surgical and Bariatric Psychological Evaluations
 
-Center PTA offers pre-surgical and bariatric psychological evaluations in Schaumburg, IL. These evaluations are often requested by medical or surgical teams to better understand emotional readiness, support systems, mental health history, behavioral patterns, and areas where additional preparation may be helpful before surgery.
+Center for PTA offers pre-surgical and bariatric psychological evaluations in Schaumburg, IL. These evaluations are often requested by medical or surgical teams to better understand emotional readiness, support systems, mental health history, behavioral patterns, and areas where additional preparation may be helpful before surgery.
 
 The process may include a clinical interview, relevant history review, questionnaires when appropriate, feedback, and written documentation for the referring provider. This is different from ongoing bariatric counseling, which focuses on longer-term adjustment and support.
 
@@ -40,7 +40,7 @@ Image direction: General healthcare readiness image connected to planning, prepa
 
 The postpartum period can bring anxiety, sadness, overwhelm, identity changes, relationship strain, sleep disruption, and pressure to adjust quickly. Postpartum therapy offers a private space to talk through what is happening emotionally, understand symptoms, strengthen coping, and feel less alone during a major life transition.
 
-Center PTA offers postpartum therapy in Schaumburg and by Illinois telehealth when appropriate. Support is available in English, Serbian, and Spanish.
+Center for PTA offers postpartum therapy in Schaumburg and by Illinois telehealth when appropriate. Clinical services are available in English and Serbian. Dr. Djurovic also speaks conversational Spanish; please confirm language needs before scheduling.
 
 Link: https://centerforpta.com/postpartum-therapy/
 
@@ -50,7 +50,7 @@ Image direction: Gentle, general image about new routines, care, and emotional a
 
 When clients provide written consent, Dr. Jelena Djurovic can coordinate with an immigration attorney about referral questions, relevant records, deadlines, and the clinical issues most important to the evaluation. This helps keep the psychological evaluation process organized while maintaining appropriate privacy and clinical boundaries.
 
-Center PTA provides immigration psychological evaluations in Schaumburg and across Illinois when telehealth is clinically appropriate. Services are available in English, Serbian, and Spanish.
+Center for PTA provides immigration psychological evaluations in Schaumburg and across Illinois when telehealth is clinically appropriate. Clinical services are available in English and Serbian. Dr. Djurovic also speaks conversational Spanish; please confirm language needs before scheduling.
 
 Link: https://centerforpta.com/immigration-evaluations/
 
@@ -62,7 +62,7 @@ Image direction: Calm professional office image connected to clinical documentat
 
 Immigration psychological evaluations may be relevant for asylum, hardship waiver, VAWA, U visa, T visa, and cancellation of removal matters when clinical documentation is appropriate. The evaluation focuses on psychological history, emotional impact, current functioning, symptoms, and clinically relevant context.
 
-Center PTA provides evaluations in Schaumburg and across Illinois when telehealth is clinically appropriate. The evaluation is clinical documentation, not legal advice or a guarantee of any immigration outcome.
+Center for PTA provides evaluations in Schaumburg and across Illinois when telehealth is clinically appropriate. The evaluation is clinical documentation, not legal advice or a guarantee of any immigration outcome.
 
 Link: https://centerforpta.com/immigration-evaluations/
 
@@ -72,7 +72,7 @@ Image direction: Organized clinical documentation image showing neutral folders,
 
 ## Post 07 - Multilingual Evaluation Support
 
-Discussing trauma, hardship, family history, and emotional symptoms can be easier when language is not a barrier. Center PTA provides psychological evaluation services in English, Serbian, and Spanish, helping clients communicate important clinical information with more clarity and comfort.
+Discussing trauma, hardship, family history, and emotional symptoms can be easier when language is not a barrier. Center for PTA provides psychological evaluation services in English and Serbian. Dr. Djurovic also speaks conversational Spanish; clients should confirm language needs before scheduling.
 
 Evaluations are available at the Schaumburg office, with Illinois telehealth options when clinically appropriate. Attorney coordination is available with the client's written consent.
 

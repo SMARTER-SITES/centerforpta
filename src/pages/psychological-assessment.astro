@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
@@ -19,30 +20,30 @@ const assessments = [
 
 const relatedLinks = [
   {
-    href: '/pre-surgical-psychological-evaluations',
+    href: '/pre-surgical-psychological-evaluations/',
     title: 'Pre-Surgical Evaluations',
     desc: 'Learn more about bariatric and medical clearance evaluations in Schaumburg, IL.'
   },
   {
-    href: '/therapy',
+    href: '/therapy/',
     title: 'Therapy Services',
     desc: 'Explore individual, couples, family, and telehealth therapy after testing or diagnostic clarification.'
   },
   {
-    href: '/contact',
+    href: '/contact/',
     title: 'Schedule an Assessment',
-    desc: 'Contact the office to ask about ADHD testing, autism evaluation, or accommodations-related assessment.'
+    desc: 'Contact the office to discuss the referral question, evaluation format, and current availability.'
   }
 ];
 
 const pageDescription =
-  'ADHD testing and psychological assessment in Schaumburg, IL for autism evaluation, cognitive concerns, school or workplace accommodations, and diagnostic clarification.';
+  'Psychological testing and assessment in Schaumburg, IL for diagnostic clarification, cognitive and emotional concerns, and school or workplace accommodations.';
 
 const faqItems = [
   {
-    question: 'Do you provide ADHD testing in Schaumburg, IL?',
+    question: 'What concerns can a psychological assessment evaluate?',
     answer:
-      'Yes. Psychological assessment can evaluate ADHD and executive functioning concerns through clinical interview, standardized testing, and careful interpretation of how attention and organization difficulties affect daily life.'
+      'The evaluation is selected around a specific referral question and may address attention and executive functioning, autism, cognitive concerns, emotional functioning, diagnostic clarification, or accommodation planning. Contact the office to confirm whether the requested evaluation is currently available and appropriate.'
   },
   {
     question: 'Can psychological testing help with school or workplace accommodations?',
@@ -62,7 +63,7 @@ const faqItems = [
 ];
 
 const localSectionParagraphs = [
-  'Psychological testing and ADHD assessment are available at the Schaumburg office for clients from Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, Streamwood, Des Plaines, and nearby northwest suburbs.',
+  'Psychological testing and assessment are available at the Schaumburg office for clients from Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, Streamwood, Des Plaines, and nearby northwest suburbs.',
   'The evaluation process is designed to answer a specific referral question, such as ADHD, autism, cognitive concerns, diagnostic clarification, or accommodation planning.'
 ];
 
@@ -75,7 +76,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="ADHD Testing and Psychological Assessment in Schaumburg, IL"
+  title="Psychological Testing and Assessment in Schaumburg, IL"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -86,12 +87,13 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Psychological Testing and Assessment in Schaumburg, IL" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        ADHD Testing and Psychological Assessment in Schaumburg, IL
+        Psychological Testing and Assessment in Schaumburg, IL
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Comprehensive testing for ADHD, autism, diagnostic clarification, cognitive concerns, and school or workplace accommodations in the northwest suburbs of Chicago.
+        Comprehensive testing for diagnostic clarification, cognitive and emotional concerns, attention, autism, and school or workplace accommodations in the northwest suburbs of Chicago.
       </p>
     </div>
   </section>
@@ -167,7 +169,7 @@ const serviceStructuredData = getServiceStructuredData({
 
   <FaqSection
     title="Psychological Assessment FAQ"
-    intro="Common questions about ADHD testing, autism evaluation, accommodations, and location."
+    intro="Common questions about evaluation goals, accommodations, format, and location."
     faqs={faqItems}
   />
 
@@ -198,7 +200,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ready for clarity?</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

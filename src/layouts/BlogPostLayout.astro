@@ -2,6 +2,7 @@
 import Layout from './Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { getBreadcrumbStructuredData } from '../utils/seo';
 
 const { frontmatter } = Astro.props;
 const articleTitle = frontmatter.metaTitle || `${frontmatter.title} | Center for PTA`;
@@ -13,34 +14,62 @@ const displayDate = frontmatter.date
     })
   : '';
 const category = frontmatter.category || 'Clinical Insight';
-const reviewedBy = frontmatter.reviewedBy || 'Dr. Jelena Djurovic, Psy.D.';
+const reviewedBy = frontmatter.reviewedBy;
 const tocHeadings = (Astro.props.headings || []).filter((heading) => heading.depth === 2 || heading.depth === 3);
+const existingStructuredData = Array.isArray(frontmatter.structuredData)
+  ? frontmatter.structuredData
+  : frontmatter.structuredData
+    ? [frontmatter.structuredData]
+    : [];
+const articleStructuredData = [
+  ...existingStructuredData,
+  getBreadcrumbStructuredData([
+    { name: 'Home', path: '/' },
+    { name: 'Insights', path: '/blog/' },
+    { name: frontmatter.title, path: Astro.url.pathname }
+  ])
+];
 ---
 
 <Layout
   title={articleTitle}
   description={frontmatter.description}
   image={frontmatter.image}
+  imageWidth={frontmatter.imageWidth || 1600}
+  imageHeight={frontmatter.imageHeight || 900}
   ogType="article"
   publishedTime={frontmatter.date}
   modifiedTime={frontmatter.updatedDate || frontmatter.date}
   author={frontmatter.author}
   reviewedBy={reviewedBy}
+  citations={frontmatter.citations || []}
   schemaType="BlogPosting"
   srAlternatePath={frontmatter.srAlternatePath === false ? false : frontmatter.srPath}
   faqItems={frontmatter.faqItems || []}
-  structuredData={frontmatter.structuredData}
+  structuredData={articleStructuredData}
 >
-  <Navbar />
+  <Navbar alternatePath={frontmatter.srPath} />
 
   <section class="pt-32 md:pt-40 bg-[#fbfaf7] border-b border-[#e8e2d8]">
     <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16 pb-14 md:pb-20">
-      <a href="/blog/" class="inline-flex items-center gap-2 text-sm font-bold text-[#2f594f] hover:text-[#1a1a1a] transition-colors mb-10">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-        Insights
-      </a>
+      <nav aria-label="Breadcrumb" class="mb-10 overflow-x-auto">
+        <ol class="flex min-w-0 items-center gap-2 whitespace-nowrap text-sm font-semibold text-gray-600">
+          <li><a href="/" class="hover:text-[#2f594f] transition-colors">Home</a></li>
+          <li aria-hidden="true" class="text-gray-400">/</li>
+          <li><a href="/blog/" class="hover:text-[#2f594f] transition-colors">Insights</a></li>
+          <li aria-hidden="true" class="text-gray-400">/</li>
+          <li class="min-w-0">
+            <span aria-current="page" class="block max-w-[55vw] truncate font-bold text-[#2f594f] md:max-w-md">
+              {frontmatter.title}
+            </span>
+          </li>
+        </ol>
+      </nav>
 
-      <div class="grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 xl:gap-16 items-end">
+      <div class:list={[
+        'grid gap-10 xl:gap-16 items-end',
+        reviewedBy ? 'lg:grid-cols-[minmax(0,1fr)_340px]' : ''
+      ]}>
         <div>
           <div class="flex flex-wrap items-center gap-3 mb-6 text-sm font-semibold text-[#2f594f]">
             <span>{category}</span>
@@ -57,16 +86,18 @@ const tocHeadings = (Astro.props.headings || []).filter((heading) => heading.dep
           )}
         </div>
 
-        <aside class="border-l-4 border-[#2f594f] pl-6 py-2">
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#8b7a56] mb-3">Reviewed Resource</p>
-          <p class="text-base font-bold text-[#1a1a1a] leading-snug">{reviewedBy}</p>
-          {frontmatter.lastReviewed && (
-            <p class="mt-2 text-sm text-gray-600">Last reviewed: {frontmatter.lastReviewed}</p>
-          )}
-          <p class="mt-5 text-sm text-gray-600 leading-relaxed">
-            Educational guidance from Center for PTA in Schaumburg, IL.
-          </p>
-        </aside>
+        {reviewedBy && (
+          <aside class="border-l-4 border-[#2f594f] pl-6 py-2">
+            <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#8b7a56] mb-3">Reviewed Resource</p>
+            <p class="text-base font-bold text-[#1a1a1a] leading-snug">{reviewedBy}</p>
+            {frontmatter.lastReviewed && (
+              <p class="mt-2 text-sm text-gray-600">Last reviewed: {frontmatter.lastReviewed}</p>
+            )}
+            <p class="mt-5 text-sm text-gray-600 leading-relaxed">
+              Educational guidance from Center for PTA in Schaumburg, IL.
+            </p>
+          </aside>
+        )}
       </div>
     </div>
   </section>
@@ -75,7 +106,14 @@ const tocHeadings = (Astro.props.headings || []).filter((heading) => heading.dep
     <div class="max-w-[1120px] mx-auto px-5 md:px-10 xl:px-16">
       {frontmatter.image && (
         <div class="mb-12 overflow-hidden rounded-2xl border border-[#e8e2d8] shadow-[0_24px_80px_rgba(47,89,79,0.12)]">
-          <img src={frontmatter.image} alt={frontmatter.imageAlt || frontmatter.title} class="w-full aspect-[16/9] object-cover" />
+          <img
+            src={frontmatter.image}
+            alt={frontmatter.imageAlt || frontmatter.title}
+            width="1600"
+            height="900"
+            decoding="async"
+            class="w-full aspect-[16/9] object-cover"
+          />
         </div>
       )}
 

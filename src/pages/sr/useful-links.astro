@@ -2,6 +2,8 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
+import { siteUrl } from '../../utils-sr/seo';
 
 const featuredLinks = [
   {
@@ -22,13 +24,13 @@ const featuredLinks = [
       'Srpkinja psiholog u Čikagu: Od čega najviše pate naši ljudi u Americi i kako im psiholog može pomoći da dobiju "papire" (VIDEO)',
     href:
       'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/',
-    source: 'srpski Times',
+    source: 'Serbian Times',
     language: 'srpski',
     date: '7. jul 2025.',
     description:
       'Razgovor sa dr Jelenom Djurović o tome od čega naši ljudi u Americi najviše pate, kako psihološka podrška može da pomogne i na koji način evaluacije mogu biti važne u imigracionim postupcima.',
     image: '/images/useful-links/jelena-djurovic-serbian-times.jpg',
-    imageAlt: 'Dr Jelena Djurovic in an interview for srpski Times',
+    imageAlt: 'Dr Jelena Djurovic u intervjuu za Serbian Times',
     actionLabel: 'Pročitajte članak'
   },
   {
@@ -44,12 +46,46 @@ const featuredLinks = [
     actionLabel: 'Pogledajte na YouTube-u'
   }
 ];
+
+const pageDescription =
+  'Medijski intervjui, podcast gostovanja, video sadržaji i resursi sa dr Jelenom Djurovic i Center for PTA u Schaumburgu, IL.';
+
+const mediaStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${siteUrl}/sr/useful-links/#webpage`,
+  url: `${siteUrl}/sr/useful-links/`,
+  name: 'Dr Jelena Djurovic u medijima i stručni resursi',
+  description: pageDescription,
+  inLanguage: 'sr-Latn',
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  about: {
+    '@id': `${siteUrl}/dr-jelena-djurovic/#person`
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: featuredLinks.length,
+    itemListElement: featuredLinks.map((link, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: link.title,
+        url: link.href,
+        inLanguage: link.language
+      }
+    }))
+  }
+};
 ---
 
 <Layout
-  title="Korisni linkovi | Center for PTA"
-  description="Korisni članci, intervjui i resursi iz Center for PTA, uključujući istaknuta medijska gostovanja."
+  title="Dr Jelena Djurovic u medijima | Center for PTA"
+  description={pageDescription}
   image="/images/useful-links/jelena-djurovic-serbian-times.jpg"
+  structuredData={mediaStructuredData}
 >
   <Navbar />
 
@@ -57,6 +93,13 @@ const featuredLinks = [
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs
+        currentLabel="Korisni linkovi"
+        homeLabel="Početna"
+        homePath="/sr/"
+        ariaLabel="Putanja stranice"
+        align="center"
+      />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resursi</p>
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Korisni linkovi

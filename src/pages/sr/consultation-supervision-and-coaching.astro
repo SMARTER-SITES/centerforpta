@@ -1,29 +1,66 @@
 ---
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import AuthorBioBox from '../../components-sr/AuthorBioBox.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
 import { getServiceStructuredData } from '../../utils-sr/seo';
 
 const services = [
   {
     title: "Klinička supervizija",
-    desc: "Sakupljate kliničke sate i tražite supervizora? Nudimo sveobuhvatnu, board-approved kliničku superviziju za nove kliničare. Gradite sigurnost, usavršite kliničke veštine i radite kroz složene etičke dileme u podržavajućem okruženju.",
+    desc: "Sakupljate kliničke sate i tražite supervizora? Nudimo strukturisanu kliničku superviziju za kliničare u razvoju. Pre početka proverite da li predloženi odnos supervizije i dokumentacija ispunjavaju zahteve vašeg licencnog odbora, poslodavca ili programa obuke.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
   },
   {
     title: "Profesionalne konsultacije",
-    desc: "Iskusan ste kliničar koji počinje rad sa specifičnom populacijom ili se suočavate sa složenim dijagnostičkim slučajem? Pružamo stručne kolegijalne konsultacije za razvoj efikasnih planova tretmana i širenje kliničke ekspertize.",
+    desc: "Počinjete rad sa specifičnom populacijom ili razmišljate o složenom dijagnostičkom pitanju? Strukturisane profesionalne konsultacije mogu podržati formulaciju slučaja, planiranje tretmana, etičko promišljanje i dalji razvoj veština.",
     icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
   },
   {
     title: "Ispitni i karijerni koučing",
-    desc: "Nedavno ste diplomirali, spremate se za licencni ispit (EPPP) i osećate se izgubljeno, ili kao novi kliničar tražite svoje mesto u profesiji? Naš koučing pruža strukturu, strategije učenja i planiranje karijernog puta.",
+    desc: "Nedavno ste diplomirali, pripremate se za EPPP ili kao novi kliničar planirate sledeći profesionalni korak? Koučing može pružiti strukturu učenja, strategije pripreme, podršku u odlučivanju i planiranju karijere, bez obećanja određenog ispitnog ili poslovnog ishoda.",
     icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
   }
 ];
 
 const pageDescription =
-  'Klinička supervizija, konsultacije i koučing za stručnjake iz oblasti mentalnog zdravlja, uključujući pripremu za EPPP i karijerno usmeravanje.';
+  'Klinička supervizija, profesionalne konsultacije, EPPP priprema i karijerni koučing kroz Center for PTA u Schaumburgu, Illinois.';
+
+const faqItems = [
+  {
+    question: 'Koja je razlika između kliničke supervizije, profesionalnih konsultacija i koučinga?',
+    answer:
+      'Klinička supervizija je usmerena na profesionalni razvoj, razmatranje slučajeva, etiku i dogovorenu dokumentaciju u okviru supervizijskog odnosa. Profesionalne konsultacije pružaju fokusiran kolegijalni uvid za kliničko ili praktično pitanje. EPPP i karijerni koučing usmereni su na strukturu učenja, odlučivanje i profesionalno planiranje.'
+  },
+  {
+    question: 'Ko pruža konsultacije, superviziju i koučing u Center for PTA?',
+    answer:
+      'Dr Jelena Djurovic, Psy.D., licencirani je klinički psiholog u državi Illinois sa više od 10 godina kliničkog iskustva. Uklapanje, domen rada, potrebe za dokumentacijom i trenutna dostupnost razmatraju se pre početka usluge.'
+  },
+  {
+    question: 'Gde se nalazi Center for PTA i da li su dostupni online sastanci?',
+    answer:
+      'Center for PTA se nalazi na adresi 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Dostupnost sastanaka uživo, online ili u hibridnom formatu zavisi od tražene usluge, profesionalnih zahteva, uklapanja i rasporeda i treba je potvrditi direktno sa ordinacijom.'
+  },
+  {
+    question: 'Da li se klinička supervizija računa za licencu ili obavezne kliničke sate?',
+    answer:
+      'Zahtevi se razlikuju prema licencnom odboru, profesiji, vrsti licence, programu obuke i jurisdikciji. Center for PTA ne može da odredi da li će određeni odbor ili program prihvatiti sate. Potvrdite zahteve sa nadležnim odborom ili programom i razgovarajte o predloženoj superviziji i dokumentaciji pre početka.'
+  },
+  {
+    question: 'Da li su profesionalne usluge dostupne na srpskom i engleskom?',
+    answer:
+      'Da. Profesionalne usluge dostupne su na srpskom i engleskom jeziku. Kontaktirajte Center for PTA da potvrdite konkretnu uslugu, jezik, uklapanje i trenutnu dostupnost.'
+  },
+  {
+    question: 'Da li profesionalne konsultacije ili koučing zamenjuju terapiju ili hitnu podršku?',
+    answer:
+      'Ne. Profesionalne konsultacije, klinička supervizija i ispitni ili karijerni koučing razlikuju se od psihoterapije i ne zamenjuju medicinsku negu, pravni savet niti hitne i krizne službe.'
+  }
+];
 
 const serviceStructuredData = getServiceStructuredData({
   name: 'Konsultacije, supervizija i koučing',
@@ -34,8 +71,9 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Konsultacije, supervizija i koučing | Center for PTA"
+  title="Klinička supervizija u Schaumburgu | Center for PTA"
   description={pageDescription}
+  faqItems={faqItems}
   structuredData={serviceStructuredData}
 >
   <Navbar />
@@ -44,12 +82,13 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Klinička supervizija, konsultacije i koučing u Schaumburgu" homeLabel="Početna" homePath="/sr/" ariaLabel="Putanja stranice" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Konsultacije, supervizija i koučing
+        Klinička supervizija, konsultacije i koučing u Schaumburgu
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Podrška kliničarima u svakoj fazi profesionalnog razvoja.
+        Strukturisana profesionalna podrška za kliničare, EPPP kandidate i stručnjake za mentalno zdravlje koji planiraju sledeći korak.
       </p>
     </div>
   </section>
@@ -83,12 +122,22 @@ const serviceStructuredData = getServiceStructuredData({
     </div>
   </section>
 
+  <FaqSection
+    title="Česta pitanja o kliničkoj superviziji i konsultacijama"
+    intro="Praktični odgovori o profesionalnom uklapanju, lokaciji, jezicima, dokumentaciji i licencnim zahtevima."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+
+  <PageAddressCard />
+
   <!-- CTA section -->
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Spremni za napredak?</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
@@ -33,40 +34,40 @@ const focusAreas = [
 
 const relatedLinks = [
   {
-    href: '/blog/reproductive-stress-and-infertility',
+    href: '/therapy/',
+    title: 'Therapy at Center for PTA',
+    desc: 'An overview of individual, couples, and family therapy options available through the Schaumburg practice.'
+  },
+  {
+    href: '/blog/reproductive-stress-and-infertility/',
     title: 'Reproductive Stress and Infertility',
     desc: 'A clinically reviewed guide to fertility stress, relationship strain, self-blame, and when therapy may help.'
   },
   {
-    href: '/blog/why-am-i-so-hard-on-myself',
+    href: '/blog/why-am-i-so-hard-on-myself/',
     title: 'Why Am I So Hard on Myself?',
     desc: 'A psychologist-reviewed guide to harsh self-criticism, perfectionism, and a more supportive response.'
   },
   {
-    href: '/prenatal-therapy',
+    href: '/prenatal-therapy/',
     title: 'Prenatal Therapy',
     desc: 'Support during pregnancy for anxiety, stress, uncertainty, and emotional adjustment.'
   },
   {
-    href: '/postpartum-therapy',
+    href: '/postpartum-therapy/',
     title: 'Postpartum Therapy',
     desc: 'Postnatal support for mood changes, overwhelm, identity shifts, and recovery.'
-  },
-  {
-    href: '/contact',
-    title: 'Book a Consultation',
-    desc: 'Reach out to ask about therapy in Schaumburg or telehealth across Illinois.'
   }
 ];
 
 const quickSignals = [
   'In-person in Schaumburg',
-  'Telehealth across Illinois',
+  'Telehealth when physically located in Illinois',
   'English and Serbian; contact us about Spanish-language needs'
 ];
 
 const localSectionParagraphs = [
-  "Dr. Jelena Djurovic provides in-person women's mental health therapy at her Schaumburg office, conveniently located for clients coming from Arlington Heights, Hoffman Estates, Palatine, Rolling Meadows, and the surrounding area. Telehealth sessions are also available for anyone located in Illinois who prefers the flexibility of online therapy.",
+  "Dr. Jelena Djurovic provides in-person women's mental health therapy at her Schaumburg office, conveniently located for clients coming from Arlington Heights, Hoffman Estates, Palatine, Rolling Meadows, and the surrounding area. Telehealth sessions may also be available when the client is physically located in Illinois at the time of the session.",
   "If you are looking for a licensed clinical psychologist who specializes in women's mental health near Schaumburg, you can reach out through the contact page to ask about fit, scheduling, and next steps."
 ];
 
@@ -86,18 +87,18 @@ const processSteps = [
 ];
 
 const pageDescription =
-  "Women's mental health therapy in Schaumburg, IL with telehealth across Illinois for reproductive challenges, pregnancy and postpartum concerns, body image, substance use concerns, life transitions, anxiety, and relationship stress.";
+  "Women's mental health therapy in Schaumburg for reproductive stress, pregnancy and postpartum concerns, body image, anxiety, and relationships.";
 
 const faqItems = [
   {
     question: "Do you offer women's mental health therapy in Schaumburg and online across Illinois?",
     answer:
-      'Yes. Dr. Jelena Djurovic offers in-person therapy in Schaumburg, Illinois and telehealth sessions for clients located anywhere in Illinois.'
+      'Yes. Dr. Jelena Djurovic offers in-person therapy in Schaumburg, Illinois and telehealth sessions when the client is physically located in Illinois at the time of the session.'
   },
   {
     question: 'Do you see clients from Arlington Heights, Palatine, and other nearby suburbs?',
     answer:
-      'Yes. The Schaumburg office is a short drive from Arlington Heights, Palatine, Hoffman Estates, Rolling Meadows, and other communities in the northwest suburbs. Telehealth is also available for anyone in Illinois.'
+      'Yes. The Schaumburg office is a short drive from Arlington Heights, Palatine, Hoffman Estates, Rolling Meadows, and other communities in the northwest suburbs. Telehealth may also be available when the client is physically located in Illinois during the session.'
   },
   {
     question: "What concerns can be addressed in women's mental health therapy?",
@@ -125,7 +126,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Women's Mental Health Therapist in Schaumburg, IL | Pregnancy and Postpartum Support"
+  title="Women's Mental Health Therapy | Schaumburg, IL"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -138,6 +139,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute bottom-[-10%] right-[10%] w-[28%] h-[28%] bg-[#fdf3df] rounded-full opacity-70 blur-3xl lg:blur-[100px]"></div>
 
     <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24 relative z-10">
+      <PageBreadcrumbs currentLabel="Women's Mental Health Therapy in Schaumburg, IL" />
       <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 xl:gap-20 items-center">
         <div>
           <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-white shadow-sm mb-7">
@@ -164,10 +166,10 @@ const serviceStructuredData = getServiceStructuredData({
           </div>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
-              Schedule a Consultation
+            <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
+              Request a Consultation
             </a>
-            <a href="/rates-and-insurance" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
+            <a href="/rates-and-insurance/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
               Rates and Insurance
             </a>
           </div>
@@ -183,7 +185,7 @@ const serviceStructuredData = getServiceStructuredData({
             </div>
             <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
               <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Flexible Format</p>
-              <p class="text-sm text-gray-700 leading-relaxed">Telehealth available across Illinois for clients who need consistent support without the commute.</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Telehealth may be available when the client is physically located in Illinois during the session.</p>
             </div>
           </div>
         </div>
@@ -342,7 +344,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">You do not have to carry it all alone</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

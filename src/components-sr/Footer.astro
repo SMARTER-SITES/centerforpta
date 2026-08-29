@@ -1,16 +1,18 @@
 ---
+import { mapUrl } from '../utils-sr/seo';
+
 const supportLinks = [
   { text: 'info@centerforpta.com', href: 'mailto:info@centerforpta.com' },
   { text: '(847) 230-0045 (Telefon)', href: 'tel:+18472300045' },
   { text: '(847) 929-7040 (SMS)', href: 'sms:+18479297040' }
 ];
 const servicesLinks = [
-  { text: 'Terapija', href: '/sr/therapy' },
-  { text: 'Psihološka procena', href: '/sr/psychological-assessment' },
-  { text: 'Imigracione evaluacije', href: '/sr/immigration-evaluations' },
-  { text: 'Konsultacije i koučing', href: '/sr/consultation-supervision-and-coaching' }
+  { text: 'Terapija', href: '/sr/therapy/' },
+  { text: 'Psihološka procena', href: '/sr/psychological-assessment/' },
+  { text: 'Imigracione evaluacije', href: '/sr/immigration-evaluations/' },
+  { text: 'Konsultacije i koučing', href: '/sr/consultation-supervision-and-coaching/' }
 ];
-const legalLinks = [{ text: 'Politika privatnosti', href: '/sr/privacy-policy' }];
+const legalLinks = [{ text: 'Politika privatnosti', href: '/sr/privacy-policy/' }];
 const socialLinks: Array<{ label: string; href: string }> = [];
 ---
 
@@ -40,41 +42,88 @@ const socialLinks: Array<{ label: string; href: string }> = [];
         ))}
       </div>
 
-      <!-- Empty column (spacer on xl) — hidden on smaller screens -->
-      <div class="hidden xl:block" />
+      <!-- Kolona 3: Lokalna ordinacija -->
+      <div class="flex flex-col gap-1">
+        <h3 class="py-2 text-base font-bold text-black xl:text-xl">Ordinacija u Schaumburgu</h3>
+        <address class="text-sm font-medium not-italic leading-relaxed text-black xl:text-lg">
+          Center for PTA<br />
+          1320 Tower Rd, Suite 156<br />
+          Schaumburg, IL 60173
+        </address>
+        <p class="py-1 text-sm font-medium leading-relaxed text-gray-600 xl:text-base">
+          Ponedeljak-petak: 9:00-20:00<br />
+          Subota-nedelja: zatvoreno
+        </p>
+        <p class="py-1 text-sm font-medium leading-relaxed text-gray-600 xl:text-base">
+          Dostupni su pristupačan parking i toalet.<br />
+          Zakazivanje se preporučuje.
+        </p>
+        <a
+          href={mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="py-1 text-sm font-semibold text-[#2f594f] transition-colors hover:text-[#1f3f37] xl:text-base"
+        >
+          Otvorite u Google Maps
+        </a>
+        <a
+          href="/sr/schaumburg-office/"
+          class="py-1 text-sm font-semibold text-[#2f594f] transition-colors hover:text-[#1f3f37] xl:text-base"
+        >
+          Detalji o ordinaciji i FAQ o lokaciji
+        </a>
+      </div>
 
-      <!-- Column 3: Contact form -->
+      <!-- Kolona 4: Kontakt forma -->
       <div class="flex flex-col gap-3 sm:col-span-2 xl:col-span-1 xl:w-[450px]">
         <h3 class="text-base xl:text-2xl font-bold text-black py-2 mb-2">Pošaljite poruku</h3>
-        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="flex flex-col gap-3">
+        <form name="contact" method="POST" action="/sr/hvala/" data-netlify="true" netlify-honeypot="bot-field" class="flex flex-col gap-3">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="form-source" value="footer-sr" />
           <p class="hidden">
             <label>Ne popunjavajte ovo polje ako ste čovek: <input name="bot-field" /></label>
           </p>
           <div class="flex flex-col sm:flex-row gap-3">
-            <input
-              type="text"
-              name="first-name"
-              placeholder="Ime"
-              required
-              class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
-            />
-            <input
-              type="text"
-              name="last-name"
-              placeholder="Prezime"
-              required
-              class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
-            />
+            <div class="w-full">
+              <label class="sr-only" for="footer-sr-first-name">Ime</label>
+              <input
+                id="footer-sr-first-name"
+                type="text"
+                name="first-name"
+                autocomplete="given-name"
+                placeholder="Ime"
+                required
+                class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
+              />
+            </div>
+            <div class="w-full">
+              <label class="sr-only" for="footer-sr-last-name">Prezime</label>
+              <input
+                id="footer-sr-last-name"
+                type="text"
+                name="last-name"
+                autocomplete="family-name"
+                placeholder="Prezime"
+                required
+                class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
+              />
+            </div>
           </div>
+          <label class="sr-only" for="footer-sr-email">Email adresa</label>
           <input
+            id="footer-sr-email"
             type="email"
             name="email"
+            autocomplete="email"
             placeholder="Email adresa"
             required
             class="w-full bg-[#fcfbf9] border border-gray-200 h-10 xl:h-12 rounded-xl px-4 text-sm xl:text-base text-black placeholder:text-gray-500 outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f] transition-all"
           />
+          <label class="sr-only" for="footer-sr-message">Kako možemo da pomognemo?</label>
           <textarea
+            id="footer-sr-message"
             name="message"
+            autocomplete="off"
             placeholder="Kako možemo da pomognemo?"
             required
             rows="4"

@@ -10,37 +10,48 @@ lastReviewed: "Jul 2026"
 category: "Mentalno zdravlje žena"
 image: "/images/blog/reproductive-stress-infertility-schaumburg.jpg"
 imageAlt: "Dve odrasle osobe drže se za ruke pored kalendara sa terminima u svetlom domu"
-description: "Saznajte kako reproduktivni stres može uticati na emocionalno zdravlje i kako terapija može pružiti podršku osobama koje se suočavaju sa infertilitetom u Schaumburgu i širom Illinoisa."
+description: "Saznajte kako reproduktivni stres i infertilitet mogu uticati na emocionalno zdravlje i kada psihološka podrška može pomoći."
+citations:
+  - name: "Svetska zdravstvena organizacija: Infertility fact sheet"
+    url: "https://www.who.int/news-room/fact-sheets/detail/infertility"
+  - name: "Američko društvo za reproduktivnu medicinu: Stress and infertility"
+    url: "https://integration.reproductivefacts.org/news-and-publications/fact-sheets-and-infographics/stress-and-infertility/"
+  - name: "Evropsko društvo za humanu reprodukciju i embriologiju: Psychosocial care guideline"
+    url: "https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Psychosocial-care-guideline.aspx"
+  - name: "Salari i saradnici (2024): Mentalno zdravlje žena sa infertilitetom"
+    url: "https://doi.org/10.1007/s00404-024-07444-y"
+  - name: "Jackson i saradnici (2025): Psihološke intervencije za žene sa infertilitetom"
+    url: "https://doi.org/10.1186/s12905-025-04054-x"
 faqItems:
   - question: "Da li je normalno da pokušaji začeća zaokupe gotovo sve moje misli?"
     answer: "Pokušaji začeća mogu uključivati stalnu neizvesnost, čekanje, donošenje odluka i razočaranje. Razumljivo je da misli o plodnosti zauzmu veliki emocionalni prostor. Ako utiču na san, posao, odnose ili svakodnevno funkcionisanje, dodatna podrška može biti korisna."
   - question: "Može li stres izazvati infertilitet?"
     answer: "Istraživanja nisu utvrdila da stres sam po sebi izaziva infertilitet. Odnos stresa i plodnosti je složen, a smanjenje stresa ne treba predstavljati kao garanciju trudnoće. Emocionalna podrška ipak može poboljšati nošenje sa situacijom i kvalitet života."
   - question: "Šta obuhvata terapija za stres povezan sa infertilitetom?"
-    answer: "Terapija može obuhvatiti individualni rad, partnersku terapiju, obradu tuge, podršku pri donošenju odluka, postavljanje granica i strategije nošenja. Ona je odvojena od medicinske dijagnostike ili lečenja infertiliteta."
-  - question: "Da li mi je potrebna dijagnoza infertiliteta ili fertility tretman da bih potražila terapiju?"
-    answer: "Ne. Reproduktivni stres može postojati pre, tokom ili bez formalne dijagnoze infertiliteta i medicinskog tretmana."
+    answer: "Izraz „savetovanje u vezi sa infertilitetom” ponekad se koristi za emocionalnu ili psihološku podršku povezanu sa izazovima plodnosti, tretmanom, reproduktivnim gubitkom ili odlukama o planiranju porodice. U zavisnosti od potreba, terapija može uključiti individualni rad, partnersku terapiju, obradu tuge, podršku pri donošenju odluka, granice i strategije nošenja. Ona je odvojena od medicinske dijagnostike i tretmana plodnosti."
+  - question: "Da li mi je potrebna dijagnoza infertiliteta ili tretman plodnosti da bih potražila terapiju?"
+    answer: "Ne. Reproduktivni stres može postojati pre, tokom ili bez formalne dijagnoze infertiliteta ili medicinskog tretmana. Terapiju možete potražiti dok pokušavate da začnete, razmatrate testiranje, nosite se sa gubitkom, prolazite kroz neizvesnost ili preispitujete planove za porodicu."
   - question: "Da li partner i ja treba zajedno da dolazimo na terapiju?"
-    answer: "I individualna i partnerska terapija mogu biti korisne. Najprikladniji format zavisi od vaših potreba, načina komunikacije i ciljeva."
-  - question: "Da li je dostupna online terapija za reproduktivni stres u Illinois-u?"
-    answer: "Online terapija može biti dostupna samo kada se klijent fizički nalazi u Illinois-u u trenutku seanse. Termini uživo dostupni su u ordinaciji Center for PTA u Schaumburgu."
-  - question: "Da li Center for PTA pruža testiranje plodnosti ili medicinski fertility tretman?"
-    answer: "Ne. Center for PTA pruža psihološku podršku, a ne testiranje plodnosti, reproduktivnu medicinu ili medicinski fertility tretman."
+    answer: "I individualna i partnerska terapija mogu biti korisne. Partnerska terapija može posebno pomoći kada se partneri različito nose sa situacijom, kada je komunikacija napeta ili kada odluke o tretmanu i porodici stvaraju sukob. Možete početi i individualno, a zatim sa terapeutom razgovarati o najprikladnijem formatu."
+  - question: "Da li je dostupna online terapija za reproduktivni stres u Illinoisu?"
+    answer: "Online terapija može biti dostupna samo kada se klijent fizički nalazi u Illinoisu u trenutku seanse. Termini uživo dostupni su u ordinaciji Center for PTA u Schaumburgu."
+  - question: "Da li Center for PTA pruža testiranje plodnosti ili medicinski tretman plodnosti?"
+    answer: "Ne. Center for PTA pruža psihološku podršku, a ne testiranje plodnosti, reproduktivnu medicinu ili medicinski tretman plodnosti."
 ---
 
 Pokušaji začeća mogu početi sa nadom, a zatim se postepeno organizovati oko čekanja, praćenja ciklusa, termina, rezultata testova, teških odluka i ponavljane neizvesnosti. Ono što je nekada bilo privatno i lično može početi da utiče na raspoloženje, odnose, posao, sliku o telu, finansije i doživljaj sebe.
 
-Ovo emocionalno opterećenje ponekad se opisuje kao reproduktivni stres ili stres povezan sa infertilitetom. Izraz reproduktivni stres ovde se koristi u širem smislu i ne predstavlja medicinsku dijagnozu. Može se javiti u različitim fazama planiranja porodice, kod osoba koje pokušavaju da začnu bez medicinskog tretmana, prolaze testiranje ili fertility tretman, nose se sa gubitkom trudnoće, razmatraju donorske opcije ili preispituju kako bi roditeljstvo moglo da izgleda.
+Ovo emocionalno opterećenje ponekad se opisuje kao reproduktivni stres ili stres povezan sa infertilitetom. Izraz reproduktivni stres ovde se koristi u širem smislu i ne predstavlja medicinsku dijagnozu. Može se javiti u različitim fazama planiranja porodice, kod osoba koje pokušavaju da začnu bez medicinskog tretmana, prolaze testiranje ili tretman plodnosti, nose se sa gubitkom trudnoće, razmatraju donorske opcije ili preispituju kako bi roditeljstvo moglo da izgleda.
 
 Osećaj preplavljenosti ne znači da ne uspevate da se nosite sa situacijom. Može značiti da dugo nosite bolno i neizvesno iskustvo bez dovoljno prostora da ga obradite.
 
 ## Najvažnije poruke
 
 - Reproduktivni stres je neformalni izraz za emocionalno opterećenje koje može pratiti izazove sa plodnošću i nije medicinska dijagnoza.
-- Infertilitet i fertility tretman mogu uticati na raspoloženje, odnose, posao, finansije, identitet i svakodnevno funkcionisanje.
+- Infertilitet i tretman plodnosti mogu uticati na raspoloženje, odnose, posao, finansije, identitet i svakodnevno funkcionisanje.
 - Istraživanja nisu utvrdila da stres sam po sebi izaziva infertilitet, a emocionalna podrška se ne sme predstavljati kao način da se garantuje trudnoća.
 - Terapija može biti usmerena na nošenje sa stresom, tugu, komunikaciju, granice i donošenje odluka, uz jasno odvajanje od medicinske brige o plodnosti.
-- Podrška može biti korisna i pre nego što uznemirenost dostigne krizni nivo, uključujući osobe koje nisu u fertility tretmanu.
+- Podrška može biti korisna i pre nego što uznemirenost dostigne krizni nivo, uključujući osobe koje nisu na tretmanu plodnosti.
 
 ## Šta je reproduktivni stres?
 
@@ -169,7 +180,7 @@ U zavisnosti od potreba, podrška može uključivati individualnu terapiju, part
 
 Center for PTA pruža [terapiju za mentalno zdravlje žena](/sr/womens-mental-health-therapy/) za reproduktivne izazove, stres zbog plodnosti, reproduktivni gubitak, napetost u odnosima i emocionalne zahteve različitih faza planiranja porodice.
 
-Dr. Jelena Djurovic, Psy.D., licencirani je klinički psiholog u Illinois-u. Terapija uživo dostupna je u Center for PTA, 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Online terapija je dostupna samo kada se klijent fizički nalazi u Illinois-u u trenutku seanse.
+Dr. Jelena Djurovic, Psy.D., licencirani je klinički psiholog u Illinoisu. Terapija uživo dostupna je u Center for PTA, 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Online terapija je dostupna samo kada se klijent fizički nalazi u Illinoisu u trenutku seanse.
 
 Pristup je topao, direktan i utemeljen. Ne morate umanjivati svoje iskustvo, glumiti optimizam ili doći sa savršeno definisanim ciljem. Terapija može početi iskrenim sagledavanjem onoga što je postalo emocionalno iscrpljujuće i vrste podrške koja bi sada bila korisna.
 
@@ -187,9 +198,9 @@ Istraživanja nisu utvrdila da stres sam po sebi izaziva infertilitet. Odnos str
 
 ### Šta obuhvata terapija za stres povezan sa infertilitetom?
 
-Izraz „infertility counseling” ponekad se koristi za emocionalnu ili psihološku podršku povezanu sa izazovima plodnosti, tretmanom, reproduktivnim gubitkom ili odlukama o planiranju porodice. U zavisnosti od potreba, terapija može uključiti individualni rad, partnersku terapiju, obradu tuge, podršku pri donošenju odluka, granice i strategije nošenja. Ona je odvojena od medicinske dijagnostike i tretmana plodnosti.
+Izraz „savetovanje u vezi sa infertilitetom” ponekad se koristi za emocionalnu ili psihološku podršku povezanu sa izazovima plodnosti, tretmanom, reproduktivnim gubitkom ili odlukama o planiranju porodice. U zavisnosti od potreba, terapija može uključiti individualni rad, partnersku terapiju, obradu tuge, podršku pri donošenju odluka, granice i strategije nošenja. Ona je odvojena od medicinske dijagnostike i tretmana plodnosti.
 
-### Da li mi je potrebna dijagnoza infertiliteta ili fertility tretman da bih potražila terapiju?
+### Da li mi je potrebna dijagnoza infertiliteta ili tretman plodnosti da bih potražila terapiju?
 
 Ne. Reproduktivni stres može postojati pre, tokom ili bez formalne dijagnoze infertiliteta ili medicinskog tretmana. Terapiju možete potražiti dok pokušavate da začnete, razmatrate testiranje, nosite se sa gubitkom, prolazite kroz neizvesnost ili preispitujete planove za porodicu.
 
@@ -197,17 +208,17 @@ Ne. Reproduktivni stres može postojati pre, tokom ili bez formalne dijagnoze in
 
 I individualna i partnerska terapija mogu biti korisne. Partnerska terapija može posebno pomoći kada se partneri različito nose sa situacijom, kada je komunikacija napeta ili kada odluke o tretmanu i porodici stvaraju sukob. Možete početi i individualno, a zatim sa terapeutom razgovarati o najprikladnijem formatu.
 
-### Da li je dostupna online terapija za reproduktivni stres u Illinois-u?
+### Da li je dostupna online terapija za reproduktivni stres u Illinoisu?
 
-Online terapija može biti dostupna samo kada se klijent fizički nalazi u Illinois-u u trenutku seanse. Termini uživo dostupni su u ordinaciji Center for PTA u Schaumburgu.
+Online terapija može biti dostupna samo kada se klijent fizički nalazi u Illinoisu u trenutku seanse. Termini uživo dostupni su u ordinaciji Center for PTA u Schaumburgu.
 
-### Da li Center for PTA pruža testiranje plodnosti ili medicinski fertility tretman?
+### Da li Center for PTA pruža testiranje plodnosti ili medicinski tretman plodnosti?
 
-Ne. Center for PTA pruža psihološku podršku, a ne testiranje plodnosti, reproduktivnu medicinu ili medicinski fertility tretman. O pitanjima dijagnoze i tretmana plodnosti treba razgovarati sa odgovarajućim stručnjakom za reproduktivno zdravlje.
+Ne. Center for PTA pruža psihološku podršku, a ne testiranje plodnosti, reproduktivnu medicinu ili medicinski tretman plodnosti. O pitanjima dijagnoze i tretmana plodnosti treba razgovarati sa odgovarajućim stručnjakom za reproduktivno zdravlje.
 
 ## Klinički pregled
 
-Tekst je klinički pregledala [Dr. Jelena Djurovic, Psy.D.](/sr/dr-jelena-djurovic/), licencirani klinički psiholog u Illinois-u, licenca #071-011433. Dr. Djurovic pruža psihoterapiju i psihološke evaluacije u Center for PTA u Schaumburgu, IL, na srpskom i engleskom jeziku.
+Tekst je klinički pregledala [Dr. Jelena Djurovic, Psy.D.](/sr/dr-jelena-djurovic/), licencirani klinički psiholog u Illinoisu, licenca #071-011433. Dr. Djurovic pruža psihoterapiju i psihološke evaluacije u Center for PTA u Schaumburgu, IL, na srpskom i engleskom jeziku.
 
 Poslednji pregled: jul 2026.
 
@@ -221,4 +232,4 @@ Poslednji pregled: jul 2026.
 
 ## Edukativna napomena
 
-Ovaj članak služi isključivo u edukativne svrhe i ne predstavlja medicinski savet, tretman plodnosti niti zamenu za procenu kvalifikovanog stručnjaka za reproduktivno zdravlje. Terapija ne garantuje trudnoću niti bilo koji medicinski ishod. Dostupnost usluga zavisi od kliničkog uklapanja i pravila licence u Illinois-u. Ako ste u neposrednoj opasnosti ili imate hitno stanje mentalnog zdravlja, kontaktirajte lokalnu hitnu službu ili idite u najbližu urgentnu službu.
+Ovaj članak služi isključivo u edukativne svrhe i ne predstavlja medicinski savet, tretman plodnosti niti zamenu za procenu kvalifikovanog stručnjaka za reproduktivno zdravlje. Terapija ne garantuje trudnoću niti bilo koji medicinski ishod. Dostupnost usluga zavisi od kliničkog uklapanja i pravila licence u Illinoisu. Ako ste u neposrednoj opasnosti ili imate hitno stanje mentalnog zdravlja, kontaktirajte lokalnu hitnu službu ili idite u najbližu urgentnu službu.

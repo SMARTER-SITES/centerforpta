@@ -1,7 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import LocalServiceArea from '../components/LocalServiceArea.astro';
+import AuthorBioBox from '../components/AuthorBioBox.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
 import { getServiceStructuredData } from '../utils/seo';
 
 const concerns = [
@@ -17,67 +22,110 @@ const concerns = [
 
 const relatedLinks = [
   {
-    href: '/rates-and-insurance',
+    href: '/rates-and-insurance/',
     title: 'Rates and Insurance',
     desc: 'Review insurance plans, private pay options, and next steps before scheduling therapy.'
   },
   {
-    href: '/contact',
-    title: 'Book a Consultation',
+    href: '/contact/',
+    title: 'Request a Consultation',
     desc: 'Reach out to ask about individual, couples, family, or telehealth therapy in Illinois.'
   },
   {
-    href: '/psychological-assessment',
+    href: '/psychological-assessment/',
     title: 'Psychological Assessment',
     desc: 'Explore testing for ADHD, autism, diagnostic clarification, and school or workplace accommodations.'
+  },
+  {
+    href: '/blog/2026-03-01-why-seek-psychotherapy/',
+    title: 'Why Seek Psychotherapy?',
+    desc: 'Read when therapy may help and what a supportive therapeutic process can offer.'
+  },
+  {
+    href: '/blog/2026-03-02-how-do-i-find-the-right-therapist/',
+    title: 'How Do I Find the Right Therapist?',
+    desc: 'Use practical questions to consider fit, credentials, approach, and next steps.'
+  },
+  {
+    href: '/blog/why-am-i-so-hard-on-myself/',
+    title: 'Why Am I So Hard on Myself?',
+    desc: 'Learn how self-criticism develops and how self-compassion can support change.'
   }
 ];
 
 const specialtyLinks = [
   {
-    href: '/couples-therapy',
+    href: '/couples-therapy/',
     title: 'Couples Therapy',
     desc: 'Relationship counseling for communication, recurring conflict, trust, and emotional distance.'
   },
   {
-    href: '/womens-mental-health-therapy',
+    href: '/womens-mental-health-therapy/',
     title: "Women's Mental Health Therapy",
     desc: 'Support for reproductive challenges, body image concerns, and life-stage stress.'
   },
   {
-    href: '/self-compassion-therapy',
+    href: '/self-compassion-therapy/',
     title: 'Self-Compassion Therapy',
     desc: 'Help for harsh self-criticism, shame, perfectionism, and burnout.'
   },
   {
-    href: '/weight-loss-counseling',
+    href: '/weight-loss-counseling/',
     title: 'Weight Loss Counseling',
     desc: 'Support for emotional eating, body image, and lasting behavior change.'
   },
   {
-    href: '/bariatric-surgery-counseling',
+    href: '/bariatric-surgery-counseling/',
     title: 'Bariatric Surgery Counseling',
     desc: 'Emotional support before and after bariatric surgery.'
   },
   {
-    href: '/divorce-counseling',
+    href: '/divorce-counseling/',
     title: 'Divorce Counseling',
     desc: 'Support before separation and after divorce during major life transition.'
   },
   {
-    href: '/prenatal-therapy',
+    href: '/prenatal-therapy/',
     title: 'Prenatal Therapy',
     desc: 'Therapy support during pregnancy for stress, anxiety, and emotional adjustment.'
   },
   {
-    href: '/postpartum-therapy',
+    href: '/postpartum-therapy/',
     title: 'Postpartum Therapy',
     desc: 'Postnatal support for mood changes, overwhelm, and recovery after birth.'
   }
 ];
 
 const pageDescription =
-  'Therapy in Schaumburg, IL for individuals, couples, and families, with telehealth available across Illinois for anxiety, trauma, ADHD, grief, and relationship concerns.';
+  'Therapy in Schaumburg for individuals, couples, and families seeking support with anxiety, trauma, grief, relationships, and life transitions.';
+
+const faqItems = [
+  {
+    question: 'Where are in-person therapy sessions offered?',
+    answer:
+      'In-person therapy is available at the Center for PTA office at 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. The office is accessible from Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, and nearby northwest suburbs.'
+  },
+  {
+    question: 'Is telehealth therapy available outside Illinois?',
+    answer:
+      'Dr. Jelena Djurovic is licensed to practice in Illinois. Telehealth may be available only when every participating client is physically located in Illinois at the time of the session and the format is clinically appropriate.'
+  },
+  {
+    question: 'Is therapy available in Serbian and English?',
+    answer:
+      'Yes. Therapy services are available in Serbian and English. Contact Center for PTA to discuss the requested service, language preference, clinical fit, and current availability.'
+  },
+  {
+    question: 'How do I know whether I need therapy or psychological assessment?',
+    answer:
+      'Therapy focuses on ongoing support, coping, relationships, and emotional change. Psychological assessment is a structured evaluation designed to answer a specific diagnostic or referral question. Center for PTA can help you discuss which service is the more appropriate starting point.'
+  }
+];
+
+const localSectionParagraphs = [
+  'Dr. Jelena Djurovic provides in-person therapy at the Center for PTA office at 1320 Tower Rd, Suite 156 in Schaumburg. The office serves Schaumburg and nearby northwest suburban communities, including Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village, and Streamwood.',
+  'Telehealth may be available only when every participating client is physically located in Illinois during the session and the format is clinically appropriate. Therapy services are available in Serbian and English.'
+];
 
 const serviceStructuredData = getServiceStructuredData({
   name: 'Therapy in Schaumburg, IL',
@@ -88,8 +136,9 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Therapy in Schaumburg, IL | Individual, Couples, Family, and Telehealth Therapy"
+  title="Therapy in Schaumburg, IL | Center for PTA"
   description={pageDescription}
+  faqItems={faqItems}
   structuredData={serviceStructuredData}
 >
   <Navbar />
@@ -98,6 +147,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Therapy in Schaumburg, IL" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Therapy in Schaumburg, IL
@@ -136,7 +186,7 @@ const serviceStructuredData = getServiceStructuredData({
           </div>
           <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
             <h3 class="font-bold text-[#2f594f] text-xl mb-3">Telehealth</h3>
-            <p class="text-gray-600">Secure and convenient virtual therapy sessions from the comfort of your own home.</p>
+            <p class="text-gray-600">Secure virtual therapy may be available when every participating client is physically located in Illinois during the session.</p>
           </div>
         </div>
       </div>
@@ -186,7 +236,7 @@ const serviceStructuredData = getServiceStructuredData({
       <div class="text-center max-w-3xl mx-auto mb-12">
         <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Planning Your Next Step</h2>
         <p class="text-lg text-gray-700">
-          These pages can help you understand cost, scheduling, and whether therapy or assessment is the best fit for what you need.
+          These practical pages and clinical guides can help you understand fit, cost, scheduling, and what to expect from therapy.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -200,12 +250,27 @@ const serviceStructuredData = getServiceStructuredData({
     </div>
   </section>
 
+  <LocalServiceArea
+    serviceName="Therapy"
+    title="Therapy in Schaumburg and Telehealth Across Illinois"
+    paragraphs={localSectionParagraphs}
+  />
+
+  <FaqSection
+    title="Therapy in Schaumburg FAQ"
+    intro="Practical answers about the office, telehealth boundaries, languages, and choosing the right service."
+    faqs={faqItems}
+  />
+
+  <AuthorBioBox />
+  <PageAddressCard />
+
   <!-- CTA section -->
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Begin your healing journey</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

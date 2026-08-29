@@ -1,0 +1,82 @@
+---
+import { getBreadcrumbStructuredData } from '../utils/seo';
+
+interface Props {
+  currentLabel: string;
+  homeLabel?: string;
+  homePath?: string;
+  ancestors?: Array<{ label: string; path: string }>;
+  ariaLabel?: string;
+  align?: 'left' | 'center';
+  tone?: 'default' | 'light';
+}
+
+const {
+  currentLabel,
+  homeLabel = 'Home',
+  homePath = '/',
+  ancestors = [],
+  ariaLabel = 'Breadcrumb',
+  align = 'left',
+  tone = 'default'
+} = Astro.props;
+
+const structuredData = getBreadcrumbStructuredData([
+  { name: homeLabel, path: homePath },
+  ...ancestors.map((ancestor) => ({ name: ancestor.label, path: ancestor.path })),
+  { name: currentLabel, path: Astro.url.pathname }
+]);
+
+const visibleItems = [
+  { label: homeLabel, path: homePath },
+  ...ancestors,
+  { label: currentLabel, path: Astro.url.pathname, current: true }
+];
+---
+
+<nav
+  aria-label={ariaLabel}
+  class:list={[
+    'mb-7 overflow-x-auto text-sm font-semibold',
+    tone === 'light' ? 'text-white/80' : 'text-gray-600',
+    align === 'center' ? 'flex justify-center' : ''
+  ]}
+>
+  <ol class="flex min-w-0 items-center gap-2 whitespace-nowrap">
+    {visibleItems.map((item, index) => (
+      <>
+        {index > 0 && (
+          <li aria-hidden="true" class:list={[tone === 'light' ? 'text-white/50' : 'text-gray-400']}>
+            /
+          </li>
+        )}
+        <li class:list={[item.current ? 'min-w-0' : '']}>
+          {item.current ? (
+            <span
+              aria-current="page"
+              title={item.label}
+              class:list={[
+                'block max-w-[70vw] truncate font-bold md:max-w-xl',
+                tone === 'light' ? 'text-white' : 'text-[#2f594f]'
+              ]}
+            >
+              {item.label}
+            </span>
+          ) : (
+            <a
+              href={item.path}
+              class:list={[
+                'transition-colors',
+                tone === 'light' ? 'hover:text-white' : 'hover:text-[#2f594f]'
+              ]}
+            >
+              {item.label}
+            </a>
+          )}
+        </li>
+      </>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

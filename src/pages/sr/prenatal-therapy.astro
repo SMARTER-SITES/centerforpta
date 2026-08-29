@@ -40,23 +40,23 @@ const supportAreas = [
 
 const relatedLinks = [
   {
-    href: '/sr/postpartum-therapy',
+    href: '/sr/postpartum-therapy/',
     title: 'Postpartalna terapija',
     desc: 'Podrška posle porođaja za promene raspoloženja, preplavljenost i postnatalno prilagođavanje.'
   },
   {
-    href: '/sr/womens-mental-health-therapy',
+    href: '/sr/womens-mental-health-therapy/',
     title: "Terapija za mentalno zdravlje žena",
     desc: 'Šira podrška za reproduktivne izazove, stres životnih faza i probleme slike tela.'
   },
   {
-    href: '/sr/contact',
-    title: 'Zakažite konsultaciju',
-    desc: 'Pitajte za prenatalnu terapiju uživo ili online širom Illinoisa.'
+    href: '/sr/blog/reproductive-stress-and-infertility/',
+    title: 'Reproduktivni stres i infertilitet',
+    desc: 'Klinički pregledan vodič o stresu zbog plodnosti, reproduktivnom gubitku, neizvesnosti i tome kada terapija može pomoći.'
   }
 ];
 
-const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Podrška tokom trudnoće i reproduktivnog stresa'];
+const signals = ['Uživo u Schaumburgu', 'Online uz fizičku lokaciju u Illinoisu', 'Podrška tokom trudnoće i reproduktivnog stresa'];
 const featureCards = [
   {
     title: 'Lokalna podrška',
@@ -68,7 +68,7 @@ const featureCards = [
   },
   {
     title: 'Fleksibilan format',
-    desc: 'Online širom Illinoisa za klijentkinje u bilo kom trimestru kojima treba podrška bez dodatnog putovanja.'
+    desc: 'Online seanse mogu biti dostupne kada se klijentkinja fizički nalazi u Illinoisu tokom seanse.'
   }
 ];
 
@@ -116,7 +116,7 @@ const processSteps = [
 ];
 
 const pageDescription =
-  'Prenatalna terapija u Schaumburgu, IL za anksioznost u trudnoći, stres zbog neplodnosti, tretmana plodnosti i reproduktivnog gubitka, uz telehealth u Ilinoisu.';
+  'Prenatalna terapija u Schaumburgu, IL za podršku tokom trudnoće, uključujući medicinsku neizvesnost, stres tokom tretmana plodnosti i raniji reproduktivni gubitak.';
 
 const faqItems = [
   {
@@ -125,9 +125,19 @@ const faqItems = [
       'Prenatalna terapija može pomoći kod anksioznosti u trudnoći, medicinskog stresa, straha od porođaja ili roditeljstva, istorije reproduktivnog gubitka, napetosti u odnosu i emocionalnog prilagođavanja u trudnoći.'
   },
   {
+    question: 'Može li terapija pomoći kod stresa tokom tretmana fertiliteta ili posle reproduktivnog gubitka?',
+    answer:
+      'Da. Terapija može pružiti emocionalnu podršku tokom pokušaja začeća, tretmana fertiliteta, neizvesnih rezultata, posle reproduktivnog gubitka ili u trudnoći posle gubitka. Može pomoći u obradi tuge, anksioznosti, napetosti u odnosu i pritiska ponovljenih medicinskih odluka. Ne zamenjuje medicinsku ili reproduktivnu zdravstvenu negu.'
+  },
+  {
+    question: 'Da li Center for PTA pruža prenatalnu medicinsku ili reproduktivnu zdravstvenu negu?',
+    answer:
+      'Ne. Center for PTA pruža psihoterapiju za emocionalno blagostanje tokom postojeće trudnoće, uključujući anksioznost, medicinski stres, istoriju tretmana fertiliteta i reproduktivnog gubitka. Terapija ne zamenjuje prenatalnu medicinsku negu, tretman fertiliteta, usluge reproduktivnog zdravlja niti medicinsko odlučivanje. Nastavite negu sa svojim prenatalnim ili reproduktivnim zdravstvenim timom.'
+  },
+  {
     question: 'Da li nudite prenatalnu terapiju u Schaumburgu, IL i online u Illinoisu?',
     answer:
-      'Da. Prenatalna terapija je dostupna uživo u Schaumburgu i online za klijentkinje širom Illinoisa.'
+      'Da. Prenatalna terapija je dostupna uživo u Schaumburgu. Online seanse mogu biti dostupne kada se klijentkinja fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan.'
   },
   {
     question: 'Može li prenatalna terapija da se nastavi u postpartalnu podršku posle porođaja?',
@@ -150,7 +160,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Prenatalna terapija u Schaumburgu, IL"
+  title="Prenatalna terapija u Schaumburgu | Center for PTA"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -160,7 +170,7 @@ const serviceStructuredData = getServiceStructuredData({
     title="Prenatalna terapija"
     accent="kada trudnoća donosi više od radosti"
     description="Emocionalna podrška tokom trudnoće za anksioznost, preplavljenost, medicinski stres, promene u odnosima i brojna prilagođavanja pre porođaja."
-    imageAlt="Quiet therapy office for prenatal support"
+    imageAlt="Miran prostor za prenatalnu psihološku podršku"
     imageSrc="/images/prenatal-therapy.jpg"
     fitText="podrška tokom trudnoće kada strahu, pritisku, tuzi ili neizvesnosti treba više prostora i stabilnosti"
     fitDescription="Ova usluga je za trudnice koje imaju više emocionalnih teškoća nego što su očekivale i žele prostor gde će to biti shvaćeno ozbiljno. Trudnoća ne mora biti radosna svakog dana da biste zaslužili podršku."
@@ -188,7 +198,7 @@ const serviceStructuredData = getServiceStructuredData({
     title="Prenatalna terapija u Schaumburgu i okolnim zajednicama"
     paragraphs={[
       'Dr Jelena Djurovic pruža prenatalnu terapiju u ordinaciji u Schaumburgu, dostupnoj klijentkinjama iz Rolling Meadows, Hanover Park, Elk Grove Village, Streamwood i drugih severozapadnih predgrađa. Njeno doktorsko istraživanje odnosa uma i tela direktno informiše pristup emocionalnim zahtevima trudnoće.',
-      'Online terapija je dostupna širom Illinoisa za klijentkinje u bilo kojoj fazi trudnoće. Prenatalna terapija može biti i korisna osnova pre prelaska na postpartalnu podršku posle porođaja.'
+      'Online seanse mogu biti dostupne kada se klijentkinja fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan. Prenatalna terapija može biti korisna osnova pre prelaska na postpartalnu podršku posle porođaja.'
     ]}
   />
 
@@ -219,7 +229,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Podrška tokom trudnoće može napraviti stvarnu razliku</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

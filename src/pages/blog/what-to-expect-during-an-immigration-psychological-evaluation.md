@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: "What to Expect During an Immigration Psychological Evaluation"
-metaTitle: "Immigration Psychological Evaluation in Illinois | Center for PTA"
+metaTitle: "Immigration Psychological Evaluation | Illinois"
 date: 2026-06-16T09:00:00.000Z
 author: "Center for PTA"
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."
@@ -9,7 +9,7 @@ lastReviewed: "June 2026"
 category: "Immigration Evaluations"
 image: "/images/blog/immigration-psychological-evaluation-schaumburg.jpg"
 imageAlt: "A calm psychology office with evaluation documents prepared on a desk"
-description: "Learn what to expect during an immigration psychological evaluation in Schaumburg or in person in Illinois, including interviews, reports, and attorney coordination."
+description: "Learn what to expect from an immigration psychological evaluation in Illinois, including interviews, records, reports, and attorney coordination."
 faqItems:
   - question: "How long does an immigration psychological evaluation take?"
     answer: "The length of the process depends on the complexity of the case, the amount of history involved, whether testing is needed, and whether documents must be reviewed. Some evaluations require more than one appointment. The practice can provide more specific scheduling information during the initial contact."
@@ -18,7 +18,7 @@ faqItems:
   - question: "Will the psychologist talk to my attorney?"
     answer: "The psychologist may communicate with your attorney if you give written permission. This can help clarify the purpose of the evaluation and help the report address the relevant clinical questions."
   - question: "Can an immigration psychological evaluation be done by telehealth?"
-    answer: "Telehealth may be available only when the client is physically located in Illinois at the time of the appointment. Clients who live outside Illinois may be seen for in-person psychological testing or evaluation if they are able to travel to the Schaumburg, IL office."
+    answer: "Telehealth may be available only when the client is physically located in Illinois at the time of the appointment. Some situations may be better suited for in-person evaluation. Clients who live outside Illinois may be seen for in-person psychological testing or evaluation if they are able to travel to the Schaumburg office."
   - question: "What documents should I prepare for an immigration psychological evaluation?"
     answer: "Documents vary by case, but may include attorney referral letters, personal statements, medical or mental health records, prior evaluations, police reports or protective orders when relevant, and documents related to family, hardship, or trauma history. Your attorney can help identify what is legally relevant."
   - question: "What languages are available for the evaluation?"

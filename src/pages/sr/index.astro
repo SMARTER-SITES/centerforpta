@@ -5,12 +5,16 @@ import Quote from '../../components-sr/Quote.astro';
 import Services from '../../components-sr/Services.astro';
 import SpecialtyTopics from '../../components-sr/SpecialtyTopics.astro';
 import About from '../../components-sr/About.astro';
+import LocalOfficeFaq from '../../components/LocalOfficeFaq.astro';
 import Footer from '../../components-sr/Footer.astro';
+import { mapUrl, practiceDescription } from '../../utils-sr/seo';
+import { nearbyCommunities, serbianLocalFaqItems } from '../../utils/local-practice-data.js';
 ---
 
 <Layout
-  title="Psiholog u Šamburgu, IL | Dr Jelena Djurovic"
-  description="Terapija, psihološko testiranje, imigracione evaluacije i predoperativne procene sa dr Jelenom Djurovic u Schaumburgu, IL."
+  title="Psiholog u Schaumburgu, IL | Center for PTA"
+  description={practiceDescription}
+  faqItems={serbianLocalFaqItems}
 >
   <!-- 1. Hero + Navbar -->
   <Hero />
@@ -27,6 +31,21 @@ import Footer from '../../components-sr/Footer.astro';
   <!-- 5. About -->
   <About />
 
-  <!-- 6. Footer -->
+  <!-- 6. Lokalna ordinacija i praktična pitanja -->
+  <LocalOfficeFaq
+    eyebrow="Ordinacija u Schaumburgu"
+    title="Podrška uživo u Schaumburgu i telehealth u Ilinoisu"
+    intro="Jasni odgovori o dolasku u ordinaciju, granicama telehealth usluga, jezicima, proveri osiguranja i putovanju u Ilinois radi evaluacije uživo."
+    addressLabel="Adresa ordinacije"
+    nearbyLabel="Okolna mesta"
+    nearbyCommunities={nearbyCommunities}
+    mapLabel="Otvorite u Google Maps"
+    mapUrl={mapUrl}
+    contactLabel="Kontaktirajte Center for PTA"
+    contactPath="/sr/contact/"
+    faqs={serbianLocalFaqItems}
+  />
+
+  <!-- 7. Footer -->
   <Footer />
 </Layout>

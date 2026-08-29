@@ -7,10 +7,10 @@ interface Props {
 
 const {
   serviceName,
-  title = `${serviceName} u Schaumburgu, IL i širom Illinoisa`,
+  title = `${serviceName} u Schaumburgu, IL i online uz fizičku lokaciju u Illinoisu`,
   paragraphs = [
-    'Dr Jelena Djurovic nudi rad uživo u Schaumburgu, Illinois, kao i online seanse za klijente širom Illinoisa. Tako možete izabrati format koji odgovara vašem rasporedu, komforu i nivou podrške koji vam je potreban.',
-    'Ako tražite licenciranog kliničkog psihologa blizu Schaumburga ili preferirate online terapiju bilo gde u Illinoisu, možete se javiti preko kontakt stranice i pitati za uklapanje, termine i sledeće korake.'
+    'Dr Jelena Djurovic nudi rad uživo u Schaumburgu, Illinois, kao i online seanse kada se klijent fizički nalazi u Illinoisu u trenutku seanse. Tako možete izabrati format koji odgovara vašem rasporedu, komforu i nivou podrške koji vam je potreban.',
+    'Ako tražite licenciranog kliničkog psihologa blizu Schaumburga ili preferirate online terapiju dok se fizički nalazite u Illinoisu, možete se javiti preko kontakt stranice i pitati za uklapanje, termine i sledeće korake.'
   ]
 } = Astro.props;
 ---
@@ -30,11 +30,11 @@ const {
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <a href="/sr/contact" class="bg-[#fcfbf9] rounded-[1.5rem] border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <a href="/sr/contact/" class="bg-[#fcfbf9] rounded-[1.5rem] border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Kontakt i zakazivanje</h3>
-          <p class="text-gray-600 leading-relaxed">Pitajte za dostupne termine, seanse uživo u Schaumburgu ili online seanse širom Illinoisa.</p>
+          <p class="text-gray-600 leading-relaxed">Pitajte za dostupne termine, seanse uživo u Schaumburgu ili online seanse dok se fizički nalazite u Illinoisu.</p>
         </a>
-        <a href="/sr/rates-and-insurance" class="bg-[#fcfbf9] rounded-[1.5rem] border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <a href="/sr/rates-and-insurance/" class="bg-[#fcfbf9] rounded-[1.5rem] border border-gray-100 p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
           <h3 class="text-xl font-bold text-[#1a1a1a] mb-2">Cene i osiguranje</h3>
           <p class="text-gray-600 leading-relaxed">Pogledajte informacije o osiguranju, privatnom plaćanju i praktičnim koracima pre početka.</p>
         </a>

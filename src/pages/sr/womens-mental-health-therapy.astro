@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 import Footer from '../../components-sr/Footer.astro';
 import FaqSection from '../../components-sr/FaqSection.astro';
 import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
@@ -33,40 +34,40 @@ const focusAreas = [
 
 const relatedLinks = [
   {
-    href: '/sr/blog/reproductive-stress-and-infertility',
+    href: '/sr/therapy/',
+    title: 'Terapija u Center for PTA',
+    desc: 'Pregled individualne, partnerske i porodične terapije dostupne kroz ordinaciju u Schaumburgu.'
+  },
+  {
+    href: '/sr/blog/reproductive-stress-and-infertility/',
     title: 'Reproduktivni stres i infertilitet',
     desc: 'Klinički pregledan vodič o stresu zbog plodnosti, napetosti u odnosima, samookrivljavanju i tome kada terapija može pomoći.'
   },
   {
-    href: '/sr/blog/why-am-i-so-hard-on-myself',
+    href: '/sr/blog/why-am-i-so-hard-on-myself/',
     title: 'Zašto sam toliko stroga prema sebi?',
     desc: 'Klinički pregledan vodič o oštroj samokritici, perfekcionizmu i odgovoru sa više podrške.'
   },
   {
-    href: '/sr/prenatal-therapy',
+    href: '/sr/prenatal-therapy/',
     title: 'Prenatalna terapija',
     desc: 'Podrška tokom trudnoće za anksioznost, stres, neizvesnost i emocionalno prilagođavanje.'
   },
   {
-    href: '/sr/postpartum-therapy',
+    href: '/sr/postpartum-therapy/',
     title: 'Postpartalna terapija',
     desc: 'Postnatalna podrška za promene raspoloženja, preplavljenost, promene identiteta i oporavak.'
-  },
-  {
-    href: '/sr/contact',
-    title: 'Zakažite konsultaciju',
-    desc: 'Javite se da pitate za terapiju u Schaumburgu ili online širom Illinoisa.'
   }
 ];
 
 const quickSignals = [
   'Uživo u Schaumburgu',
-  'Online širom Illinoisa',
+  'Online kada se klijentkinja fizički nalazi u Illinoisu',
   'srpski i engleski; kontaktirajte nas radi potreba na španskom'
 ];
 
 const localSectionParagraphs = [
-  "Dr Jelena Djurovic pruža terapiju za mentalno zdravlje žena uživo u ordinaciji u Schaumburgu, koja je praktična za klijentkinje iz Arlington Heights, Hoffman Estates, Palatine, Rolling Meadows i okoline. Online seanse su dostupne svima u Illinoisu koji preferiraju fleksibilnost online terapije.",
+  "Dr Jelena Djurovic pruža terapiju za mentalno zdravlje žena uživo u ordinaciji u Schaumburgu, koja je praktična za klijentkinje iz Arlington Heights, Hoffman Estates, Palatine, Rolling Meadows i okoline. Online seanse mogu biti dostupne kada se klijentkinja fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan.",
   "Ako tražite licenciranog kliničkog psihologa specijalizovanog za mentalno zdravlje žena blizu Schaumburga, možete se javiti preko kontakt stranice i pitati za uklapanje, termine i sledeće korake."
 ];
 
@@ -86,18 +87,18 @@ const processSteps = [
 ];
 
 const pageDescription =
-  "Terapija za mentalno zdravlje žena u Schaumburgu, IL uz online seanse širom Illinoisa za reproduktivne izazove, reproduktivno zdravlje, sliku tela, upotrebu supstanci, životne promene, anksioznost i stres u odnosima.";
+  "Terapija za mentalno zdravlje žena u Šamburgu za reproduktivni stres, sliku tela, životne promene, anksioznost i odnose.";
 
 const faqItems = [
   {
-    question: "Da li nudite terapiju za mentalno zdravlje žena u Schaumburgu i online širom Illinoisa?",
+    question: "Da li nudite terapiju za mentalno zdravlje žena u Schaumburgu i online uz fizičku lokaciju u Illinoisu?",
     answer:
-      'Da. Dr Jelena Djurovic nudi terapiju uživo u Schaumburgu, Illinois, i online seanse za klijentkinje širom Illinoisa.'
+      'Da. Dr Jelena Djurovic nudi terapiju uživo u Schaumburgu. Online seanse mogu biti dostupne kada se klijentkinja fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan.'
   },
   {
     question: 'Da li primate klijentkinje iz Arlington Heights, Palatine i okolnih predgrađa?',
     answer:
-      'Da. Ordinacija u Schaumburgu je kratka vožnja od Arlington Heights, Palatine, Hoffman Estates, Rolling Meadows i drugih mesta u severozapadnim predgrađima. Online seanse su dostupne svima u Illinoisu.'
+      'Da. Ordinacija u Schaumburgu je kratka vožnja od Arlington Heights, Palatine, Hoffman Estates, Rolling Meadows i drugih mesta u severozapadnim predgrađima. Online seanse mogu biti dostupne kada se klijentkinja fizički nalazi u Ilinoisu.'
   },
   {
     question: "Koje teme se mogu raditi u terapiji za mentalno zdravlje žena?",
@@ -138,6 +139,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute bottom-[-10%] right-[10%] w-[28%] h-[28%] bg-[#fdf3df] rounded-full opacity-70 blur-3xl lg:blur-[100px]"></div>
 
     <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24 relative z-10">
+      <PageBreadcrumbs currentLabel="Terapija za mentalno zdravlje žena u Schaumburgu, IL" homeLabel="Početna" homePath="/sr/" ariaLabel="Putanja stranice" />
       <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 xl:gap-20 items-center">
         <div>
           <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-white shadow-sm mb-7">
@@ -164,10 +166,10 @@ const serviceStructuredData = getServiceStructuredData({
           </div>
 
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
-            <a href="/sr/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
-              Zakažite konsultaciju
+            <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
+              Pošaljite upit za konsultaciju
             </a>
-            <a href="/sr/rates-and-insurance" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
+            <a href="/sr/rates-and-insurance/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
               Cene i osiguranje
             </a>
           </div>
@@ -183,7 +185,7 @@ const serviceStructuredData = getServiceStructuredData({
             </div>
             <div class="rounded-[1.75rem] bg-white/85 border border-white shadow-sm p-5">
               <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#2f594f] mb-2">Fleksibilan format</p>
-              <p class="text-sm text-gray-700 leading-relaxed">Online terapija širom Illinoisa za klijentkinje kojima treba kontinuirana podrška bez putovanja.</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Online seanse mogu biti dostupne klijentkinjama koje se fizički nalaze u Ilinoisu, kada je ovaj format klinički prikladan.</p>
             </div>
           </div>
         </div>
@@ -342,7 +344,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ne morate sve nositi sami</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

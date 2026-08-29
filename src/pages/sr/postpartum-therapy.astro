@@ -32,23 +32,23 @@ const supportAreas = [
 
 const relatedLinks = [
   {
-    href: '/sr/prenatal-therapy',
+    href: '/sr/prenatal-therapy/',
     title: 'Prenatalna terapija',
     desc: 'Podrška tokom trudnoće za anksioznost, neizvesnost i stres tranzicije.'
   },
   {
-    href: '/sr/womens-mental-health-therapy',
+    href: '/sr/womens-mental-health-therapy/',
     title: "Terapija za mentalno zdravlje žena",
     desc: 'Šira podrška za reproduktivne teme, sliku tela i izazove životnih faza.'
   },
   {
-    href: '/sr/contact',
-    title: 'Zakažite konsultaciju',
+    href: '/sr/contact/',
+    title: 'Pošaljite upit za konsultaciju',
     desc: 'Pitajte za postpartalnu terapiju uživo ili online u Illinoisu.'
   }
 ];
 
-const signals = ['Uživo u Schaumburgu', 'Online širom Illinoisa', 'Postpartalna i postnatalna podrška'];
+const signals = ['Uživo u Schaumburgu', 'Online uz fizičku lokaciju u Illinoisu', 'Postpartalna i postnatalna podrška'];
 const featureCards = [
   {
     title: 'Lokalna podrška',
@@ -60,7 +60,7 @@ const featureCards = [
   },
   {
     title: 'Fleksibilan format',
-    desc: 'Online širom Illinoisa so new parents can access support during naps, breaks, or whenever a session fits the day.'
+    desc: 'Online podrška može biti dostupna kada se klijent fizički nalazi u Ilinoisu i kada je ovaj format klinički prikladan.'
   }
 ];
 
@@ -108,6 +108,17 @@ const processSteps = [
 const pageDescription =
   'Postpartalna terapija u Schaumburgu, IL za depresiju, anksioznost, preplavljenost i emocionalnu podršku posle porođaja.';
 
+const clinicalSources = [
+  {
+    name: 'National Institute of Mental Health: Perinatal Depression',
+    url: 'https://www.nimh.nih.gov/health/publications/perinatal-depression'
+  },
+  {
+    name: 'American College of Obstetricians and Gynecologists: Postpartum Depression',
+    url: 'https://www.acog.org/womens-health/faqs/postpartum-depression'
+  }
+];
+
 const faqItems = [
   {
     question: 'U čemu može pomoći postpartalna terapija?',
@@ -117,17 +128,32 @@ const faqItems = [
   {
     question: 'Da li nudite postpartalnu terapiju u Schaumburgu, IL i online?',
     answer:
-      'Da. Seanse su dostupne uživo u Schaumburgu, a online terapija je dostupna klijentima širom Illinoisa.'
+      'Da. Seanse su dostupne uživo u Schaumburgu. Online seanse mogu biti dostupne kada se klijent fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan.'
   },
   {
     question: 'Koliko brzo posle porođaja mogu početi postpartalnu terapiju?',
     answer:
-      'Ne postoji minimalni period čekanja. Neke klijentkinje se jave u prvih nekoliko nedelja posle porođaja, a druge kasnije. Ordinacija u Schaumburgu dostupna je iz Arlington Heights, Des Plaines, Rolling Meadows i okolnih predgrađa, a online terapija je dostupna svima u Illinoisu.'
+      'Ne postoji minimalni period čekanja. Neke klijentkinje se jave u prvih nekoliko nedelja posle porođaja, a druge kasnije. Ordinacija u Schaumburgu dostupna je iz Arlington Heights, Des Plaines, Rolling Meadows i okolnih predgrađa. Online seanse mogu biti dostupne kada se klijent fizički nalazi u Ilinoisu.'
   },
   {
     question: 'Da li je postpartalna terapija samo za teške simptome?',
     answer:
       'Ne. Terapija može biti prikladna kada su simptomi teški, ali može pomoći i mnogo ranije ako se posle porođaja osećate emocionalno istanjeno, kao da niste svoji ili preplavljeno.'
+  },
+  {
+    question: 'Koja je razlika između baby blues-a i postpartalne depresije?',
+    answer:
+      'Baby blues obično podrazumeva blaže, kratkotrajne promene raspoloženja tokom prvih dana posle porođaja i često se povlači u roku od oko dve nedelje. Intenzivni simptomi, simptomi koji traju duže ili ometaju svakodnevno funkcionisanje mogu ukazivati na postpartalnu depresiju ili drugo perinatalno stanje mentalnog zdravlja i treba ih razmotriti sa kvalifikovanim zdravstvenim stručnjakom.'
+  },
+  {
+    question: 'Kada treba da potražim pomoć zbog postpartalne depresije ili anksioznosti?',
+    answer:
+      'Javite se kada su tuga, anksioznost, razdražljivost, osećaj krivice, iscrpljenost, zastrašujuće misli ili teškoće u funkcionisanju uporni, intenzivni ili ih je teško kontrolisati. Ne morate čekati zakazanu postpartalnu kontrolu. Obratite se akušeru, lekaru primarne zdravstvene zaštite, psihijatru ili kvalifikovanom stručnjaku za mentalno zdravlje radi procene.'
+  },
+  {
+    question: 'Da li postpartalna terapija zamenjuje medicinsku ili hitnu negu?',
+    answer:
+      'Ne. Postpartalna terapija može da se odvija uz akušersku, primarnu i psihijatrijsku negu, ali ne zamenjuje medicinski tretman niti hitnu podršku. Ako ste u neposrednoj opasnosti ili ne možete da ostanete bezbedni, pozovite 911, pozovite ili pošaljite SMS na 988 u Sjedinjenim Državama ili idite u najbližu urgentnu službu.'
   }
 ];
 
@@ -140,7 +166,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Postpartalna terapija u Schaumburgu, IL"
+  title="Terapija za postpartalnu depresiju i anksioznost | Schaumburg, IL"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -178,7 +204,7 @@ const serviceStructuredData = getServiceStructuredData({
     title="Postpartalna terapija u Schaumburgu i širem severozapadnom predgrađu"
     paragraphs={[
       'Dr Jelena Djurovic nudi postpartalnu terapiju u ordinaciji u Schaumburgu za nove roditelje iz Arlington Heights, Des Plaines, Mount Prospect, Palatine, Hoffman Estates i okoline. Njeno iskustvo sa perinatalnim mentalnim zdravljem omogućava da rad počne brzo, bez trošenja seansi na osnovna objašnjenja.',
-      'Online terapija je dostupna širom Illinoisa, što mnogi novi roditelji preferiraju u postpartalnom periodu. Ako ste počeli prenatalnu terapiju i želite da nastavite u postpartalnu podršku, taj kontinuitet je dostupan i često koristan.'
+      'Online seanse mogu biti dostupne kada se klijent fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan. Ako ste počeli prenatalnu terapiju i želite da nastavite u postpartalnu podršku, taj kontinuitet može se razmotriti sa ordinacijom.'
     ]}
   />
 
@@ -189,6 +215,29 @@ const serviceStructuredData = getServiceStructuredData({
     faqs={faqItems}
     intro="Nekoliko čestih pitanja o postpartalnoj i postnatalnoj podršci, lokaciji i vremenu početka."
   />
+
+  <section class="border-y border-gray-100 bg-[#fcfbf9] py-10">
+    <div class="mx-auto max-w-[1000px] px-5 md:px-10">
+      <h2 class="mb-3 text-xl font-bold text-[#1a1a1a]">Klinički izvori</h2>
+      <p class="mb-4 leading-relaxed text-gray-700">
+        Ovi javnozdravstveni izvori podržavaju edukativna objašnjenja i bezbednosne smernice u odgovorima iznad.
+      </p>
+      <ul class="space-y-2">
+        {clinicalSources.map((source) => (
+          <li>
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-[#0d5c4e] underline decoration-[#0d5c4e]/30 underline-offset-4 hover:text-[#1f3f37]"
+            >
+              {source.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
@@ -209,7 +258,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Postpartalna podrška je prava podrška</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

@@ -2,6 +2,7 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 
 const books = [
   { author: "Neff, K. (2015)", title: "Self‑compassion: The proven power of being kind to yourself", publisher: "William Morrow.", amazonQuery: "Self-Compassion Kristin Neff" },
@@ -21,7 +22,7 @@ const buildAmazonUrl = (query) => `https://www.amazon.com/s?k=${encodeURICompone
 
 <Layout
   title="Preporučene knjige | Center for PTA"
-  description="Knjige o mentalnom zdravlju i ličnom razvoju koje preporučuju dr Jelena Djurovic i Center for PTA."
+  description="Knjige o mentalnom zdravlju i ličnom razvoju koje preporučuje dr Jelena Djurovic, licencirani klinički psiholog u Center for PTA u Schaumburgu."
 >
   <Navbar />
 
@@ -29,6 +30,13 @@ const buildAmazonUrl = (query) => `https://www.amazon.com/s?k=${encodeURICompone
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs
+        currentLabel="Preporučene knjige"
+        homeLabel="Početna"
+        homePath="/sr/"
+        ariaLabel="Putanja stranice"
+        align="center"
+      />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resursi</p>
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Preporučene knjige

@@ -3,16 +3,26 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 import headshotImg from '../assets/Jelena-Djurovic-headshot.png';
 import {
+  idfprClinicalPsychologyUrl,
+  idfprLicenseLookupUrl,
   providerLicenseNumber,
   providerNpiNumber,
+  providerNpiUrl,
   siteName,
   siteUrl
 } from '../utils/seo';
 
 const providerUrl = `${siteUrl}/dr-jelena-djurovic/`;
 const providerImage = `${siteUrl}/images/dr-jelena-djurovic-schaumburg.png`;
+const providerProfilePageId = `${providerUrl}#webpage`;
+const serbianTimesInterviewUrl =
+  'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/';
+const sbnInterviewUrl = 'https://www.youtube.com/watch?v=4xS8Sm2lOh4';
 
 const providerStructuredData = {
   '@context': 'https://schema.org',
@@ -25,10 +35,13 @@ const providerStructuredData = {
   image: providerImage,
   jobTitle: 'Illinois Licensed Clinical Psychologist',
   description:
-    'Dr. Jelena Djurovic is an Illinois Licensed Clinical Psychologist providing psychotherapy, psychological assessment, immigration evaluations, and pre-surgical evaluations in Schaumburg, Illinois.',
+    "Dr. Jelena Djurovic is an Illinois Licensed Clinical Psychologist at Center for PTA providing therapy focused on women's mental health, self-compassion, reproductive stress, and couples, plus psychological and specialized evaluations in Schaumburg, Illinois.",
   worksFor: {
     '@id': `${siteUrl}/#professional-service`,
     name: siteName
+  },
+  workLocation: {
+    '@id': `${siteUrl}/#professional-service`
   },
   identifier: [
     {
@@ -38,10 +51,21 @@ const providerStructuredData = {
     },
     {
       '@type': 'PropertyValue',
-      propertyID: 'National Provider Identifier',
+      propertyID: 'National Provider Identifier (NPI-1)',
       value: providerNpiNumber
     }
   ],
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    name: 'Illinois Licensed Clinical Psychologist',
+    credentialCategory: 'Professional license',
+    identifier: providerLicenseNumber,
+    recognizedBy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Illinois Department of Financial and Professional Regulation',
+      url: idfprClinicalPsychologyUrl
+    }
+  },
   alumniOf: [
     {
       '@type': 'CollegeOrUniversity',
@@ -52,20 +76,68 @@ const providerStructuredData = {
       name: 'Illinois School of Professional Psychology'
     }
   ],
-  knowsLanguage: ['English', 'Serbian'],
+  knowsLanguage: ['en', 'sr'],
   knowsAbout: [
     'Psychotherapy',
+    "Women's mental health",
+    'Self-compassion',
+    'Reproductive stress and infertility',
+    'Fertility-treatment stress',
+    'Prenatal and postpartum mental health',
     'Couples therapy',
     'Immigration psychological evaluations',
     'Pre-surgical psychological evaluations',
     'Bariatric psychological evaluations',
-    "Women's mental health",
-    'Self-compassion',
     'Psychological assessment'
   ],
   sameAs: [
+    providerNpiUrl,
     'https://www.psychologytoday.com/us/therapists/jelena-djurovic-schaumburg-il/1611370'
+  ],
+  subjectOf: [
+    {
+      '@type': 'NewsArticle',
+      name:
+        'Srpkinja psiholog u Čikagu: Od čega najviše pate naši ljudi u Americi i kako im psiholog može pomoći da dobiju "papire" (VIDEO)',
+      url: serbianTimesInterviewUrl,
+      datePublished: '2025-07-07',
+      inLanguage: 'sr',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Serbian Times',
+        url: 'https://serbiantimes.info/'
+      }
+    },
+    {
+      '@type': 'VideoObject',
+      name: 'Nije Bitno Gde Sam Već Ko Sam S2: EP1 Jelena Djurović Psiholog',
+      url: sbnInterviewUrl,
+      thumbnailUrl: 'https://i.ytimg.com/vi/4xS8Sm2lOh4/hqdefault.jpg',
+      inLanguage: 'sr',
+      publisher: {
+        '@type': 'Organization',
+        name: 'SBN Chicago News',
+        url: 'https://www.youtube.com/@sbnchicagonews'
+      }
+    }
   ]
+};
+
+const providerProfilePageStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': providerProfilePageId,
+  url: providerUrl,
+  name: 'Dr. Jelena Djurovic, Psy.D. | Center for PTA',
+  description:
+    'Professional profile, credentials, areas of focus, and public education for Dr. Jelena Djurovic at Center for PTA in Schaumburg, Illinois.',
+  inLanguage: 'en-US',
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  mainEntity: {
+    '@id': `${providerUrl}#person`
+  }
 };
 
 const focusAreas = [
@@ -100,13 +172,42 @@ const focusAreas = [
     href: '/womens-mental-health-therapy/'
   }
 ];
+
+const faqItems = [
+  {
+    question: 'Where does Dr. Jelena Djurovic see clients in person?',
+    answer:
+      'Dr. Jelena Djurovic provides in-person services at Center for PTA, 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Contact the practice to confirm that the requested service is available in person and to discuss current scheduling.'
+  },
+  {
+    question: 'What are Dr. Jelena Djurovic’s professional credentials?',
+    answer:
+      `Dr. Jelena Djurovic holds a Psy.D. in Clinical Psychology and is an Illinois Licensed Clinical Psychologist, license #${providerLicenseNumber}. Her individual National Provider Identifier is NPI-1 ${providerNpiNumber}.`
+  },
+  {
+    question: 'In which languages are clinical services available?',
+    answer:
+      'Clinical services are available in English and Serbian. Dr. Djurovic also has conversational Spanish proficiency, but clients should confirm the language needed for therapy, testing, and written reports with Center for PTA before scheduling.'
+  },
+  {
+    question: 'Can Dr. Djurovic provide telehealth when a client is outside Illinois?',
+    answer:
+      'Dr. Djurovic is licensed to practice in Illinois. Telehealth may be available only when every participating client is physically located in Illinois during the session and the format is clinically appropriate.'
+  },
+  {
+    question: 'Can someone who lives outside Illinois travel to Schaumburg for an evaluation?',
+    answer:
+      'Yes. A client who lives outside Illinois may travel to the Center for PTA office in Schaumburg for an in-person psychological evaluation. Contact the practice first to confirm the referral question, service fit, required records, and scheduling.'
+  }
+];
 ---
 
 <Layout
   title="Dr. Jelena Djurovic, PsyD | Psychologist in Schaumburg, IL"
-  description="Meet Dr. Jelena Djurovic, an Illinois Licensed Clinical Psychologist in Schaumburg providing therapy, psychological assessments, immigration evaluations, and pre-surgical evaluations."
+  description="Meet Dr. Jelena Djurovic, an Illinois Licensed Clinical Psychologist providing therapy and specialized evaluations in Schaumburg."
   image="/images/dr-jelena-djurovic-schaumburg.png"
-  structuredData={providerStructuredData}
+  structuredData={[providerStructuredData, providerProfilePageStructuredData]}
+  faqItems={faqItems}
   srAlternatePath="/sr/dr-jelena-djurovic/"
 >
   <Navbar />
@@ -129,6 +230,7 @@ const focusAreas = [
       <div class="relative z-10 w-full px-5 pb-16 pt-40 md:px-10 md:pb-20 xl:px-24">
         <div class="mx-auto max-w-[1440px]">
           <div class="max-w-3xl">
+            <PageBreadcrumbs currentLabel="Dr. Jelena Djurovic" tone="light" />
             <p class="mb-5 text-sm font-bold uppercase tracking-[0.16em] text-[#f7c95e]">
               Meet your psychologist
             </p>
@@ -165,11 +267,26 @@ const focusAreas = [
       <div class="mx-auto grid max-w-[1440px] grid-cols-1 px-5 py-8 sm:grid-cols-2 md:px-10 lg:grid-cols-4 xl:px-24">
         <div class="py-4 lg:pr-8">
           <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">License</p>
-          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">Illinois #{providerLicenseNumber}</p>
+          <a
+            href={idfprLicenseLookupUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Verify Illinois clinical psychologist license ${providerLicenseNumber} with IDFPR`}
+            class="mt-2 inline-flex text-lg font-bold text-[#1a1a1a] underline decoration-gray-300 underline-offset-4 transition-colors hover:text-[#2f594f]"
+          >
+            Illinois #{providerLicenseNumber}
+          </a>
         </div>
         <div class="border-gray-200 py-4 sm:border-l sm:pl-8">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">NPI</p>
-          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">{providerNpiNumber}</p>
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Individual NPI (NPI-1)</p>
+          <a
+            href={providerNpiUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-2 inline-flex text-lg font-bold text-[#1a1a1a] underline decoration-gray-300 underline-offset-4 transition-colors hover:text-[#2f594f]"
+          >
+            {providerNpiNumber}
+          </a>
         </div>
         <div class="border-gray-200 py-4 lg:border-l lg:pl-8">
           <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Languages</p>
@@ -281,7 +398,7 @@ const focusAreas = [
           </div>
           <div class="divide-y divide-gray-200 border-y border-gray-200">
             <a
-              href="https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/"
+              href={serbianTimesInterviewUrl}
               target="_blank"
               rel="noreferrer"
               class="group block py-7"
@@ -292,7 +409,7 @@ const focusAreas = [
               </h3>
             </a>
             <a
-              href="https://www.youtube.com/watch?v=4xS8Sm2lOh4"
+              href={sbnInterviewUrl}
               target="_blank"
               rel="noreferrer"
               class="group block py-7"
@@ -306,6 +423,14 @@ const focusAreas = [
         </div>
       </div>
     </section>
+
+    <FaqSection
+      title="Dr. Jelena Djurovic FAQ"
+      intro="Verified answers about credentials, the Schaumburg office, clinical languages, telehealth boundaries, and in-person evaluations."
+      faqs={faqItems}
+    />
+
+    <PageAddressCard />
 
     <section class="bg-white py-16 md:py-24">
       <div class="mx-auto max-w-[900px] px-5 text-center md:px-10">

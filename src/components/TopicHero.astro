@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import officeImg from '../assets/hero-office.png';
+import PageBreadcrumbs from './PageBreadcrumbs.astro';
 
 interface CareStyleItem {
   title: string;
@@ -31,7 +32,7 @@ const defaultFeatureCards = [
   },
   {
     title: 'Flexible Format',
-    desc: 'Telehealth available across Illinois when that fits your life better.'
+    desc: 'Telehealth may be available when the client is physically located in Illinois during the session.'
   }
 ];
 
@@ -55,6 +56,7 @@ const {
   <div class="absolute bottom-[-10%] right-[10%] w-[28%] h-[28%] bg-[#fdf3df] rounded-full opacity-70 blur-3xl lg:blur-[100px]"></div>
 
   <div class="max-w-[1440px] mx-auto px-5 md:px-10 xl:px-24 relative z-10">
+    <PageBreadcrumbs currentLabel={`${title} ${accent}`} />
     <div class="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 xl:gap-20 items-center">
       <div>
         <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/85 backdrop-blur border border-white shadow-sm mb-7">
@@ -81,10 +83,10 @@ const {
         </div>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
-            Schedule a Consultation
+          <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 bg-[#2f594f] text-white text-[15px] font-semibold rounded-full shadow-[0_10px_30px_rgba(47,89,79,0.22)] hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(47,89,79,0.28)] transition-all duration-300">
+            Request a Consultation
           </a>
-          <a href="/rates-and-insurance" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
+          <a href="/rates-and-insurance/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-[#1a1a1a] border border-gray-200 text-[15px] font-semibold rounded-full hover:bg-[#faf8f4] hover:border-gray-300 transition-all duration-300">
             Rates and Insurance
           </a>
         </div>
@@ -106,8 +108,11 @@ const {
               <img
                 src={imageSrc}
                 alt={imageAlt}
+                width="1200"
+                height="900"
                 class="w-full h-full object-cover"
                 loading="eager"
+                decoding="async"
               />
             ) : (
               <Image

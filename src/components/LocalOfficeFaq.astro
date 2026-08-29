@@ -1,0 +1,89 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  addressLabel: string;
+  nearbyLabel: string;
+  nearbyCommunities: string[];
+  mapLabel: string;
+  mapUrl: string;
+  contactLabel: string;
+  contactPath: string;
+  faqs: FaqItem[];
+}
+
+const {
+  eyebrow,
+  title,
+  intro,
+  addressLabel,
+  nearbyLabel,
+  nearbyCommunities,
+  mapLabel,
+  mapUrl,
+  contactLabel,
+  contactPath,
+  faqs
+} = Astro.props;
+---
+
+<section id="schaumburg-office" class="scroll-mt-24 border-y border-gray-200 bg-[#fcfbf9] py-16 md:scroll-mt-28 xl:py-24">
+  <div class="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-5 md:px-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 xl:px-24">
+    <div>
+      <p class="mb-3 text-sm font-bold uppercase text-[#2f594f]">{eyebrow}</p>
+      <h2 class="mb-5 text-3xl font-bold text-[#1a1a1a] md:text-4xl">{title}</h2>
+      <p class="mb-8 text-lg leading-relaxed text-gray-700">{intro}</p>
+
+      <p class="mb-2 text-sm font-bold uppercase text-gray-500">{addressLabel}</p>
+      <address class="mb-6 text-xl font-bold not-italic leading-relaxed text-[#1a1a1a]">
+        Center for PTA<br />
+        1320 Tower Rd, Suite 156<br />
+        Schaumburg, IL 60173
+      </address>
+
+      <p class="mb-2 text-sm font-bold uppercase text-gray-500">{nearbyLabel}</p>
+      <p class="mb-8 leading-relaxed text-gray-700">{nearbyCommunities.join(', ')}</p>
+
+      <div class="flex flex-wrap gap-3">
+        <a
+          href={mapUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#2f594f] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#1f3f37]"
+        >
+          {mapLabel}
+        </a>
+        <a
+          href={contactPath}
+          class="inline-flex min-h-11 items-center justify-center rounded-lg border border-[#2f594f] px-5 py-3 font-semibold text-[#2f594f] transition-colors hover:bg-white"
+        >
+          {contactLabel}
+        </a>
+      </div>
+    </div>
+
+    <div class="space-y-3">
+      {faqs.map((faq, index) => (
+        <details class="group rounded-lg border border-gray-200 bg-white px-5 py-1" open={index === 0}>
+          <summary class="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-4 text-lg font-bold text-[#1a1a1a] marker:content-none">
+            <span>{faq.question}</span>
+            <span class="faq-toggle flex h-7 w-7 flex-none items-center justify-center text-2xl font-normal text-[#2f594f] transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="border-t border-gray-100 pb-5 pt-4 leading-relaxed text-gray-700">{faq.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  details[open] .faq-toggle {
+    transform: rotate(45deg);
+  }
+</style>

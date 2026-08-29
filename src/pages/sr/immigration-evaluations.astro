@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 import Footer from '../../components-sr/Footer.astro';
 import FaqSection from '../../components-sr/FaqSection.astro';
 import LocalServiceArea from '../../components-sr/LocalServiceArea.astro';
@@ -17,19 +18,19 @@ const cases = [
 
 const relatedLinks = [
   {
-    href: '/sr/contact',
+    href: '/sr/contact/',
     title: 'Zatražite konsultaciju za imigracionu evaluaciju',
     desc: 'Kontaktirajte ordinaciju da pitate za zakazivanje, rokove, dostupne jezike ili saradnju sa vašim advokatom.'
   },
   {
-    href: '/sr/rates-and-insurance',
+    href: '/sr/rates-and-insurance/',
     title: 'Cene i informacije o plaćanju',
     desc: 'Pogledajte cene evaluacije i praktične informacije pre zakazivanja imigracione procene.'
   },
   {
-    href: '/sr/therapy',
-    title: 'Terapijske usluge',
-    desc: 'Pogledajte kontinuiranu terapijsku podršku za anksioznost, traumu, tugu i velike životne promene.'
+    href: '/sr/blog/what-to-expect-during-an-immigration-psychological-evaluation/',
+    title: 'Šta možete očekivati tokom evaluacije',
+    desc: 'Pročitajte vodič kroz intervju, dokumentaciju, izveštaj, saradnju sa advokatom i granice telehealth formata.'
   }
 ];
 
@@ -89,6 +90,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Imigracione psihološke evaluacije u Schaumburgu, IL" homeLabel="Početna" homePath="/sr/" ariaLabel="Putanja stranice" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Imigracione psihološke evaluacije u Schaumburgu, IL
@@ -214,7 +216,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Ojačajte svoj slučaj na vreme</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

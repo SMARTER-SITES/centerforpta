@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
@@ -17,19 +18,19 @@ const cases = [
 
 const relatedLinks = [
   {
-    href: '/contact',
+    href: '/contact/',
     title: 'Request an Immigration Evaluation Consultation',
     desc: 'Contact the office to ask about scheduling, timelines, language availability, or coordination with your attorney.'
   },
   {
-    href: '/rates-and-insurance',
+    href: '/rates-and-insurance/',
     title: 'Rates and Payment Information',
     desc: 'Review evaluation pricing and practical planning information before scheduling an immigration assessment.'
   },
   {
-    href: '/therapy',
-    title: 'Therapy Services',
-    desc: 'Explore ongoing therapeutic support for anxiety, trauma, grief, and major life transitions.'
+    href: '/blog/what-to-expect-during-an-immigration-psychological-evaluation/',
+    title: 'What to Expect During the Evaluation',
+    desc: 'Read the step-by-step guide to interviews, documents, reports, attorney coordination, and telehealth boundaries.'
   }
 ];
 
@@ -89,6 +90,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Immigration Psychological Evaluations in Schaumburg, IL" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Immigration Psychological Evaluations in Schaumburg, IL
@@ -214,7 +216,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Strengthen Your Case Early</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

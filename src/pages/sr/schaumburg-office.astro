@@ -1,0 +1,223 @@
+---
+import Layout from '../../layouts-sr/Layout.astro';
+import Navbar from '../../components-sr/Navbar.astro';
+import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
+import {
+  nearbyCommunities,
+  serbianLocalFaqItems
+} from '../../utils/local-practice-data.js';
+import { absoluteUrl, mapUrl, siteUrl } from '../../utils-sr/seo';
+
+const pageTitle = 'Ordinacija psihologa u Schaumburgu, IL | Center for PTA';
+const pageDescription =
+  'Posetite Center for PTA na adresi 1320 Tower Rd, Suite 156 u Schaumburgu. Pogledajte radno vreme, usluge, jezike, pristup, mapu i česta pitanja.';
+const officePageUrl = absoluteUrl('/sr/schaumburg-office/');
+
+const officeStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${officePageUrl}#webpage`,
+  url: officePageUrl,
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: 'sr-Latn',
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  about: {
+    '@id': `${siteUrl}/#professional-service`
+  },
+  mainEntity: {
+    '@id': `${siteUrl}/#professional-service`
+  }
+};
+
+const officeServices = [
+  {
+    name: 'Individualna, partnerska i porodična terapija',
+    description: 'Podrška za anksioznost, depresiju, traumu, tugu, odnose, samosaosećanje, reproduktivni stres i životne promene.',
+    path: '/sr/therapy/'
+  },
+  {
+    name: 'Terapija za mentalno zdravlje žena',
+    description: 'Usmerena podrška za stres tokom tretmana fertiliteta, reproduktivni gubitak, trudnoću, postpartalno prilagođavanje, sliku tela i samosaosećanje.',
+    path: '/sr/womens-mental-health-therapy/'
+  },
+  {
+    name: 'Psihološko testiranje i procena',
+    description: 'Procena izabrana prema jasno definisanom pitanju, aktuelnoj potrebi i odgovarajućem formatu evaluacije.',
+    path: '/sr/psychological-assessment/'
+  },
+  {
+    name: 'Imigracione psihološke evaluacije',
+    description: 'Klinički utemeljene evaluacije uz koordinaciju sa advokatom kada je to potrebno i kada klijent da saglasnost.',
+    path: '/sr/immigration-evaluations/'
+  },
+  {
+    name: 'Predoperativne psihološke evaluacije',
+    description: 'Evaluacije za barijatrijsku hirurgiju i druge procedure kada medicinski program traži psihološku procenu.',
+    path: '/sr/pre-surgical-psychological-evaluations/'
+  },
+  {
+    name: 'Barijatrijsko savetovanje i podrška pri mršavljenju',
+    description: 'Terapijska podrška za emocionalno jedenje, sliku tela, promenu ponašanja i prilagođavanje pre ili posle barijatrijske operacije.',
+    path: '/sr/bariatric-surgery-counseling/'
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  faqItems={serbianLocalFaqItems}
+  structuredData={officeStructuredData}
+>
+  <Navbar />
+
+  <main>
+    <section class="border-b border-gray-200 bg-[#fcfbf9] pb-16 pt-32 md:pb-20 md:pt-40">
+      <div class="mx-auto max-w-[1100px] px-5 md:px-10 xl:px-24">
+        <PageBreadcrumbs
+          currentLabel="Ordinacija u Schaumburgu"
+          homeLabel="Početna"
+          homePath="/sr/"
+          ariaLabel="Putanja stranice"
+        />
+        <p class="mb-4 text-sm font-bold uppercase text-[#2f594f]">Lokacija Center for PTA</p>
+        <h1 class="max-w-4xl text-4xl font-extrabold leading-tight text-[#1a1a1a] md:text-6xl">
+          Ordinacija psihologa u Schaumburgu, Illinois
+        </h1>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-gray-700 md:text-xl">
+          Pronađite adresu, radno vreme, jezike, praktične informacije o pristupu, dostupne usluge i odgovore na česta pitanja pre dolaska.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a
+            href={mapUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#2f594f] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#1f3f37]"
+          >
+            Otvorite u Google Maps
+          </a>
+          <a
+            href="/sr/contact/"
+            class="inline-flex min-h-11 items-center justify-center rounded-lg border border-[#2f594f] px-5 py-3 font-semibold text-[#2f594f] transition-colors hover:bg-white"
+          >
+            Kontaktirajte ordinaciju
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 xl:py-24">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10 xl:px-24">
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-lg border border-gray-200 p-6">
+            <p class="mb-3 text-sm font-bold uppercase text-[#2f594f]">Adresa</p>
+            <address class="not-italic leading-relaxed text-gray-700">
+              <strong class="text-[#1a1a1a]">Center for PTA</strong><br />
+              1320 Tower Rd, Suite 156<br />
+              Schaumburg, IL 60173
+            </address>
+          </div>
+          <div class="rounded-lg border border-gray-200 p-6">
+            <p class="mb-3 text-sm font-bold uppercase text-[#2f594f]">Radno vreme</p>
+            <p class="leading-relaxed text-gray-700">
+              Ponedeljak-petak<br />
+              <strong class="text-[#1a1a1a]">9:00-20:00</strong><br />
+              Subota-nedelja: zatvoreno
+            </p>
+          </div>
+          <div class="rounded-lg border border-gray-200 p-6">
+            <p class="mb-3 text-sm font-bold uppercase text-[#2f594f]">Jezici</p>
+            <p class="leading-relaxed text-gray-700">
+              Kliničke usluge su dostupne na <strong class="text-[#1a1a1a]">srpskom i engleskom</strong>. Pri zakazivanju potvrdite dostupnost tražene usluge na željenom jeziku.
+            </p>
+          </div>
+          <div class="rounded-lg border border-gray-200 p-6">
+            <p class="mb-3 text-sm font-bold uppercase text-[#2f594f]">Pristup i dolazak</p>
+            <p class="leading-relaxed text-gray-700">
+              Google Business Profile navodi parking pristupačan osobama koje koriste invalidska kolica i toalet. Zakazivanje se preporučuje.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 border-l-4 border-[#2f594f] bg-[#f4f8f6] p-6 md:p-8">
+          <h2 class="text-2xl font-bold text-[#1a1a1a]">Identitet ordinacije</h2>
+          <p class="mt-3 max-w-4xl leading-relaxed text-gray-700">
+            Center for PTA je javni naziv ordinacije čiji je registrovani pravni naziv Center for Psychological Treatment and Assessment. Ordinacija je povezana sa organizacionim NPI-2 brojem 1306636089, a vodi je dr Jelena Djurovic, Psy.D., licencirani klinički psiholog u Ilinoisu, licenca #071-011433.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-gray-200 bg-[#fcfbf9] py-16 xl:py-24">
+      <div class="mx-auto max-w-[1200px] px-5 md:px-10 xl:px-24">
+        <div class="max-w-3xl">
+          <p class="mb-3 text-sm font-bold uppercase text-[#2f594f]">Usluge uživo</p>
+          <h2 class="text-3xl font-bold text-[#1a1a1a] md:text-4xl">Usluge dostupne kroz ordinaciju u Schaumburgu</h2>
+          <p class="mt-5 text-lg leading-relaxed text-gray-700">
+            Odgovarajuća usluga zavisi od pitanja zbog kog se javljate, kliničkog uklapanja, uzrasta, formata i trenutne dostupnosti. Kontaktirajte ordinaciju pre dolaska kako bi zahtev bio usmeren ka najprikladnijem sledećem koraku.
+          </p>
+        </div>
+        <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {officeServices.map((service) => (
+            <a href={service.path} class="rounded-lg border border-gray-200 bg-white p-6 transition-colors hover:border-[#2f594f]">
+              <h3 class="text-xl font-bold text-[#1a1a1a]">{service.name}</h3>
+              <p class="mt-3 leading-relaxed text-gray-700">{service.description}</p>
+              <span class="mt-5 inline-block font-semibold text-[#2f594f]">Pogledajte uslugu</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 xl:py-24">
+      <div class="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 px-5 md:px-10 lg:grid-cols-2 xl:px-24">
+        <div>
+          <h2 class="text-3xl font-bold text-[#1a1a1a]">Obližnja mesta</h2>
+          <p class="mt-5 text-lg leading-relaxed text-gray-700">
+            Ordinacija u Schaumburgu dostupna je klijentima iz Schaumburga i okolnih severozapadnih predgrađa, uključujući {nearbyCommunities.join(', ')}. Dostupnost zavisi od tražene usluge i kliničkog uklapanja, a ne od prebivališta u određenom predgrađu.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-[#1a1a1a]">Dolazak izvan Ilinoisa</h2>
+          <p class="mt-5 text-lg leading-relaxed text-gray-700">
+            Osoba koja živi van Ilinoisa može da kontaktira Center for PTA u vezi sa dolaskom u Schaumburg na psihološku evaluaciju uživo. Pre planiranja puta treba potvrditi pitanje evaluacije, potrebnu dokumentaciju, jezik, uklapanje usluge i termin.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#2f594f] py-14 text-white">
+      <div class="mx-auto max-w-[1000px] px-5 text-center md:px-10">
+        <h2 class="text-3xl font-bold">Granica telehealth usluga u Ilinoisu</h2>
+        <p class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-white/90">
+          Dr Jelena Djurovic ima licencu za rad u Ilinoisu. Telehealth može biti dostupan samo kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan.
+        </p>
+      </div>
+    </section>
+
+    <FaqSection
+      title="Česta pitanja o ordinaciji u Schaumburgu"
+      intro="Praktični odgovori o lokaciji, radnom vremenu, uslugama, jezicima, pristupu, proveri osiguranja i zakazivanju."
+      faqs={serbianLocalFaqItems}
+    />
+
+    <section class="border-t border-gray-200 bg-[#fcfbf9] py-14">
+      <div class="mx-auto flex max-w-[1000px] flex-col items-start justify-between gap-6 px-5 md:flex-row md:items-center md:px-10">
+        <div>
+          <p class="text-sm font-bold uppercase text-[#2f594f]">Pre dolaska</p>
+          <h2 class="mt-2 text-2xl font-bold text-[#1a1a1a]">Potvrdite uklapanje i trenutnu dostupnost</h2>
+        </div>
+        <a href="/sr/contact/" class="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#2f594f] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#1f3f37]">
+          Kontaktirajte Center for PTA
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

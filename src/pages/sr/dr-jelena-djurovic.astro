@@ -3,16 +3,26 @@ import { Image } from 'astro:assets';
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 import headshotImg from '../../assets/Jelena-Djurovic-headshot.png';
 import {
+  idfprClinicalPsychologyUrl,
+  idfprLicenseLookupUrl,
   providerLicenseNumber,
   providerNpiNumber,
+  providerNpiUrl,
   siteName,
   siteUrl
 } from '../../utils-sr/seo';
 
 const providerUrl = `${siteUrl}/dr-jelena-djurovic/`;
+const providerProfilePageUrl = `${siteUrl}/sr/dr-jelena-djurovic/`;
 const providerImage = `${siteUrl}/images/dr-jelena-djurovic-schaumburg.png`;
+const serbianTimesInterviewUrl =
+  'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/';
+const sbnInterviewUrl = 'https://www.youtube.com/watch?v=4xS8Sm2lOh4';
 
 const providerStructuredData = {
   '@context': 'https://schema.org',
@@ -25,10 +35,13 @@ const providerStructuredData = {
   image: providerImage,
   jobTitle: 'Licencirani klinički psiholog u Ilinoisu',
   description:
-    'Dr Jelena Djurovic je licencirani klinički psiholog u Ilinoisu i pruža psihoterapiju, psihološke procene, imigracione evaluacije i predoperativne evaluacije u Šamburgu.',
+    'Dr Jelena Djurovic je licencirani klinički psiholog u Ilinoisu i u Center for PTA pruža terapiju usmerenu na mentalno zdravlje žena, samosaosećanje, reproduktivni stres i partnerske odnose, uz psihološke i specijalizovane evaluacije u Šamburgu.',
   worksFor: {
     '@id': `${siteUrl}/#professional-service`,
     name: siteName
+  },
+  workLocation: {
+    '@id': `${siteUrl}/#professional-service`
   },
   identifier: [
     {
@@ -38,14 +51,93 @@ const providerStructuredData = {
     },
     {
       '@type': 'PropertyValue',
-      propertyID: 'National Provider Identifier',
+      propertyID: 'National Provider Identifier (NPI-1)',
       value: providerNpiNumber
     }
   ],
-  knowsLanguage: ['English', 'Serbian'],
+  hasCredential: {
+    '@type': 'EducationalOccupationalCredential',
+    name: 'Illinois Licensed Clinical Psychologist',
+    credentialCategory: 'Professional license',
+    identifier: providerLicenseNumber,
+    recognizedBy: {
+      '@type': 'GovernmentOrganization',
+      name: 'Illinois Department of Financial and Professional Regulation',
+      url: idfprClinicalPsychologyUrl
+    }
+  },
+  alumniOf: [
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'The Chicago School of Professional Psychology'
+    },
+    {
+      '@type': 'CollegeOrUniversity',
+      name: 'Illinois School of Professional Psychology'
+    }
+  ],
+  knowsLanguage: ['en', 'sr'],
+  knowsAbout: [
+    'Psihoterapija',
+    'Mentalno zdravlje žena',
+    'Samosaosećanje',
+    'Reproduktivni stres i neplodnost',
+    'Stres tokom tretmana fertiliteta',
+    'Prenatalno i postpartalno mentalno zdravlje',
+    'Partnerska terapija',
+    'Imigracione psihološke evaluacije',
+    'Predoperativne psihološke evaluacije',
+    'Bariatrijske psihološke evaluacije',
+    'Psihološka procena'
+  ],
   sameAs: [
+    providerNpiUrl,
     'https://www.psychologytoday.com/us/therapists/jelena-djurovic-schaumburg-il/1611370'
+  ],
+  subjectOf: [
+    {
+      '@type': 'NewsArticle',
+      name:
+        'Srpkinja psiholog u Čikagu: Od čega najviše pate naši ljudi u Americi i kako im psiholog može pomoći da dobiju "papire" (VIDEO)',
+      url: serbianTimesInterviewUrl,
+      datePublished: '2025-07-07',
+      inLanguage: 'sr',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Serbian Times',
+        url: 'https://serbiantimes.info/'
+      }
+    },
+    {
+      '@type': 'VideoObject',
+      name: 'Nije Bitno Gde Sam Već Ko Sam S2: EP1 Jelena Djurović Psiholog',
+      url: sbnInterviewUrl,
+      thumbnailUrl: 'https://i.ytimg.com/vi/4xS8Sm2lOh4/hqdefault.jpg',
+      inLanguage: 'sr',
+      publisher: {
+        '@type': 'Organization',
+        name: 'SBN Chicago News',
+        url: 'https://www.youtube.com/@sbnchicagonews'
+      }
+    }
   ]
+};
+
+const providerProfilePageStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${providerProfilePageUrl}#webpage`,
+  url: providerProfilePageUrl,
+  name: 'Dr Jelena Djurovic, Psy.D. | Center for PTA',
+  description:
+    'Profesionalni profil, kvalifikacije, oblasti rada i javna edukacija dr Jelene Djurovic u Center for PTA u Schaumburgu, Ilinois.',
+  inLanguage: 'sr-Latn',
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  mainEntity: {
+    '@id': `${providerUrl}#person`
+  }
 };
 
 const focusAreas = [
@@ -80,13 +172,42 @@ const focusAreas = [
     href: '/sr/womens-mental-health-therapy/'
   }
 ];
+
+const faqItems = [
+  {
+    question: 'Gde dr Jelena Djurovic prima klijente uživo?',
+    answer:
+      'Dr Jelena Djurovic pruža usluge uživo u Center for PTA na adresi 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Kontaktirajte ordinaciju da potvrdite da li je tražena usluga dostupna uživo i da razgovarate o aktuelnim terminima.'
+  },
+  {
+    question: 'Koje profesionalne kvalifikacije ima dr Jelena Djurovic?',
+    answer:
+      `Dr Jelena Djurovic ima Psy.D. iz kliničke psihologije i licencirani je klinički psiholog u Ilinoisu, licenca #${providerLicenseNumber}. Njen individualni National Provider Identifier je NPI-1 ${providerNpiNumber}.`
+  },
+  {
+    question: 'Na kojim jezicima su dostupne kliničke usluge?',
+    answer:
+      'Kliničke usluge dostupne su na srpskom i engleskom jeziku. Dr Djurovic govori i konverzacijski španski, ali je pre zakazivanja potrebno potvrditi sa Center for PTA jezik terapije, testiranja i pisanog izveštaja.'
+  },
+  {
+    question: 'Da li dr Djurovic može da pruži online terapiju kada je klijent van Ilinoisa?',
+    answer:
+      'Dr Djurovic ima licencu za rad u Ilinoisu. Online terapija može biti dostupna samo kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu tokom seanse i kada je ovaj format klinički prikladan.'
+  },
+  {
+    question: 'Može li osoba koja živi van Ilinoisa da doputuje u Schaumburg radi evaluacije?',
+    answer:
+      'Da. Klijent koji živi van Ilinoisa može da doputuje u ordinaciju Center for PTA u Schaumburgu radi psihološke evaluacije uživo. Pre dolaska kontaktirajte ordinaciju da potvrdite referalno pitanje, prikladnost usluge, potrebnu dokumentaciju i termin.'
+  }
+];
 ---
 
 <Layout
   title="Dr Jelena Djurovic, PsyD | Psiholog u Šamburgu, IL"
   description="Upoznajte dr Jelenu Djurovic, licenciranog kliničkog psihologa u Ilinoisu koji pruža terapiju i psihološke evaluacije u Šamburgu."
   image="/images/dr-jelena-djurovic-schaumburg.png"
-  structuredData={providerStructuredData}
+  structuredData={[providerStructuredData, providerProfilePageStructuredData]}
+  faqItems={faqItems}
 >
   <Navbar />
 
@@ -108,6 +229,13 @@ const focusAreas = [
       <div class="relative z-10 w-full px-5 pb-16 pt-40 md:px-10 md:pb-20 xl:px-24">
         <div class="mx-auto max-w-[1440px]">
           <div class="max-w-3xl">
+            <PageBreadcrumbs
+              currentLabel="Dr Jelena Djurovic"
+              homeLabel="Početna"
+              homePath="/sr/"
+              ariaLabel="Putanja stranice"
+              tone="light"
+            />
             <p class="mb-5 text-sm font-bold uppercase tracking-[0.16em] text-[#f7c95e]">
               Upoznajte svog psihologa
             </p>
@@ -144,11 +272,26 @@ const focusAreas = [
       <div class="mx-auto grid max-w-[1440px] grid-cols-1 px-5 py-8 sm:grid-cols-2 md:px-10 lg:grid-cols-4 xl:px-24">
         <div class="py-4 lg:pr-8">
           <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Licenca</p>
-          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">Ilinois #{providerLicenseNumber}</p>
+          <a
+            href={idfprLicenseLookupUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Proverite licencu kliničkog psihologa u Ilinoisu ${providerLicenseNumber} preko IDFPR`}
+            class="mt-2 inline-flex text-lg font-bold text-[#1a1a1a] underline decoration-gray-300 underline-offset-4 transition-colors hover:text-[#2f594f]"
+          >
+            Ilinois #{providerLicenseNumber}
+          </a>
         </div>
         <div class="border-gray-200 py-4 sm:border-l sm:pl-8">
-          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">NPI</p>
-          <p class="mt-2 text-lg font-bold text-[#1a1a1a]">{providerNpiNumber}</p>
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Individualni NPI (NPI-1)</p>
+          <a
+            href={providerNpiUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-2 inline-flex text-lg font-bold text-[#1a1a1a] underline decoration-gray-300 underline-offset-4 transition-colors hover:text-[#2f594f]"
+          >
+            {providerNpiNumber}
+          </a>
         </div>
         <div class="border-gray-200 py-4 lg:border-l lg:pl-8">
           <p class="text-xs font-bold uppercase tracking-[0.14em] text-gray-500">Jezici</p>
@@ -259,7 +402,7 @@ const focusAreas = [
           </div>
           <div class="divide-y divide-gray-200 border-y border-gray-200">
             <a
-              href="https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/"
+              href={serbianTimesInterviewUrl}
               target="_blank"
               rel="noreferrer"
               class="group block py-7"
@@ -270,7 +413,7 @@ const focusAreas = [
               </h3>
             </a>
             <a
-              href="https://www.youtube.com/watch?v=4xS8Sm2lOh4"
+              href={sbnInterviewUrl}
               target="_blank"
               rel="noreferrer"
               class="group block py-7"
@@ -284,6 +427,14 @@ const focusAreas = [
         </div>
       </div>
     </section>
+
+    <FaqSection
+      title="Česta pitanja o dr Jeleni Djurovic"
+      intro="Provereni odgovori o kvalifikacijama, ordinaciji u Schaumburgu, jezicima kliničkih usluga, granicama online terapije i evaluacijama uživo."
+      faqs={faqItems}
+    />
+
+    <PageAddressCard />
 
     <section class="bg-white py-16 md:py-24">
       <div class="mx-auto max-w-[900px] px-5 text-center md:px-10">

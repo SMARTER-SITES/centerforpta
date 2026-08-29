@@ -2,18 +2,50 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import FaqSection from '../components/FaqSection.astro';
+import PageAddressCard from '../components/PageAddressCard.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 
 const facts = [
-  "83% of patients report significant symptom improvement",
-  "63% achieve full remission from depression symptoms",
-  "Covered by most major insurance providers",
-  "FDA approved and medication-free"
+  'TMS and PrTMS clinic located in Evanston, Illinois',
+  'FDA-cleared TMS may be considered for eligible patients with treatment-resistant depression, depending on the device and indication',
+  'R Hope describes personalized planning, accelerated scheduling options, and mobile TMS support',
+  'Eligibility, expected benefits, risks, costs, and insurance coverage must be confirmed directly with the R Hope clinical team'
+];
+
+const faqItems = [
+  {
+    question: 'Is R Hope Treatment part of Center for PTA?',
+    answer:
+      'No. Center for PTA and R Hope Treatment are separate clinical practices. Center for PTA is located in Schaumburg, and R Hope Treatment is located in Evanston.'
+  },
+  {
+    question: 'Does Center for PTA provide TMS?',
+    answer:
+      'No. Center for PTA provides psychotherapy and psychological assessment within its own scope of practice. R Hope Treatment separately provides TMS services and determines whether its medical care may be appropriate.'
+  },
+  {
+    question: 'Where are Center for PTA and R Hope Treatment located?',
+    answer:
+      'Center for PTA is located at 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. R Hope Treatment lists its clinic at 1335 Dodge Ave, Evanston, IL 60201.'
+  },
+  {
+    question: 'Who determines whether TMS is appropriate and whether insurance may cover it?',
+    answer:
+      'The R Hope clinical and administrative teams determine eligibility, treatment planning, scheduling, costs, and insurance verification for R Hope services. Center for PTA does not make those determinations or promise insurance coverage.'
+  },
+  {
+    question: 'Where should current R Hope services and contact details be confirmed?',
+    answer:
+      'Confirm current services, clinical information, availability, and insurance details directly with R Hope Treatment or on its official Evanston website, because those details may change.'
+  }
 ];
 ---
 
 <Layout
-  title="Our Partners | Center for PTA"
-  description="Learn about trusted care partners recommended by the Center for PTA, including R Hope Treatment in Evanston, IL."
+  title="R Hope Treatment: TMS Referral Information | Center for PTA"
+  description="Learn about R Hope Treatment, a separate TMS clinic in Evanston, Illinois, and how its services differ from care provided by Center for PTA."
+  faqItems={faqItems}
 >
   <Navbar />
 
@@ -21,12 +53,13 @@ const facts = [
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resources</p>
+      <PageBreadcrumbs currentLabel="R Hope Treatment Referral Information" align="center" />
+      <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Independent referral resource</p>
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Our Partners
+        R Hope Treatment: TMS Referral Information
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        We collaborate with leading health professionals to provide comprehensive care.
+        Clear information about outside services that may be relevant when a client needs care beyond the scope of psychotherapy or psychological assessment.
       </p>
     </div>
   </section>
@@ -38,27 +71,30 @@ const facts = [
         
         <div class="lg:w-1/2">
           <h2 class="text-3xl md:text-4xl font-extrabold text-[#147b6a] mb-6">R Hope Treatment</h2>
-          <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6">TMS Clinic</h3>
+          <h3 class="text-xl md:text-2xl font-bold text-[#1a1a1a] mb-6">Independent TMS Clinic in Evanston</h3>
           
           <div class="space-y-4 text-gray-700 text-[15px] md:text-lg leading-relaxed font-medium">
-            <p>At R Hope Treatment, we are proud to be a regional leader in delivering both standard and personalized Transcranial Magnetic Stimulation (TMS) therapy — an innovative, non-medication, non-invasive, and FDA-approved treatment for mental health conditions.</p>
-            <p>TMS therapy works by applying gentle magnetic pulses to stimulate underactive areas of the brain that regulate mood, without the use of medication. A typical session lasts less than 20 minutes and is completed over a 6–8 week period.</p>
-            <p>Our clinic, based in Evanston, IL, specializes in treating depression and anxiety, and we also help patients suffering from PTSD, OCD, ADHD, and other mood-related disorders.</p>
-            <p>We are also proud to offer a fully equipped mobile TMS clinic, designed to serve patients who are unable to visit our main location regularly. Our mobile unit brings the same high-quality care directly to your doorstep — whether at home, a care facility, or another convenient location — making mental health care more accessible than ever.</p>
-            <p>At R Hope Treatment, we offer both standard TMS protocols and advanced personalized TMS (PrTMS) protocols using EEG brain mapping. This allows us to tailor treatment to each patient’s unique brainwave activity, resulting in more precise and effective care.</p>
+            <p>R Hope Treatment is a separate clinical practice in Evanston that offers transcranial magnetic stimulation (TMS) and PrTMS-informed services. Its public website describes FDA-cleared TMS for eligible patients with treatment-resistant depression, along with personalized planning, accelerated scheduling conversations, and mobile TMS support.</p>
+            <p>TMS is a medical treatment. Whether it is appropriate depends on an individual clinical evaluation, the device and indication being considered, medical history, and other factors reviewed by the treating team. Center for PTA does not provide TMS and does not determine eligibility for R Hope services.</p>
+            <p>Center for PTA may provide psychotherapy or psychological assessment within its own scope of practice. R Hope independently provides its medical evaluation, treatment planning, informed-consent process, scheduling, billing, and insurance verification.</p>
+            <p>This page is intended to help visitors understand the difference between the two practices. It is not a treatment recommendation, statement of eligibility, insurance promise, or guarantee of results.</p>
           </div>
           
           <div class="mt-8 pt-6 border-t border-gray-200">
             <p class="font-bold text-[#1a1a1a]">R Hope Treatment</p>
             <p class="text-gray-600 mt-1">1335 Dodge Ave, Evanston, IL 60201</p>
-            <p class="text-gray-600 mt-1">📞 847-868-9369 | 📧 office@RHopeTreatment.com</p>
+            <p class="text-gray-600 mt-1"><a href="tel:+18478689369" class="font-semibold hover:text-[#2f594f]">(847) 868-9369</a> · <a href="mailto:office@rhopetreatment.com" class="font-semibold hover:text-[#2f594f]">office@rhopetreatment.com</a></p>
+            <a href="https://rhopetreatment.com/" target="_blank" rel="noopener noreferrer" class="mt-5 inline-flex items-center gap-2 font-bold text-[#0d5c4e] hover:text-[#2f594f]">
+              Review current services on the official R Hope website <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="mt-3 text-sm text-gray-500">Public details last checked August 29, 2026. Confirm current clinical and insurance information directly with R Hope.</p>
           </div>
         </div>
 
         <div class="lg:w-1/2 bg-white rounded-3xl p-8 xl:p-10 shadow-sm border border-gray-100 w-full">
           <h3 class="text-2xl font-bold text-[#1a1a1a] mb-8 flex items-center">
             <svg class="w-8 h-8 text-[#fcc13e] mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-            Key Facts
+            What to Confirm Directly
           </h3>
           <div class="space-y-6">
             {facts.map(fact => (
@@ -75,6 +111,14 @@ const facts = [
       </div>
     </div>
   </section>
+
+  <FaqSection
+    title="R Hope Treatment and TMS FAQs"
+    intro="Answers that distinguish the two practices, their locations, and who is responsible for TMS decisions."
+    faqs={faqItems}
+  />
+
+  <PageAddressCard />
 
   <Footer />
 </Layout>

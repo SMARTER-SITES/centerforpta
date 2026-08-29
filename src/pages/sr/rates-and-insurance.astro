@@ -2,6 +2,9 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import FaqSection from '../../components-sr/FaqSection.astro';
+import PageAddressCard from '../../components-sr/PageAddressCard.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 
 const prices = [
   { service: "Individualna terapija", details: "60 min (53 klinička min)", price: "$200" },
@@ -11,11 +14,35 @@ const prices = [
   { service: "Imigracione evaluacije", details: "Detaljan izveštaj za pravne potrebe", price: "Od $1,500" },
   { service: "Konsultacije i supervizija", details: "Profesionalni koučing", price: "Pozovite za cenu" }
 ];
+
+const faqItems = [
+  {
+    question: 'Koja osiguranja prihvata Center for PTA?',
+    answer:
+      'Center for PTA trenutno navodi BCBS PPO, Aetna i UnitedHealthcare. Učešće u mreži, pokrivene usluge, deductible, copay i druge obaveze pacijenta zavise od konkretnog plana. Pre početka usluge proverite aktuelne benefite sa osiguranjem i Center for PTA.'
+  },
+  {
+    question: 'Šta je superbill i da li garantuje refundaciju?',
+    answer:
+      'Superbill je dokumentacija koja se može poslati osiguravajućoj kompaniji radi moguće refundacije van mreže. Izdavanje superbill-a ne garantuje isplatu. Refundacija zavisi od uslova konkretnog osiguravajućeg plana.'
+  },
+  {
+    question: 'Kako mogu da proverim očekivani trošak pre termina?',
+    answer:
+      'Kontaktirajte Center for PTA da potvrdite aktuelnu cenu tražene usluge i razgovarate o osiguranju ili privatnom plaćanju. Cena procene ili evaluacije može zavisiti od obima pitanja, testiranja, dokumentacije i potrebnog izveštaja.'
+  },
+  {
+    question: 'Gde se pružaju usluge uživo i da li je online terapija dostupna van Ilinoisa?',
+    answer:
+      'Usluge uživo pružaju se na adresi 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Online terapija može biti dostupna samo kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu tokom seanse i kada je ovaj format klinički prikladan. Klijenti koji žive drugde mogu da doputuju u Schaumburg radi evaluacije uživo.'
+  }
+];
 ---
 
 <Layout
   title="Cene i osiguranje | Center for PTA"
   description="Pogledajte cene terapije, procena i imigracionih evaluacija, kao i prihvaćena osiguranja: BCBS PPO, Aetna i UnitedHealthcare."
+  faqItems={faqItems}
 >
   <Navbar />
 
@@ -23,11 +50,18 @@ const prices = [
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs
+        currentLabel="Cene i osiguranje"
+        homeLabel="Početna"
+        homePath="/sr/"
+        ariaLabel="Putanja stranice"
+        align="center"
+      />
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Cene i osiguranje
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Jasne cene i fleksibilne opcije plaćanja kako biste lakše dobili podršku koja vam je potrebna.
+        Pogledajte aktuelne cene, informacije o osiguranju i opcije plaćanja pre zakazivanja usluge.
       </p>
     </div>
   </section>
@@ -38,6 +72,9 @@ const prices = [
       <div class="max-w-4xl mb-12">
         <p class="text-lg text-gray-700 leading-relaxed">
           Nudimo jasne cene za terapiju, psihološku procenu, imigracione evaluacije i predoperativne evaluacije u Schaumburgu, IL. Trenutno prihvatamo BCBS PPO, Aetna i UnitedHealthcare, a po potrebi možemo obezbediti superbill za refundaciju van mreže.
+        </p>
+        <p class="mt-4 text-base text-gray-600 leading-relaxed">
+          Pokriće, status u mreži, deductible, copay i refundacija zavise od konkretnog plana. Pre početka usluge potvrdite aktuelne benefite sa osiguranjem i Center for PTA.
         </p>
       </div>
       
@@ -82,11 +119,19 @@ const prices = [
     </div>
   </section>
 
+  <FaqSection
+    title="Česta pitanja o cenama i osiguranju"
+    intro="Praktični odgovori o proveri osiguranja, superbill-u, troškovima, ordinaciji u Schaumburgu i granicama online terapije."
+    faqs={faqItems}
+  />
+
+  <PageAddressCard />
+
   <!-- CTA section -->
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Imate pitanja?</h2>
-      <a href="/sr/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
     </div>

@@ -40,23 +40,23 @@ const supportAreas = [
 
 const relatedLinks = [
   {
-    href: '/postpartum-therapy',
+    href: '/postpartum-therapy/',
     title: 'Postpartum Therapy',
     desc: 'Support after birth for mood changes, overwhelm, and postnatal adjustment.'
   },
   {
-    href: '/womens-mental-health-therapy',
+    href: '/womens-mental-health-therapy/',
     title: "Women's Mental Health Therapy",
     desc: 'Broader support for reproductive challenges, life-stage stress, and body image concerns.'
   },
   {
-    href: '/contact',
-    title: 'Book a Consultation',
-    desc: 'Ask about prenatal therapy in person or through telehealth across Illinois.'
+    href: '/blog/reproductive-stress-and-infertility/',
+    title: 'Reproductive Stress and Infertility',
+    desc: 'A clinically reviewed guide to fertility stress, reproductive loss, uncertainty, and when therapy may help.'
   }
 ];
 
-const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Support during pregnancy and reproductive stress'];
+const signals = ['In-person in Schaumburg', 'Illinois-location telehealth', 'Support during pregnancy and reproductive stress'];
 const featureCards = [
   {
     title: 'Local Care',
@@ -68,7 +68,7 @@ const featureCards = [
   },
   {
     title: 'Flexible Format',
-    desc: 'Telehealth across Illinois for clients in any trimester who need support without the added travel.'
+    desc: 'Telehealth may be available when the client is physically located in Illinois during the session.'
   }
 ];
 
@@ -116,7 +116,7 @@ const processSteps = [
 ];
 
 const pageDescription =
-  'Pregnancy therapy in Schaumburg, IL for prenatal anxiety, fertility-treatment stress, medical uncertainty, and reproductive loss, with Illinois telehealth.';
+  'Prenatal anxiety therapy in Schaumburg, IL for support during pregnancy, including medical uncertainty, fertility-treatment stress, and prior reproductive loss.';
 
 const faqItems = [
   {
@@ -130,9 +130,14 @@ const faqItems = [
       'Yes. Therapy can support the emotional strain of trying to conceive, fertility treatment, uncertain results, prior reproductive loss, or pregnancy after loss. It can help you process grief, anxiety, relationship stress, and the pressure of repeated medical decisions. It does not replace medical or reproductive health care.'
   },
   {
+    question: 'Does Center for PTA provide prenatal medical or reproductive health care?',
+    answer:
+      'No. Center for PTA provides psychotherapy for emotional well-being during an ongoing pregnancy, including anxiety, medical stress, fertility-treatment history, and reproductive loss history. Therapy does not replace prenatal medical care, fertility treatment, reproductive health services, or medical decision-making. Continue care with your prenatal or reproductive health team.'
+  },
+  {
     question: 'Do you offer prenatal therapy in Schaumburg, IL and online in Illinois?',
     answer:
-      'Yes. Prenatal therapy is available in person in Schaumburg and by telehealth for clients anywhere in Illinois.'
+      'Yes. Prenatal therapy is available in person in Schaumburg and by telehealth when the client is physically located in Illinois at the time of the session.'
   },
   {
     question: 'Can prenatal therapy continue into postpartum support after delivery?',
@@ -155,7 +160,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Pregnancy Therapy in Schaumburg, IL | Prenatal Counseling"
+  title="Prenatal Anxiety Therapy in Schaumburg, IL | Center for PTA"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -193,7 +198,7 @@ const serviceStructuredData = getServiceStructuredData({
     title="Prenatal Therapy in Schaumburg and Nearby Communities"
     paragraphs={[
       'Dr. Jelena Djurovic provides prenatal therapy at her Schaumburg office, accessible for clients from Rolling Meadows, Hanover Park, Elk Grove Village, Streamwood, and other northwest suburban communities. Her doctoral research on the mind-body relationship directly informs her approach to the emotional demands of pregnancy.',
-      'Telehealth is available throughout Illinois for clients in any stage of pregnancy. Prenatal therapy can also be a useful foundation before transitioning to postpartum support after birth.'
+      'Telehealth may be available when the client is physically located in Illinois at the time of the session. Prenatal therapy can also be a useful foundation before transitioning to postpartum support after birth.'
     ]}
   />
 
@@ -224,7 +229,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Support during pregnancy can make a real difference</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

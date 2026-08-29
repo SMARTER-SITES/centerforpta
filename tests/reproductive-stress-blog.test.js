@@ -24,7 +24,7 @@ test('reproductive stress guide keeps bilingual review, location, and safety sig
     assert.match(article, /author: "Center for PTA"/);
     assert.match(article, /reviewedBy: "Dr\. Jelena Djurovic, Psy\.D\."/);
     assert.match(article, /License #071-011433|licenca #071-011433/);
-    assert.match(article, /physically located in Illinois|fizički nalazi u Illinois-u/);
+    assert.match(article, /physically located in Illinois|fizički nalazi u Illinoisu/);
     assert.match(article, /does not guarantee pregnancy|ne garantuje trudnoću/);
     assert.match(article, /reproductive-stress-infertility-schaumburg\.jpg/);
     assert.match(article, /reproductive-stress-shared-decisions\.jpg/);

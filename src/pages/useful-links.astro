@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
+import { siteUrl } from '../utils/seo';
 
 const featuredLinks = [
   {
@@ -44,12 +46,46 @@ const featuredLinks = [
     actionLabel: 'Watch on YouTube'
   }
 ];
+
+const pageDescription =
+  'Media interviews, podcast appearances, videos, and mental health resources featuring Dr. Jelena Djurovic and Center for PTA in Schaumburg, IL.';
+
+const mediaStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${siteUrl}/useful-links/#webpage`,
+  url: `${siteUrl}/useful-links/`,
+  name: 'Dr. Jelena Djurovic Media and Resources',
+  description: pageDescription,
+  inLanguage: 'en-US',
+  isPartOf: {
+    '@id': `${siteUrl}/#website`
+  },
+  about: {
+    '@id': `${siteUrl}/dr-jelena-djurovic/#person`
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: featuredLinks.length,
+    itemListElement: featuredLinks.map((link, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: link.title,
+        url: link.href,
+        inLanguage: link.language
+      }
+    }))
+  }
+};
 ---
 
 <Layout
-  title="Useful Links | Center for PTA"
-  description="Helpful articles, interviews, and resources from the Center for PTA, including featured media coverage."
+  title="Dr. Jelena Djurovic Media | Center for PTA"
+  description={pageDescription}
   image="/images/useful-links/jelena-djurovic-serbian-times.jpg"
+  structuredData={mediaStructuredData}
 >
   <Navbar />
 
@@ -57,6 +93,7 @@ const featuredLinks = [
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Useful Links" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Resources</p>
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Useful Links

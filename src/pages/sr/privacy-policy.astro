@@ -2,6 +2,7 @@
 import Layout from '../../layouts-sr/Layout.astro';
 import Navbar from '../../components-sr/Navbar.astro';
 import Footer from '../../components-sr/Footer.astro';
+import PageBreadcrumbs from '../../components/PageBreadcrumbs.astro';
 
 const effectiveDate = '20. mart 2026.';
 ---
@@ -16,6 +17,13 @@ const effectiveDate = '20. mart 2026.';
     <div class="absolute top-[20%] left-[-10%] w-[40%] h-[60%] bg-[#e0eae5] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="absolute bottom-[10%] right-[-10%] w-[35%] h-[50%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs
+        currentLabel="Politika privatnosti"
+        homeLabel="Početna"
+        homePath="/sr/"
+        ariaLabel="Putanja stranice"
+        align="center"
+      />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Privatnost</p>
       <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Politika privatnosti

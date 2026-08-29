@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "node --test"
+    "test": "node --test",
+    "audit:seo": "npm run build && node scripts/audit-generated-site.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",

@@ -1,20 +1,18 @@
 export const siteUrl = 'https://centerforpta.com';
-export const staticLastmod = '2026-06-09T00:00:00.000Z';
+// Omit lastmod when a route does not have a verified content-change date.
+export const staticLastmod = undefined;
 
 export const staticPages = [
   '/',
-  '/about/',
   '/dr-jelena-djurovic/',
   '/therapy/',
-  {
-    path: '/couples-therapy/',
-    lastmod: '2026-07-25T00:00:00.000Z'
-  },
+  '/couples-therapy/',
   '/psychological-assessment/',
   '/pre-surgical-psychological-evaluations/',
   '/immigration-evaluations/',
   '/consultation-supervision-and-coaching/',
   '/rates-and-insurance/',
+  '/schaumburg-office/',
   '/book-recommendations/',
   '/our-partners/',
   '/useful-links/',
@@ -73,18 +71,20 @@ export function createSitemapEntries(extraPages = []) {
     const path = normalizePath(typeof page === 'string' ? page : page.path);
     const lastmod = typeof page === 'string' ? staticLastmod : page.lastmod || staticLastmod;
     const includeAlternates = typeof page === 'string' ? true : page.alternates !== false;
+    const customAlternatePath =
+      typeof page === 'string' || !page.alternatePath ? undefined : normalizePath(page.alternatePath);
 
     if (!entries.has(path)) {
-      entries.set(path, { path, lastmod, alternates: includeAlternates });
+      entries.set(path, { path, lastmod, alternates: includeAlternates, alternatePath: customAlternatePath });
     }
 
     if (!includeAlternates) {
       return;
     }
 
-    const alternatePath = getAlternatePath(path);
+    const alternatePath = customAlternatePath || getAlternatePath(path);
     if (!entries.has(alternatePath)) {
-      entries.set(alternatePath, { path: alternatePath, lastmod, alternates: true });
+      entries.set(alternatePath, { path: alternatePath, lastmod, alternates: true, alternatePath: path });
     }
   }
 
@@ -116,9 +116,16 @@ function formatLastmod(lastmod) {
   return date.toISOString();
 }
 
-function createAlternateLinks(path) {
-  const englishPath = getEnglishPath(path);
-  const serbianPath = getAlternatePath(englishPath);
+function createAlternateLinks(path, customAlternatePath) {
+  const normalizedPath = normalizePath(path);
+  const normalizedAlternatePath = customAlternatePath ? normalizePath(customAlternatePath) : undefined;
+  const isSerbianPath = normalizedPath.startsWith('/sr/');
+  const englishPath = isSerbianPath
+    ? normalizedAlternatePath || getEnglishPath(normalizedPath)
+    : normalizedPath;
+  const serbianPath = isSerbianPath
+    ? normalizedPath
+    : normalizedAlternatePath || getAlternatePath(normalizedPath);
 
   return [
     { hreflang: 'en', href: toAbsoluteUrl(englishPath) },
@@ -129,10 +136,10 @@ function createAlternateLinks(path) {
 
 export function buildSitemapXml(entries) {
   const urls = entries
-    .map(({ path, lastmod, alternates = true }) => {
+    .map(({ path, lastmod, alternates = true, alternatePath }) => {
       const formattedLastmod = formatLastmod(lastmod);
       const alternateLinks = alternates
-        ? createAlternateLinks(path)
+        ? createAlternateLinks(path, alternatePath)
             .map(
               ({ hreflang, href }) =>
                 `    <xhtml:link rel="alternate" hreflang="${escapeXml(hreflang)}" href="${escapeXml(href)}" />`

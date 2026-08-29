@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
@@ -15,24 +16,34 @@ const timeline = [
 
 const relatedLinks = [
   {
-    href: '/psychological-assessment',
+    href: '/psychological-assessment/',
     title: 'Psychological Assessment',
     desc: 'Learn more about diagnostic testing, cognitive concerns, and recommendations for treatment or accommodations.'
   },
   {
-    href: '/rates-and-insurance',
+    href: '/bariatric-surgery-counseling/',
+    title: 'Bariatric Surgery Counseling',
+    desc: 'Explore ongoing therapeutic support before or after surgery for adjustment, body image, and behavior change.'
+  },
+  {
+    href: '/weight-loss-counseling/',
+    title: 'Weight Loss Counseling',
+    desc: 'Learn about counseling for sustainable behavior change, emotional patterns, and the mental side of weight-related goals.'
+  },
+  {
+    href: '/rates-and-insurance/',
     title: 'Rates and Insurance',
     desc: 'Review current rates, accepted insurance, and next steps before scheduling an evaluation.'
   },
   {
-    href: '/contact',
+    href: '/contact/',
     title: 'Contact',
     desc: 'Reach out to schedule a pre-surgical or bariatric psychological evaluation in Schaumburg, IL.'
   }
 ];
 
 const pageDescription =
-  'Bariatric psychological evaluations and pre-surgical psychological evaluations in Schaumburg, IL for medical clearance, readiness assessment, and clear reporting for surgical and medical teams.';
+  'Bariatric and pre-surgical psychological evaluations in Schaumburg, with readiness assessment and clear reports for referring medical teams.';
 
 const faqItems = [
   {
@@ -43,7 +54,7 @@ const faqItems = [
   {
     question: 'Do you provide bariatric psychological evaluations near Schaumburg?',
     answer:
-      'Yes. Bariatric psychological evaluations are available in person in Schaumburg, IL and may be available by telehealth across Illinois when clinically appropriate and accepted by the referring bariatric program.'
+      'Yes. Bariatric psychological evaluations are available in person in Schaumburg, IL and may be available by telehealth when the client is physically located in Illinois, the format is clinically appropriate, and the referring bariatric program accepts it.'
   },
   {
     question: 'Is this the same as bariatric counseling?',
@@ -81,7 +92,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Bariatric Psychological Evaluation in Schaumburg, IL | Pre-Surgical Clearance"
+  title="Bariatric Psychological Evaluation | Schaumburg, IL"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -92,6 +103,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#fcfbf9] overflow-hidden">
     <div class="absolute top-[20%] right-[-10%] w-[40%] h-[60%] bg-[#fdf3df] rounded-full opacity-60 blur-3xl lg:blur-[80px]"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
+      <PageBreadcrumbs currentLabel="Bariatric and Pre-Surgical Psychological Evaluations in Schaumburg, IL" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Our Services</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
         Bariatric and Pre-Surgical Psychological Evaluations in Schaumburg, IL
@@ -213,7 +225,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="absolute bottom-[-20%] left-[20%] w-[30%] h-[30%] bg-[#f4e8e1] rounded-full opacity-20 blur-3xl"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Schedule a Pre-Surgical Evaluation</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

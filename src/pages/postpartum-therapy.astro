@@ -32,23 +32,23 @@ const supportAreas = [
 
 const relatedLinks = [
   {
-    href: '/prenatal-therapy',
+    href: '/prenatal-therapy/',
     title: 'Prenatal Therapy',
     desc: 'Support during pregnancy for anxiety, uncertainty, and transition stress.'
   },
   {
-    href: '/womens-mental-health-therapy',
+    href: '/womens-mental-health-therapy/',
     title: "Women's Mental Health Therapy",
     desc: 'Broader support for reproductive concerns, body image, and life-stage challenges.'
   },
   {
-    href: '/contact',
-    title: 'Book a Consultation',
+    href: '/contact/',
+    title: 'Request a Consultation',
     desc: 'Ask about postpartum therapy in person or through telehealth in Illinois.'
   }
 ];
 
-const signals = ['In-person in Schaumburg', 'Telehealth across Illinois', 'Postpartum and postnatal support'];
+const signals = ['In-person in Schaumburg', 'Telehealth while located in Illinois', 'Postpartum and postnatal support'];
 const featureCards = [
   {
     title: 'Local Care',
@@ -60,7 +60,7 @@ const featureCards = [
   },
   {
     title: 'Flexible Format',
-    desc: 'Telehealth across Illinois so new parents can access support during naps, breaks, or whenever a session fits the day.'
+    desc: 'Telehealth may be available while the client is physically located in Illinois, when the format is clinically appropriate.'
   }
 ];
 
@@ -108,6 +108,17 @@ const processSteps = [
 const pageDescription =
   'Postpartum therapy in Schaumburg, IL for depression, anxiety, overwhelm, identity changes, and postnatal support, with Illinois telehealth.';
 
+const clinicalSources = [
+  {
+    name: 'National Institute of Mental Health: Perinatal Depression',
+    url: 'https://www.nimh.nih.gov/health/publications/perinatal-depression'
+  },
+  {
+    name: 'American College of Obstetricians and Gynecologists: Postpartum Depression',
+    url: 'https://www.acog.org/womens-health/faqs/postpartum-depression'
+  }
+];
+
 const faqItems = [
   {
     question: 'What can postpartum therapy help with?',
@@ -117,17 +128,32 @@ const faqItems = [
   {
     question: 'Do you offer postpartum therapy in Schaumburg, IL and online?',
     answer:
-      'Yes. Sessions are available in person in Schaumburg, and telehealth is available for clients throughout Illinois.'
+      'Yes. Sessions are available in person in Schaumburg, and telehealth may be available when the client is physically located in Illinois at the time of the session.'
   },
   {
     question: 'How soon after birth can I start postpartum therapy?',
     answer:
-      'There is no minimum waiting period. Some clients reach out within the first few weeks after birth, while others start later. The office in Schaumburg is accessible from Arlington Heights, Des Plaines, Rolling Meadows, and surrounding suburbs, and telehealth is available for anyone in Illinois.'
+      'There is no minimum waiting period. Some clients reach out within the first few weeks after birth, while others start later. The office in Schaumburg is accessible from Arlington Heights, Des Plaines, Rolling Meadows, and surrounding suburbs, and telehealth may be available when the client is physically located in Illinois.'
   },
   {
     question: 'Is postpartum therapy only for severe symptoms?',
     answer:
       'No. Therapy can be appropriate when symptoms are severe, but it can also be helpful much earlier if you feel emotionally stretched thin, unlike yourself, or overwhelmed after birth.'
+  },
+  {
+    question: 'How are the baby blues different from postpartum depression?',
+    answer:
+      'The baby blues usually involve milder, short-lived mood changes during the first days after birth and often improve within about two weeks. Symptoms that are intense, last longer, or interfere with daily functioning may be signs of postpartum depression or another perinatal mental health condition and should be discussed with a qualified healthcare professional.'
+  },
+  {
+    question: 'When should I ask for help with postpartum depression or anxiety?',
+    answer:
+      'Reach out when sadness, anxiety, irritability, guilt, exhaustion, frightening thoughts, or difficulty functioning feel persistent, severe, or hard to manage. You do not need to wait for a scheduled postpartum visit. Contact an obstetric, primary care, psychiatric, or qualified mental health professional for an assessment.'
+  },
+  {
+    question: 'Does postpartum therapy replace medical or emergency care?',
+    answer:
+      'No. Postpartum therapy can work alongside obstetric, primary care, and psychiatric care, but it does not replace medical treatment or emergency support. If you are in immediate danger or cannot stay safe, call 911, call or text 988 in the United States, or go to the nearest emergency department.'
   }
 ];
 
@@ -140,7 +166,7 @@ const serviceStructuredData = getServiceStructuredData({
 ---
 
 <Layout
-  title="Postpartum Therapy in Schaumburg, IL | Depression Counseling"
+  title="Postpartum Depression & Anxiety Therapy | Schaumburg, IL"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -178,7 +204,7 @@ const serviceStructuredData = getServiceStructuredData({
     title="Postpartum Therapy in Schaumburg and the Greater Northwest Suburbs"
     paragraphs={[
       'Dr. Jelena Djurovic offers postpartum therapy at her Schaumburg office, serving new parents from Arlington Heights, Des Plaines, Mount Prospect, Palatine, Hoffman Estates, and the surrounding area. Her experience with perinatal mental health means the work can begin quickly without spending sessions on background education.',
-      'Telehealth is available statewide for Illinois residents, which many new parents prefer during the postpartum period. If you started with prenatal therapy and want to continue into postpartum care, that continuity is available and often beneficial.'
+      'Telehealth may be available when the client is physically located in Illinois at the time of the session, which many new parents prefer during the postpartum period. If you started with prenatal therapy and want to continue into postpartum care, that continuity is available and often beneficial.'
     ]}
   />
 
@@ -189,6 +215,29 @@ const serviceStructuredData = getServiceStructuredData({
     faqs={faqItems}
     intro="A few common questions about postpartum and postnatal support, location, and timing."
   />
+
+  <section class="border-y border-gray-100 bg-[#fcfbf9] py-10">
+    <div class="mx-auto max-w-[1000px] px-5 md:px-10">
+      <h2 class="mb-3 text-xl font-bold text-[#1a1a1a]">Clinical sources</h2>
+      <p class="mb-4 leading-relaxed text-gray-700">
+        These public-health resources support the educational distinctions and safety guidance in the FAQ above.
+      </p>
+      <ul class="space-y-2">
+        {clinicalSources.map((source) => (
+          <li>
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="font-semibold text-[#0d5c4e] underline decoration-[#0d5c4e]/30 underline-offset-4 hover:text-[#1f3f37]"
+            >
+              {source.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
@@ -209,7 +258,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Postpartum support is real support</h2>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Contact Us
       </a>
     </div>

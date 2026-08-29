@@ -2,6 +2,8 @@
 import Layout from '../layouts-sr/Layout.astro';
 import Navbar from './Navbar.astro';
 import Footer from './Footer.astro';
+import PageBreadcrumbs from '../components/PageBreadcrumbs.astro';
+import { absoluteUrl, siteName, siteUrl } from '../utils-sr/seo';
 
 type Post = {
   frontmatter: {
@@ -25,8 +27,23 @@ interface Props {
 const { posts, currentPage, totalPages, totalPosts } = Astro.props;
 const featuredPost = currentPage === 1 ? posts[0] : undefined;
 const gridPosts = currentPage === 1 ? posts.slice(1) : posts;
-const previousHref = currentPage === 2 ? '/sr/blog/' : `/sr/blog/page/${currentPage - 1}/`;
-const nextHref = `/sr/blog/page/${currentPage + 1}/`;
+const previousHref = currentPage > 1
+  ? currentPage === 2
+    ? '/sr/blog/'
+    : `/sr/blog/page/${currentPage - 1}/`
+  : undefined;
+const nextHref = currentPage < totalPages ? `/sr/blog/page/${currentPage + 1}/` : undefined;
+const pagePath = currentPage === 1 ? '/sr/blog/' : `/sr/blog/page/${currentPage}/`;
+const pageTitle = currentPage === 1
+  ? 'Klinički uvidi | Center for PTA'
+  : `Klinički uvidi, strana ${currentPage} | Center for PTA`;
+const pageDescription = currentPage === 1
+  ? 'Korisni tekstovi o terapiji, psihološkoj proceni, imigracionim evaluacijama i mentalnom zdravlju u Schaumburgu i širom Ilinoisa.'
+  : `Pregledajte ${currentPage}. stranu kliničkih uvida Center for PTA o terapiji, evaluacijama i mentalnom zdravlju u Schaumburgu i Ilinoisu.`;
+
+function canonicalPostUrl(url: string) {
+  return url.endsWith('/') ? url : `${url}/`;
+}
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString('sr-Latn-RS', {
@@ -35,16 +52,57 @@ function formatDate(date: string) {
     year: 'numeric'
   });
 }
+
+const collectionStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${absoluteUrl(pagePath)}#webpage`,
+  name: pageTitle,
+  description: pageDescription,
+  url: absoluteUrl(pagePath),
+  inLanguage: 'sr-Latn',
+  isPartOf: {
+    '@type': 'Blog',
+    '@id': `${siteUrl}/sr/blog/#blog`,
+    name: 'Klinički uvidi',
+    url: `${siteUrl}/sr/blog/`,
+    publisher: {
+      '@id': `${siteUrl}/#professional-service`,
+      name: siteName
+    }
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: posts.length,
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: post.frontmatter.title,
+      url: absoluteUrl(canonicalPostUrl(post.url))
+    }))
+  }
+};
 ---
 
 <Layout
-  title={currentPage === 1 ? 'Klinički uvidi | Center for PTA' : `Klinički uvidi, strana ${currentPage} | Center for PTA`}
-  description="Korisni tekstovi o terapiji, psihološkoj proceni, imigracionim evaluacijama i mentalnom zdravlju u Šamburgu i širom Ilinoisa."
+  title={pageTitle}
+  description={pageDescription}
+  previousPath={previousHref}
+  nextPath={nextHref}
+  structuredData={collectionStructuredData}
 >
   <Navbar />
 
+  <main>
   <section class="pt-32 md:pt-40 pb-14 md:pb-20 bg-[#fbfaf7] border-b border-[#e8e2d8]">
     <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16">
+      <PageBreadcrumbs
+        currentLabel={currentPage === 1 ? 'Klinički uvidi' : `Strana ${currentPage}`}
+        homeLabel="Početna"
+        homePath="/sr/"
+        ancestors={currentPage === 1 ? [] : [{ label: 'Klinički uvidi', path: '/sr/blog/' }]}
+        ariaLabel="Putanja stranice"
+      />
       <div class="grid lg:grid-cols-[minmax(0,1fr)_320px] gap-10 xl:gap-16 items-end">
         <div>
           <h1 class="text-4xl md:text-6xl xl:text-[72px] font-extrabold text-[#1a1a1a] leading-[1.02] tracking-tight max-w-4xl">
@@ -55,15 +113,17 @@ function formatDate(date: string) {
           </p>
         </div>
         <div class="border-l-4 border-[#2f594f] pl-6 py-2">
-          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#8b7a56] mb-3">SEO hub</p>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#756544] mb-3">Urednički centar</p>
           <p class="text-base text-gray-700 leading-relaxed">
-            Klinički pregledani resursi Center for PTA u Šamburgu, IL.
+            Stručni edukativni resursi Center for PTA u Šamburgu, IL.
           </p>
         </div>
       </div>
 
       <div class="mt-10 flex flex-wrap gap-3 text-sm font-semibold">
+        <a href="/sr/womens-mental-health-therapy/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Mentalno zdravlje žena</a>
         <a href="/sr/immigration-evaluations/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Imigracione evaluacije</a>
+        <a href="/sr/pre-surgical-psychological-evaluations/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Predoperativne evaluacije</a>
         <a href="/sr/psychological-assessment/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Psihološko testiranje</a>
         <a href="/sr/therapy/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Terapija</a>
         <a href="/sr/contact/" class="px-4 py-2 rounded-full bg-[#2f594f] text-white hover:bg-[#24473f] transition-colors">Pitajte za zakazivanje</a>
@@ -74,11 +134,14 @@ function formatDate(date: string) {
   <section class="py-12 md:py-16 xl:py-24 bg-white">
     <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16">
       {featuredPost && (
-        <a href={featuredPost.url} class="group grid lg:grid-cols-[1.08fr_0.92fr] gap-0 overflow-hidden rounded-2xl border border-[#e8e2d8] shadow-[0_22px_70px_rgba(47,89,79,0.12)] mb-12 md:mb-16 bg-white">
+        <a href={canonicalPostUrl(featuredPost.url)} class="group grid lg:grid-cols-[1.08fr_0.92fr] gap-0 overflow-hidden rounded-2xl border border-[#e8e2d8] shadow-[0_22px_70px_rgba(47,89,79,0.12)] mb-12 md:mb-16 bg-white">
           {featuredPost.frontmatter.image ? (
             <img
               src={featuredPost.frontmatter.image}
               alt={featuredPost.frontmatter.imageAlt || featuredPost.frontmatter.title}
+              width="1600"
+              height="900"
+              decoding="async"
               class="w-full h-full min-h-[280px] lg:min-h-[430px] object-cover"
             />
           ) : (
@@ -115,11 +178,15 @@ function formatDate(date: string) {
           {gridPosts.length > 0 && (
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
               {gridPosts.map((post) => (
-                <a href={post.url} class="group flex flex-col h-full bg-white border border-[#e8e2d8] rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_18px_55px_rgba(47,89,79,0.12)] transition-all duration-300 hover:-translate-y-1">
+                <a href={canonicalPostUrl(post.url)} class="group flex flex-col h-full bg-white border border-[#e8e2d8] rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_18px_55px_rgba(47,89,79,0.12)] transition-all duration-300 hover:-translate-y-1">
                   {post.frontmatter.image ? (
                     <img
                       src={post.frontmatter.image}
                       alt={post.frontmatter.imageAlt || post.frontmatter.title}
+                      width="1600"
+                      height="900"
+                      loading="lazy"
+                      decoding="async"
                       class="w-full aspect-[16/10] object-cover"
                     />
                   ) : (
@@ -170,6 +237,7 @@ function formatDate(date: string) {
       )}
     </div>
   </section>
+  </main>
 
   <Footer />
 </Layout>
