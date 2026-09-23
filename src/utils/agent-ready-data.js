@@ -441,6 +441,9 @@ ${serviceLinks}
 
 - [Insights hub](${siteBaseUrl}/blog/): Published Center for PTA articles and pagination.
 - [Reproductive Stress and Infertility](${siteBaseUrl}/blog/reproductive-stress-and-infertility/): Emotional effects of infertility and fertility treatment, coping, and when therapy may help.
+- [When Fertility Stress Affects Partners Differently](${siteBaseUrl}/blog/fertility-stress-and-relationships/): Communication and shared decisions for couples facing infertility.
+- [Pregnancy After Infertility or Pregnancy Loss](${siteBaseUrl}/blog/pregnancy-after-infertility-or-loss/): Emotional coping with uncertainty during a current pregnancy.
+- [Fertility Treatment Burnout](${siteBaseUrl}/blog/fertility-treatment-burnout/): Exhaustion during IVF or fertility treatment, self-compassion, and therapy support.
 - [Why Am I So Hard on Myself?](${siteBaseUrl}/blog/why-am-i-so-hard-on-myself/): Self-criticism, perfectionism, shame, and self-compassion.
 - [What to Expect During an Immigration Psychological Evaluation](${siteBaseUrl}/blog/what-to-expect-during-an-immigration-psychological-evaluation/): Purpose, process, and preparation for an immigration psychological evaluation.
 
@@ -452,6 +455,9 @@ ${serviceLinks}
 - [Serbian rates and insurance](${siteBaseUrl}/sr/rates-and-insurance/): Informacije o plaćanju, navedenim planovima i proveri konkretnog pokrića na srpskom.
 - [Serbian insights](${siteBaseUrl}/sr/blog/): Published articles in Serbian.
 - [Reproduktivni stres i infertilitet](${siteBaseUrl}/sr/blog/reproductive-stress-and-infertility/): Emocionalni uticaj infertiliteta i tretmana fertiliteta, suočavanje i terapijska podrška.
+- [Kada stres zbog infertiliteta različito pogađa partnere](${siteBaseUrl}/sr/blog/stres-zbog-neplodnosti-i-partnerski-odnos/): Komunikacija i zajedničke odluke tokom infertiliteta.
+- [Trudnoća posle infertiliteta ili gubitka trudnoće](${siteBaseUrl}/sr/blog/trudnoca-posle-infertiliteta-ili-gubitka-trudnoce/): Emocionalno nošenje sa neizvesnošću u postojećoj trudnoći.
+- [Iscrpljenost tokom lečenja neplodnosti](${siteBaseUrl}/sr/blog/iscrpljenost-tokom-lecenja-neplodnosti/): Iscrpljenost tokom IVF-a i psihološka podrška.
 - [Zašto sam toliko stroga prema sebi?](${siteBaseUrl}/sr/blog/why-am-i-so-hard-on-myself/): Samokritika, perfekcionizam, stid i samosaosećanje.
 - [Šta očekivati tokom imigracione psihološke evaluacije](${siteBaseUrl}/sr/blog/what-to-expect-during-an-immigration-psychological-evaluation/): Svrha, proces i priprema za imigracionu psihološku evaluaciju.
 - [Serbian contact page](${siteBaseUrl}/sr/contact/): Public contact details and inquiry form in Serbian.

@@ -18,6 +18,18 @@ const articlePairs = [
     'src/pages/sr/blog/reproductive-stress-and-infertility.md'
   ],
   [
+    'src/pages/blog/fertility-stress-and-relationships.md',
+    'src/pages/sr/blog/stres-zbog-neplodnosti-i-partnerski-odnos.md'
+  ],
+  [
+    'src/pages/blog/pregnancy-after-infertility-or-loss.md',
+    'src/pages/sr/blog/trudnoca-posle-infertiliteta-ili-gubitka-trudnoce.md'
+  ],
+  [
+    'src/pages/blog/fertility-treatment-burnout.md',
+    'src/pages/sr/blog/iscrpljenost-tokom-lecenja-neplodnosti.md'
+  ],
+  [
     'src/pages/blog/why-am-i-so-hard-on-myself.md',
     'src/pages/sr/blog/why-am-i-so-hard-on-myself.md'
   ]
@@ -25,7 +37,7 @@ const articlePairs = [
 
 function citationUrls(source) {
   const frontmatter = source.match(/^---\n([\s\S]*?)\n---/)?.[1] || '';
-  const citationBlock = frontmatter.match(/\ncitations:\n([\s\S]*?)(?=\n[a-zA-Z][\w]*:)/)?.[1] || '';
+  const citationBlock = frontmatter.match(/\ncitations:\n([\s\S]*?)(?=\n[a-zA-Z][\w]*:|$)/)?.[1] || '';
   return [...citationBlock.matchAll(/^\s+url:\s+"([^"]+)"/gm)].map((match) => match[1]);
 }
 

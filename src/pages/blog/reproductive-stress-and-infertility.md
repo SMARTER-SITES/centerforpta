@@ -242,6 +242,10 @@ Telehealth may be available only when the client is physically located in Illino
 
 No. Center for PTA provides psychological support, not fertility testing, reproductive medicine, or medical fertility treatment. Questions about fertility diagnosis and treatment should be discussed with an appropriate reproductive healthcare professional.
 
+## Related reading
+
+For a closer look at communication under fertility stress, read [When Fertility Stress Affects Partners Differently](/blog/fertility-stress-and-relationships/). [Fertility Treatment Burnout](/blog/fertility-treatment-burnout/) focuses on exhaustion during treatment, while [Pregnancy After Infertility or Pregnancy Loss](/blog/pregnancy-after-infertility-or-loss/) addresses anxiety and uncertainty during a current pregnancy.
+
 ## Clinically reviewed by
 
 Clinically reviewed by [Dr. Jelena Djurovic, Psy.D.](/dr-jelena-djurovic/), Illinois Licensed Clinical Psychologist, License #071-011433. Dr. Djurovic provides psychotherapy and psychological evaluations at Center for PTA in Schaumburg, IL, in English and Serbian.

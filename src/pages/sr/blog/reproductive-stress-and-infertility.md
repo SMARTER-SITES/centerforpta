@@ -216,6 +216,10 @@ Online terapija može biti dostupna samo kada se klijent fizički nalazi u Illin
 
 Ne. Center for PTA pruža psihološku podršku, a ne testiranje plodnosti, reproduktivnu medicinu ili medicinski tretman plodnosti. O pitanjima dijagnoze i tretmana plodnosti treba razgovarati sa odgovarajućim stručnjakom za reproduktivno zdravlje.
 
+## Povezani tekstovi
+
+O partnerskoj komunikaciji pročitajte tekst [Kada stres zbog infertiliteta različito pogađa partnere](/sr/blog/stres-zbog-neplodnosti-i-partnerski-odnos/). [Iscrpljenost tokom lečenja neplodnosti](/sr/blog/iscrpljenost-tokom-lecenja-neplodnosti/) govori o emocionalnom umoru tokom tretmana, a [Trudnoća posle infertiliteta ili gubitka trudnoće](/sr/blog/trudnoca-posle-infertiliteta-ili-gubitka-trudnoce/) o neizvesnosti tokom postojeće trudnoće.
+
 ## Klinički pregled
 
 Tekst je klinički pregledala [Dr. Jelena Djurovic, Psy.D.](/sr/dr-jelena-djurovic/), licencirani klinički psiholog u Illinoisu, licenca #071-011433. Dr. Djurovic pruža psihoterapiju i psihološke evaluacije u Center for PTA u Schaumburgu, IL, na srpskom i engleskom jeziku.

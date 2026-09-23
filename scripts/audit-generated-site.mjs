@@ -108,6 +108,12 @@ const webPageSchemaTypes = new Set([
 const citationRequiredRoutes = new Set([
   '/blog/reproductive-stress-and-infertility/',
   '/sr/blog/reproductive-stress-and-infertility/',
+  '/blog/fertility-stress-and-relationships/',
+  '/sr/blog/stres-zbog-neplodnosti-i-partnerski-odnos/',
+  '/blog/pregnancy-after-infertility-or-loss/',
+  '/sr/blog/trudnoca-posle-infertiliteta-ili-gubitka-trudnoce/',
+  '/blog/fertility-treatment-burnout/',
+  '/sr/blog/iscrpljenost-tokom-lecenja-neplodnosti/',
   '/blog/why-am-i-so-hard-on-myself/',
   '/sr/blog/why-am-i-so-hard-on-myself/'
 ]);

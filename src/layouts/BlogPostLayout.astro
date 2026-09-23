@@ -109,8 +109,8 @@ const articleStructuredData = [
           <img
             src={frontmatter.image}
             alt={frontmatter.imageAlt || frontmatter.title}
-            width="1600"
-            height="900"
+            width={frontmatter.imageWidth || 1600}
+            height={frontmatter.imageHeight || 900}
             decoding="async"
             class="w-full aspect-[16/9] object-cover"
           />

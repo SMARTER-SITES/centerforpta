@@ -136,10 +136,12 @@ test('llms.txt is a concise, grounded discovery map of verified live content', (
   assert.match(llmsTxt, /## Serbian/);
   assert.match(llmsTxt, /\/api\/practice\.json/);
   assert.doesNotMatch(llmsTxt, /unplanned pregnancy/i);
-  assert.doesNotMatch(llmsTxt, /fertility-stress-and-relationships/);
-  assert.doesNotMatch(llmsTxt, /pregnancy-after-infertility-or-loss/);
-  assert.doesNotMatch(llmsTxt, /stres-zbog-neplodnosti-i-partnerski-odnos/);
-  assert.doesNotMatch(llmsTxt, /trudnoca-posle-infertiliteta-ili-gubitka-trudnoce/);
+  assert.match(llmsTxt, /fertility-stress-and-relationships/);
+  assert.match(llmsTxt, /pregnancy-after-infertility-or-loss/);
+  assert.match(llmsTxt, /fertility-treatment-burnout/);
+  assert.match(llmsTxt, /stres-zbog-neplodnosti-i-partnerski-odnos/);
+  assert.match(llmsTxt, /trudnoca-posle-infertiliteta-ili-gubitka-trudnoce/);
+  assert.match(llmsTxt, /iscrpljenost-tokom-lecenja-neplodnosti/);
 });
 
 test('English and Serbian pages expose llms.txt discovery independently of CDN headers', () => {
