@@ -83,8 +83,8 @@ test('public CMS admin surfaces send noindex signals', () => {
 });
 
 test('all Netlify contact forms include deterministic names and confirmation routes', () => {
-  assert.match(englishContact, /action="\/thank-you\/\?submitted=1"/);
-  assert.match(serbianContact, /action="\/sr\/hvala\/\?submitted=1"/);
+  assert.match(englishContact, /action="\/thank-you\/"/);
+  assert.match(serbianContact, /action="\/sr\/hvala\/"/);
 
   for (const source of [englishContact, serbianContact, englishFooter, serbianFooter]) {
     assert.match(source, /name="form-name" value="contact"/);
@@ -95,14 +95,9 @@ test('all Netlify contact forms include deterministic names and confirmation rou
 
   assert.match(englishThankYou, /noIndex=\{true\}/);
   assert.match(serbianThankYou, /noIndex=\{true\}/);
-  assert.match(englishThankYou, /generate_lead/);
-  assert.match(serbianThankYou, /generate_lead/);
-  assert.match(englishThankYou, /sessionStorage/);
-  assert.match(serbianThankYou, /sessionStorage/);
-  assert.match(englishThankYou, /confirmedSubmission/);
-  assert.match(serbianThankYou, /confirmedSubmission/);
-  assert.match(englishThankYou, /get\('submitted'\) === '1'/);
-  assert.match(serbianThankYou, /get\('submitted'\) === '1'/);
+  for (const page of [englishThankYou, serbianThankYou]) {
+    assert.doesNotMatch(page, /generate_lead|sessionStorage|confirmedSubmission/);
+  }
   assert.match(englishThankYou, /<Navbar alternatePath="\/sr\/hvala\/" \/>/);
   assert.match(serbianThankYou, /<Navbar alternatePath="\/thank-you\/" \/>/);
 });

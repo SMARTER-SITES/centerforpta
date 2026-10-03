@@ -33,16 +33,4 @@ import Footer from '../../components-sr/Footer.astro';
   </main>
 
   <Footer />
-
-  <script is:inline>
-    const leadEventKey = 'center-for-pta-contact-lead-sr';
-    const confirmedSubmission = new URLSearchParams(window.location.search).get('submitted') === '1';
-    if (confirmedSubmission && !sessionStorage.getItem(leadEventKey) && typeof window.gtag === 'function') {
-      window.gtag('event', 'generate_lead', {
-        form_name: 'contact',
-        language: 'sr'
-      });
-      sessionStorage.setItem(leadEventKey, 'sent');
-    }
-  </script>
 </Layout>
