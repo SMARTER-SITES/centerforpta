@@ -6,7 +6,8 @@ const sources = {
   'footer-sr': 'sr',
 };
 
-document.querySelectorAll('form[data-netlify="true"][name="contact"]').forEach((form) => {
+// Netlify removes data-netlify from published HTML after form discovery.
+document.querySelectorAll('form[name="contact"]').forEach((form) => {
   const source = form.querySelector('[name="form-source"]')?.value;
   const language = sources[source];
   if (!language) return;
