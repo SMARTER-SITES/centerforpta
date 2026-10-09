@@ -439,6 +439,7 @@ ${serviceLinks}
 
 ## Clinical insights
 
+- [Postpartum Depression and Anxiety](${siteBaseUrl}/blog/postpartum-depression-and-anxiety/): Recognizing symptoms, professional assessment, support after birth, and urgent-help guidance.
 - [Insights hub](${siteBaseUrl}/blog/): Published Center for PTA articles and pagination.
 - [Reproductive Stress and Infertility](${siteBaseUrl}/blog/reproductive-stress-and-infertility/): Emotional effects of infertility and fertility treatment, coping, and when therapy may help.
 - [When Fertility Stress Affects Partners Differently](${siteBaseUrl}/blog/fertility-stress-and-relationships/): Communication and shared decisions for couples facing infertility.
@@ -449,6 +450,7 @@ ${serviceLinks}
 
 ## Serbian
 
+- [Postpartalna depresija i anksioznost](${siteBaseUrl}/sr/blog/postpartalna-depresija-i-anksioznost/): Simptomi, stručna procena, podrška posle porođaja i hitna pomoć.
 - [Serbian homepage](${siteBaseUrl}/sr/): Practice, services, and Schaumburg office information in Serbian.
 - [Serbian office and location FAQ](${practiceProfile.location.serbianPageUrl}): Address, hours, verified parking and restroom details, appointment guidance, nearby communities, telehealth boundaries, languages, insurance verification, and travel-to-Illinois answers in Serbian.
 - [Serbian provider profile](${siteBaseUrl}/sr/dr-jelena-djurovic/): Provider biography and professional details in Serbian.

@@ -106,6 +106,8 @@ const webPageSchemaTypes = new Set([
 ]);
 
 const citationRequiredRoutes = new Set([
+  '/blog/postpartum-depression-and-anxiety/',
+  '/sr/blog/postpartalna-depresija-i-anksioznost/',
   '/blog/reproductive-stress-and-infertility/',
   '/sr/blog/reproductive-stress-and-infertility/',
   '/blog/fertility-stress-and-relationships/',
