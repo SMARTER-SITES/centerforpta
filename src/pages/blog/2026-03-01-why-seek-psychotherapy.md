@@ -7,7 +7,7 @@ updatedDate: 2026-08-29T12:00:00.000Z
 author: "Dr. Jelena Djurovic"
 category: "Starting Therapy"
 image: "/images/blog/why-seek-psychotherapy.png"
-imageAlt: "Two adults having a calm psychotherapy conversation in a private office"
+imageAlt: "Chairs and a vase of branches beside a window in a quiet room"
 description: "Learn when psychotherapy may help with stress, relationships, grief, symptoms, or life changes, and how to begin in Schaumburg or by Illinois telehealth."
 srPath: "/sr/blog/2026-03-01-why-seek-psychotherapy/"
 citations:

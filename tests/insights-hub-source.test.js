@@ -61,7 +61,7 @@ test('site navigation and hub present the blog as Clinical Insights', () => {
 test('blog post layout emits BlogPosting and optional faq metadata', () => {
   assert.match(blogPostLayout, /schemaType="BlogPosting"/);
   assert.match(blogPostLayout, /faqItems=\{frontmatter\.faqItems \|\| \[\]\}/);
-  assert.match(blogPostLayout, /srAlternatePath=\{frontmatter\.srAlternatePath === false/);
+  assert.match(blogPostLayout, /srAlternatePath=\{alternatePath\}/);
   assert.match(srBlogPostLayout, /schemaType="BlogPosting"/);
   assert.match(srBlogPostLayout, /faqItems=\{frontmatter\.faqItems \|\| \[\]\}/);
 });

@@ -1,10 +1,16 @@
 ---
+import { responsiveImage, imageDimensions } from '../utils/responsive-image';
 import Layout from './Layout.astro';
 import Navbar from '../components-sr/Navbar.astro';
 import Footer from '../components-sr/Footer.astro';
 import { getBreadcrumbStructuredData } from '../utils-sr/seo';
 
 const { frontmatter } = Astro.props;
+const otherPosts = import.meta.glob('../pages/blog/*.md');
+const candidateAlternate = frontmatter.enPath || `${Astro.url.pathname.replace(/^\/sr(?=\/|$)/, '')}`;
+const counterpartKey = `../pages${candidateAlternate.replace(/\/$/, '')}.md`;
+const alternatePath = frontmatter.enAlternatePath === false || !(counterpartKey in otherPosts) ? false : candidateAlternate;
+
 const articleTitle = frontmatter.metaTitle || `${frontmatter.title} | Center for PTA`;
 const displayDate = frontmatter.date
   ? new Date(frontmatter.date).toLocaleDateString('sr-Latn-RS', {
@@ -35,8 +41,8 @@ const articleStructuredData = [
   title={articleTitle}
   description={frontmatter.description}
   image={frontmatter.image}
-  imageWidth={frontmatter.imageWidth || 1600}
-  imageHeight={frontmatter.imageHeight || 900}
+  imageWidth={imageDimensions(frontmatter.image).width || frontmatter.imageWidth}
+  imageHeight={imageDimensions(frontmatter.image).height || frontmatter.imageHeight}
   ogType="article"
   publishedTime={frontmatter.date}
   modifiedTime={frontmatter.updatedDate || frontmatter.date}
@@ -44,11 +50,11 @@ const articleStructuredData = [
   reviewedBy={reviewedBy}
   citations={frontmatter.citations || []}
   schemaType="BlogPosting"
-  enAlternatePath={frontmatter.enAlternatePath === false ? false : frontmatter.enPath}
+  enAlternatePath={alternatePath}
   faqItems={frontmatter.faqItems || []}
   structuredData={articleStructuredData}
 >
-  <Navbar alternatePath={frontmatter.enPath} />
+  <Navbar alternatePath={alternatePath} />
 
   <section class="pt-32 md:pt-40 bg-[#fbfaf7] border-b border-[#e8e2d8]">
     <div class="max-w-[1180px] mx-auto px-5 md:px-10 xl:px-16 pb-14 md:pb-20">
@@ -107,12 +113,12 @@ const articleStructuredData = [
       {frontmatter.image && (
         <div class="mb-12 overflow-hidden rounded-2xl border border-[#e8e2d8] shadow-[0_24px_80px_rgba(47,89,79,0.12)]">
           <img
-            src={frontmatter.image}
+            {...responsiveImage(frontmatter.image, "(min-width: 1120px) 1000px, 100vw")}
             alt={frontmatter.imageAlt || frontmatter.title}
-            width={frontmatter.imageWidth || 1600}
-            height={frontmatter.imageHeight || 900}
+            width={imageDimensions(frontmatter.image).width || frontmatter.imageWidth}
+            height={imageDimensions(frontmatter.image).height || frontmatter.imageHeight}
             decoding="async"
-            class="w-full aspect-[16/9] object-cover"
+            class="w-full max-h-[700px] object-contain bg-[#fcfbf9]"
           />
         </div>
       )}
