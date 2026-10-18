@@ -11,7 +11,7 @@ const featuredLinks = [
     title: 'Nije Bitno Gde Sam Već Ko Sam S2: EP1 Jelena Djurović Psiholog',
     href: 'https://www.youtube.com/watch?v=4xS8Sm2lOh4',
     source: 'SBN Chicago News na YouTube-u',
-    language: 'srpski',
+    language: 'srpski', languageCode: 'sr',
     description:
       'Podcast epizoda sa dr Jelenom Djurović, psihologom, u serijalu SBN Chicago News-a Nije Bitno Gde Sam Već Ko Sam.',
     image: 'https://i.ytimg.com/vi/4xS8Sm2lOh4/hqdefault.jpg',
@@ -25,7 +25,7 @@ const featuredLinks = [
     href:
       'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/',
     source: 'Serbian Times',
-    language: 'srpski',
+    language: 'srpski', languageCode: 'sr',
     date: '7. jul 2025.',
     description:
       'Razgovor sa dr Jelenom Djurović o tome od čega naši ljudi u Americi najviše pate, kako psihološka podrška može da pomogne i na koji način evaluacije mogu biti važne u imigracionim postupcima.',
@@ -38,7 +38,7 @@ const featuredLinks = [
     title: 'Da li je TMS dobra dopuna razgovornoj terapiji?',
     href: 'https://www.youtube.com/watch?v=G6AWlonyxyE',
     source: 'TMSFIRSTCHOICE on YouTube',
-    language: 'engleski',
+    language: 'engleski', languageCode: 'en',
     description:
       'Video razgovor o tome da li TMS može biti dobra dopuna razgovornoj terapiji i širem tretmanu mentalnog zdravlja.',
     image: 'https://i.ytimg.com/vi/G6AWlonyxyE/hqdefault.jpg',
@@ -74,7 +74,7 @@ const mediaStructuredData = {
         '@type': 'CreativeWork',
         name: link.title,
         url: link.href,
-        inLanguage: link.language
+        inLanguage: link.languageCode
       }
     }))
   }

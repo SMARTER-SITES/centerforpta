@@ -2,83 +2,52 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import languageRouting from '../netlify/edge-functions/language-routing.js';
 
-function createContext() {
-  return {
-    next: () => new Response('next', { status: 200 })
-  };
-}
+const pairs = [
+  ['fertility-treatment-burnout', 'iscrpljenost-tokom-lecenja-neplodnosti'],
+  ['postpartum-depression-and-anxiety', 'postpartalna-depresija-i-anksioznost'],
+  ['fertility-stress-and-relationships', 'stres-zbog-neplodnosti-i-partnerski-odnos'],
+  ['pregnancy-after-infertility-or-loss', 'trudnoca-posle-infertiliteta-ili-gubitka-trudnoce']
+];
+const route = (path, headers = {}) => languageRouting(
+  new Request(`https://centerforpta.com${path}`, {headers: {accept: 'text/html', ...headers}}),
+  {next: () => new Response('requested page', {status: 200})}
+);
 
-async function route(path, headers = {}) {
-  return languageRouting(
-    new Request(`https://centerforpta.com${path}`, {
-      headers: {
-        accept: 'text/html',
-        ...headers
+test('explicit article URLs survive all browser-language and stored-preference combinations', async () => {
+  for (const [en, sr] of pairs) {
+    for (const path of [`/blog/${en}/`, `/sr/blog/${sr}/`]) {
+      for (const language of ['sr-RS', 'en-US', 'hr-HR', '']) {
+        for (const cookie of ['', 'preferred_locale=sr', 'preferred_locale=en', 'preferred_locale=%invalid']) {
+          const response = await route(path, {'accept-language': language, cookie});
+          assert.equal(response.status, 200, `${path}: ${language}, ${cookie}`);
+          assert.equal(response.headers.get('location'), null);
+        }
       }
-    }),
-    createContext()
-  );
-}
-
-test('keeps English as default for non-Balkan browser languages', async () => {
-  const response = await route('/', {
-    'accept-language': 'en-US,en;q=0.9'
-  });
-
-  assert.equal(response.status, 200);
+    }
+  }
 });
 
-test('redirects Balkan browser languages to matching Serbian routes', async () => {
-  const home = await route('/', {
-    'accept-language': 'sr-RS,sr;q=0.9,en;q=0.8'
-  });
-  const service = await route('/immigration-evaluations/', {
-    'accept-language': 'hr-HR,hr;q=0.9,en;q=0.8'
-  });
-
-  assert.equal(home.status, 302);
-  assert.equal(home.headers.get('location'), 'https://centerforpta.com/sr/');
-  assert.equal(service.status, 302);
-  assert.equal(service.headers.get('location'), 'https://centerforpta.com/sr/immigration-evaluations/');
+test('manual switches retain translated slugs, tracking parameters and a non-cacheable preference', async () => {
+  for (const [en, sr] of pairs) {
+    for (const [path, locale] of [[`/blog/${en}/`, 'en'], [`/sr/blog/${sr}/`, 'sr']]) {
+      const response = await route(`${path}?lang=${locale}&utm_source=google`);
+      assert.equal(response.status, 302);
+      assert.equal(response.headers.get('location'), `https://centerforpta.com${path}?utm_source=google`);
+      assert.match(response.headers.get('set-cookie'), new RegExp(`preferred_locale=${locale};`));
+      assert.match(response.headers.get('cache-control'), /no-store/);
+    }
+  }
 });
 
-test('language switch query stores explicit preference and cleans the URL', async () => {
-  const toSerbian = await route('/about?lang=sr');
-  const toEnglish = await route('/sr/about?lang=en');
-
-  assert.equal(toSerbian.status, 302);
-  assert.equal(toSerbian.headers.get('location'), 'https://centerforpta.com/sr/about');
-  assert.match(toSerbian.headers.get('set-cookie') || '', /preferred_locale=sr/);
-  assert.equal(toEnglish.status, 302);
-  assert.equal(toEnglish.headers.get('location'), 'https://centerforpta.com/about');
-  assert.match(toEnglish.headers.get('set-cookie') || '', /preferred_locale=en/);
+test('home, services and invalid language values do not redirect implicitly', async () => {
+  for (const path of ['/', '/sr/', '/therapy/', '/sr/therapy/', '/blog/?lang=xx']) {
+    assert.equal((await route(path, {'accept-language': 'sr-RS', cookie: 'preferred_locale=sr'})).status, 200);
+  }
 });
 
-test('explicit English preference overrides Balkan browser language', async () => {
-  const response = await route('/therapy', {
-    'accept-language': 'bs-BA,bs;q=0.9,en;q=0.8',
-    cookie: 'preferred_locale=en'
-  });
-
-  assert.equal(response.status, 200);
-});
-
-test('keeps English when English is the primary browser language and Serbian is secondary', async () => {
-  const response = await route('/therapy', {
-    'accept-language': 'en-US,en;q=0.9,sr;q=0.4'
-  });
-
-  assert.equal(response.status, 200);
-});
-
-test('skips non-public or already Serbian paths', async () => {
-  const srPage = await route('/sr/therapy', {
-    'accept-language': 'mk-MK,mk;q=0.9,en;q=0.8'
-  });
-  const asset = await route('/_astro/app.js', {
-    'accept-language': 'sr-RS,sr;q=0.9,en;q=0.8'
-  });
-
-  assert.equal(srPage.status, 200);
-  assert.equal(asset.status, 200);
+test('non-HTML and protected paths pass through even with a language parameter', async () => {
+  for (const path of ['/_astro/a.js?lang=sr', '/api/contact?lang=sr', '/admin/?lang=en', '/images/a.jpg?lang=en']) {
+    assert.equal((await route(path)).status, 200);
+  }
+  assert.equal((await route('/sitemap.xml?lang=sr', {accept: 'application/xml'})).status, 200);
 });

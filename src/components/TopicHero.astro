@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { responsiveImage } from '../utils/responsive-image';
 import officeImg from '../assets/hero-office.png';
 import PageBreadcrumbs from './PageBreadcrumbs.astro';
 
@@ -115,10 +116,8 @@ const {
           <div class="rounded-[1.9rem] overflow-hidden h-[320px] md:h-[460px]">
             {imageSrc ? (
               <img
-                src={imageSrc}
+                {...responsiveImage(imageSrc, "(min-width: 1024px) 45vw, 100vw")}
                 alt={imageAlt}
-                width="1200"
-                height="900"
                 class="w-full h-full object-cover"
                 loading="eager"
                 decoding="async"

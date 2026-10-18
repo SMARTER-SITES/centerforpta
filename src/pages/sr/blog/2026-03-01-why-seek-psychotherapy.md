@@ -7,7 +7,7 @@ updatedDate: 2026-08-29T12:00:00.000Z
 author: "Dr. Jelena Djurovic"
 category: "Početak terapije"
 image: "/images/blog/why-seek-psychotherapy.png"
-imageAlt: "Dve odrasle osobe vode miran psihoterapijski razgovor u privatnoj ordinaciji"
+imageAlt: "Stolice i vaza sa grančicama pored prozora u mirnoj prostoriji"
 description: "Psihoterapija može pružiti podršku kod simptoma, stresa, problema u odnosima, tuge i životnih promena. Saznajte kada terapija može pomoći u Schaumburgu ili online u Ilinoisu."
 enPath: "/blog/2026-03-01-why-seek-psychotherapy/"
 citations:
