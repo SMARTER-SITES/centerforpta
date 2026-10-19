@@ -21,6 +21,14 @@ citations:
     url: "https://www.acog.org/womens-health/experts-and-stories/the-latest/finding-emotional-support-after-pregnancy-loss"
   - name: "ACOG: Screening and Diagnosis of Mental Health Conditions During Pregnancy and Postpartum"
     url: "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum"
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Pregnancy after infertility or loss"
+lastReviewedDate: "2026-09-22"
+relatedServicePaths:
+  - "/prenatal-therapy/"
 ---
 
 A pregnancy after infertility or pregnancy loss can bring relief, joy, fear, grief, numbness, or feelings that change from one appointment to the next. Some people do not experience significant anxiety. There is no required emotional response and no correct way to feel grateful, hopeful, or attached.

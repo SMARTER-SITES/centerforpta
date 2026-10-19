@@ -21,6 +21,14 @@ citations:
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10224906/"
   - name: "Kristin Neff: What is self-compassion?"
     url: "https://self-compassion.org/what-is-self-compassion/"
+authorId: "jelena-djurovic"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Iscrpljenost tokom lečenja neplodnosti"
+lastReviewedDate: "2026-09-22"
+relatedServicePaths:
+  - "/sr/self-compassion-therapy/"
 ---
 
 Možda želite dete jednako snažno kao i ranije, a ipak osećate da nemate snage za još jedan pregled. Pratite plan lečenja, pamtite šta je sledeće i uspevate da završite radni dan. Ali i sasvim obično pitanje „Kako ide?” može da traži više energije nego što trenutno imate.

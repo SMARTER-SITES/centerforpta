@@ -25,6 +25,9 @@ faqItems:
     answer: "Evaluations are available in English and Serbian. Dr. Djurovic speaks conversational Spanish; contact the practice to discuss whether Spanish-language support is appropriate for your needs. Clients from outside Illinois who need an evaluation in Serbian may be seen in person if they are able to travel to the Schaumburg office and are physically present in Illinois for the evaluation."
   - question: "Does a psychological evaluation guarantee that my immigration case will be approved?"
     answer: "No. A psychological evaluation can provide clinical documentation, but it does not guarantee any immigration outcome. Immigration decisions are made by legal or government authorities. Clients should speak with their attorney about how the evaluation may be used in their case."
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
 ---
 
 Immigration psychological evaluations can feel unfamiliar, especially when they are connected to a legal process, personal history, family stress, trauma, or uncertainty about the future. Many people are not sure what the evaluation involves, what they will be asked, or how the final report may be used.

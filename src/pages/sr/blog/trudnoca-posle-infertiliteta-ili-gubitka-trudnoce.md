@@ -21,6 +21,14 @@ citations:
     url: "https://www.acog.org/womens-health/experts-and-stories/the-latest/finding-emotional-support-after-pregnancy-loss"
   - name: "ACOG: Screening and Diagnosis of Mental Health Conditions During Pregnancy and Postpartum"
     url: "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum"
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Trudnoća posle neplodnosti ili gubitka trudnoće"
+lastReviewedDate: "2026-09-22"
+relatedServicePaths:
+  - "/sr/prenatal-therapy/"
 ---
 
 Trudnoća posle infertiliteta ili gubitka trudnoće može doneti olakšanje, radost, strah, tugu, emocionalnu utrnulost ili osećanja koja se menjaju od jednog pregleda do drugog. Neke osobe ne osećaju izraženu anksioznost. Ne postoji obavezna emocionalna reakcija niti jedan ispravan način da budete zahvalni, puni nade ili povezani sa trudnoćom.

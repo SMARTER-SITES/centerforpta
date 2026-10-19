@@ -29,6 +29,9 @@ faqItems:
     answer: "No. Self-compassion makes room for pain, disappointment, and responsibility. It aims for a response that is honest and supportive rather than falsely positive."
   - question: "When should I consider therapy for self-criticism?"
     answer: "Consider reaching out when self-criticism is affecting daily life, relationships, work, health, or your ability to recover from ordinary mistakes. A therapist can help determine whether self-compassion-focused work fits your needs."
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
 ---
 
 You make a mistake and the moment is over, but your mind keeps working. You replay the email, the conversation, or the decision. When something goes well, relief lasts only briefly before the next standard appears.

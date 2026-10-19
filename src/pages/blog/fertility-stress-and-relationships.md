@@ -21,6 +21,14 @@ citations:
     url: "https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Psychosocial-care-guideline.aspx"
   - name: "American Psychiatric Association: Psychiatric aspects of infertility"
     url: "https://www.psychiatry.org/psychiatrists/search-directories-databases/resource-documents/2019/psychiatric-aspects-of-infertility"
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Fertility stress and relationships"
+lastReviewedDate: "2026-09-22"
+relatedServicePaths:
+  - "/couples-therapy/"
 ---
 
 You can be on the same fertility journey and still live on different emotional timelines.

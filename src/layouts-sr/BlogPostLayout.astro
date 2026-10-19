@@ -21,6 +21,9 @@ const displayDate = frontmatter.date
   : '';
 const category = frontmatter.category || 'Klinički uvid';
 const reviewedBy = frontmatter.reviewedBy;
+const reviewDateLabel = frontmatter.lastReviewedDate
+  ? new Date(frontmatter.lastReviewedDate).toLocaleDateString('sr-Latn-RS', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+  : frontmatter.lastReviewed;
 const tocHeadings = (Astro.props.headings || []).filter((heading) => heading.depth === 2 || heading.depth === 3);
 const existingStructuredData = Array.isArray(frontmatter.structuredData)
   ? frontmatter.structuredData
@@ -47,6 +50,13 @@ const articleStructuredData = [
   publishedTime={frontmatter.date}
   modifiedTime={frontmatter.updatedDate || frontmatter.date}
   author={frontmatter.author}
+  authorId={frontmatter.authorId}
+  reviewerId={frontmatter.reviewerId}
+  lastReviewedDate={frontmatter.lastReviewedDate}
+  medicalContent={frontmatter.medicalContent === true}
+  topic={frontmatter.schemaTopic}
+  relatedServicePaths={frontmatter.relatedServicePaths || []}
+  translationPath={frontmatter.translationSource === 'en' ? alternatePath : false}
   reviewedBy={reviewedBy}
   citations={frontmatter.citations || []}
   schemaType="BlogPosting"
@@ -96,8 +106,8 @@ const articleStructuredData = [
           <aside class="border-l-4 border-[#2f594f] pl-6 py-2">
             <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#8b7a56] mb-3">Klinički pregledano</p>
             <p class="text-base font-bold text-[#1a1a1a] leading-snug">{reviewedBy}</p>
-            {frontmatter.lastReviewed && (
-              <p class="mt-2 text-sm text-gray-600">Poslednji pregled: {frontmatter.lastReviewed}</p>
+            {reviewDateLabel && (
+              <p class="mt-2 text-sm text-gray-600">Poslednji pregled: <time datetime={frontmatter.lastReviewedDate}>{reviewDateLabel}</time></p>
             )}
             <p class="mt-5 text-sm text-gray-600 leading-relaxed">
               Edukativne smernice Center for PTA u Šamburgu, IL.

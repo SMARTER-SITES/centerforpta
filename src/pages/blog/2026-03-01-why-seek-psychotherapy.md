@@ -30,6 +30,8 @@ faqItems:
     answer: "Dr. Jelena Djurovic is licensed to practice in Illinois. Telehealth may be available only when the client is physically located in Illinois at the time of the session and the format is clinically appropriate."
   - question: "How can I ask whether Center for PTA is a good fit?"
     answer: "Contact Center for PTA to describe the type of support you are seeking and ask about current availability, language, insurance, format, and clinical fit. Services are available in English and Serbian."
+authorId: "jelena-djurovic"
+translationSource: "en"
 ---
 
 Hear me out. I know that starting therapy can sound as though something must be seriously wrong. Therapy can absolutely help when a person is experiencing depression, anxiety, trauma-related symptoms, relationship distress, or another clear concern. But psychotherapy is not reserved only for a diagnosis or a crisis.

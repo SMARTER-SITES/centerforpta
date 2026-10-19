@@ -70,6 +70,14 @@ faqItems:
     answer: "Yes. Breastfeeding does not prevent someone from receiving psychotherapy. If medication is also being considered, discuss your feeding situation and the individual benefits and risks with the prescribing clinician."
   - question: "What should I say in the first appointment?"
     answer: "“Since the birth, I have been feeling ___. It has been going on for ___. The hardest part of my day is ___. I need help understanding what is happening.” Include concerns about sleep, intrusive thoughts, or safety rather than trying to make the description sound less serious."
+authorId: "jelena-djurovic"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Postpartum depression and anxiety"
+lastReviewedDate: "2026-10-08"
+relatedServicePaths:
+  - "/postpartum-therapy/"
 ---
 
 Dr. Jelena Djurovic, Psy.D.

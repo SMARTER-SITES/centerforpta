@@ -70,6 +70,14 @@ faqItems:
     answer: "Da. Možete ići na psihoterapiju dok dojite. Ako se razmatraju lekovi, razgovarajte sa lekarom koji ih propisuje o dojenju i koristima i rizicima u vašoj situaciji."
   - question: "Šta da kažem na prvom razgovoru?"
     answer: "Možete početi ovako: „Od porođaja se osećam ___. To traje ___. Najteže mi je ___. Volela bih da razumem šta mi se dešava.“ Pomenite i teškoće sa snom, nametljive misli ili brigu za bezbednost. Ne morate ublažavati opis da bi zvučao manje ozbiljno."
+authorId: "jelena-djurovic"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Postpartalna depresija i anksioznost"
+lastReviewedDate: "2026-10-08"
+relatedServicePaths:
+  - "/sr/postpartum-therapy/"
 ---
 
 dr Jelena Đurović, Psy.D.
