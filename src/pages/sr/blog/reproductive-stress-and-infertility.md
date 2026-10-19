@@ -37,6 +37,14 @@ faqItems:
     answer: "Online terapija može biti dostupna samo kada se klijent fizički nalazi u Illinoisu u trenutku seanse. Termini uživo dostupni su u ordinaciji Center for PTA u Schaumburgu."
   - question: "Da li Center for PTA pruža testiranje plodnosti ili medicinski tretman plodnosti?"
     answer: "Ne. Center for PTA pruža psihološku podršku, a ne testiranje plodnosti, reproduktivnu medicinu ili medicinski tretman plodnosti."
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Reproduktivni stres i neplodnost"
+lastReviewedDate: "2026-07-31"
+relatedServicePaths:
+  - "/sr/womens-mental-health-therapy/"
 ---
 
 Pokušaji začeća mogu početi sa nadom, a zatim se postepeno organizovati oko čekanja, praćenja ciklusa, termina, rezultata testova, teških odluka i ponavljane neizvesnosti. Ono što je nekada bilo privatno i lično može početi da utiče na raspoloženje, odnose, posao, sliku o telu, finansije i doživljaj sebe.

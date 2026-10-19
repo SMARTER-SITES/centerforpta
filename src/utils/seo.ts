@@ -135,6 +135,13 @@ interface WebPageStructuredDataInput {
   url: string;
   language: string;
   image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  medicalContent?: boolean;
+  mainEntityId?: string;
+  topic?: string;
+  reviewedBy?: Record<string, unknown>;
+  lastReviewed?: string;
 }
 
 interface FaqStructuredDataOptions {
@@ -215,13 +222,14 @@ export function getBaseStructuredData() {
     employee: {
       '@type': 'Person',
       '@id': `${siteUrl}/dr-jelena-djurovic/#person`,
-      name: 'Dr. Jelena Djurovic',
+      name: 'Jelena Djurovic',
+      honorificPrefix: 'Dr.',
+      honorificSuffix: 'Psy.D.',
       jobTitle: 'Illinois Licensed Clinical Psychologist'
     },
     logo: logoUrl,
     image: defaultOgImage,
     hasMap: mapUrl,
-    medicalSpecialty: ['Clinical Psychology', 'Psychotherapy', 'Psychological Assessment'],
     knowsLanguage: serviceLanguages,
     knowsAbout: [
       'Therapy in Schaumburg, IL',
@@ -273,13 +281,12 @@ export function getBaseStructuredData() {
       name: 'Clinical psychology services in Schaumburg and Illinois',
       itemListElement: coreServiceOffers.map((service) => ({
         '@type': 'Offer',
+        name: service.name,
         url: absoluteUrl(service.path),
         itemOffered: {
           '@type': 'Service',
-          name: service.name,
-          serviceType: service.serviceType,
-          url: absoluteUrl(service.path),
-          areaServed: localServiceArea
+          '@id': `${absoluteUrl(service.path)}#service`,
+          url: absoluteUrl(service.path)
         }
       }))
     },
@@ -292,11 +299,11 @@ export function getWebPageStructuredData({
   description,
   url,
   language,
-  image
+  image, imageWidth, imageHeight, medicalContent = false, mainEntityId, topic, reviewedBy, lastReviewed
 }: WebPageStructuredDataInput) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    '@type': medicalContent ? 'MedicalWebPage' : 'WebPage',
     '@id': `${url}#webpage`,
     url,
     name,
@@ -305,9 +312,12 @@ export function getWebPageStructuredData({
     isPartOf: {
       '@id': `${siteUrl}/#website`
     },
-    about: {
-      '@id': `${siteUrl}/#professional-service`
+    about: topic ? { '@type': 'Thing', name: topic } : {
+      '@id': mainEntityId?.endsWith('#service') ? mainEntityId : `${siteUrl}/#professional-service`
     },
+    ...(mainEntityId ? { mainEntity: { '@id': mainEntityId } } : {}),
+    ...(reviewedBy ? { reviewedBy } : {}),
+    ...(lastReviewed ? { lastReviewed } : {}),
     publisher: {
       '@id': `${siteUrl}/#professional-service`
     },
@@ -315,7 +325,8 @@ export function getWebPageStructuredData({
       ? {
           primaryImageOfPage: {
             '@type': 'ImageObject',
-            url: image
+            url: image,
+            ...(imageWidth && imageHeight ? { width: imageWidth, height: imageHeight } : {})
           }
         }
       : {})
@@ -395,9 +406,7 @@ export function getServiceStructuredData({
       url: absoluteUrl('/contact/'),
       itemOffered: {
         '@type': 'Service',
-        name,
-        serviceType,
-        areaServed: localServiceArea
+        '@id': `${serviceUrl}#service`
       }
     },
     availableChannel: {

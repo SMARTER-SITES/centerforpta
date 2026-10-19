@@ -32,6 +32,8 @@ faqItems:
     answer: "Ne. Etičan stručnjak ne može garantovati određeni rezultat. Terapeut treba da objasni predloženi pristup, razloge za njega, razumne alternative, ograničenja i način na koji će se napredak pratiti."
   - question: "Može li Center for PTA pružati telehealth ako sam van Ilinoisa?"
     answer: "Telehealth može biti dostupan samo kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan. Terapija uživo dostupna je u ordinaciji u Schaumburgu."
+authorId: "jelena-djurovic"
+translationSource: "en"
 ---
 
 Pronalaženje pravog terapeuta jeste važno. To ne znači da za svaku osobu postoji samo jedan savršen terapeut ili da je prijatan prvi utisak dovoljan. Dobro uklapanje spaja odgovarajuću licencu i kliničku stručnost sa radnim odnosom u kome možete da postavljate pitanja, razumete plan i iskreno kažete šta vam pomaže, a šta ne.

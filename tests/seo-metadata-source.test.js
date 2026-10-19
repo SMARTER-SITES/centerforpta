@@ -50,14 +50,14 @@ test('layouts expose Open Graph locale and only emit verified image dimensions',
 test('base structured data identifies the practice as a local medical service', () => {
   assert.match(englishSeo, /'MedicalBusiness'/);
   assert.match(englishSeo, /hasMap:/);
-  assert.match(englishSeo, /medicalSpecialty:/);
+  assert.equal(getEnglishBaseStructuredData().medicalSpecialty, undefined);
   assert.match(englishSeo, /knowsLanguage:/);
   assert.match(englishSeo, /hasOfferCatalog:/);
   assert.match(englishSeo, /Hoffman Estates/);
   assert.match(englishSeo, /Family Therapy in Schaumburg, IL/);
   assert.match(serbianSeo, /'MedicalBusiness'/);
   assert.match(serbianSeo, /hasMap:/);
-  assert.match(serbianSeo, /medicalSpecialty:/);
+  assert.equal(getSerbianBaseStructuredData().medicalSpecialty, undefined);
   assert.match(serbianSeo, /knowsLanguage:/);
   assert.match(serbianSeo, /hasOfferCatalog:/);
   assert.match(serbianSeo, /Hoffman Estates/);
@@ -72,7 +72,7 @@ test('practice schema avoids unsupported founder claims while provider schema li
   assert.equal(serbianPractice.founder, undefined);
   assert.equal(englishPractice.employee['@id'], 'https://centerforpta.com/dr-jelena-djurovic/#person');
   assert.equal(serbianPractice.employee['@id'], englishPractice.employee['@id']);
-  assert.equal(englishPractice.employee.name, 'Dr. Jelena Djurovic');
+  assert.equal(englishPractice.employee.name, 'Jelena Djurovic');
   assert.match(providerPage, /worksFor:/);
   assert.match(providerPage, /#professional-service/);
   assert.match(serbianProviderPage, /worksFor:/);

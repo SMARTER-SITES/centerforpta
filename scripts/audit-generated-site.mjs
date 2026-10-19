@@ -294,6 +294,25 @@ for (const page of indexablePages) {
     }
   }
 
+  for (const pageEntity of pageEntities) {
+    if (pageEntity.reviewedBy && pageEntity.reviewedBy['@id'] !== providerId) {
+      problems.entityGraph.push({ route: page.route, issue: 'reviewer must reference the verified clinician' });
+    }
+    if (pageEntity.lastReviewed) {
+      const date = pageEntity.lastReviewed;
+      const validDate = typeof date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(date) &&
+        !Number.isNaN(Date.parse(date)) && new Date(date).toISOString().slice(0, 10) === date;
+      if (!validDate || !pageEntity.reviewedBy || !page.html.includes(`datetime="${date}"`)) {
+        problems.entityGraph.push({ route: page.route, issue: 'review date must be precise, attributed and visible' });
+      }
+    }
+  }
+  for (const practice of structuredData.filter((entry) => entry['@id'] === practiceId)) {
+    if (practice.medicalSpecialty) {
+      problems.entityGraph.push({ route: page.route, issue: 'medicalSpecialty is unsupported on this practice type' });
+    }
+  }
+
   if (page.route === '/contact/' || page.route === '/sr/contact/') {
     const contactPage = pageEntities.find((entry) => schemaTypes(entry).includes('ContactPage'));
     const contactPageIssues = [];
@@ -311,6 +330,13 @@ for (const page of indexablePages) {
   for (const entity of structuredData.filter((entry) =>
     schemaTypes(entry).some((type) => ['Article', 'BlogPosting', 'Service'].includes(type))
   )) {
+    const pageEntity = pageEntities[0];
+    if (pageEntity?.mainEntity?.['@id'] !== entity['@id']) {
+      problems.entityGraph.push({ route: page.route, issue: 'page must identify its main article or service' });
+    }
+    if (entity.reviewedBy || entity.lastReviewed) {
+      problems.entityGraph.push({ route: page.route, issue: 'review metadata belongs on WebPage' });
+    }
     if (entity.mainEntityOfPage?.['@id'] !== expectedPageId) {
       problems.entityGraph.push({
         route: page.route,
@@ -330,6 +356,32 @@ for (const page of indexablePages) {
         });
       }
 
+      if (entity.author?.['@type'] === 'Person' &&
+          (entity.author['@id'] !== providerId || !entity.author.url || /^(?:dr\.?|prof\.?)\s|Psy\.D\./i.test(entity.author.name))) {
+        problems.entityGraph.push({ route: page.route, issue: 'author needs a stable identity and name without titles' });
+      }
+      for (const [key, inverse] of [['translationOfWork', 'workTranslation'], ['workTranslation', 'translationOfWork']]) {
+        const targetId = entity[key]?.['@id'];
+        if (!targetId) continue;
+        const target = parseUrl(targetId);
+        const counterpart = target?.origin === siteOrigin ? pageByRoute.get(target.pathname) : null;
+        const counterpartEntities = counterpart
+          ? [...counterpart.html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)]
+              .flatMap((match) => { try { return collectJsonLdEntries(JSON.parse(match[1])); } catch { return []; } })
+          : [];
+        const translatedArticle = counterpartEntities.find((item) => item['@id'] === targetId);
+        if (!translatedArticle || translatedArticle[inverse]?.['@id'] !== entity['@id'] ||
+            translatedArticle.inLanguage === entity.inLanguage) {
+          problems.entityGraph.push({ route: page.route, issue: 'translation must link a real reciprocal article in the other language' });
+        }
+      }
+      for (const mention of asArray(entity.mentions)) {
+        const target = parseUrl(mention?.['@id']);
+        if (target?.origin === siteOrigin && target.hash === '#service' &&
+            (!page.links.some((href) => resolveInternalPath(href, page.route) === target.pathname) || !routeExists(target.pathname))) {
+          problems.entityGraph.push({ route: page.route, issue: 'mentioned service must have a visible working link' });
+        }
+      }
       const citations = Array.isArray(entity.citation)
         ? entity.citation
         : entity.citation
@@ -395,7 +447,8 @@ for (const page of indexablePages) {
         : 'Illinois Licensed Clinical Psychologist';
 
       if (person['@id'] !== providerId) personIssues.push('Person @id');
-      if (person.name !== 'Dr. Jelena Djurovic') personIssues.push('Person name');
+      if (person.name !== 'Jelena Djurovic') personIssues.push('Person name');
+      if (person.honorificPrefix !== 'Dr.' || person.honorificSuffix !== 'Psy.D.') personIssues.push('Person titles');
       if (person.url !== `${siteOrigin}/dr-jelena-djurovic/`) personIssues.push('Person URL');
       if (person.jobTitle !== expectedJobTitle) personIssues.push('Person jobTitle');
       if (person.worksFor?.['@id'] !== practiceId) personIssues.push('Person worksFor');

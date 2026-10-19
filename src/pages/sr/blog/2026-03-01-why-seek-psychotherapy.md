@@ -30,6 +30,8 @@ faqItems:
     answer: "Dr Jelena Djurovic ima licencu za rad u Ilinoisu. Telehealth može biti dostupan samo kada se klijent fizički nalazi u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan."
   - question: "Kako mogu da proverim da li mi Center for PTA odgovara?"
     answer: "Kontaktirajte Center for PTA, ukratko opišite kakvu podršku tražite i pitajte o aktuelnoj dostupnosti, jeziku, osiguranju, formatu i kliničkom uklapanju. Usluge su dostupne na srpskom i engleskom."
+authorId: "jelena-djurovic"
+translationSource: "en"
 ---
 
 Saslušajte me. Znam da početak terapije može zvučati kao da nešto mora biti ozbiljno pogrešno. Terapija zaista može pomoći kada osoba ima depresiju, anksioznost, simptome povezane sa traumom, probleme u odnosima ili neku drugu jasnu teškoću. Ipak, psihoterapija nije rezervisana samo za dijagnozu ili krizu.

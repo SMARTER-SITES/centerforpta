@@ -32,6 +32,8 @@ faqItems:
     answer: "No ethical clinician can guarantee a particular result. A therapist should explain the proposed approach, its rationale, reasonable alternatives, limitations, and how progress will be reviewed."
   - question: "Can Center for PTA provide telehealth if I am outside Illinois?"
     answer: "Telehealth may be available only when every participating client is physically located in Illinois at the time of the session and the format is clinically appropriate. In-person therapy is available at the Schaumburg office."
+authorId: "jelena-djurovic"
+translationSource: "en"
 ---
 
 Finding the right therapist matters. That does not mean there is one perfect therapist waiting for every person, or that a warm first impression is enough by itself. A good fit combines appropriate credentials and clinical competence with a working relationship in which you can ask questions, understand the plan, and speak honestly about what is or is not helping.

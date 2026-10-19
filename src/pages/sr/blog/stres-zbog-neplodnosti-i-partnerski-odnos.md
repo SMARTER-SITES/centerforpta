@@ -21,6 +21,14 @@ citations:
     url: "https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Psychosocial-care-guideline.aspx"
   - name: "American Psychiatric Association: Psychiatric aspects of infertility"
     url: "https://www.psychiatry.org/psychiatrists/search-directories-databases/resource-documents/2019/psychiatric-aspects-of-infertility"
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Stres zbog neplodnosti i partnerski odnos"
+lastReviewedDate: "2026-09-22"
+relatedServicePaths:
+  - "/sr/couples-therapy/"
 ---
 
 Dvoje ljudi mogu prolaziti kroz isti problem sa plodnošću, a ipak ga doživljavati u potpuno različitom emocionalnom ritmu.

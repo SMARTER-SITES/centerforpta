@@ -13,6 +13,9 @@ import {
 import type { FaqItem } from '../utils-sr/seo';
 import WebMcpProvider from '../components-sr/WebMcpProvider.astro';
 
+import { getContributor, getReviewMetadata, getTranslationMetadata } from '../utils/content-schema.js';
+import { imageDimensions } from '../utils/responsive-image';
+
 interface CitationItem {
   name: string;
   url: string;
@@ -28,6 +31,13 @@ interface Props {
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
+  authorId?: string;
+  reviewerId?: string;
+  lastReviewedDate?: string;
+  medicalContent?: boolean;
+  topic?: string;
+  relatedServicePaths?: string[];
+  translationPath?: string | false;
   reviewedBy?: string;
   citations?: CitationItem[];
   schemaType?: 'Article' | 'BlogPosting';
@@ -50,6 +60,8 @@ const {
   publishedTime,
   modifiedTime,
   author = 'Dr. Jelena Djurovic',
+  authorId, reviewerId, lastReviewedDate, medicalContent = false, topic,
+  relatedServicePaths = [], translationPath,
   reviewedBy,
   citations = [],
   schemaType = 'Article',
@@ -71,27 +83,15 @@ const englishAlternateUrl = new URL(englishPath, Astro.site ?? siteUrl).toString
 const previousUrl = previousPath ? new URL(previousPath, Astro.site ?? siteUrl).toString() : undefined;
 const nextUrl = nextPath ? new URL(nextPath, Astro.site ?? siteUrl).toString() : undefined;
 const socialImage = resolveMetaImage(image);
-const articleAuthor = author === siteName
-  ? {
-      '@type': 'Organization',
-      '@id': `${siteUrl}/#professional-service`,
-      name: siteName,
-      url: siteUrl
-    }
-  : {
-      '@type': 'Person',
-      '@id': author.includes('Jelena Djurovic') ? `${siteUrl}/dr-jelena-djurovic/#person` : undefined,
-      name: author,
-      url: author.includes('Jelena Djurovic') ? `${siteUrl}/dr-jelena-djurovic/` : undefined
-    };
-const articleReviewer = reviewedBy
-  ? {
-      '@type': 'Person',
-      '@id': `${siteUrl}/dr-jelena-djurovic/#person`,
-      name: reviewedBy,
-      url: `${siteUrl}/dr-jelena-djurovic/`
-    }
-  : undefined;
+const articleAuthor = getContributor(authorId, author);
+const reviewMetadata = getReviewMetadata(reviewerId, reviewedBy, lastReviewedDate);
+const dimensions = imageDimensions(image);
+const structuredImage = {
+  '@type': 'ImageObject', url: socialImage,
+  ...(dimensions.width && dimensions.height
+    ? { width: dimensions.width, height: dimensions.height }
+    : imageWidth && imageHeight ? { width: imageWidth, height: imageHeight } : {})
+};
 
 const customStructuredDataItems = Array.isArray(customStructuredData)
   ? customStructuredData
@@ -112,13 +112,17 @@ const hasCustomWebPageEntity = customStructuredDataItems.some((item) => {
   const itemTypes = Array.isArray(item['@type']) ? item['@type'] : [item['@type']];
   return itemTypes.some((itemType) => typeof itemType === 'string' && webPageSchemaTypes.has(itemType));
 });
+const serviceEntity = customStructuredDataItems.find((item) => item['@type'] === 'Service');
+const mainEntityId = ogType === 'article' ? `${canonicalUrl}#article` : serviceEntity?.['@id'] as string | undefined;
 const webPageStructuredData = !noIndex && !hasCustomWebPageEntity
   ? getWebPageStructuredData({
       name: title,
       description,
       url: canonicalUrl,
       language: 'sr-Latn',
-      image: socialImage
+      image: socialImage,
+      imageWidth: structuredImage.width, imageHeight: structuredImage.height,
+      medicalContent, mainEntityId, topic, ...reviewMetadata
     })
   : null;
 
@@ -135,7 +139,7 @@ const structuredData = [
         headline: title,
         description,
         inLanguage: 'sr-Latn',
-        image: socialImage,
+        image: structuredImage,
         author: articleAuthor,
         publisher: {
           '@type': 'Organization',
@@ -148,7 +152,11 @@ const structuredData = [
         },
         datePublished: publishedTime,
         dateModified: modifiedTime || publishedTime,
-        reviewedBy: articleReviewer,
+        ...(topic ? { about: { '@type': 'Thing', name: topic } } : {}),
+        ...(relatedServicePaths.length ? { mentions: relatedServicePaths.map((path) => ({
+          '@id': `${new URL(path, siteUrl).toString()}#service`
+        })) } : {}),
+        ...getTranslationMetadata('sr', translationPath),
         ...(citations.length > 0
           ? {
               citation: citations.map((citation) => ({

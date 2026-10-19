@@ -104,8 +104,8 @@ test('all Netlify contact forms include deterministic names and confirmation rou
 
 test('article schemas link Dr. Jelena to one canonical Person entity', () => {
   for (const layout of [englishLayout, serbianLayout]) {
-    assert.match(layout, /'@id': author\.includes\('Jelena Djurovic'\)/);
-    assert.match(layout, /dr-jelena-djurovic\/#person/);
+    assert.match(layout, /getContributor\(authorId, author\)/);
+    assert.doesNotMatch(layout, /author\.includes/);
   }
 });
 

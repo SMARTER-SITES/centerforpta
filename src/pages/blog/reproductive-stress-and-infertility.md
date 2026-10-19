@@ -38,6 +38,14 @@ faqItems:
     answer: "Telehealth may be available only when the client is physically located in Illinois at the time of the session. In-person appointments are available at the Center for PTA office in Schaumburg."
   - question: "Does Center for PTA provide fertility testing or medical fertility treatment?"
     answer: "No. Center for PTA provides psychological support, not fertility testing, reproductive medicine, or medical fertility treatment."
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Reproductive stress and infertility"
+lastReviewedDate: "2026-07-31"
+relatedServicePaths:
+  - "/womens-mental-health-therapy/"
 ---
 
 Trying to conceive can begin with hope and gradually become organized around waiting, tracking, appointments, test results, difficult decisions, and repeated uncertainty. What once felt private and personal may begin to affect your mood, relationships, work, body image, finances, and sense of who you are.

@@ -28,6 +28,9 @@ faqItems:
     answer: "Nije. Samosaosećanje ostavlja prostor za bol, razočaranje i odgovornost. Cilj je odgovor koji je iskren i podržavajući, a ne lažno pozitivan."
   - question: "Kada treba da razmislim o terapiji zbog samokritike?"
     answer: "Razmislite o podršci kada samokritika utiče na svakodnevni život, odnose, posao, zdravlje ili sposobnost da se oporavite od uobičajenih grešaka. Terapeut može pomoći da procenite da li rad usmeren na samosaosećanje odgovara vašim potrebama."
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
 ---
 
 Napravite grešku i trenutak prođe, ali vaš um nastavlja da radi. Iznova preispitujete imejl, razgovor ili odluku. Kada nešto prođe dobro, olakšanje traje kratko pre nego što se pojavi sledeći standard koji treba dostići.

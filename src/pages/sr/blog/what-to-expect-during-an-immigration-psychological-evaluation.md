@@ -25,6 +25,9 @@ faqItems:
     answer: "Evaluacije su dostupne na srpskom i engleskom jeziku. Dr Djurovic govori konverzacijski španski; kontaktirajte ordinaciju da proverite da li podrška na španskom odgovara vašim potrebama. Klijenti van Ilinoisa kojima je potrebna evaluacija na srpskom jeziku mogu biti viđeni uživo ako mogu da doputuju u ordinaciju u Šamburgu i ako su fizički prisutni u Ilinoisu tokom evaluacije."
   - question: "Da li psihološka evaluacija garantuje da će moj imigracioni slučaj biti odobren?"
     answer: "Ne. Psihološka evaluacija može pružiti kliničku dokumentaciju, ali ne garantuje nijedan imigracioni ishod. Odluke u imigracionim postupcima donose pravni ili državni organi. Klijenti treba da razgovaraju sa svojim advokatom o tome kako se evaluacija može koristiti u njihovom slučaju."
+authorId: "center-for-pta"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
 ---
 
 Imigracione psihološke evaluacije mogu delovati nepoznato, posebno kada su povezane sa pravnim postupkom, ličnom istorijom, porodičnim stresom, traumom ili neizvesnošću oko budućnosti. Mnogi ljudi nisu sigurni šta evaluacija uključuje, koja pitanja mogu očekivati ili kako se završni izveštaj može koristiti.

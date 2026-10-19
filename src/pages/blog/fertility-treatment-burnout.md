@@ -21,6 +21,14 @@ citations:
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10224906/"
   - name: "Kristin Neff: What is self-compassion?"
     url: "https://self-compassion.org/what-is-self-compassion/"
+authorId: "jelena-djurovic"
+translationSource: "en"
+reviewerId: "jelena-djurovic"
+medicalContent: true
+schemaTopic: "Fertility treatment burnout"
+lastReviewedDate: "2026-09-22"
+relatedServicePaths:
+  - "/self-compassion-therapy/"
 ---
 
 You may still want a child as much as you ever did and feel that you cannot face another appointment. You follow the treatment plan, keep track of what comes next, and get through your workday. Yet a question as simple as “How are things going?” can feel like more than you have the energy to answer.
