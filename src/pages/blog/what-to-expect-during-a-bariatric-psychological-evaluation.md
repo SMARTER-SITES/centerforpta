@@ -11,6 +11,8 @@ translationSource: "en"
 medicalContent: true
 lastReviewedDate: "2026-10-26"
 category: "Psychological Assessment"
+image: "/images/bariatric-surgery-counseling.jpg"
+imageAlt: "Two chairs beside a wooden table with an open notebook in a quiet consultation room"
 description: "Learn what a bariatric psychological evaluation involves, how to prepare, and what to ask about appointments, reports, and follow-up care."
 srPath: "/sr/blog/psiholoska-procena-pre-barijatrijske-operacije/"
 citations: [{"name":"ASMBS/IFSO (2022). Indications for Metabolic and Bariatric Surgery.","url":"https://asmbs.org/app/uploads/2022/10/ASMBS-IFSO-Guidelines-2022-PIIS1550728922006414.pdf"},{"name":"Mayo Clinic (2026). Weight-loss surgery: Is it an option for you?","url":"https://www.mayoclinic.org/healthy-lifestyle/weight-loss/in-depth/gastric-bypass-surgery/art-20046318"},{"name":"A review of psychological assessment instruments for use in bariatric surgery evaluations (2016).","url":"https://pubmed.ncbi.nlm.nih.gov/27537008/"},{"name":"Sogg, Lauretti & West-Smith (2016). Recommendations for the presurgical psychosocial evaluation of bariatric surgery patients.","url":"https://old.asmbs.org/app/uploads/2016/06/2016-Psych-Guidelines-published.pdf"},{"name":"ASMBS. Life After Bariatric Surgery.","url":"https://asmbs.org/patients/life-after-bariatric-surgery/"}]
