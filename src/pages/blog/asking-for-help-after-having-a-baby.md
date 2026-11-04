@@ -80,11 +80,11 @@ This article is educational and does not replace individual care. In the United 
 
 ## Sources
 
-[NIMH: Perinatal Depression](https://www.nimh.nih.gov/health/publications/perinatal-depression): simptomi, stručna procena i podrška u krizi.
+[NIMH: Perinatal Depression](https://www.nimh.nih.gov/health/publications/perinatal-depression): symptoms, professional assessment, and crisis support.
 
-[NHS: Postnatal depression](https://www.nhs.uk/mental-health/conditions/postnatal-depression/): praktična pomoć i obraćanje zdravstvenom stručnjaku.
+[NHS: Postnatal depression](https://www.nhs.uk/mental-health/conditions/postnatal-depression/): practical support and when to speak with a healthcare professional.
 
-[Kristin Neff: What Is Self-Compassion?](https://self-compassion.org/what-is-self-compassion/): objašnjenje samosaosećanja.
+[Kristin Neff: What Is Self-Compassion?](https://self-compassion.org/what-is-self-compassion/): an explanation of self-compassion.
 
-[NICHD: Action Plan for Depression and Anxiety During Pregnancy and After Birth](https://www.nichd.nih.gov/ncmhep/initiatives/moms-mental-health-matters/moms/action-plan): situacije u kojima je potrebna hitna pomoć.
+[NICHD: Action Plan for Depression and Anxiety During Pregnancy and After Birth](https://www.nichd.nih.gov/ncmhep/initiatives/moms-mental-health-matters/moms/action-plan): situations that need urgent help.
 
