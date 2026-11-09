@@ -203,6 +203,8 @@ You can contact Center for PTA directly to ask about services. Your insurance pl
 
 ## Related reading
 
+Learn about individual and couples support through [fertility and IVF counseling in Schaumburg](/fertility-counseling/).
+
 For a broader overview, read [reproductive stress and infertility](/blog/reproductive-stress-and-infertility/) and learn about [self-compassion therapy](/self-compassion-therapy/).
 
 ## About the author

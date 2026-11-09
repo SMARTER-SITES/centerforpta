@@ -239,6 +239,8 @@ Center for PTA pruža usluge na srpskom i engleskom. Online terapija može biti 
 
 ## Povezani tekstovi
 
+O individualnom i partnerskom radu saznajte više na stranici [psihološke podrške tokom neplodnosti i IVF-a](/sr/fertility-counseling/).
+
 Za širi pregled pročitajte [reproduktivni stres i infertilitet](/sr/blog/reproductive-stress-and-infertility/), a o dostupnoj pomoći saznajte više na stranici [partnerske terapije](/sr/couples-therapy/).
 
 ## O ovom tekstu

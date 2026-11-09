@@ -247,6 +247,8 @@ No. Center for PTA provides psychotherapy and psychological services. Prenatal, 
 
 ## Related reading
 
+Learn about individual and couples support through [fertility and IVF counseling in Schaumburg](/fertility-counseling/).
+
 For a broader overview, read [reproductive stress and infertility](/blog/reproductive-stress-and-infertility/) and learn about [prenatal therapy](/prenatal-therapy/).
 
 ## About this article

@@ -20,6 +20,8 @@ export const staticPages = [
   '/contact/',
   '/blog/',
   '/womens-mental-health-therapy/',
+  '/fertility-counseling/',
+  '/fertility-support-guide/',
   '/self-compassion-therapy/',
   '/weight-loss-counseling/',
   '/bariatric-surgery-counseling/',

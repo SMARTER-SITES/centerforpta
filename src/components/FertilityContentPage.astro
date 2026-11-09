@@ -1,0 +1,67 @@
+---
+import EnLayout from '../layouts/Layout.astro';
+import SrLayout from '../layouts-sr/Layout.astro';
+import EnNavbar from './Navbar.astro';
+import SrNavbar from '../components-sr/Navbar.astro';
+import EnFooter from './Footer.astro';
+import SrFooter from '../components-sr/Footer.astro';
+import EnBio from './AuthorBioBox.astro';
+import SrBio from '../components-sr/AuthorBioBox.astro';
+import copy from '../data/fertility.json';
+import PageBreadcrumbs from './PageBreadcrumbs.astro';
+const { lang = 'en', guide = false } = Astro.props as { lang?: 'en' | 'sr'; guide?: boolean };
+const sr = lang === 'sr';
+const content = copy[lang];
+const Layout = sr ? SrLayout : EnLayout;
+const Navbar = sr ? SrNavbar : EnNavbar;
+const Footer = sr ? SrFooter : EnFooter;
+const Bio = sr ? SrBio : EnBio;
+const prefix = sr ? '/sr' : '';
+const title = guide ? content.guideTitle : content.title;
+const sections = guide ? content.questions : content.sections;
+const seoTitle = sr
+  ? (guide ? 'Kako izabrati terapeuta tokom IVF-a | Center for PTA' : 'Podrška tokom IVF-a u Schaumburgu | Center for PTA')
+  : (guide ? 'Choosing a Therapist During Fertility Treatment | Center for PTA' : 'Fertility and IVF Counseling in Schaumburg | Center for PTA');
+// Clinical-review activation: no review date is inferred from deployment.
+---
+<Layout title={seoTitle} description={guide ? content.guideIntro : content.description}>
+  <Navbar />
+  <main>
+    <header class="pt-36 pb-14 md:pt-44 md:pb-20 bg-[#fcfbf9]">
+      <div class="max-w-4xl mx-auto px-6 md:px-10">
+        <PageBreadcrumbs
+          currentLabel={sr ? (guide ? 'Izbor terapeuta tokom IVF-a' : 'Podrška tokom IVF-a') : (guide ? 'Choosing a therapist' : 'Fertility counseling')}
+          homeLabel={sr ? 'Početna' : 'Home'}
+          homePath={sr ? '/sr/' : '/'}
+          ariaLabel={sr ? 'Putanja stranice' : 'Breadcrumb'}
+        />
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight text-[#2f594f] mb-7">{title}</h1>
+        <p class="text-lg md:text-xl leading-relaxed text-gray-700">{guide ? content.guideIntro : content.intro}</p>
+        <p class="mt-6 text-sm text-gray-600">{sr ? 'Srpski i engleski · Ordinacija u Schaumburgu · Onlajn u Ilinoisu' : 'English and Serbian · Schaumburg office · Illinois telehealth'}</p>
+      </div>
+    </header>
+    <article class="max-w-4xl mx-auto px-6 md:px-10 py-14 space-y-10">
+      {sections.map((section, index) => <section>
+        <h2 class="text-2xl font-bold text-[#2f594f] mb-4">{guide ? `${index + 1}. ` : ''}{section.title}</h2>
+        <p class="text-lg leading-relaxed text-gray-700">{section.text}</p>
+      </section>)}
+      {guide && <aside class="bg-[#edf2eb] p-6 rounded-2xl text-lg leading-relaxed text-[#2f594f]">{content.guideClose}</aside>}
+      <section class="border-t border-gray-200 pt-8">
+        <h2 class="text-2xl font-bold text-[#2f594f] mb-5">{sr ? 'Cene i dodatni tekstovi' : 'Fees and further reading'}</h2>
+        <ul class="space-y-4 text-lg">
+          <li><a class="text-[#2f594f] underline underline-offset-4" href={`${prefix}/rates-and-insurance/`}>{sr ? 'Cene i osiguranje' : 'Rates and insurance'}</a></li>
+          <li><a class="text-[#2f594f] underline underline-offset-4" href={`${prefix}/${guide ? 'fertility-counseling' : 'fertility-support-guide'}/`}>{guide ? content.title : content.guideTitle}</a></li>
+          {!guide && content.links.map(link => <li><a class="text-[#2f594f] underline underline-offset-4" href={link.href}>{link.title}</a></li>)}
+        </ul>
+      </section>
+      <section class="bg-[#2f594f] text-white p-7 md:p-10 rounded-2xl">
+        <h2 class="text-2xl font-bold mb-4">{sr ? 'Pitajte za termin' : 'Ask about appointments'}</h2>
+        <p class="leading-relaxed mb-6">{sr ? 'Za dostupne termine i pitanja pre zakazivanja javite se ordinaciji.' : 'Contact the office for availability and questions before booking.'}</p>
+        <a class="inline-block rounded-full bg-white text-[#2f594f] px-7 py-3 font-bold" href={`${prefix}/contact/`}>{sr ? 'Kontaktirajte ordinaciju' : 'Contact the practice'}</a>
+        <p class="text-sm mt-6">1320 Tower Rd, Suite 156, Schaumburg, IL 60173</p>
+      </section>
+    </article>
+    <Bio />
+  </main>
+  <Footer />
+</Layout>

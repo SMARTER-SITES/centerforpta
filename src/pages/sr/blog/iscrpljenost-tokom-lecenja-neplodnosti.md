@@ -203,6 +203,8 @@ Možete direktno da kontaktirate Center for PTA i pitate o uslugama. Vaš plan z
 
 ## Povezani tekstovi
 
+O individualnom i partnerskom radu saznajte više na stranici [psihološke podrške tokom neplodnosti i IVF-a](/sr/fertility-counseling/).
+
 Za širi pregled pročitajte [reproduktivni stres i infertilitet](/sr/blog/reproductive-stress-and-infertility/), a o dostupnoj pomoći saznajte više na stranici [terapije zasnovane na samosaosećanju](/sr/self-compassion-therapy/).
 
 ## O autorki

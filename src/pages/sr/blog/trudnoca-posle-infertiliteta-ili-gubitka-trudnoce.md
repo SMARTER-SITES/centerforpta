@@ -247,6 +247,8 @@ Ne. Center for PTA pruža psihoterapiju i psihološke usluge. Pitanja o trudnoć
 
 ## Povezani tekstovi
 
+O individualnom i partnerskom radu saznajte više na stranici [psihološke podrške tokom neplodnosti i IVF-a](/sr/fertility-counseling/).
+
 Za širi pregled pročitajte [reproduktivni stres i infertilitet](/sr/blog/reproductive-stress-and-infertility/), a o dostupnoj pomoći saznajte više na stranici [prenatalne terapije](/sr/prenatal-therapy/).
 
 ## O ovom tekstu

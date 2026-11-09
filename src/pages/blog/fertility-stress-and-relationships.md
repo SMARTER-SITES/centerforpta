@@ -239,6 +239,8 @@ Center for PTA provides services in English and Serbian. Telehealth may be avail
 
 ## Related reading
 
+Learn about individual and couples support through [fertility and IVF counseling in Schaumburg](/fertility-counseling/).
+
 For a broader overview, read [reproductive stress and infertility](/blog/reproductive-stress-and-infertility/) and learn about [couples therapy](/couples-therapy/).
 
 ## About this article

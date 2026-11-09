@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/BlogPostLayout.astro"
 title: "What to Expect During a Bariatric Psychological Evaluation"
-metaTitle: "Bariatric Psychological Evaluation | Center for PTA"
+metaTitle: "What to Expect During a Bariatric Psychological Evaluation"
 date: "2026-10-27T09:00:00.000Z"
 author: "Dr. Jelena Djurovic, Psy.D."
 reviewedBy: "Dr. Jelena Djurovic, Psy.D."

@@ -10,26 +10,26 @@ import PageAddressCard from '../../components-sr/PageAddressCard.astro';
 import { getServiceStructuredData } from '../../utils-sr/seo';
 
 const concerns = [
-  { title: "Anksioznost i stres", desc: "Naučite kako da upravljate preplavljujućom brigom, paničnim napadima i svakodnevnim stresom kroz strategije zasnovane na dokazima." },
-  { title: "Depresija i raspoloženje", desc: "Pronađite nadu i motivaciju kada se osećate tužno, beznadežno ili zaglavljeno. Pomažemo vam da ojačate emocionalnu otpornost." },
-  { title: "Trauma i PTSP", desc: "Rad na oporavku od prošlih iskustava u bezbednom, trauma-informed okruženju, uz proverene terapijske pristupe." },
-  { title: "Odnosi", desc: "Unapredite komunikaciju, obnovite poverenje i efikasnije se nosite sa porodičnim ili bračnim izazovima." },
-  { title: "Životne promene", desc: "Dobijte podršku tokom promena u karijeri, gubitka, tuge, separacije ili drugih značajnih životnih promena." },
-  { title: "Upotreba supstanci", desc: "Povratite osećaj kontrole nad alkoholom ili drogama uz saosećajnu podršku bez osuđivanja i efikasne intervencije." },
-  { title: "ADHD i fokus", desc: "Naučite kako da se efikasnije nosite sa rasutim mislima i unapredite svakodnevno funkcionisanje i kvalitet života." },
-  { title: "Hronični bol i bolest", desc: "Istražite vezu uma i tela i naučite intervencije koje vam pomažu da živite što slobodnije." }
+  { title: "Anksioznost i stres", desc: "Rad na brigama, paničnim napadima i stresu koji ometaju san, posao ili svakodnevne obaveze." },
+  { title: "Depresija i raspoloženje", desc: "Razgovor o sniženom raspoloženju, gubitku interesovanja i teškoćama da se pokrenete." },
+  { title: "Trauma i PTSP", desc: "Terapija se može baviti posledicama traumatskog iskustva, uz dogovor o tome šta ste spremni da otvorite u razgovoru." },
+  { title: "Odnosi", desc: "Razgovor o sukobima, nepoverenju i teškoćama da kažete šta vam je potrebno u odnosu." },
+  { title: "Životne promene", desc: "Podrška posle gubitka ili razdvajanja, pri promeni posla i drugim promenama na koje se teško navikavate." },
+  { title: "Upotreba supstanci", desc: "Razgovor o upotrebi alkohola ili droga, posledicama koje primećujete i odgovarajućoj vrsti pomoći." },
+  { title: "Samokritika", desc: "Rad na strogim zahtevima prema sebi, osećaju krivice i preispitivanju koje se stalno vraća na iste greške." },
+  { title: "Hronični bol i bolest", desc: "Psihološka podrška kada bol ili bolest utiču na raspoloženje, odnose i svakodnevni život." }
 ];
 
 const relatedLinks = [
   {
     href: '/sr/rates-and-insurance/',
     title: 'Cene i osiguranje',
-    desc: 'Pogledajte osiguranja, privatno plaćanje i sledeće korake pre zakazivanja terapije.'
+    desc: 'Informacije o ceni seanse, osiguranju i privatnom plaćanju.'
   },
   {
     href: '/sr/contact/',
     title: 'Pošaljite upit za konsultaciju',
-    desc: 'Javite se da pitate za individualnu, partnersku, porodičnu ili online terapiju u Ilinoisu.'
+    desc: 'Javite se da pitate za individualnu, partnersku, porodičnu ili onlajn terapiju u Ilinoisu.'
   },
   {
     href: '/sr/psychological-assessment/',
@@ -39,17 +39,17 @@ const relatedLinks = [
   {
     href: '/sr/blog/2026-03-01-why-seek-psychotherapy/',
     title: 'Zašto potražiti psihoterapiju?',
-    desc: 'Pročitajte kada terapija može pomoći i šta podržavajući terapijski proces može ponuditi.'
+    desc: 'O razlozima za javljanje psihologu i pitanjima koja se često javljaju pre prvog razgovora.'
   },
   {
     href: '/sr/blog/2026-03-02-how-do-i-find-the-right-therapist/',
     title: 'Kako da pronađem odgovarajućeg terapeuta?',
-    desc: 'Razmotrite praktična pitanja o uklapanju, kvalifikacijama, pristupu i sledećim koracima.'
+    desc: 'Šta da pitate o iskustvu terapeuta i načinu rada pre nego što zakažete.'
   },
   {
     href: '/sr/blog/why-am-i-so-hard-on-myself/',
     title: 'Zašto sam tako strog prema sebi?',
-    desc: 'Saznajte kako se samokritika razvija i kako samosaosećanje može podržati promenu.'
+    desc: 'O tome odakle dolazi stroga samokritika i kako se može raditi na odnosu prema sebi.'
   }
 ];
 
@@ -62,17 +62,17 @@ const specialtyLinks = [
   {
     href: '/sr/womens-mental-health-therapy/',
     title: "Terapija za mentalno zdravlje žena",
-    desc: 'Podrška za reproduktivne izazove, sliku tela i stres u životnim fazama.'
+    desc: 'Razgovori o lečenju neplodnosti, trudnoći, odnosu prema telu i drugim brigama.'
   },
   {
     href: '/sr/self-compassion-therapy/',
     title: 'Terapija samosaosećanja',
-    desc: 'Pomoć kod oštre samokritike, stida, perfekcionizma i burnout-a.'
+    desc: 'Rad na oštroj samokritici, stidu, perfekcionizmu i iscrpljenosti.'
   },
   {
     href: '/sr/weight-loss-counseling/',
     title: 'Savetovanje za mršavljenje',
-    desc: 'Podrška za emocionalno jedenje, sliku tela i trajnu promenu ponašanja.'
+    desc: 'Rad na emocionalnom jedenju, odnosu prema telu i navikama u ishrani.'
   },
   {
     href: '/sr/bariatric-surgery-counseling/',
@@ -82,7 +82,7 @@ const specialtyLinks = [
   {
     href: '/sr/divorce-counseling/',
     title: 'Savetovanje tokom razvoda',
-    desc: 'Podrška pre separacije i posle razvoda tokom velike životne promene.'
+    desc: 'Razgovori o razdvajanju, razvodu i odnosima koji se time menjaju.'
   },
   {
     href: '/sr/prenatal-therapy/',
@@ -92,12 +92,12 @@ const specialtyLinks = [
   {
     href: '/sr/postpartum-therapy/',
     title: 'Postpartalna terapija',
-    desc: 'Postnatalna podrška za promene raspoloženja, preplavljenost i oporavak posle porođaja.'
+    desc: 'Psihološka podrška za teškoće sa raspoloženjem i prilagođavanje posle porođaja.'
   }
 ];
 
 const pageDescription =
-  'Psihoterapija u Šamburgu za pojedince, parove i porodice koji traže podršku za anksioznost, traumu, tugu, odnose i životne promene.';
+  'Psiholog na srpskom za Čikago i okolinu. Dr Jelena Đurović, ordinacija u Schaumburgu i onlajn terapija za klijente koji se nalaze u Ilinoisu.';
 
 const faqItems = [
   {
@@ -108,23 +108,23 @@ const faqItems = [
   {
     question: 'Da li je online terapija dostupna van Ilinoisa?',
     answer:
-      'Dr Jelena Djurovic ima licencu za rad u Ilinoisu. Online terapija može biti dostupna samo kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu u trenutku seanse i kada je ovaj format klinički prikladan.'
+      'Dr Jelena Đurović ima licencu za rad u Ilinoisu. Onlajn seanse su moguće kada su svi učesnici fizički u Ilinoisu i kada je takav rad klinički primeren.'
   },
   {
     question: 'Da li je terapija dostupna na srpskom i engleskom?',
     answer:
-      'Da. Terapijske usluge su dostupne na srpskom i engleskom jeziku. Kontaktirajte Center for PTA da razgovarate o traženoj usluzi, željenom jeziku, kliničkom uklapanju i trenutnoj dostupnosti.'
+      'Da, dr Jelena Đurović radi na srpskom i engleskom. Kada se javite, navedite na kom jeziku želite da razgovarate i pitajte za slobodne termine.'
   },
   {
     question: 'Kako da znam da li mi je potrebna terapija ili psihološka procena?',
     answer:
-      'Terapija je usmerena na kontinuiranu podršku, suočavanje, odnose i emocionalnu promenu. Psihološka procena je strukturisana evaluacija koja odgovara na konkretno dijagnostičko ili upućujuće pitanje. Center for PTA može da vam pomogne da razgovarate o tome koja je usluga prikladniji prvi korak.'
+      'Na terapiji se kroz razgovore bavite teškoćama i onim što biste želeli da promenite. Psihološka procena služi da se odgovori na određeno pitanje, na primer da se razjasni dijagnoza. Ako niste sigurni šta vam treba, opišite razlog javljanja ordinaciji.'
   }
 ];
 
 const localSectionParagraphs = [
-  'Dr Jelena Djurovic pruža terapiju uživo u ordinaciji Center for PTA na adresi 1320 Tower Rd, Suite 156 u Schaumburgu. Ordinacija služi klijentima iz Schaumburga i okolnih severozapadnih predgrađa, uključujući Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village i Streamwood.',
-  'Online terapija može biti dostupna samo kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu tokom seanse i kada je ovaj format klinički prikladan. Terapijske usluge su dostupne na srpskom i engleskom jeziku.'
+  'Dr Jelena Đurović pruža terapiju uživo u ordinaciji Center for PTA na adresi 1320 Tower Rd, Suite 156 u Schaumburgu. Ordinacija služi klijentima iz Schaumburga i okolnih severozapadnih predgrađa, uključujući Hoffman Estates, Arlington Heights, Palatine, Rolling Meadows, Elk Grove Village i Streamwood.',
+  'Onlajn seanse su moguće kada su svi učesnici fizički u Ilinoisu i kada je takav rad klinički primeren. Terapijske usluge su dostupne na srpskom i engleskom jeziku.'
 ];
 
 const serviceStructuredData = getServiceStructuredData({
@@ -137,7 +137,7 @@ const serviceStructuredData = getServiceStructuredData({
 
 <Layout
   medicalContent={true}
-  title="Psihoterapija u Šamburgu, IL | Center for PTA"
+  title="Psiholog na srpskom | Schaumburg i Čikago"
   description={pageDescription}
   faqItems={faqItems}
   structuredData={serviceStructuredData}
@@ -151,11 +151,25 @@ const serviceStructuredData = getServiceStructuredData({
       <PageBreadcrumbs currentLabel="Terapija u Schaumburgu, IL" homeLabel="Početna" homePath="/sr/" ariaLabel="Putanja stranice" align="center" />
       <p class="text-[15px] xl:text-lg font-bold text-[#2f594f] uppercase tracking-widest mb-4">Naše usluge</p>
       <h1 class="text-4xl md:text-5xl xl:text-[64px] font-extrabold text-[#1a1a1a] leading-tight tracking-tight mb-8">
-        Terapija u Schaumburgu, IL
+        Psiholog na srpskom za Čikago i okolinu
       </h1>
       <p class="text-lg md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        Individualna, partnerska, porodična i online terapija za anksioznost, depresiju, traumu, ADHD, probleme u odnosima, tugu i životne promene.
+        Ordinacija dr Jelene Đurović nalazi se u Schaumburgu. Terapija je dostupna na srpskom i engleskom, uživo ili onlajn kada su svi učesnici fizički u Ilinoisu i kada je takav rad klinički primeren.
       </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-[1000px] mx-auto px-5 md:px-10">
+      <h2 class="text-3xl font-bold text-[#2f594f] mb-5">Razgovor na jeziku koji vam odgovara</h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-5">Ako vam je lakše da o porodici, odnosima ili teškom iskustvu govorite na srpskom, recite to kada se javite. Dr Jelena radi i sa osobama koje prolaze kroz lečenje neplodnosti, bore se sa strogom samokritikom ili razmišljaju o razvodu.</p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-6">Adresa ordinacije je 1320 Tower Rd, Suite 156, Schaumburg, IL 60173. Ako vam dolazak ne odgovara, pitajte da li su onlajn seanse moguće za vas.</p>
+      <div class="flex flex-wrap gap-5 text-[#2f594f] font-semibold">
+        <a class="underline underline-offset-4" href="/sr/womens-mental-health-therapy/">Mentalno zdravlje žena</a>
+        <a class="underline underline-offset-4" href="/sr/self-compassion-therapy/">Samosaosećanje</a>
+        <a class="underline underline-offset-4" href="/sr/divorce-counseling/">Podrška tokom razvoda</a>
+        <a class="underline underline-offset-4" href="/sr/contact/">Pitajte za termin</a>
+      </div>
     </div>
   </section>
 
@@ -164,30 +178,30 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="flex flex-col md:flex-row gap-12 items-center">
         <div class="md:w-1/2">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Individualizovan pristup terapiji</h2>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6">Kako počinje terapija</h2>
           <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Početak terapije može delovati preplavljujuće, ali ne morate sami prolaziti kroz teške emocije ili životne promene. Nudimo podržavajući prostor bez osuđivanja, u kome možete bolje razumeti ono kroz šta prolazite i postepeno graditi stvarnu promenu.
+            Prvi razgovori služe da dr Jelena upozna razlog vašeg dolaska, kako teškoće utiču na svakodnevni život i šta biste želeli da se promeni. Nije potrebno da unapred znate kako da objasnite sve što vam se dešava.
           </p>
           <p class="text-lg text-gray-700 leading-relaxed">
-            Dr Jelena Djurovic pruža terapiju zasnovanu na dokazima, prilagođenu vašim potrebama, ciljevima, životnoj istoriji i snagama, kako biste se kretali ka većoj stabilnosti, zdravijim odnosima i dubljem razumevanju sebe.
+            Zajedno dogovarate na čemu ćete raditi. Tokom terapije razgovarate i o tome da li vam rad pomaže i da li treba nešto promeniti u pristupu.
           </p>
         </div>
         <div class="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
             <h3 class="font-bold text-[#2f594f] text-xl mb-3">Individualna terapija</h3>
-            <p class="text-gray-600">Seanse jedan na jedan usmerene na lični rast, oporavak i vaše konkretne psihološke potrebe.</p>
+            <p class="text-gray-600">Razgovori sa psihologom o teškoćama zbog kojih dolazite i njihovom uticaju na vaš život.</p>
           </div>
           <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
             <h3 class="font-bold text-[#2f594f] text-xl mb-3">Partnerska terapija</h3>
-            <p class="text-gray-600">Učenje efikasnije komunikacije i strategija za rešavanje problema radi jačanja odnosa.</p>
+            <p class="text-gray-600">Zajednički razgovori o sukobima, poverenju i problemima koje teško rešavate sami.</p>
           </div>
           <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
             <h3 class="font-bold text-[#2f594f] text-xl mb-3">Porodična terapija</h3>
-            <p class="text-gray-600">Rad na konfliktima i porodičnoj dinamici kroz vođen, konstruktivan dijalog.</p>
+            <p class="text-gray-600">Razgovori sa članovima porodice o odnosima i sukobima koji ih opterećuju.</p>
           </div>
           <div class="bg-[#fcfbf9] p-6 rounded-2xl border border-gray-100">
-            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Online terapija</h3>
-            <p class="text-gray-600">Sigurne online seanse mogu biti dostupne kada se svi klijenti koji učestvuju fizički nalaze u Ilinoisu tokom seanse.</p>
+            <h3 class="font-bold text-[#2f594f] text-xl mb-3">Onlajn terapija</h3>
+            <p class="text-gray-600">Onlajn razgovori, kada su klinički primereni i svi učesnici se tokom seanse fizički nalaze u Ilinoisu.</p>
           </div>
         </div>
       </div>
@@ -199,7 +213,7 @@ const serviceStructuredData = getServiceStructuredData({
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Sa čime radimo</h2>
-        <p class="text-lg text-gray-700">Nudimo specijalizovan tretman za širok spektar emocionalnih, ponašajnih i psiholoških teškoća.</p>
+        <p class="text-lg text-gray-700">Ovo su neki od razloga zbog kojih se ljudi javljaju za terapiju.</p>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8">
@@ -216,9 +230,9 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Specijalizovane teme u terapiji</h2>
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Više o pojedinim uslugama</h2>
         <p class="text-lg text-gray-700">
-          Ako tražite podršku za konkretniju temu, ove stranice mogu pomoći da brže pronađete pravi pravac.
+          Na ovim stranicama možete pročitati kako izgleda rad na problemu zbog kog se javljate.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -235,9 +249,9 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-16 xl:py-24 bg-white relative">
     <div class="max-w-[1200px] mx-auto px-5 md:px-10 xl:px-24">
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Planiranje sledećeg koraka</h2>
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6">Pre zakazivanja</h2>
         <p class="text-lg text-gray-700">
-          Ove praktične stranice i stručni vodiči mogu pomoći da razumete uklapanje, cenu, zakazivanje i šta možete očekivati od terapije.
+          Proverite cenu i osiguranje ili pročitajte više o izboru terapeuta i psihološkoj proceni.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -253,13 +267,13 @@ const serviceStructuredData = getServiceStructuredData({
 
   <LocalServiceArea
     serviceName="Psihoterapija"
-    title="Terapija u Schaumburgu i online podrška u Ilinoisu"
+    title="Terapija u Schaumburgu i onlajn podrška u Ilinoisu"
     paragraphs={localSectionParagraphs}
   />
 
   <FaqSection
     title="Česta pitanja o terapiji u Schaumburgu"
-    intro="Praktični odgovori o ordinaciji, granicama online terapije, jezicima i izboru odgovarajuće usluge."
+    intro="Praktični odgovori o ordinaciji, granicama onlajn terapije, jezicima i izboru odgovarajuće usluge."
     faqs={faqItems}
   />
 
@@ -270,7 +284,7 @@ const serviceStructuredData = getServiceStructuredData({
   <section class="py-20 md:py-28 bg-[#2f594f] relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-[#3a6e62] rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
     <div class="max-w-[1000px] mx-auto px-5 md:px-10 text-center relative z-10">
-      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Započnite put oporavka</h2>
+      <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 md:mb-8 tracking-tight">Javite se za termin</h2>
       <a href="/sr/contact/" class="inline-flex items-center justify-center px-8 md:px-12 py-4 bg-[#fcc13e] text-[#1a1a1a] text-lg font-bold rounded-full hover:bg-white hover:text-[#2f594f] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
         Kontakt
       </a>
