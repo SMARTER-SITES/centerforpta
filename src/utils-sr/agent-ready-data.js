@@ -44,7 +44,7 @@ export const practiceProfile = {
           'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/'
       },
       {
-        type: 'VideoObject',
+        type: 'CreativeWork',
         title: 'Nije Bitno Gde Sam Već Ko Sam S2: EP1 Jelena Djurović Psiholog',
         publisher: 'SBN Chicago News',
         url: 'https://www.youtube.com/watch?v=4xS8Sm2lOh4'

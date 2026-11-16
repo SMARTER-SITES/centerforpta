@@ -34,7 +34,7 @@ authorId: "jelena-djurovic"
 translationSource: "en"
 ---
 
-Saslušajte me. Znam da početak terapije može zvučati kao da nešto mora biti ozbiljno pogrešno. Terapija zaista može pomoći kada osoba ima depresiju, anksioznost, simptome povezane sa traumom, probleme u odnosima ili neku drugu jasnu teškoću. Ipak, psihoterapija nije rezervisana samo za dijagnozu ili krizu.
+Možda razmišljate o terapiji, ali niste sigurni da li je vaš problem dovoljno ozbiljan. Terapija zaista može pomoći kada osoba ima depresiju, anksioznost, simptome povezane sa traumom, probleme u odnosima ili neku drugu jasnu teškoću. Ipak, psihoterapija nije rezervisana samo za dijagnozu ili krizu.
 
 Ljudi započinju terapiju i zato što se osećaju preopterećeno, zaglavljeno, emocionalno iscrpljeno, nesigurno pred važnom odlukom ili uhvaćeno u obrazac koji ne uspevaju sami da promene. Nekima je potrebna podrška tokom tuge, razvoda, trudnoće, infertiliteta, imigracionog stresa, promene karijere ili teškog odnosa. Drugi žele privatno mesto na kome mogu jasnije da razumeju sebe.
 
@@ -52,7 +52,7 @@ Ponekad je razlog za terapiju vrlo konkretan: napadi panike, uporna tuga, nametl
 
 Možda primećujete da:
 
-- ista briga ili konflikt stalno vraća;
+- vam se ista briga ili konflikt stalno vraća;
 - funkcionišete, ali sve zahteva više napora nego ranije;
 - samokritika utiče na vaše odluke ili odnose;
 - velika životna promena menja način na koji vidite sebe;

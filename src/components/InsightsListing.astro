@@ -126,6 +126,16 @@ const collectionStructuredData = {
         <a href="/therapy/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Therapy</a>
         <a href="/contact/" class="px-4 py-2 rounded-full bg-[#2f594f] text-white hover:bg-[#24473f] transition-colors">Ask About Scheduling</a>
       </div>
+      {currentPage === 1 && (
+        <nav aria-label="Thinking about starting therapy?" class="mt-8 border-t border-[#e8e2d8] pt-6">
+          <h2 class="text-lg font-bold text-[#1a1a1a]">Thinking about starting therapy?</h2>
+          <div class="mt-3 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-x-6 text-[#2f594f] font-semibold">
+            <a href="/blog/2026-03-01-why-seek-psychotherapy/" class="underline underline-offset-4 hover:text-[#1a1a1a]">When to seek psychotherapy</a>
+            <a href="/blog/2026-03-02-how-do-i-find-the-right-therapist/" class="underline underline-offset-4 hover:text-[#1a1a1a]">How to choose a therapist</a>
+            <a href="/therapy/" class="underline underline-offset-4 hover:text-[#1a1a1a]">Therapy in Schaumburg</a>
+          </div>
+        </nav>
+      )}
     </div>
   </section>
 

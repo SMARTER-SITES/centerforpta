@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 import FaqSection from '../components/FaqSection.astro';
 import LocalServiceArea from '../components/LocalServiceArea.astro';
 import AuthorBioBox from '../components/AuthorBioBox.astro';
-import { getServiceStructuredData } from '../utils/seo';
+import { getServiceStructuredData, mapUrl } from '../utils/seo';
 
 const timeline = [
   { step: "1. Clinical Interview", desc: "A comprehensive conversation about medical history, weight-loss journey, current lifestyle, and support systems." },
@@ -116,6 +116,10 @@ const serviceStructuredData = getServiceStructuredData({
         <a href="/contact/" class="inline-flex items-center justify-center rounded-full bg-[#2f594f] px-8 py-4 font-semibold text-white hover:bg-[#23443c] transition-colors">Ask About a Bariatric Evaluation</a>
         <a href="/bariatric-surgery-counseling/" class="font-semibold text-[#2f594f] underline underline-offset-4">Looking for ongoing bariatric counseling?</a>
       </div>
+      <p class="mt-6 text-base leading-relaxed text-gray-700">
+        In-person evaluations: 1320 Tower Rd, Suite 156, Schaumburg, IL 60173.
+        <a href={mapUrl} class="font-semibold text-[#2f594f] underline underline-offset-4">Office location and directions</a>
+      </p>
     </div>
   </section>
 

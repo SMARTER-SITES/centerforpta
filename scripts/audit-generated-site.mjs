@@ -490,7 +490,7 @@ for (const page of indexablePages) {
 
       const sbnInterview = mediaByUrl.get(sbnInterviewUrl);
       if (
-        sbnInterview?.['@type'] !== 'VideoObject' ||
+        sbnInterview?.['@type'] !== 'CreativeWork' ||
         !comparableText(sbnInterview?.name) ||
         sbnInterview?.publisher?.name !== 'SBN Chicago News' ||
         sbnInterview?.thumbnailUrl !== 'https://i.ytimg.com/vi/4xS8Sm2lOh4/hqdefault.jpg'

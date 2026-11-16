@@ -135,7 +135,8 @@ test('provider profiles link the doctor to the canonical Schaumburg practice ent
     assert.match(source, /Illinois School of Professional Psychology/);
     assert.match(source, /subjectOf:/);
     assert.match(source, /'@type': 'NewsArticle'/);
-    assert.match(source, /'@type': 'VideoObject'/);
+    assert.match(source, /'@type': 'CreativeWork'/);
+    assert.doesNotMatch(source, /'@type': 'VideoObject'/);
     assert.match(source, /datePublished: '2025-07-07'/);
     assert.match(source, /publisher:[\s\S]*?name: 'Serbian Times'/);
     assert.match(source, /publisher:[\s\S]*?name: 'SBN Chicago News'/);
@@ -158,7 +159,7 @@ test('AI-facing practice data exposes the same independent provider evidence', (
           'https://serbiantimes.info/srpkinja-psiholog-u-cikagu-od-cega-najvise-pate-nasi-ljudi-u-americi-i-kako-im-psiholog-moze-pomoci-da-dobiju-papire-video/'
         ],
         [
-          'VideoObject',
+          'CreativeWork',
           'SBN Chicago News',
           'https://www.youtube.com/watch?v=4xS8Sm2lOh4'
         ]

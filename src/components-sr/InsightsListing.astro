@@ -129,6 +129,16 @@ const collectionStructuredData = {
         <a href="/sr/therapy/" class="px-4 py-2 rounded-full bg-white border border-[#e8e2d8] text-[#2f594f] hover:border-[#2f594f] transition-colors">Terapija</a>
         <a href="/sr/contact/" class="px-4 py-2 rounded-full bg-[#2f594f] text-white hover:bg-[#24473f] transition-colors">Pitajte za zakazivanje</a>
       </div>
+      {currentPage === 1 && (
+        <nav aria-label="Razmišljate o prvom razgovoru sa psihologom?" class="mt-8 border-t border-[#e8e2d8] pt-6">
+          <h2 class="text-lg font-bold text-[#1a1a1a]">Razmišljate o prvom razgovoru sa psihologom?</h2>
+          <div class="mt-3 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-x-6 text-[#2f594f] font-semibold">
+            <a href="/sr/blog/2026-03-01-why-seek-psychotherapy/" class="underline underline-offset-4 hover:text-[#1a1a1a]">Kada potražiti psihoterapiju</a>
+            <a href="/sr/blog/2026-03-02-how-do-i-find-the-right-therapist/" class="underline underline-offset-4 hover:text-[#1a1a1a]">Kako izabrati terapeuta</a>
+            <a href="/sr/therapy/" class="underline underline-offset-4 hover:text-[#1a1a1a]">Terapija na srpskom u Schaumburgu</a>
+          </div>
+        </nav>
+      )}
     </div>
   </section>
 
