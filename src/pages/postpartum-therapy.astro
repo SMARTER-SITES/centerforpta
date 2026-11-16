@@ -50,7 +50,7 @@ const relatedLinks = [
   }
 ];
 
-const signals = ['In-person in Schaumburg', 'Telehealth while located in Illinois', 'Postpartum and postnatal support'];
+const signals = ['In-person in Schaumburg', 'Telehealth while physically in Illinois', 'English and Serbian'];
 const featureCards = [
   {
     title: 'Local Care',
@@ -77,7 +77,7 @@ const careStyle = [
   },
   {
     title: 'Built for early support',
-    desc: 'You do not need to wait until things are severe. Reaching out when something feels off is often the most effective time to start.'
+    desc: 'You do not need to wait until things are severe. If something feels off, it is reasonable to ask for support.'
   }
 ];
 
@@ -122,6 +122,11 @@ const clinicalSources = [
 
 const faqItems = [
   {
+    question: 'What should I include in my first message?',
+    answer:
+      'A short message is enough: mention postpartum therapy, your preferred language, and whether you are interested in in-person or online sessions. Include any questions about scheduling or fees. You do not need to send medical records or a detailed personal history with an initial inquiry. Sending an inquiry does not book an appointment.'
+  },
+  {
     question: 'What can postpartum therapy help with?',
     answer:
       'Postpartum therapy can help with postpartum anxiety, postpartum depression, irritability, overwhelm, identity changes, relationship strain, sleep disruption, and the emotional adjustment after birth.'
@@ -129,7 +134,7 @@ const faqItems = [
   {
     question: 'Do you offer postpartum therapy in Schaumburg, IL and online?',
     answer:
-      'Yes. Sessions are available in person in Schaumburg, and telehealth may be available when the client is physically located in Illinois at the time of the session.'
+      'Yes. Sessions are available in person in Schaumburg, and telehealth may be available when the client is physically located in Illinois at the time of the session and the format is clinically appropriate.'
   },
   {
     question: 'How soon after birth can I start postpartum therapy?',
@@ -211,8 +216,8 @@ const serviceStructuredData = getServiceStructuredData({
     serviceName="Postpartum Therapy"
     title="Postpartum Therapy in Schaumburg and the Greater Northwest Suburbs"
     paragraphs={[
-      'Dr. Jelena Djurovic offers postpartum therapy at her Schaumburg office, serving new parents from Arlington Heights, Des Plaines, Mount Prospect, Palatine, Hoffman Estates, and the surrounding area. Her experience with perinatal mental health means the work can begin quickly without spending sessions on background education.',
-      'Telehealth may be available when the client is physically located in Illinois at the time of the session, which many new parents prefer during the postpartum period. If you started with prenatal therapy and want to continue into postpartum care, that continuity is available and often beneficial.'
+      'Dr. Jelena Djurovic offers postpartum therapy at her Schaumburg office, serving new parents from Arlington Heights, Des Plaines, Mount Prospect, Palatine, Hoffman Estates, and the surrounding area.',
+      'Telehealth may be available when the client is physically located in Illinois at the time of the session and the format is clinically appropriate. If you started prenatal therapy and would like to continue after birth, discuss that with the practice.'
     ]}
   />
 
