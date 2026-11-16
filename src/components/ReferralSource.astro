@@ -1,0 +1,32 @@
+---
+interface Props {
+  id: string;
+  language?: 'en' | 'sr';
+}
+const { id, language = 'en' } = Astro.props;
+const sr = language === 'sr';
+const options = [
+  ['google', 'Google'],
+  ['bing', 'Bing'],
+  ['ai-assistant', sr ? 'ChatGPT ili drugi AI asistent' : 'ChatGPT or another AI assistant'],
+  ['psychology-today', 'Psychology Today'],
+  ['professional-referral', sr ? 'Preporuka stručnjaka' : 'A professional referral'],
+  ['personal-referral', sr ? 'Preporuka prijatelja ili porodice' : 'A friend or family member'],
+  ['media', sr ? 'Intervju, članak ili društvene mreže' : 'An interview, article, or social media'],
+  ['other', sr ? 'Drugo' : 'Other'],
+];
+---
+
+<div>
+  <label for={id} class="mb-2 block text-sm font-medium text-gray-700">
+    {sr ? 'Kako ste saznali za ordinaciju? (neobavezno)' : 'How did you hear about us? (optional)'}
+  </label>
+  <select
+    id={id}
+    name="referral-source"
+    class="w-full bg-[#fcfbf9] border border-gray-200 min-h-14 rounded-2xl px-4 py-3 text-base text-black outline-none focus:ring-2 focus:ring-[#2f594f]/40 focus:border-[#2f594f]"
+  >
+    <option value="">{sr ? 'Izaberite ako želite' : 'Select if you wish'}</option>
+    {options.map(([value, label]) => <option value={value}>{label}</option>)}
+  </select>
+</div>
