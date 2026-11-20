@@ -62,7 +62,7 @@ Feeling overwhelmed does not mean you are failing to cope. It may mean that you 
 
 - Research has not established that stress alone causes infertility, and emotional support should never be presented as a way to guarantee pregnancy.
 
-- Therapy can focus on coping, grief, communication, boundaries, and decision-making while remaining separate from medical fertility care.
+- [Counseling during fertility treatment or while trying to conceive](/fertility-counseling/) can focus on coping, grief, communication, boundaries, and decision-making while remaining separate from medical fertility care.
 
 - Support may be useful before distress reaches a crisis point, including for people who are not undergoing fertility treatment.
 

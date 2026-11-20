@@ -58,7 +58,7 @@ Osećaj preplavljenosti ne znači da ne uspevate da se nosite sa situacijom. Mo�
 - Reproduktivni stres je neformalni izraz za emocionalno opterećenje koje može pratiti izazove sa plodnošću i nije medicinska dijagnoza.
 - Infertilitet i tretman plodnosti mogu uticati na raspoloženje, odnose, posao, finansije, identitet i svakodnevno funkcionisanje.
 - Istraživanja nisu utvrdila da stres sam po sebi izaziva infertilitet, a emocionalna podrška se ne sme predstavljati kao način da se garantuje trudnoća.
-- Terapija može biti usmerena na nošenje sa stresom, tugu, komunikaciju, granice i donošenje odluka, uz jasno odvajanje od medicinske brige o plodnosti.
+- [Psihološka podrška tokom pokušaja začeća ili lečenja neplodnosti](/sr/fertility-counseling/) može biti usmerena na nošenje sa stresom, tugu, komunikaciju, granice i donošenje odluka, uz jasno odvajanje od medicinske brige o plodnosti.
 - Podrška može biti korisna i pre nego što uznemirenost dostigne krizni nivo, uključujući osobe koje nisu na tretmanu plodnosti.
 
 ## Šta je reproduktivni stres?

@@ -49,7 +49,7 @@ Ovaj tekst govori o emocionalnom nošenju sa sadašnjom trudnoćom. Pitanja o fi
 
 - Suočavanje može biti usmereno na sledeći podnošljiv korak, granice prema informacijama i podršku u sadašnjosti, umesto na potpunu sigurnost o celoj trudnoći.
 
-- Terapija može pomoći kod anksioznosti, tuge, komunikacije i samookrivljavanja, ali ne može sprečiti gubitak ili garantovati ishod trudnoće.
+- [Razgovor sa psihologom tokom trudnoće](/sr/prenatal-therapy/) može pomoći kod anksioznosti, tuge, komunikacije i samookrivljavanja, ali ne može sprečiti gubitak ili garantovati ishod trudnoće.
 
 ## Zašto trudnoća posle infertiliteta može biti emocionalno složena
 
@@ -249,7 +249,7 @@ Ne. Center for PTA pruža psihoterapiju i psihološke usluge. Pitanja o trudnoć
 
 O individualnom i partnerskom radu saznajte više na stranici [psihološke podrške tokom neplodnosti i IVF-a](/sr/fertility-counseling/).
 
-Za širi pregled pročitajte [reproduktivni stres i infertilitet](/sr/blog/reproductive-stress-and-infertility/), a o dostupnoj pomoći saznajte više na stranici [prenatalne terapije](/sr/prenatal-therapy/).
+Za širi pregled pročitajte [reproduktivni stres i infertilitet](/sr/blog/reproductive-stress-and-infertility/).
 
 ## O ovom tekstu
 

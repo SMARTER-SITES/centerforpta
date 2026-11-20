@@ -49,7 +49,7 @@ This article addresses emotional coping during a current pregnancy. Medical ques
 
 - Coping can focus on the next manageable step, boundaries around information, and support for the present rather than certainty about the entire pregnancy.
 
-- Therapy may help with anxiety, grief, communication, and self-blame, but it cannot prevent loss or guarantee a pregnancy outcome.
+- [Therapy during pregnancy](/prenatal-therapy/) may help with anxiety, grief, communication, and self-blame, but it cannot prevent loss or guarantee a pregnancy outcome.
 
 ## Why pregnancy after infertility can feel emotionally complicated
 
@@ -249,7 +249,7 @@ No. Center for PTA provides psychotherapy and psychological services. Prenatal, 
 
 Learn about individual and couples support through [fertility and IVF counseling in Schaumburg](/fertility-counseling/).
 
-For a broader overview, read [reproductive stress and infertility](/blog/reproductive-stress-and-infertility/) and learn about [prenatal therapy](/prenatal-therapy/).
+For a broader overview, read [reproductive stress and infertility](/blog/reproductive-stress-and-infertility/).
 
 ## About this article
 
